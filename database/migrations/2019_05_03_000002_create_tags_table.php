@@ -27,6 +27,8 @@ class CreateTagsTable extends Migration
             $table->string('description', 150)->nullable();
 
             $table->unique(["name"], 'name_UNIQUE');
+
+            $table->unique(["id"], 'id_UNIQUE');
         });
     }
 

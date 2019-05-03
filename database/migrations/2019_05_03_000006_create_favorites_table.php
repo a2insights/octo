@@ -25,7 +25,7 @@ class CreateFavoritesTable extends Migration
             $table->increments('id');
             $table->string('model_type', 150);
             $table->integer('model_id');
-            $table->integer('user_id')->nullable();
+            $table->integer('user_id');
         });
     }
 

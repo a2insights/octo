@@ -22,12 +22,15 @@ class CreatePostHasTagsTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('tag_id');
+            $table->increments('id');
+            $table->unsignedInteger('tag_id');
             $table->unsignedInteger('post_id');
 
             $table->index(["tag_id"], 'fk_tags_has_posts_tags1_idx');
 
             $table->index(["post_id"], 'fk_tags_has_posts_posts1_idx');
+
+            $table->unique(["id"], 'id_UNIQUE');
 
 
             $table->foreign('tag_id', 'fk_tags_has_posts_tags1_idx')

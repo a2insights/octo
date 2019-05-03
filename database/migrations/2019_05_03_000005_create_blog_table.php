@@ -27,6 +27,8 @@ class CreateBlogTable extends Migration
             $table->text('description')->nullable();
             $table->string('sub_domain', 45)->nullable();
             $table->string('guard_name', 45)->nullable();
+
+            $table->unique(["id"], 'id_UNIQUE');
             $table->nullableTimestamps();
         });
     }
