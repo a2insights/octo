@@ -24,8 +24,8 @@ class CreatePostsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->unsignedInteger('user_has_blog_id');
-            $table->string('name', 45);
-            $table->string('content', 45)->nullable();
+            $table->string('name', 150);
+            $table->text('content')->nullable();
 
             $table->index(["user_has_blog_id"], 'fk_posts_users_has_tenancys1_idx');
             $table->nullableTimestamps();
