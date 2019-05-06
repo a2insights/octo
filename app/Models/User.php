@@ -36,4 +36,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function blogs()
+    {
+        return $this->belongsToMany(\App\Models\Blog::class, 'user_has_blogs')
+            ->withPivot('id');
+    }
 }
