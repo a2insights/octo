@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Blog;
 
 class HomeController extends Controller
 {
@@ -13,16 +13,16 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('web');
     }
 
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\View\View
      */
     public function index()
     {
-        return view('home');
+        return view('home')->with(['blogs' => Blog::all()]);
     }
 }
