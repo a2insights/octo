@@ -8,13 +8,15 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * Class Post
  *
  * @property int $id
- * @property int $user_has_blog_id
  * @property string $name
+ * @property int $user_id
+ * @property int $blog_id
  * @property string $content
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  *
- * @property \App\Models\UserHasBlog $user_has_blog
+ * @property \App\Models\Blog $blog
+ * @property \App\Models\User $author
  * @property \Illuminate\Database\Eloquent\Collection $tags
  *
  * @package App\Models
@@ -25,24 +27,34 @@ class Post extends Eloquent
      * @var array
      */
     protected $casts = [
-		'user_has_blog_id' => 'int'
+		'user_id' => 'int',
+		'blog_id' => 'int'
 	];
 
     /**
      * @var array
      */
     protected $fillable = [
-		'user_has_blog_id',
 		'name',
+		'user_id',
+		'blog_id',
 		'content'
 	];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user_has_blog()
+    public function blog()
 	{
-		return $this->belongsTo(\App\Models\UserHasBlog::class);
+		return $this->belongsTo(\App\Models\Blog::class);
+	}
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function author()
+	{
+		return $this->belongsTo(\App\Models\User::class , 'user_id');
 	}
 
     /**
