@@ -4,8 +4,48 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "50026b4f8b80a219e9e3d2dca9cc24f3",
+    "content-hash": "aa8f383486218ddfc747fd650c901f28",
     "packages": [
+        {
+            "name": "atiladanvi/clean-hasblog",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Atiladanvi/clean-hasblog.git",
+                "reference": "b06b0394cfddb13ea1e0b09ba0efda5f7bbe77c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Atiladanvi/clean-hasblog/zipball/b06b0394cfddb13ea1e0b09ba0efda5f7bbe77c7",
+                "reference": "b06b0394cfddb13ea1e0b09ba0efda5f7bbe77c7",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "CleanHasBlog\\CleanHasBlogServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CleanHasBlog\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Atiladanvi",
+                    "email": "atila.danvi@outlook.com"
+                }
+            ],
+            "description": "template blog to hasblog",
+            "time": "2019-05-07T18:41:16+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
