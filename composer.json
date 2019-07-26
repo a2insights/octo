@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "atiladanvi/hasblog",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "The web Blog cms.",
     "keywords": [
         "framework",
         "laravel"
