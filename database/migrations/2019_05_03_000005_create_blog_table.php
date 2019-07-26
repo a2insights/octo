@@ -26,13 +26,13 @@ class CreateBlogTable extends Migration
             $table->unsignedInteger('user_id');
             $table->string('theme', 45)->default('clean');
             $table->string('name', 45);
-            $table->text('description')->nullable();
-            $table->string('sub_domain', 45)->nullable();
-            $table->string('guard_name', 45)->nullable();
+            $table->text('description')->nullable()->default(null);
+            $table->string('sub_domain', 45)->nullable()->default(null);
+            $table->string('guard_name', 45)->nullable()->default(null);
 
             $table->index(["user_id"], 'fk_blog_users1_idx');
 
-            $table->unique(["id"], 'id_UNIQUE');
+            $table->unique(["id"], 'id_UNIQUE_blog');
             $table->nullableTimestamps();
 
 

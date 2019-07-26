@@ -30,16 +30,16 @@ class CreatePostHasTagsTable extends Migration
 
             $table->index(["post_id"], 'fk_tags_has_posts_posts1_idx');
 
-            $table->unique(["id"], 'id_UNIQUE');
+            $table->unique(["id"], 'id_UNIQUE_post_has_tags');
 
-
-            $table->foreign('tag_id', 'fk_tags_has_posts_tags1_idx')
-                ->references('id')->on('tags')
-                ->onDelete('no action')
-                ->onUpdate('no action');
 
             $table->foreign('post_id', 'fk_tags_has_posts_posts1_idx')
                 ->references('id')->on('posts')
+                ->onDelete('no action')
+                ->onUpdate('no action');
+
+            $table->foreign('tag_id', 'fk_tags_has_posts_tags1_idx')
+                ->references('id')->on('tags')
                 ->onDelete('no action')
                 ->onUpdate('no action');
         });

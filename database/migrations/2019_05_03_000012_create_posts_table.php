@@ -26,7 +26,7 @@ class CreatePostsTable extends Migration
             $table->string('name', 150);
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('blog_id');
-            $table->text('content')->nullable();
+            $table->text('content')->nullable()->default(null);
 
             $table->index(["user_id"], 'fk_posts_users1_idx');
 
