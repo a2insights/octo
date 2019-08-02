@@ -1,7 +1,7 @@
 /.idea
 /node_modules
 /public/hot
-/public/storage
+/public/vendor
 /storage/*.key
 /vendor
 .env
