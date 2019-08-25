@@ -35,7 +35,7 @@ class CreatePostsTable extends Migration
 
 
             $table->foreign('blog_id', 'fk_posts_blog1_idx')
-                ->references('id')->on('blog')
+                ->references('id')->on('blogs')
                 ->onDelete('no action')
                 ->onUpdate('no action');
 
