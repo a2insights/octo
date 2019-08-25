@@ -28,7 +28,7 @@ class Blog extends Eloquent
     /**
      * @var string
      */
-    protected $table = 'blog';
+    protected $table = 'blogs';
 
     /**
      * @var array
