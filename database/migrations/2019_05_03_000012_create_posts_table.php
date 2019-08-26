@@ -23,12 +23,9 @@ class CreatePostsTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('name', 150);
-            $table->unsignedInteger('user_id');
+            $table->string('title', 150);
             $table->unsignedInteger('blog_id');
             $table->text('content')->nullable()->default(null);
-
-            $table->index(["user_id"], 'fk_posts_users1_idx');
 
             $table->index(["blog_id"], 'fk_posts_blog1_idx');
             $table->nullableTimestamps();
@@ -36,11 +33,6 @@ class CreatePostsTable extends Migration
 
             $table->foreign('blog_id', 'fk_posts_blog1_idx')
                 ->references('id')->on('blogs')
-                ->onDelete('no action')
-                ->onUpdate('no action');
-
-            $table->foreign('user_id', 'fk_posts_users1_idx')
-                ->references('id')->on('users')
                 ->onDelete('no action')
                 ->onUpdate('no action');
         });

@@ -33,24 +33,24 @@ $factory->define(App\Models\Blog::class, function (Faker\Generator $faker) use (
 $factory->define(App\Models\User::class, function (Faker\Generator $faker) use ($name) {
     return [
         'name' => $name,
-        'email' => $faker->unique()->safeEmail,
+        'blog_id' => factory(\App\Models\Blog::class)->create()->id,
+        'email' => 'admin@admin.com',
         'email_verified_at' => now(),
         'password' => bcrypt('senha'),
         'remember_token' => Str::random(10),
     ];
 });
 
-$factory->afterCreating(\App\Models\User::class, function (\App\Models\User $user) {
+$factory->afterCreating(\App\Models\Blog::class, function (\App\Models\Blog $blog) {
     factory(\App\Models\Post::class, rand(20,100))->create([
-        'blog_id' => factory(\App\Models\Blog::class)->create(['user_id' => $user->id])->id,
-        'user_id' => $user->id
+        'blog_id' => $blog->id,
     ]);
 });
 
 
 $factory->define(App\Models\Post::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->text(25),
+        'title' => $faker->text(25),
         'content' => $faker->text
     ];
 });

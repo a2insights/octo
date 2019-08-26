@@ -19,7 +19,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  *
- * @property \Illuminate\Database\Eloquent\Collection $blogs
+ * @property \Illuminate\Database\Eloquent\Collection $blog
  * @property \Illuminate\Database\Eloquent\Collection $posts
  *
  * @package App\Models
@@ -32,7 +32,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'blog_id',
     ];
 
     /**
@@ -61,11 +61,11 @@ class User extends Authenticatable
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function blogs()
+    public function blog()
 	{
-		return $this->hasMany(\App\Models\Blog::class);
+		return $this->belongsTo(\App\Models\Blog::class, 'blog_id');
 	}
 
     /**

@@ -18,7 +18,6 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property \Carbon\Carbon $updated_at
  *
  * @property \App\Models\User $user
- * @property \App\Models\User $owner
  * @property \Illuminate\Database\Eloquent\Collection $posts
  *
  * @package App\Models
@@ -41,7 +40,6 @@ class Blog extends Eloquent
      * @var array
      */
     protected $fillable = [
-		'user_id',
 		'name',
         'theme',
 		'description',
@@ -50,20 +48,12 @@ class Blog extends Eloquent
 	];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function user()
 	{
-		return $this->belongsTo(\App\Models\User::class);
+		return $this->hasOne(\App\Models\User::class);
 	}
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function owner()
-    {
-        return $this->belongsTo(\App\Models\User::class , 'user_id');
-    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
