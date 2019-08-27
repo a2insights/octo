@@ -174,7 +174,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Reliese\Coders\CodersServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Yoeunes\Toastr\ToastrServiceProvider::class,
         Kris\LaravelFormBuilder\FormBuilderServiceProvider::class
