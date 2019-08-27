@@ -35,6 +35,10 @@ Copy the example env file and make the required configuration changes in the .en
 Generate a new application key
 
     php artisan key:generate
+    
+Publish vendor files
+
+    php artisan vendor:publish --provider="CleanHasBlog\CleanHasBlogServiceProvider"    
 
 Run the database migrations (**Set the database connection in .env before migrating**)
 
@@ -45,6 +49,10 @@ Start the local development server
     php artisan serve
 
 You can now access the server at http://localhost:8000
+
+### [All Rigth Now]( https://www.youtube.com/watch?v=rl51s5Osutg) :notes: :notes:
+
+
 
 **TL;DR command list**
 
