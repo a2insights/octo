@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 
+/**
+ * Class HomeController
+ *
+ * @package App\Http\Controllers
+ */
 class HomeController extends Controller
 {
     /**

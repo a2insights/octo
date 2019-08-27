@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Models\Blog;
 use App\Models\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -65,19 +66,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $user = null;
 
-        $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        DB::transaction(function () use ($data, &$user){
 
-        Blog::create([
-            'name' => $data['name'],
-            'quard_name' => Str::slug($data['name']),
-            'user_id' => $user->id,
-        ]);
+            $blog = Blog::create([
+                'name' => $data['name'],
+                'guard_name' => Str::slug($data['name'])
+            ]);
+
+            $user = User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'blog_id' => $blog->id
+            ]);
+        });
 
         return $user;
+
     }
 }

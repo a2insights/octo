@@ -176,6 +176,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         Reliese\Coders\CodersServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
+        Yoeunes\Toastr\ToastrServiceProvider::class,
+        Kris\LaravelFormBuilder\FormBuilderServiceProvider::class
 
     ],
 
@@ -227,7 +229,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'FormBuilder' => Kris\LaravelFormBuilder\Facades\FormBuilder::class,
     ],
 
 ];
