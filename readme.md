@@ -1,11 +1,12 @@
-# HasBlog 1.0
+# HasBlog 0.1
 
 ### The clean blog system
 
 [![GitHub license](https://img.shields.io/github/license/gothinkster/laravel-realworld-example-app.svg)](https://raw.githubusercontent.com/gothinkster/laravel-realworld-example-app/master/LICENSE)
 
-> ### Example Laravel blog containing (posts, blogs, auth, registration advanced patterns and more)
-PRs and issues welcome!
+> ### Example Laravel blog containing (posts, blogs, auth, registration)
+
+PRs and issues is welcome!
 
 ----------
 
@@ -38,7 +39,7 @@ Generate a new application key
     
 Publish vendor files
 
-    php artisan vendor:publish --provider="CleanHasBlog\CleanHasBlogServiceProvider"    
+    php artisan vendor:publish --provider="CleanHasBlog\CleanHasBlogServiceProvider" --tag=clean-assets        
 
 Run the database migrations (**Set the database connection in .env before migrating**)
 
@@ -49,10 +50,6 @@ Start the local development server
     php artisan serve
 
 You can now access the server at http://localhost:8000
-
-### [All Rigth Now]( https://www.youtube.com/watch?v=rl51s5Osutg) :notes: :notes:
-
-
 
 **TL;DR command list**
 
@@ -67,14 +64,10 @@ You can now access the server at http://localhost:8000
     php artisan migrate
     php artisan serve
 
-# Code overview
-
 ## Dependencies
 
-- [atiladanvi/clean-hasblog](https://github.com/Atiladanvi/clean-hasblog) - Default theme created by me.
-- [yoeunes/toastr](https://github.com/yoeunes/toastr) -Toastr.js notifications for Laravel.
+- [laravel/framework 5.8](https://github.com/kristijanhusak/laravel-form-builder) - The PHP Framework for Web Artisans.
+- [atiladanvi/clean-hasblog](https://github.com/blackrockdigital) - Bootstrap admin theme created by Start Bootstrap.
+- [yoeunes/toastr](https://github.com/yoeunes/toastr) - Toastr.js notifications for Laravel.
 - [kris/laravel-form-builder](https://github.com/kristijanhusak/laravel-form-builder) - Form builder for Laravel 5 inspired by Symfony's form builder.
-- [spatie/laravel-permission](https://github.com/spatie/laravel-permission) - Associate users with roles and permissions.
 - [adavejamesmiller/laravel-breadcrumbs](https://github.com/davejamesmiller/laravel-breadcrumbst) - A simple Laravel-style way to create breadcrumbs
-
-#### Is something missing? submit a PR please ;)
