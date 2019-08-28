@@ -14,7 +14,6 @@
         "fideloper/proxy": "^4.0",
         "kris/laravel-form-builder": "^1.20",
         "laravel/framework": "5.8.*",
-        "spatie/laravel-permission": "^2.37",
         "yoeunes/toastr": "^1.2"
     },
     "require-dev": {
