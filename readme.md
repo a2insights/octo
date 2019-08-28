@@ -58,6 +58,7 @@ You can now access the server at http://localhost:8000
     composer install
     cp .env.example .env
     php artisan key:generate
+    php artisan vendor:publish --provider="CleanHasBlog\CleanHasBlogServiceProvider" --tag=clean-assets        
     
 **Make sure you set the correct database connection information before running the migrations** [Environment variables](#environment-variables)
 
@@ -67,6 +68,7 @@ You can now access the server at http://localhost:8000
 ## Dependencies
 
 - [laravel/framework 5.8](https://github.com/kristijanhusak/laravel-form-builder) - The PHP Framework for Web Artisans.
+- [fideloper/proxy](https://github.com/fideloper/TrustedProxy) - Laravel Proxy Package for handling sessions when behind load balancers or other intermediaries.
 - [atiladanvi/clean-hasblog](https://github.com/blackrockdigital) - Bootstrap admin theme created by Start Bootstrap.
 - [yoeunes/toastr](https://github.com/yoeunes/toastr) - Toastr.js notifications for Laravel.
 - [kris/laravel-form-builder](https://github.com/kristijanhusak/laravel-form-builder) - Form builder for Laravel 5 inspired by Symfony's form builder.
