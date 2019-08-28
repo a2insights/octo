@@ -88,10 +88,13 @@ class PostController extends Controller
      * @param int $id
      * @param FormBuilder $formBuilder
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function edit($id , FormBuilder $formBuilder)
     {
         $post = Post::find($id);
+
+        $this->authorize('update', $post);
 
         $form = $formBuilder->create(\App\Forms\PostForm::class, [
             'method' => 'PUT',
@@ -109,6 +112,7 @@ class PostController extends Controller
      * @param int $id
      * @param FormBuilder $formBuilder
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function update($id , FormBuilder $formBuilder)
     {
@@ -116,11 +120,14 @@ class PostController extends Controller
 
         $data = $form->getFieldValues();
 
-        if (!$form->isValid()) {
+        if (!$form->isValid())   {
             return redirect()->back()->withErrors($form->getErrors())->withInput();
         }
 
         $post = Post::find($id);
+
+        $this->authorize('update', $post);
+
 
         $post->title = $data['title'];
         $post->content = $data['content'];
@@ -137,17 +144,18 @@ class PostController extends Controller
      *
      * @param int $id
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function destroy($id)
     {
 
-        $deleted = Post::destroy($id);
+        $post = Post::find($id);
 
-        if ($deleted > 0){
-            toastr()->success('Post successfully deleted !');
-        }else{
-            toastr()->error('Unable to delete post!');
-        }
+        $this->authorize('update', $post);
+
+        $post->delete();
+
+        toastr()->success('Post successfully deleted !');
 
         return back();
     }
