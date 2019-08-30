@@ -82,7 +82,7 @@
             </div>
         </nav>
 
-        <main class="pb-5">
+        <main class="pt-3 pb-5">
             @yield('content')
         </main>
 
@@ -106,25 +106,14 @@
     }
     .footer {
         position: absolute;
+        background: white;
+        box-shadow: 0px -4px 4px rgba(0,0,0,.06);
         bottom: 0;
         width: 100%;
         height: 60px; /* Set the fixed height of the footer here */
         line-height: 60px; /* Vertically center the text there */
-        background-color: #f5f5f5;
     }
 
-
-    /* Custom page CSS
-    -------------------------------------------------- */
-    /* Not required for template or sticky footer method. */
-
-    .container {
-        padding: 0 15px;
-    }
-    .breadcrumb {
-        background-color: #f8fafc !important;
-        padding-left: unset !important;
-    }
 </style>
 
     @jquery

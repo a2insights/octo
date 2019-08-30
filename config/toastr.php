@@ -40,7 +40,7 @@ return [
         'showMethod'        => 'fadeIn',
         'tapToDismiss'      => true,
         'target'            => 'body',
-        'timeOut'           => 400,
+        'timeOut'           => 1000,
         'titleClass'        => 'toast-title',
         'toastClass'        => 'toast',
     ],
