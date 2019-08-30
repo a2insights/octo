@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         {{ Breadcrumbs::render('posts') }}
-        <div class="row">
+        <div class="row mb-3">
             <div class="col-7">
                 <h1>Posts</h1>
             </div>
@@ -44,7 +44,7 @@
                 @endforeach
             </div>
         </div>
-        @if($posts->total() > 0)
+        @if($posts->currentPage() !== $posts->lastPage() || $posts->lastPage() !== 1)
             <div class="row">
                 <div class="col">
                     {{ $posts->links() }}
@@ -56,7 +56,7 @@
                 </div>
             </div>
             <hr>
-        @else
+        @elseif($posts->total() === 0)
             <div class="contatiner py-5">
                 <div class="row py-2">
                     <div class="col text-center">
