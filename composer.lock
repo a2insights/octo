@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "154deb46feda6ea8e3b930cc8abcb56b",
+    "content-hash": "f3034abaeea42d111b17234d955ae340",
     "packages": [
         {
             "name": "atiladanvi/clean-hasblog",
-            "version": "v0.0.3",
+            "version": "v0.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atiladanvi/clean-hasblog.git",
-                "reference": "b833eb5961eb6938dc641d14f401f62717feaea4"
+                "reference": "0f782799acbe6a6736f4af1101af4d05e22a2ecc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atiladanvi/clean-hasblog/zipball/b833eb5961eb6938dc641d14f401f62717feaea4",
-                "reference": "b833eb5961eb6938dc641d14f401f62717feaea4",
+                "url": "https://api.github.com/repos/Atiladanvi/clean-hasblog/zipball/0f782799acbe6a6736f4af1101af4d05e22a2ecc",
+                "reference": "0f782799acbe6a6736f4af1101af4d05e22a2ecc",
                 "shasum": ""
             },
             "type": "library",
@@ -44,7 +44,7 @@
                 }
             ],
             "description": "template blog to hasblog",
-            "time": "2019-08-27T01:42:53+00:00"
+            "time": "2019-08-30T01:18:29+00:00"
         },
         {
             "name": "davejamesmiller/laravel-breadcrumbs",
