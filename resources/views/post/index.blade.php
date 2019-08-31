@@ -21,7 +21,7 @@
                                 {{ $post->title }}
                             </h2>
                             <h6>created at {{ $post->created_at }} | updated at {{ $post->updated_at }}</h6>
-                            <p>{{ $post->content }}</p>
+                            {!! $post->content !!}
                         </div>
                     </div>
                     <form method="POST" id="destroyPost-{{$post->id}}" action="/dashboard/post/{{$post->id}}">

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3034abaeea42d111b17234d955ae340",
+    "content-hash": "33e62386b201faa37869a3c503466892",
     "packages": [
         {
             "name": "atiladanvi/clean-hasblog",
-            "version": "v0.0.4",
+            "version": "v0.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atiladanvi/clean-hasblog.git",
-                "reference": "0f782799acbe6a6736f4af1101af4d05e22a2ecc"
+                "reference": "c0af20739b5d4942cdd939bc60a98a173a100883"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atiladanvi/clean-hasblog/zipball/0f782799acbe6a6736f4af1101af4d05e22a2ecc",
-                "reference": "0f782799acbe6a6736f4af1101af4d05e22a2ecc",
+                "url": "https://api.github.com/repos/Atiladanvi/clean-hasblog/zipball/c0af20739b5d4942cdd939bc60a98a173a100883",
+                "reference": "c0af20739b5d4942cdd939bc60a98a173a100883",
                 "shasum": ""
             },
             "type": "library",
@@ -44,7 +44,7 @@
                 }
             ],
             "description": "template blog to hasblog",
-            "time": "2019-08-30T01:18:29+00:00"
+            "time": "2019-08-31T22:26:29+00:00"
         },
         {
             "name": "davejamesmiller/laravel-breadcrumbs",
@@ -891,16 +891,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.23.1",
+            "version": "2.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "767617a047e5b8b8b3b0b6023a2650847ed7df02"
+                "reference": "934459c5ac0658bc765ad1e53512c7c77adcac29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/767617a047e5b8b8b3b0b6023a2650847ed7df02",
-                "reference": "767617a047e5b8b8b3b0b6023a2650847ed7df02",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/934459c5ac0658bc765ad1e53512c7c77adcac29",
+                "reference": "934459c5ac0658bc765ad1e53512c7c77adcac29",
                 "shasum": ""
             },
             "require": {
@@ -954,7 +954,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2019-08-17T13:57:34+00:00"
+            "time": "2019-08-31T16:37:55+00:00"
         },
         {
             "name": "opis/closure",
