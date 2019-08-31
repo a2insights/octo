@@ -10,7 +10,7 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group">
-                            <label for="email" class="">{{ __('E-Mail') }}</label>
+                            <label for="email">{{ __('E-Mail') }}</label>
                             <input
                                 id="email"
                                 type="email"
