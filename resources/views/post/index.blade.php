@@ -46,7 +46,7 @@
         @if($posts->currentPage() !== $posts->lastPage() || $posts->lastPage() !== 1)
             <div class="row">
                 <div class="col text-center">
-                    {{ $posts->links() }}
+                    {{ $posts->onEachSide(1)->links() }}
                 </div>
             </div>
             <div class="row mb-5">
