@@ -16,6 +16,7 @@ Auth::routes();
 
 Route::get('/','HomeController@index')->name('home');
 Route::get('/dashboard' , 'DashboardController@index')->name('dashboard');
+Route::get('/dashboard/posts' , 'PostController@index')->name('post');
 Route::get('/{blog_guard_name}', 'BlogController@index')->name('blog');
 
 Route::middleware(['auth'])->group(function () {
