@@ -23,7 +23,7 @@ class PostController extends Controller
     {
         $blog =  Auth::user()->blog;
 
-        $posts = Post::query()->where('blog_id' , '=' , $blog->id)->paginate(10);
+        $posts = Post::query()->where('blog_id' , '=' , $blog->id)->paginate(5);
 
         return view('post.index')->with(['posts' => $posts]);
     }

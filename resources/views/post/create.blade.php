@@ -1,8 +1,7 @@
 @extends('layouts.app')
-
 @section('content')
-   <div class="container">
-       {{ Breadcrumbs::render('create post') }}
+    {{ Breadcrumbs::render('create post') }}
+    <div class="container p-4">
        <h1>Update a new Post</h1>
        <hr>
        <div class="row">

@@ -1,8 +1,7 @@
 @extends('dashboard')
-
 @section('content')
-    <div class="container">
-        {{ Breadcrumbs::render('posts') }}
+    {{ Breadcrumbs::render('posts') }}
+    <div class="container px-4">
         <div class="row mb-3">
             <div class="col-7">
                 <h1>Posts</h1>
@@ -16,12 +15,12 @@
                 @foreach($posts as $post)
                     <div class="row">
                         <div class="col">
-                            <h2>
+                            <h5>
                                 <span class="text-muted">#{{ $post->id }}</span>
                                 {{ $post->title }}
-                            </h2>
-                            <h6>created at {{ $post->created_at }} | updated at {{ $post->updated_at }}</h6>
-                            {!! $post->content !!}
+                            </h5>
+                            <small class="font-italic">created at {{ $post->created_at }} | updated at {{ $post->updated_at }}</small>
+                            <p>{{ \Illuminate\Support\Str::limit(strip_tags($post->content) , 100) }}</p>
                         </div>
                     </div>
                     <form method="POST" id="destroyPost-{{$post->id}}" action="/dashboard/post/{{$post->id}}">
@@ -46,7 +45,7 @@
         </div>
         @if($posts->currentPage() !== $posts->lastPage() || $posts->lastPage() !== 1)
             <div class="row">
-                <div class="col">
+                <div class="col text-center">
                     {{ $posts->links() }}
                 </div>
             </div>
@@ -55,7 +54,6 @@
                     Showing {{ $posts->currentPage() }} of {{ $posts->lastPage() }} pages and a total of {{ $posts->total() }} posts
                 </div>
             </div>
-            <hr>
         @elseif($posts->total() === 0)
             <div class="contatiner py-5">
                 <div class="row py-2">

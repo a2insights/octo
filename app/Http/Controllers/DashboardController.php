@@ -15,6 +15,6 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return redirect('dashboard/post');
+        return view('dashboard');
     }
 }

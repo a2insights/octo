@@ -1,16 +1,15 @@
 @extends('layouts.app')
-
 @section('content')
+    {{ Breadcrumbs::render('dashboard') }}
     <div class="container">
-        {{ Breadcrumbs::render('dashboard') }}
-        <div class="row justify-content-center">
-            @if (session('status'))
-                <div class="alert alert-success" role="alert">
-                    {{ session('status') }}
+        <div class="row">
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Posts</h3>
+                        <hp>3049</hp>
+                    </div>
                 </div>
-            @endif
-            <div class="col-md-12">
-                @yield('content')
             </div>
         </div>
     </div>
