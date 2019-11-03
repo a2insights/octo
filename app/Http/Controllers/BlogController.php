@@ -24,9 +24,7 @@ class BlogController extends Controller
         $blog = Blog::query()
             ->where('guard_name' , '=' ,  $request->blog_guard_name)->firstOrFail();
 
-        $posts =
-            $blog
-                ->posts()->paginate(10);
+        $posts = $blog->posts()->paginate(10);
 
         return view("$blog->theme::index")->with(
             [
