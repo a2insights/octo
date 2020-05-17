@@ -15,7 +15,7 @@ class PostForm extends Form
                 'rules' => 'required|min:5'
             ])
             ->add('content', Field::TEXTAREA, [
-                'rules' => 'max:5000'
+                'rules' => 'max:30000'
             ])
             ->add('publish', Field::BUTTON_SUBMIT, [
                 'class' => 'btn btn-primaryphp artisan vendor:publish'
