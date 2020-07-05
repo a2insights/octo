@@ -16,7 +16,6 @@
                     <div class="row">
                         <div class="col">
                             <h5>
-                                <span class="text-muted">#{{ $post->id }}</span>
                                 {{ $post->title }}
                             </h5>
                             <small class="font-italic">created at {{ $post->created_at }} | updated at {{ $post->updated_at }}</small>

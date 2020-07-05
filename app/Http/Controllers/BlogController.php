@@ -1,5 +1,4 @@
 <?php
-/** @noinspection PhpUndefinedFieldInspection */
 
 namespace App\Http\Controllers;
 
@@ -8,16 +7,10 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('web');
     }
-
 
     public function index(Request $request)
     {

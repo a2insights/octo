@@ -6,18 +6,8 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreatePostsTable extends Migration
 {
-    /**
-     * Schema table name to migrate
-     * @var string
-     */
     public $tableName = 'posts';
 
-    /**
-     * Run the migrations.
-     * @table posts
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create($this->tableName, function (Blueprint $table) {
@@ -38,13 +28,8 @@ class CreatePostsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-     public function down()
-     {
-       Schema::dropIfExists($this->tableName);
-     }
+    public function down()
+    {
+        Schema::dropIfExists($this->tableName);
+    }
 }

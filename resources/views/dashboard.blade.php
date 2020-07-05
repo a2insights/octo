@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h3>Posts</h3>
-                        <hp>3049</hp>
+                        <hp></hp>
                     </div>
                 </div>
             </div>
