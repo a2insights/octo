@@ -7,18 +7,8 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Kris\LaravelFormBuilder\FormBuilder;
 
-/**
- * Class PostController
- *
- * @package App\Http\Controllers
- */
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $blog =  Auth::user()->blog;

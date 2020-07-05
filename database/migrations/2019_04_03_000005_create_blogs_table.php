@@ -6,18 +6,8 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateBlogsTable extends Migration
 {
-    /**
-     * Schema table name to migrate
-     * @var string
-     */
     public $tableName = 'blogs';
 
-    /**
-     * Run the migrations.
-     * @table blogs
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create($this->tableName, function (Blueprint $table) {
@@ -34,13 +24,8 @@ class CreateBlogsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-     public function down()
-     {
-       Schema::dropIfExists($this->tableName);
-     }
+    public function down()
+    {
+        Schema::dropIfExists($this->tableName);
+    }
 }

@@ -6,18 +6,8 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreatePostHasTagsTable extends Migration
 {
-    /**
-     * Schema table name to migrate
-     * @var string
-     */
     public $tableName = 'post_has_tags';
 
-    /**
-     * Run the migrations.
-     * @table post_has_tags
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create($this->tableName, function (Blueprint $table) {
@@ -45,13 +35,8 @@ class CreatePostHasTagsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-     public function down()
-     {
-       Schema::dropIfExists($this->tableName);
-     }
+    public function down()
+    {
+        Schema::dropIfExists($this->tableName);
+    }
 }
