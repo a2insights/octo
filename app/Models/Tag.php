@@ -9,8 +9,7 @@ class Tag extends Eloquent
     public $timestamps = false;
 
     protected $fillable = [
-		'name',
-		'description'
+		'name', 'description', 'tenant_id'
 	];
 
     public function posts()

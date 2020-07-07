@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Str;
+use App\Models\Tenant;
 
 class RegisterController extends Controller
 {
@@ -26,13 +27,9 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/dashboard';
+    protected $tenant;
 
+    protected $user;
     /**
      * Create a new controller instance.
      *
@@ -41,6 +38,11 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    public function redirectTo()
+    {
+        return $this->tenant->id . '/' . 'dashboard';
     }
 
     /**
@@ -52,7 +54,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255' , 'unique:blogs'],
+            'name' => ['required', 'string', 'max:255'],
+            'blog' => ['required', 'string', 'max:255', 'unique:blogs,name'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -66,24 +69,25 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = null;
-
         DB::transaction(function () use ($data, &$user){
 
-            $blog = Blog::create([
-                'name' => $data['name'],
-                'guard_name' => Str::slug($data['name'])
-            ]);
+            $this->tenant = Tenant::create();
 
-            $user = User::create([
+            $this->user = User::create([
+                'tenant_id' => $this->tenant->id,
                 'name' => $data['name'],
                 'email' => $data['email'],
-                'password' => Hash::make($data['password']),
-                'blog_id' => $blog->id
+                'password' => Hash::make($data['password'])
+            ]);
+
+            Blog::create([
+                'tenant_id' => $this->tenant->id,
+                'user_id' => $this->user->id,
+                'name' => $data['blog'],
+                'path' => 'blogs/' . Str::slug($data['blog'])
             ]);
         });
 
-        return $user;
-
+        return $this->user;
     }
 }

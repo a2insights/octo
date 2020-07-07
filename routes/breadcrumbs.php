@@ -26,23 +26,23 @@ Breadcrumbs::for('blog', function ($trail , $blog) {
 // Home > Dashboard
 Breadcrumbs::for('dashboard', function ($trail) {
     $trail->parent('home');
-    $trail->push('Dashboard', route('dashboard'));
+    $trail->push('Dashboard', route('dashboard', tenant()->id));
 });
 
 // Home > Dashboard > [ post ]
 Breadcrumbs::for('posts', function ($trail) {
     $trail->parent('dashboard');
-    $trail->push('Posts', route('post.index'));
+    $trail->push('Posts', route('post.index', tenant()->id));
 });
 
 // Home > Dashboard > [ post ] [ create ]
 Breadcrumbs::for('create post', function ($trail) {
     $trail->parent('posts');
-    $trail->push('create post', route('post.create'));
+    $trail->push('create post', route('post.create', tenant()->id));
 });
 
 // Home > Blog > [post create] > [post update]
 Breadcrumbs::for('edit post', function ($trail, $post) {
     $trail->parent('posts');
-    $trail->push($post->title, route('post.edit', $post->id));
+    $trail->push($post->title, route('post.edit', [tenant()->id, $post->id]));
 });

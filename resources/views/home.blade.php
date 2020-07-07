@@ -7,7 +7,7 @@
                    <h1 class="display-4">HasBlog</h1>
                    <div class="text-center">
                        @foreach($blogs as $blog)
-                           <a class="m-2 btn-outline-primary btn-link btn" href="/{{$blog->guard_name}}">{{$blog->name}}</a>
+                           <a class="m-2 btn-outline-primary btn-link btn" href="/{{$blog->path}}">{{$blog->name}}</a>
                        @endforeach
                    </div>
                </div>

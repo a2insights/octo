@@ -11,7 +11,6 @@ class CreatePostHasTagsTable extends Migration
     public function up()
     {
         Schema::create($this->tableName, function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->unsignedInteger('tag_id');
             $table->unsignedInteger('post_id');

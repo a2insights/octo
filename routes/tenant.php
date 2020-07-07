@@ -3,8 +3,7 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
-use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
-use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
+use Stancl\Tenancy\Middleware\InitializeTenancyByPath;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +17,13 @@ use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 |
 */
 
-Route::middleware([
-    'web',
-    InitializeTenancyByDomain::class,
-    PreventAccessFromCentralDomains::class,
-])->group(function () {
-    Route::get('/', function () {
-        return 'This is your multi-tenant application. The id of the current tenant is ' . tenant('id');
+Route::group([
+    'prefix' => '/{tenant}',
+    'middleware' => ['web', 'auth', InitializeTenancyByPath::class],
+], function () {
+    Route::prefix('dashboard')->group(function () {
+        Route::get('/' , 'DashboardController@index')->name('dashboard');
+        Route::get('posts' , 'PostController@index')->name('post');
+        Route::resource('post', 'PostController');
     });
 });

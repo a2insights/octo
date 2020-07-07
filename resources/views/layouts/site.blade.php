@@ -29,14 +29,14 @@
                 </ul>
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
-                    @isset(Auth::user()->blog->guard_name)
+                    @if(Auth::user())
                         <li class="nav-item">
-                            <a class="nav-link" href="/{{ Auth::user()->blog->guard_name }}">{{ __('Blog') }}</a>
+                            <a class="nav-link" href="/{{ Auth::user()->blog()->path }}">{{ __('Blog') }}</a>
                         </li>
-                    @endisset
+                    @endif
                     @auth
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
+                            <a class="nav-link" href="{{ route('dashboard', Auth::user()->blog()->tenant_id) }}">{{ __('Dashboard') }}</a>
                         </li>
                     @endauth
                     @guest
