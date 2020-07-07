@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
+use App\Models\Post;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard');
+        return view('dashboard')->with(
+            [
+                'posts_count' => Post::all()->count()
+            ]
+        );
     }
 }

@@ -41,8 +41,14 @@ Breadcrumbs::for('create post', function ($trail) {
     $trail->push('create post', route('post.create', tenant()->id));
 });
 
-// Home > Blog > [post create] > [post update]
+// Home > Dashboard > [post create] > [post update]
 Breadcrumbs::for('edit post', function ($trail, $post) {
     $trail->parent('posts');
     $trail->push($post->title, route('post.edit', [tenant()->id, $post->id]));
+});
+
+// Home > Dashboard > [settings]
+Breadcrumbs::for('settings', function ($trail) {
+    $trail->parent('dashboard');
+    $trail->push('settings', route('settings', [tenant()->id]));
 });

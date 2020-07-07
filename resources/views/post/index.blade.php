@@ -1,7 +1,7 @@
-@extends('dashboard')
+@extends('layouts.app')
 @section('content')
     {{ Breadcrumbs::render('posts') }}
-    <div class="container px-4">
+    <div class="container p-4">
         <div class="row mb-3">
             <div class="col-7">
                 <h1>Posts</h1>
@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col">
                 @foreach($posts as $post)
-                    <div class="row">
+                    <div class="row px-2">
                         <div class="col">
                             <h5>
                                 {{ $post->title }}

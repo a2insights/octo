@@ -25,5 +25,7 @@ Route::group([
         Route::get('/' , 'DashboardController@index')->name('dashboard');
         Route::get('posts' , 'PostController@index')->name('post');
         Route::resource('post', 'PostController');
+        Route::get('settings' , 'SettingsController@edit')->name('settings');
+        Route::put('settings' , 'SettingsController@update')->name('settings.update');
     });
 });
