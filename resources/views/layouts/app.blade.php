@@ -30,6 +30,7 @@
             <div class="list-group list-group-flush">
                 <a href="/{{ tenant()->id }}/dashboard" class="list-group-item list-group-item-action bg-light">Dashboard</a>
                 <a href="/{{ tenant()->id }}/dashboard/post" class="list-group-item list-group-item-action bg-light">Posts</a>
+                <a href="/{{ tenant()->id }}/dashboard/settings" class="list-group-item list-group-item-action bg-light">Setings</a>
             </div>
         </div>
         <div id="page-content-wrapper">

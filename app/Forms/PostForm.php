@@ -18,7 +18,7 @@ class PostForm extends Form
                 'rules' => 'max:30000'
             ])
             ->add('publish', Field::BUTTON_SUBMIT, [
-                'class' => 'btn btn-primaryphp artisan vendor:publish'
+                'class' => 'btn btn-primary'
             ]);
     }
 

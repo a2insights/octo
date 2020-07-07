@@ -20,12 +20,6 @@ class PostController extends Controller
         return view('post.index')->with(['posts' => $posts]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @param FormBuilder $formBuilder
-     * @return \Illuminate\Http\Response
-     */
     public function create(FormBuilder $formBuilder)
     {
         $form = $formBuilder->create(PostForm::class, [
@@ -36,12 +30,6 @@ class PostController extends Controller
         return view('post.create', compact('form'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param FormBuilder $formBuilder
-     * @return \Illuminate\Http\Response
-     */
     public function store(FormBuilder $formBuilder)
     {
         $form = $formBuilder->create(PostForm::class);
@@ -63,25 +51,11 @@ class PostController extends Controller
         return redirect(route('post.index', tenant('id')));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return void
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @param FormBuilder $formBuilder
-     * @return \Illuminate\Http\Response
-     * @throws \Illuminate\Auth\Access\AuthorizationException
-     */
     public function edit($id , FormBuilder $formBuilder)
     {
         $post = Post::find($id);
@@ -98,14 +72,6 @@ class PostController extends Controller
 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param int $id
-     * @param FormBuilder $formBuilder
-     * @return \Illuminate\Http\Response
-     * @throws \Illuminate\Auth\Access\AuthorizationException
-     */
     public function update($id , FormBuilder $formBuilder)
     {
         $form = $formBuilder->create(PostForm::class);
@@ -131,16 +97,8 @@ class PostController extends Controller
         return redirect(route('post.index', tenant('id')));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     * @throws \Illuminate\Auth\Access\AuthorizationException
-     */
     public function destroy($id)
     {
-
         $post = Post::find($id);
 
         $this->authorize('update', $post);
