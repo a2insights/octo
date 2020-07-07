@@ -2,19 +2,23 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model as Eloquent;
+use Stancl\Tenancy\Database\Concerns\BelongsToPrimaryModel;
 
-class Post extends Eloquent
+class Post extends BaseModel
 {
-    protected $casts = [
-		'blog_id' => 'int'
-	];
+    use BelongsToPrimaryModel;
 
     protected $fillable = [
+        'tenant_id',
 		'title',
 		'blog_id',
 		'content'
-	];
+    ];
+
+    public function getRelationshipToPrimaryModel(): string
+    {
+        return 'blog';
+    }
 
     public function blog()
 	{

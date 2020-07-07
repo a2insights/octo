@@ -10,7 +10,7 @@ class User extends Authenticatable
     use Notifiable;
 
     protected $fillable = [
-        'name', 'email', 'password', 'blog_id'
+        'name', 'email', 'password', 'tenant_id'
     ];
 
     protected $dates = [
@@ -27,7 +27,12 @@ class User extends Authenticatable
 
     public function blog()
 	{
-		return $this->belongsTo(\App\Models\Blog::class, 'blog_id');
+		return $this->blogs->first();
+    }
+
+    public function blogs()
+	{
+		return $this->hasMany(\App\Models\Blog::class);
 	}
 
     public function posts()

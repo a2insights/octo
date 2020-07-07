@@ -11,9 +11,11 @@ class PostController extends Controller
 {
     public function index()
     {
-        $blog =  Auth::user()->blog;
+        $blog =  Auth::user()->blog();
 
-        $posts = Post::query()->where('blog_id' , '=' , $blog->id)->paginate(5);
+        $posts = Post::query()
+            ->where('blog_id' , '=' , $blog->id)
+            ->paginate(10);
 
         return view('post.index')->with(['posts' => $posts]);
     }
@@ -28,7 +30,7 @@ class PostController extends Controller
     {
         $form = $formBuilder->create(PostForm::class, [
             'method' => 'POST',
-            'url' => route('post.store')
+            'url' => route('post.store', tenant('id'))
         ]);
 
         return view('post.create', compact('form'));
@@ -50,7 +52,7 @@ class PostController extends Controller
             return redirect()->back()->withErrors($form->getErrors())->withInput();
         }
 
-        $blog = Auth::user()->blog;
+        $blog = Auth::user()->blog();
 
         $data['blog_id'] = $blog->id;
 
@@ -58,7 +60,7 @@ class PostController extends Controller
 
         toastr()->success('Successfully created post !');
 
-        return redirect(route('post.index'));
+        return redirect(route('post.index', tenant('id')));
     }
 
     /**
@@ -88,7 +90,7 @@ class PostController extends Controller
 
         $form = $formBuilder->create(\App\Forms\PostForm::class, [
             'method' => 'PUT',
-            'url' => route('post.update' , $post->id),
+            'url' => route('post.update', [tenant('id'), $post->id ]),
             'model' => $post->toArray()
         ]);
 
@@ -126,7 +128,7 @@ class PostController extends Controller
 
         toastr()->success('Post updated successfully !');
 
-        return redirect(route('post.index'));
+        return redirect(route('post.index', tenant('id')));
     }
 
     /**

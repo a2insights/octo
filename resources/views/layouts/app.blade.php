@@ -25,11 +25,11 @@
     <div class="d-flex" id="wrapper">
         <div class="bg-light border-right" id="sidebar-wrapper">
             <div class="sidebar-heading">
-                {{ config('app.name', 'Laravel') }}
+                {{ Auth::user()->blog()->name }}
             </div>
             <div class="list-group list-group-flush">
-                <a href="/dashboard" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-                <a href="/dashboard/post" class="list-group-item list-group-item-action bg-light">Posts</a>
+                <a href="/{{ tenant()->id }}/dashboard" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+                <a href="/{{ tenant()->id }}/dashboard/post" class="list-group-item list-group-item-action bg-light">Posts</a>
             </div>
         </div>
         <div id="page-content-wrapper">
@@ -44,9 +44,9 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
-                            @isset(Auth::user()->blog->guard_name)
+                            @isset(Auth::user()->blog()->path)
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/{{ Auth::user()->blog->guard_name }}">{{ __('Blog') }}</a>
+                                    <a class="nav-link" href="/{{ Auth::user()->blog()->path }}">{{ __('Blog') }}</a>
                                 </li>
                             @endisset
                         </ul>

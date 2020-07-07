@@ -7,7 +7,7 @@
                 <h1>Posts</h1>
             </div>
             <div class="col-5 text-right">
-                <a href="/dashboard/post/create" role="button" class="btn btn-outline-primary">New Post</a>
+                <a href="post/create" role="button" class="btn btn-outline-primary">New Post</a>
             </div>
         </div>
         <div class="row">
@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <form method="POST" id="destroyPost-{{$post->id}}" action="/dashboard/post/{{$post->id}}">
-                        <a class="btn btn-link text-primary" href="/dashboard/post/{{$post->id}}/edit">edit</a>
+                        <a class="btn btn-link text-primary" href="post/{{$post->id}}/edit">edit</a>
                         {{ method_field('DELETE') }}
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <button
@@ -62,7 +62,7 @@
                 </div>
                 <div class="row py-2">
                     <div class="col text-center">
-                        <a href="/dashboard/post/create">
+                        <a href="post/create">
                             <h5> Shall we start now ?</h5>
                         </a>
                     </div>

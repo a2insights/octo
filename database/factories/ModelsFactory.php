@@ -13,14 +13,6 @@ $factory->define(App\Models\Tag::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Models\Favorite::class, function (Faker\Generator $faker) {
-    return [
-        'model_type' => $faker->word,
-        'model_id' => '\App\Models\User::class',
-        'user_id' => function(){ return factory(\App\Models\User::class)->create()->id; },
-    ];
-});
-
 $factory->define(App\Models\Blog::class, function (Faker\Generator $faker) use ($name){
     return [
         'name' => $name,
@@ -33,7 +25,6 @@ $factory->define(App\Models\Blog::class, function (Faker\Generator $faker) use (
 $factory->define(App\Models\User::class, function (Faker\Generator $faker) use ($name) {
     return [
         'name' => $name,
-        'blog_id' => factory(\App\Models\Blog::class)->create()->id,
         'email' => 'admin@admin.com',
         'email_verified_at' => now(),
         'password' => bcrypt('senha'),
