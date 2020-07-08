@@ -52,3 +52,8 @@ Breadcrumbs::for('settings', function ($trail) {
     $trail->parent('dashboard');
     $trail->push('settings', route('settings', [tenant()->id]));
 });
+
+Breadcrumbs::for('profile', function ($trail) {
+    $trail->parent('dashboard');
+    $trail->push('profile', route('profile', [tenant()->id]));
+});
