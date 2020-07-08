@@ -27,5 +27,9 @@ Route::group([
         Route::resource('post', 'PostController');
         Route::get('settings' , 'SettingsController@edit')->name('settings');
         Route::put('settings' , 'SettingsController@update')->name('settings.update');
+        Route::get('profile' , 'ProfileController@edit')->name('profile');
+        Route::put('profile' , 'ProfileController@update')->name('profile.update');
+        Route::post('account' , 'ProfileController@deleteAccount')->name('account.delete');
+        Route::put('password' , 'ProfileController@updatePassword')->name('profile.password');
     });
 });

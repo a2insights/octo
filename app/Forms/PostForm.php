@@ -7,7 +7,6 @@ use Kris\LaravelFormBuilder\Field;
 
 class PostForm extends Form
 {
-
     public function buildForm()
     {
         $this
@@ -18,8 +17,8 @@ class PostForm extends Form
                 'rules' => 'max:30000'
             ])
             ->add('publish', Field::BUTTON_SUBMIT, [
-                'class' => 'btn btn-primary'
+                'attr' => ['class' => 'btn-primary btn']
             ]);
     }
-
+    
 }

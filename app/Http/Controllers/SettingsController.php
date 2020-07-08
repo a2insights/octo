@@ -40,7 +40,7 @@ class SettingsController extends Controller
 
         $blog->save();
 
-        toastr()->success('Settings updated successfully !');
+        toastr()->success('Settings updated successfully !', 'Success!');
 
         return back();
     }

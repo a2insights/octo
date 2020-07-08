@@ -7,6 +7,9 @@
     <title>Has Blog</title>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    @toastr_css
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Styles -->
@@ -83,7 +86,9 @@
 </footer>
 
 </body>
-
+@jquery
+@toastr_js
+@toastr_render
 <style>
     .footer {
         position: fixed;
