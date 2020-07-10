@@ -69,7 +69,6 @@ class Kernel extends HttpKernel
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
         \Illuminate\Session\Middleware\AuthenticateSession::class,
         \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        \Stancl\Tenancy\Middleware\InitializeTenancyByPath::class,
         \App\Http\Middleware\Authenticate::class,
         \Illuminate\Auth\Middleware\Authorize::class
     ];
