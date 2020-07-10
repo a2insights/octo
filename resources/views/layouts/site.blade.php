@@ -70,7 +70,7 @@
 </main>
 <footer class="bg-dark footer mt-auto py-3">
     <div class="container">
-        <p class="m-0 text-center text-white small">Copyright &copy; HasBlog 2020</p>
+        <p class="m-0 text-center text-white small">Copyright &copy; {{ config('app.name') }} - {{ date('Y') }}</p>
     </div>
 </footer>
 </body>
