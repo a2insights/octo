@@ -32,7 +32,7 @@
                 @endif
                 @auth
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('dashboard', Auth::user()->blog()->tenant_id) }}">{{ __('Dashboard') }}</a>
+                        <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
                     </li>
                 @endauth
                 @guest

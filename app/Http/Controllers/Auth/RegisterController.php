@@ -30,6 +30,7 @@ class RegisterController extends Controller
     protected $tenant;
 
     protected $user;
+
     /**
      * Create a new controller instance.
      *
@@ -42,7 +43,7 @@ class RegisterController extends Controller
 
     public function redirectTo()
     {
-        return $this->tenant->id . '/' . 'dashboard';
+        return 'dashboard';
     }
 
     /**

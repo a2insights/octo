@@ -5,7 +5,7 @@
             <div class="container">
                 <h2 class="masthead-heading mb-0">Start a web!</h2>
                 <h5 class="masthead-subheading mb-0 mb-0">Create a web under laravel power. It’s easy and free.</h5>
-                <a href="{{ auth()->user() ? route('dashboard', auth()->user()->tenant_id) : route('register') }}" class="btn btn-primary btn-xl rounded-pill mt-5">Create your free blog</a>
+                <a href="{{ auth()->user() ? route('dashboard') : route('register') }}" class="btn btn-primary btn-xl rounded-pill mt-5">Create your free blog</a>
             </div>
         </div>
         <div class="bg-circle-1 bg-circle"></div>
