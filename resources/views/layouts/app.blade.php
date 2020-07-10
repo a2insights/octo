@@ -17,9 +17,9 @@
                 {{ Auth::user()->blog()->name }}
             </div>
             <div class="list-group list-group-flush">
-                <a href="/{{ tenant()->id }}/dashboard" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-                <a href="/{{ tenant()->id }}/dashboard/post" class="list-group-item list-group-item-action bg-light">Posts</a>
-                <a href="/{{ tenant()->id }}/dashboard/settings" class="list-group-item list-group-item-action bg-light">Setings</a>
+                <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+                <a href="{{ route('post.index') }}" class="list-group-item list-group-item-action bg-light">Posts</a>
+                <a href="{{ route('settings') }}" class="list-group-item list-group-item-action bg-light">Setings</a>
             </div>
         </div>
         <div id="page-content-wrapper">
@@ -58,7 +58,7 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('profile' , tenant('id') )}}">
+                                        <a class="dropdown-item" href="{{ route('profile')}}">
                                             {{ __('Profile') }}
                                         </a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
