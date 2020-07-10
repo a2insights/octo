@@ -19,7 +19,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
         "stancl/tenancy": "^3.0",
-        "yoeunes/toastr": "^1.2"
+        "yoeunes/notify": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
