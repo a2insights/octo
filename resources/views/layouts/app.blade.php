@@ -82,7 +82,7 @@
         </div>
         <footer class="footer bg-light border">
             <div class="container text-center">
-                <span class="text-muted">@hasBlog - 2019</span>
+                <p class="m-0 text-center text-white small">Copyright &copy; {{ config('app.name') }} - {{ date('Y') }}</p>
             </div>
         </footer>
     </div>
