@@ -3,9 +3,9 @@
     <div class="masthead text-white text-center">
         <div class="masthead-content">
             <div class="container">
-                <h2 class="masthead-heading mb-0">Start a blog!</h2>
-                <h5 class="masthead-subheading mb-0 mb-0">Create a blog under laravel power. It’s easy and free.</h5>
-                <a href="{{ auth()->user() ? route('dashboard', auth()->user()->tenant_id) : route('register') }}" class="btn btn-primary btn-xl rounded-pill mt-5">Create your blog</a>
+                <h2 class="masthead-heading mb-0">Start a web!</h2>
+                <h5 class="masthead-subheading mb-0 mb-0">Create a web under laravel power. It’s easy and free.</h5>
+                <a href="{{ auth()->user() ? route('dashboard', auth()->user()->tenant_id) : route('register') }}" class="btn btn-primary btn-xl rounded-pill mt-5">Create your free blog</a>
             </div>
         </div>
         <div class="bg-circle-1 bg-circle"></div>
@@ -23,8 +23,8 @@
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
-                        <h2 class="display-4">A new blog concept</h2>
-                        <p>Use the laravel power to improve your websites with a PHP OO</p>
+                        <h2 class="display-4">A new system concept</h2>
+                        <p>Use the laravel power to implement your websites with a PHP OO</p>
                         <code><var>$blogs</var> = Blog::all()</code>
                     </div>
                 </div>
