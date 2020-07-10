@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "42edd163d74de64ae08e34bc774c6f99",
+    "content-hash": "b157b555a00da82c887fca8198072bb7",
     "packages": [
         {
             "name": "atiladanvi/clean-hasblog",
@@ -4695,17 +4695,17 @@
             "time": "2020-06-15T23:49:30+00:00"
         },
         {
-            "name": "yoeunes/toastr",
-            "version": "v1.2.3",
+            "name": "yoeunes/notify",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/yoeunes/toastr.git",
-                "reference": "1a2d58aaa6add715f16ad76112f3a2b32bd89d92"
+                "url": "https://github.com/yoeunes/notify.git",
+                "reference": "8d96c26306e3318741dd5d8fba90b4fd7824acca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yoeunes/toastr/zipball/1a2d58aaa6add715f16ad76112f3a2b32bd89d92",
-                "reference": "1a2d58aaa6add715f16ad76112f3a2b32bd89d92",
+                "url": "https://api.github.com/repos/yoeunes/notify/zipball/8d96c26306e3318741dd5d8fba90b4fd7824acca",
+                "reference": "8d96c26306e3318741dd5d8fba90b4fd7824acca",
                 "shasum": ""
             },
             "require": {
@@ -4713,20 +4713,24 @@
                 "illuminate/support": "^5.5 || ^6.0 || ^7.0",
                 "php": ">=7.0"
             },
+            "require-dev": {
+                "orchestra/testbench": "^2.0.4 || ^3.0 || ^4.0 || ^5.0",
+                "phpunit/phpunit": "^4.8.36 || ^5.7 || ^6.0 || ^7.0 || ^8.3 || ^9.0"
+            },
             "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Yoeunes\\Toastr\\ToastrServiceProvider"
+                        "Yoeunes\\Notify\\NotifyServiceProvider"
                     ],
                     "aliases": {
-                        "Toastr": "Yoeunes\\Toastr\\Facades\\Toastr"
+                        "Notify": "Yoeunes\\Notify\\Facades\\Notify"
                     }
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Yoeunes\\Toastr\\": "src"
+                    "Yoeunes\\Notify\\": "src"
                 },
                 "files": [
                     "src/helpers.php"
@@ -4740,34 +4744,38 @@
                 {
                     "name": "Younes Khoubza",
                     "email": "younes.khoubza@gmail.com",
-                    "homepage": "https://github.com/yoeunes",
+                    "homepage": "https://github.com/yoeunes/notify",
                     "role": "Developer"
                 }
             ],
-            "description": "toastr.js flush notifications for Laravel 5, 6, 7 and Lumen",
-            "homepage": "https://github.com/yoeunes/toastr",
+            "description": "toastr.js, pnotify.js flush notifications for Laravel 5 and Lumen",
+            "homepage": "https://github.com/yoeunes/notify",
             "keywords": [
+                "Laravel 5.6",
                 "alerts",
                 "flush",
                 "flush messages",
                 "flush notifications",
                 "laravel",
                 "laravel 5",
+                "laravel 5.7",
+                "laravel 5.8",
                 "laravel 6",
-                "laravel 7",
                 "laravel flush notifications",
                 "laravel notification",
-                "laravel notify",
+                "laravel pnotify",
                 "laravel toastr",
                 "lumen",
                 "messages",
                 "notification",
                 "php",
+                "pnotify",
+                "pnotify js",
                 "toastr",
                 "toastr js",
                 "yoeunes"
             ],
-            "time": "2020-03-13T07:27:21+00:00"
+            "time": "2020-03-06T08:40:27+00:00"
         }
     ],
     "packages-dev": [

@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h3>Posts</h3>
-                        <hp>{{ $posts_count }}</hp>
+                        <p>{{ $posts_count }}</p>
                     </div>
                 </div>
             </div>
