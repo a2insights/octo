@@ -46,7 +46,7 @@ class PostController extends Controller
 
         Post::create($data);
 
-        toastr()->success('Successfully created post !');
+        notify()->success('Successfully created post !');
 
         return redirect(route('post.index', tenant('id')));
     }
@@ -92,7 +92,7 @@ class PostController extends Controller
 
         $post->save();
 
-        toastr()->success('Post updated successfully !');
+        notify()->success('Post updated successfully !');
 
         return redirect(route('post.index', tenant('id')));
     }
@@ -105,7 +105,7 @@ class PostController extends Controller
 
         $post->delete();
 
-        toastr()->success('Post successfully deleted !');
+        notify()->success('Post successfully deleted !');
 
         return back();
     }

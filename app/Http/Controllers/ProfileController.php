@@ -49,7 +49,7 @@ class ProfileController extends Controller
 
         Auth::user()->save();
 
-        toastr()->success('Profile updated successfully!', 'Success!');
+        notify()->success('Profile updated successfully!', 'Success!');
 
         return back();
     }
@@ -61,7 +61,7 @@ class ProfileController extends Controller
         $data = $form->getFieldValues();
 
         if (Hash::check($data['password_current'], Auth::user()->password) !== true) {
-            toastr()->error('The current password givin is incorrect!', 'Password error', ['closeDuration' => 600]);
+            notify()->error('The current password givin is incorrect!', 'Password error', ['closeDuration' => 600]);
             return redirect()->back();
         }
 
@@ -73,7 +73,7 @@ class ProfileController extends Controller
 
         Auth::user()->save();
 
-        toastr()->success('Password updated successfully!', 'Success!');
+        notify()->success('Password updated successfully!', 'Success!');
 
         return back();
     }
@@ -91,7 +91,7 @@ class ProfileController extends Controller
 
         tenant()->delete();
 
-        toastr()->success('Account deleted successfully!', 'Success!');
+        notify()->success('Account deleted successfully!', 'Success!');
 
         Auth::logout();
 

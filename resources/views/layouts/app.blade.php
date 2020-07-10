@@ -4,22 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'HasBlog') }}</title>
-
-    @toastr_css
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-
-    <script src="https://cdn.tiny.cloud/1/ct6syz16ot14p2f6txedemgd7pz7qchw97sy4kyq2ubhp6ev/tinymce/5/tinymce.min.js"></script>
-
-    <!-- Styles -->
+    <title>{{ config('app.name', 'Blog') }}</title>
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    @notify_css
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body class="bg-white">
     <div class="d-flex" id="wrapper">
@@ -87,7 +76,7 @@
                     </div>
                 </div>
             </nav>
-            <main>
+            <main id="app">
                 @yield('content')
             </main>
         </div>
@@ -98,15 +87,14 @@
         </footer>
     </div>
 </body>
-
-<!-- Menu Toggle Script -->
+@notify_js
+@notify_render
 <script>
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
 </script>
-
 <style>
 
     html {
@@ -115,15 +103,15 @@
     }
 
     body {
-        margin-bottom: 60px; /* Margin bottom by footer height */
+        margin-bottom: 60px;
     }
 
     .footer {
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: 60px; /* Set the fixed height of the footer here */
-        line-height: 60px; /* Vertically center the text there */
+        height: 60px;
+        line-height: 60px;
     }
 
     .breadcrumb {
@@ -181,22 +169,4 @@
     }
 
 </style>
-@jquery
-@toastr_js
-@toastr_render
-<script>
-    $(document).ready(function () {
-        tinymce.init({
-            selector: 'textarea',
-            height: 500,
-            menubar: false,
-            plugins: [
-                'advlist autolink lists link image charmap print preview anchor',
-                'searchreplace visualblocks code fullscreen',
-                'insertdatetime media table paste code help wordcount'
-            ],
-            toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
-        });
-    });
-</script>
 </html>
