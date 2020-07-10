@@ -3,8 +3,6 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
-use Stancl\Tenancy\Middleware\InitializeTenancyByPath;
-
 /*
 |--------------------------------------------------------------------------
 | Tenant Routes
@@ -18,8 +16,7 @@ use Stancl\Tenancy\Middleware\InitializeTenancyByPath;
 */
 
 Route::group([
-    'prefix' => '/{tenant}',
-    'middleware' => ['web', 'auth', InitializeTenancyByPath::class],
+    'middleware' => ['web', 'auth'],
 ], function () {
     Route::prefix('dashboard')->group(function () {
         Route::get('/' , 'DashboardController@index')->name('dashboard');
