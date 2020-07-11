@@ -9,7 +9,7 @@
                     </div>
                     <div class="col-md-8 align-self-center">
                         <div class="card bg-dark mt-4 mx-2">
-                            <div class="card-body">
+                            <div class="card-body px-4 pb-2 pt-4">
                                 <form method="POST" action="{{ route('register') }}">
                                     @csrf
                                     <div class="form-row">

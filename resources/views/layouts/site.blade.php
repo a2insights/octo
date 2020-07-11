@@ -79,7 +79,15 @@
 <style>
     body {
         font-family: 'Lato', serif;
-        background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%);
+        background: linear-gradient(0deg, #ff6a00 40%, #ee0979 100%);
+        background-size: 300% 200%;
+        -webkit-animation: gradientLoopFade 23s ease infinite;
+        -moz-animation: gradientLoopFade 23s ease infinite;
+        -o-animation: gradientLoopFade 23s ease infinite;
+        animation: gradientLoopFade 23s ease infinite;
+        animation-iteration-count: infinite;
+        animation-name: gradientLoopFade;
+        animation-duration: 30s;
     }
 
     h1,
@@ -127,12 +135,18 @@
     .masthead {
         position: relative;
         overflow: hidden;
-        padding-top: calc(7rem + 72px);
-        padding-bottom: 7rem;
+        padding-top: calc(3rem + 72px);
+        padding-bottom: calc(0.4rem + 30px);
         background-repeat: no-repeat;
         background-position: center center;
         background-attachment: scroll;
         background-size: cover;
+    }
+
+    @media (max-width:768px){
+        .masthead {
+            padding-top: calc(4rem + 30px);
+        }
     }
 
     .masthead .masthead-content {
@@ -213,6 +227,28 @@
 
     .btn-secondary:focus {
         box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
+    }
+
+
+    @-webkit-keyframes gradientLoopFade {
+        0%{background-position:55% 0%}
+        50%{background-position:46% 100%}
+        100%{background-position:55% 0%}
+    }
+    @-moz-keyframes gradientLoopFade {
+        0%{background-position:55% 0%}
+        50%{background-position:46% 100%}
+        100%{background-position:55% 0%}
+    }
+    @-o-keyframes gradientLoopFade {
+        0%{background-position:55% 0%}
+        50%{background-position:46% 100%}
+        100%{background-position:55% 0%}
+    }
+    @keyframes gradientLoopFade {
+        0%{background-position:55% 0%}
+        50%{background-position:46% 100%}
+        100%{background-position:55% 0%}
     }
 
 </style>
