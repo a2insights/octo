@@ -1,6 +1,6 @@
 @extends('layouts.site')
 @section('content')
-    <div class="masthead text-white text-center">
+    <div style="padding-bottom: 7rem;padding-top: calc(7rem + 72px);" class="masthead text-white text-center">
         <div class="masthead-content">
             <div class="container">
                 <h2 class="masthead-heading mb-0">Start a web!</h2>
@@ -33,7 +33,7 @@
     </section>
     <section class="bg-white">
         <div class="container pb-5">
-            <h2 class="text-center mb-4">Made with:</h2>
+            <h2 class="text-center pt-3 mb-4">Made with:</h2>
             <div class="row">
                 <div class="col align-self-start">
                 </div>
