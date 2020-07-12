@@ -1,7 +1,7 @@
 {
-    "name": "atiladanvi/hasblog",
+    "name": "a2ensite/octo-web",
     "type": "project",
-    "description": "The web Blog cms.",
+    "description": "The web cms.",
     "keywords": [
         "blog",
         "cms"
@@ -9,8 +9,10 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
-        "atiladanvi/clean-hasblog": "dev-master",
-        "atiladanvi/material-hasblog": "dev-master",
+        "a2ensite/clean-blog": "dev-master",
+        "a2ensite/material-admin": "dev-master",
+        "a2ensite/material-blog": "dev-master",
+        "a2ensite/octo-core": "dev-master",
         "davejamesmiller/laravel-breadcrumbs": "5.x",
         "fideloper/proxy": "^4.2",
         "guzzlehttp/guzzle": "^6.3",
@@ -18,8 +20,7 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
-        "stancl/tenancy": "^3.0",
-        "yoeunes/notify": "^1.0"
+        "stancl/tenancy": "^3.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -71,7 +72,8 @@
         ],
         "post-install-cmd": [
             "php artisan vendor:publish --provider=\"Atiladanvi\\MaterialHasblog\\MaterialHasblogServiceProvider\"",
-            "php artisan vendor:publish --provider=\"Atiladanvi\\CleanHasblog\\CleanHasblogServiceProvider\""
+            "php artisan vendor:publish --provider=\"Atiladanvi\\CleanHasblog\\CleanHasblogServiceProvider\"",
+            "php artisan vendor:publish --provider=\"MaterialAdmin\\MaterialAdminServiceProvider\""
         ]
     }
 }

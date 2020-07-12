@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('material-admin::index')
+@section('title', 'Edit Post')
 @section('content')
-    {{ Breadcrumbs::render('edit post' , $post) }}
+{{ Breadcrumbs::render('edit post' , $post) }}
     <div class="container p-4">
         <h1>Update post</h1>
         <hr>

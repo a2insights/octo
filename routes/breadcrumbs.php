@@ -26,34 +26,34 @@ Breadcrumbs::for('blog', function ($trail , $blog) {
 // Home > Dashboard
 Breadcrumbs::for('dashboard', function ($trail) {
     $trail->parent('home');
-    $trail->push('Dashboard', route('dashboard', tenant()->id));
+    $trail->push('Dashboard', route('dashboard'));
 });
 
 // Home > Dashboard > [ post ]
 Breadcrumbs::for('posts', function ($trail) {
     $trail->parent('dashboard');
-    $trail->push('Posts', route('post.index', tenant()->id));
+    $trail->push('Posts', route('post.index'));
 });
 
 // Home > Dashboard > [ post ] [ create ]
 Breadcrumbs::for('create post', function ($trail) {
     $trail->parent('posts');
-    $trail->push('create post', route('post.create', tenant()->id));
+    $trail->push('create post', route('post.create'));
 });
 
 // Home > Dashboard > [post create] > [post update]
 Breadcrumbs::for('edit post', function ($trail, $post) {
     $trail->parent('posts');
-    $trail->push($post->title, route('post.edit', [tenant()->id, $post->id]));
+    $trail->push($post->title, route('post.edit', $post->id));
 });
 
 // Home > Dashboard > [settings]
 Breadcrumbs::for('settings', function ($trail) {
     $trail->parent('dashboard');
-    $trail->push('settings', route('settings', [tenant()->id]));
+    $trail->push('settings', route('settings'));
 });
 
 Breadcrumbs::for('profile', function ($trail) {
     $trail->parent('dashboard');
-    $trail->push('profile', route('profile', [tenant()->id]));
+    $trail->push('profile', route('profile'));
 });

@@ -24,7 +24,7 @@ class PostController extends Controller
     {
         $form = $formBuilder->create(PostForm::class, [
             'method' => 'POST',
-            'url' => route('post.store', tenant('id'))
+            'url' => route('post.store')
         ]);
 
         return view('post.create', compact('form'));
@@ -46,9 +46,9 @@ class PostController extends Controller
 
         Post::create($data);
 
-        notify()->success('Successfully created post !');
+        notify()->success('Successfully created post !', 'Success!');
 
-        return redirect(route('post.index', tenant('id')));
+        return redirect(route('post.index'));
     }
 
     public function show($id)
@@ -64,7 +64,7 @@ class PostController extends Controller
 
         $form = $formBuilder->create(\App\Forms\PostForm::class, [
             'method' => 'PUT',
-            'url' => route('post.update', [tenant('id'), $post->id ]),
+            'url' => route('post.update', [$post->id ]),
             'model' => $post->toArray()
         ]);
 
@@ -92,9 +92,9 @@ class PostController extends Controller
 
         $post->save();
 
-        notify()->success('Post updated successfully !');
+        notify()->success('Post updated successfully!', 'Success!');
 
-        return redirect(route('post.index', tenant('id')));
+        return redirect(route('post.index'));
     }
 
     public function destroy($id)
@@ -105,7 +105,7 @@ class PostController extends Controller
 
         $post->delete();
 
-        notify()->success('Post successfully deleted !');
+        notify()->success('Post successfully deleted!', 'Success!');
 
         return back();
     }
