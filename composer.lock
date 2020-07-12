@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5b1a6e9ce00f0e53c97ceb5bf2247f5",
+    "content-hash": "7b436e3bfb4f11db63bdd87f2bfe72dc",
     "packages": [
         {
             "name": "a2ensite/clean-blog",
@@ -62,12 +62,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a2ensite/material-admin.git",
-                "reference": "fccee44d30a47b0025ec4e36a9658d89efd1cfd2"
+                "reference": "24de4894fe3ff7e5784aef84fa519e2c096972dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a2ensite/material-admin/zipball/fccee44d30a47b0025ec4e36a9658d89efd1cfd2",
-                "reference": "fccee44d30a47b0025ec4e36a9658d89efd1cfd2",
+                "url": "https://api.github.com/repos/a2ensite/material-admin/zipball/24de4894fe3ff7e5784aef84fa519e2c096972dd",
+                "reference": "24de4894fe3ff7e5784aef84fa519e2c096972dd",
                 "shasum": ""
             },
             "require": {
@@ -97,7 +97,7 @@
                 }
             ],
             "description": "a part of octo system",
-            "time": "2020-07-12T05:16:07+00:00"
+            "time": "2020-07-12T05:56:10+00:00"
         },
         {
             "name": "a2ensite/material-blog",
