@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('material-admin::index')
+@section('title', 'Dashboard')
 @section('content')
     {{ Breadcrumbs::render('dashboard') }}
     <div class="container">

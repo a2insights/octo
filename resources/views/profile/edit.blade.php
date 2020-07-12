@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('material-admin::index')
+@section('title', 'Edit Profile')
 @section('content')
     {{ Breadcrumbs::render('profile') }}
     <div class="container p-4">
@@ -43,7 +44,7 @@
                     document.getElementById('delete-account').submit();">
                     {{ __('Delete') }}
                 </button>
-                <form id="delete-account" action="{{ route('account.delete', tenant('id') ) }}" method="POST" style="display: none;">
+                <form id="delete-account" action="{{ route('account.delete', ('id') ) }}" method="POST" style="display: none;">
                     @csrf
                 </form>
             </div>
