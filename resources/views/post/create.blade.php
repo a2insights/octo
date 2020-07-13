@@ -1,14 +1,11 @@
 @extends('material-admin::index')
-@section('title', 'Create Post')
+@section('title', 'New Post')
 @section('content')
-{{ Breadcrumbs::render('create post') }}
-    <div class="container p-4">
-        <h1>New Post</h1>
-        <hr>
-        <div class="row">
-            <div class="col">
-                {!! form($form) !!}
-            </div>
-        </div>
-    </div>
+    {{ Breadcrumbs::render('create post') }}
+    <x-octo-card-material
+        title="Post"
+        description="Create a new post"
+    >
+        {!! form($form) !!}
+    </x-octo-card-material>
 @endsection

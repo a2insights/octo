@@ -1,29 +1,37 @@
 @extends('material-admin::index')
-@section('title', 'Edit Profile')
+@section('title', 'Settings')
 @section('content')
     {{ Breadcrumbs::render('profile') }}
-    <div class="container p-4">
-        <h1>Profile</h1>
-        <hr>
-        <div class="row">
-            <div class="col">
+    <div class="row">
+        <div class="col-7">
+            <x-octo-card-material
+                title="Profile"
+                description="Edit your informations"
+            >
                 {!! form($formProfile) !!}
-            </div>
+            </x-octo-card-material>
+        </div>
+        <div class="col-5">
+            <x-octo-card-material
+                title="Password"
+                variant="warning"
+                description="Change your current password"
+            >
+                {!! form($formPassword) !!}
+            </x-octo-card-material>
         </div>
     </div>
-    <div class="container p-4">
-        <h1 class="text-danger">Danger Zone</h1>
-        <hr>
-        <h4>Update Password</h4>
-        <div class="row">
-            <div class="col">
-                {!! form($formPassword) !!}
-            </div>
+    <div class="row">
+        <div class="col">
+            <x-octo-card-material
+                title="Danger Zone!"
+                variant="danger"
+                description="Delete your account"
+            >
+                <p>Please be aware that deleting your account will also remove all of your data, including your blogs and posts. This cannot be undone.</p>
+                <button type="button" data-toggle="modal" data-target="#deleteAccount" class="btn btn-danger">Delete</button>
+            </x-octo-card-material>
         </div>
-        <hr>
-        <h4>Delete Account</h4>
-        <p>Please be aware that deleting your account will also remove all of your data, including your blogs and posts. This cannot be undone.</p>
-        <button type="button" data-toggle="modal" data-target="#deleteAccount" class="btn btn-danger">Delete</button>
     </div>
     <div class="modal fade" id="deleteAccount" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -42,7 +50,7 @@
                 <button type="button" class="btn btn-danger" href="#"
                     onclick="event.preventDefault();
                     document.getElementById('delete-account').submit();">
-                    {{ __('Delete') }}
+                    {{ __('Confirm') }}
                 </button>
                 <form id="delete-account" action="{{ route('account.delete', ('id') ) }}" method="POST" style="display: none;">
                     @csrf
