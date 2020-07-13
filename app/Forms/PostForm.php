@@ -11,7 +11,7 @@ class PostForm extends Form
     {
         $this
             ->add('title', Field::TEXT, [
-                'rules' => 'required|min:5'
+                'rules' => 'required|min:5|max:150'
             ])
             ->add('content', Field::TEXTAREA, [
                 'rules' => 'max:30000'
@@ -20,5 +20,5 @@ class PostForm extends Form
                 'attr' => ['class' => 'btn-primary btn']
             ]);
     }
-    
+
 }

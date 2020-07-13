@@ -2,54 +2,72 @@
 @section('title', 'List Posts')
 @section('content')
     {{ Breadcrumbs::render('posts') }}
-    <div class="container p-4">
-        <div class="row mb-3">
-            <div class="col-7">
-                <h1>Posts</h1>
-            </div>
-            <div class="col-5 text-right">
-                <a href="post/create" role="button" class="btn btn-outline-primary">New Post</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
+    <div class="float-right mb-4">
+        <a href="post/create" role="button" class="btn btn-outline-primary">New Post</a>
+    </div>
+    <x-octo-card-material
+        title="Posts"
+        description="List posts"
+    >
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Created at</th>
+                    <th>Updated at</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
                 @foreach($posts as $post)
-                    <div class="row px-2">
-                        <div class="col">
-                            <h5>
+                    <tr>
+                        <td>
+                            <h4 class="title mb-0">
                                 {{ $post->title }}
-                            </h5>
-                            <small class="font-italic">created at {{ $post->created_at }} | updated at {{ $post->updated_at }}</small>
-                            <p>{{ \Illuminate\Support\Str::limit(strip_tags($post->content) , 100) }}</p>
-                        </div>
-                    </div>
-                    <form method="POST" id="destroyPost-{{$post->id}}" action="/dashboard/post/{{$post->id}}">
-                        <a class="btn btn-link text-primary" href="post/{{$post->id}}/edit">edit</a>
-                        {{ method_field('DELETE') }}
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <button
-                            type="submit"
-                            onclick="
-                                event.preventDefault();
-                                let destroy = confirm('Really want to delete the post');
-                                if(destroy){ document.getElementById('destroyPost-{{$post->id}}').submit() }
-                            "
-                            class="btn btn-link text-danger"
-                        >
-                            delete
-                        </button>
-                    </form>
-                    <hr>
+                            </h4>
+                        </td>
+                        <td>{{ $post->created_at->diffForHumans() }}</td>
+                        <td>{{ $post->updated_at->diffForHumans() }}</td>
+                        <td class="td-actions text-right">
+                            <form method="POST" id="destroyPost-{{$post->id}}" action="/dashboard/post/{{$post->id}}">
+                                <a
+                                    href="post/{{$post->id}}/edit"
+                                    type="button"
+                                    rel="tooltip"
+                                    title=""
+                                    class="btn btn-primary btn-link btn-sm"
+                                    data-original-title="Edit"
+                                >
+                                    <i class="material-icons">edit</i>
+                                </a>
+                                {{ method_field('DELETE') }}
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <button
+                                    type="submit"
+                                    rel="tooltip"
+                                    title=""
+                                    class="btn btn-danger btn-link btn-sm"
+                                    data-original-title="Delete"
+                                    onclick="
+                                        event.preventDefault();
+                                        let destroy = confirm('Really want to delete the post');
+                                        if(destroy){ document.getElementById('destroyPost-{{$post->id}}').submit() }
+                                    "
+                                >
+                                <i class="material-icons">delete</i>
+                            </button>
+                        </td>
+                    </tr>
                 @endforeach
-            </div>
-        </div>
+            </tbody>
+        </table>
         @if($posts->currentPage() !== $posts->lastPage() || $posts->lastPage() !== 1)
             <div class="row">
-                <div class="col text-center">
+                <div class="col">
                     {{ $posts->onEachSide(1)->links() }}
                 </div>
             </div>
-            <div class="row mb-5">
+            <div class="row">
                 <div class="col">
                     Showing {{ $posts->currentPage() }} of {{ $posts->lastPage() }} pages and a total of {{ $posts->total() }} posts
                 </div>
@@ -70,5 +88,5 @@
                 </div>
             </div>
         @endif
-    </div>
+    </x-octo-card-material>
 @endsection

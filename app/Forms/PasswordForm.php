@@ -12,19 +12,19 @@ class PasswordForm extends Form
         $this
             ->add('password_current', Field::PASSWORD, [
                 'rules' => 'required|string|max:255',
-                'attr' => ['class' => 'form-control  col-4']
+                'attr' => ['class' => 'form-control']
             ])
             ->add('password', Field::PASSWORD, [
                 'rules' => 'required|string|min:6|max:255|confirmed',
-                'attr' => ['class' => 'form-control  col-4']
+                'attr' => ['class' => 'form-control']
 
             ])
             ->add('password_confirmation', Field::PASSWORD, [
                 'rules' => 'required|string|min:6|max:255,confirmation',
-                'attr' => ['class' => 'form-control  col-4']
+                'attr' => ['class' => 'form-control']
             ])
             ->add('update', Field::BUTTON_SUBMIT, [
-                'attr' => ['class' => 'btn btn-primary']
+                'attr' => ['class' => 'btn btn-warning']
             ]);
     }
 

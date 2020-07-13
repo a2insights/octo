@@ -15,12 +15,12 @@ class ProfileForm extends Form
         $this
             ->add('name', Field::TEXT, [
                 'rules' => 'required|min:2|max:255',
-                'attr' => ['class' => 'form-control  col-4']
+                'attr' => ['class' => 'form-control']
 
             ])
             ->add('email', Field::TEXT, [
                 'rules' => "email|required|unique:users,name,$user->id|min:2|max:40",
-                'attr' => ['class' => 'form-control  col-5']
+                'attr' => ['class' => 'form-control']
             ])
             ->add('Save', Field::BUTTON_SUBMIT, [
                 'attr' => ['class' => 'btn btn-primary']
