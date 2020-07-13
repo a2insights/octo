@@ -62,12 +62,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a2ensite/material-admin.git",
-                "reference": "24de4894fe3ff7e5784aef84fa519e2c096972dd"
+                "reference": "7083f156ac67117de1e1fc5c058479e170571919"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a2ensite/material-admin/zipball/24de4894fe3ff7e5784aef84fa519e2c096972dd",
-                "reference": "24de4894fe3ff7e5784aef84fa519e2c096972dd",
+                "url": "https://api.github.com/repos/a2ensite/material-admin/zipball/7083f156ac67117de1e1fc5c058479e170571919",
+                "reference": "7083f156ac67117de1e1fc5c058479e170571919",
                 "shasum": ""
             },
             "require": {
@@ -96,8 +96,8 @@
                     "email": "atila.danvi@outlook.com"
                 }
             ],
-            "description": "a part of octo system",
-            "time": "2020-07-12T05:56:10+00:00"
+            "description": "This is a part of octo system",
+            "time": "2020-07-12T06:01:01+00:00"
         },
         {
             "name": "a2ensite/material-blog",
@@ -155,15 +155,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a2ensite/octo-core.git",
-                "reference": "86a64a06f418a3c45040e8b5d64b782d4fedbc10"
+                "reference": "bd92c53f41783ef3fccb09400b168507c42895b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a2ensite/octo-core/zipball/86a64a06f418a3c45040e8b5d64b782d4fedbc10",
-                "reference": "86a64a06f418a3c45040e8b5d64b782d4fedbc10",
+                "url": "https://api.github.com/repos/a2ensite/octo-core/zipball/bd92c53f41783ef3fccb09400b168507c42895b9",
+                "reference": "bd92c53f41783ef3fccb09400b168507c42895b9",
                 "shasum": ""
             },
             "require": {
+                "hieu-le/active": "^7.0",
                 "illuminate/support": "^5.8 || ^6.0 || ^7.0",
                 "php": "^7.2",
                 "yoeunes/notify": "^1.0"
@@ -201,7 +202,7 @@
             "keywords": [
                 "octo"
             ],
-            "time": "2020-07-12T04:49:06+00:00"
+            "time": "2020-07-13T03:30:54+00:00"
         },
         {
             "name": "brick/math",
@@ -913,6 +914,68 @@
                 "url"
             ],
             "time": "2019-07-01T23:21:34+00:00"
+        },
+        {
+            "name": "hieu-le/active",
+            "version": "7.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/letrunghieu/active.git",
+                "reference": "6996435d6996ba98e191e97d393de03ab8d25043"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/letrunghieu/active/zipball/6996435d6996ba98e191e97d393de03ab8d25043",
+                "reference": "6996435d6996ba98e191e97d393de03ab8d25043",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^7.0",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^5.0",
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "HieuLe\\Active\\ActiveServiceProvider"
+                    ],
+                    "aliases": {
+                        "Active": "HieuLe\\Active\\Facades\\Active"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "HieuLe\\Active\\": "src/",
+                    "HieuLe\\ActiveTest\\": "tests/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hieu Le",
+                    "email": "letrunghieu.cse09@gmail.com",
+                    "homepage": "https://www.hieule.info"
+                }
+            ],
+            "description": "The helper class for Laravel applications to get active class base on current route",
+            "homepage": "https://www.hieule.info/tag/laravel-active/",
+            "keywords": [
+                "active",
+                "laravel",
+                "routing"
+            ],
+            "time": "2020-03-16T15:08:33+00:00"
         },
         {
             "name": "kris/laravel-form-builder",
@@ -7041,23 +7104,23 @@
         },
         {
             "name": "theseer/tokenizer",
-            "version": "1.1.3",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/theseer/tokenizer.git",
-                "reference": "11336f6f84e16a720dae9d8e6ed5019efa85a0f9"
+                "reference": "75a63c33a8577608444246075ea0af0d052e452a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/theseer/tokenizer/zipball/11336f6f84e16a720dae9d8e6ed5019efa85a0f9",
-                "reference": "11336f6f84e16a720dae9d8e6ed5019efa85a0f9",
+                "url": "https://api.github.com/repos/theseer/tokenizer/zipball/75a63c33a8577608444246075ea0af0d052e452a",
+                "reference": "75a63c33a8577608444246075ea0af0d052e452a",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-tokenizer": "*",
                 "ext-xmlwriter": "*",
-                "php": "^7.0"
+                "php": "^7.2 || ^8.0"
             },
             "type": "library",
             "autoload": {
@@ -7077,7 +7140,13 @@
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
-            "time": "2019-06-13T22:48:21+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/theseer",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-07-12T23:59:07+00:00"
         },
         {
             "name": "webmozart/assert",
