@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Forms\PostForm;
+use App\Tables\PostsTable;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Kris\LaravelFormBuilder\FormBuilder;
+use Octo\Resources\Builders\TableBuilder;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(TableBuilder $tableBuilder)
     {
         $blog =  Auth::user()->blog();
 
@@ -17,7 +19,9 @@ class PostController extends Controller
             ->where('blog_id' , '=' , $blog->id)
             ->paginate(10);
 
-        return view('post.index')->with(['posts' => $posts]);
+        $table = $tableBuilder->create(PostsTable::class, $posts)->build();
+
+        return view('post.index')->with(compact('table'));
     }
 
     public function create(FormBuilder $formBuilder)

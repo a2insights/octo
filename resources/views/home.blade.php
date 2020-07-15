@@ -37,16 +37,19 @@
             <div class="row">
                 <div class="col align-self-start">
                 </div>
-                <div class="col-lg-6 col-md-6 text-center align-self-center">
-                    <a href="https://laravel.com/" target="_blank" class="float-left">
+                <div class="col-lg-6 col-md-6 text-center ">
+                    <a class="mx-2" href="https://laravel.com" target="_blank">
                         <img src="{{asset('img/logo-laravel-1.svg')}}" alt="logo laravel icon">
                         <img src="{{asset('img/logo-laravel-2.svg')}}" alt="logo laravel word">
                     </a>
-                    <a href="https://tenancyforlaravel.com/" target="_blank">
-                        <img width="150px" src="{{asset('img/logo-tenancy.svg')}}" alt="logo tenancy">
-                    </a>
-                    <a href="https://startbootstrap.com" target="_blank" class="float-right">
+                    <a class="mx-2" href="https://startbootstrap.com" target="_blank">
                         <img width="50px" src="{{asset('img/logo-sb.svg')}}" alt="logo start bootstrap">
+                    </a>
+                    <a class="mx-2" href="https://www.creative-tim.com" target="_blank">
+                        <img width="50px" src="{{asset('img/logo-ct.png')}}" alt="logo creative tim">
+                    </a>
+                    <a class="mx-2" href="https://tenancyforlaravel.com" target="_blank">
+                        <img width="150px" src="{{asset('img/logo-tenancy.svg')}}" alt="logo tenancy">
                     </a>
                 </div>
                 <div class="col align-self-end">
