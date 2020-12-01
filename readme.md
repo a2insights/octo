@@ -1,10 +1,10 @@
-# HasBlog 0.1
+# OctoWeb
 
-### The clean blog system
+### A new system concept
 
 [![GitHub license](https://img.shields.io/github/license/gothinkster/laravel-realworld-example-app.svg)](https://raw.githubusercontent.com/gothinkster/laravel-realworld-example-app/master/LICENSE)
 
-> ### Example Laravel blog containing (posts, blogs, auth, registration)
+> ### Use the laravel power to implement your websites with a PHP OO
 
 PRs and issues is welcome!
 
