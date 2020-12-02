@@ -19,7 +19,7 @@ Please check the official laravel installation guide for server requirements bef
 
 Clone the repository
 
-    git clone https://github.com/Atiladanvi/hasblog.git
+    git clone https://github.com/a2insights/octo.git
 
 Switch to the repo folder
 
@@ -53,7 +53,7 @@ You can now access the server at http://localhost:8000
 
 **TL;DR command list**
 
-    git clone https://github.com/Atiladanvi/hasblog.git
+    git clone https://github.com/a2insights/octo.git
     cd has-blog
     composer install
     cp .env.example .env
