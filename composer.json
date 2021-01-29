@@ -6,39 +6,17 @@
         "system"
     ],
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../clean-blog"
-        },
-        {
-            "type": "path",
-            "url": "../material-admin"
-        },
-        {
-            "type": "path",
-            "url": "../material-blog"
-        },
-        {
-            "type": "path",
-            "url": "../octo-core"
-        }
-    ],
     "require": {
         "php": "^7.3|^8.0",
-        "a2insights/clean-blog": "dev-master",
-        "a2insights/material-admin": "dev-master",
-        "a2insights/material-blog": "dev-master",
-        "a2insights/octo-core": "dev-master",
-        "davejamesmiller/laravel-breadcrumbs": "5.x",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
-        "kris/laravel-form-builder": "^1.20",
         "laravel/framework": "^8.12",
+        "laravel/jetstream": "^2.1",
+        "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
-        "stancl/tenancy": "^3.0"
+        "livewire/livewire": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -87,9 +65,7 @@
             "@php artisan key:generate --ansi"
         ],
         "post-install-cmd": [
-            "php artisan vendor:publish --provider=\"Octo\\MaterialBlog\\MaterialBlogServiceProvider\"",
-            "php artisan vendor:publish --provider=\"Octo\\CleanBlog\\CleanBlogServiceProvider\"",
-            "php artisan vendor:publish --provider=\"Octo\\MaterialAdmin\\MaterialAdminServiceProvider\""
+
         ]
     }
 }

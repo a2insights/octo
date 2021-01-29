@@ -11,9 +11,12 @@
 |
 */
 
-
-Auth::routes();
-
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/blogs/{path}', [\App\Http\Controllers\BlogController::class, 'index'])->name('blog');
 
+Route::group([
+    'middleware' => ['web', 'auth:sanctum'],
+], function () {
+    Route::prefix('dashboard')->group(function () {
+        Route::get('/', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+    });
+});
