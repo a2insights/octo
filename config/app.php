@@ -4,7 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application Name
+    | Application Name/Description
     |--------------------------------------------------------------------------
     |
     | This value is the name of your application. This value is used when the
@@ -13,7 +13,9 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Octo Web'),
+
+    'description' => env('APP_DESCRIPTION', 'Create a web under laravel power. It’s easy and free.'),
 
     /*
     |--------------------------------------------------------------------------
@@ -174,8 +176,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\TenancyServiceProvider::class,
-        Kris\LaravelFormBuilder\FormBuilderServiceProvider::class
+        App\Providers\FortifyServiceProvider::class,
+        App\Providers\JetstreamServiceProvider::class,
     ],
 
     /*

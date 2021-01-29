@@ -14,43 +14,5 @@ class Controller extends BaseController
 
     public function __construct()
     {
-        $nav = [
-            [
-                'label' => 'User',
-                'icon' => 'person',
-                'url' => '#',
-                'children' => [
-                    [
-                        'label' => 'Profile',
-                        'route' => 'profile'
-                    ],
-                    [
-                        'label' => 'Settings',
-                        'route' => 'settings'
-                    ],
-                    [
-                        'label' => 'Logout',
-                        'action' => true,
-                        'route' => 'logout'
-                    ],
-                ],
-            ],
-        ];
-
-        $sidebar = [
-            [
-                'label' => 'Dashboard',
-                'route' => 'dashboard',
-                'icon' => 'dashboard'
-            ],
-            [
-                'label' => 'Posts',
-                'route' => 'post.index',
-                'icon' => 'library_books'
-            ]
-        ];
-
-        View::share ( 'nav',  $nav);
-        View::share ( 'sidebar',  $sidebar);
     }
 }
