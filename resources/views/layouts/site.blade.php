@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 </head>
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column h-100 color-bg-animated">
 <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
     <div class="container">
         <a class="navbar-brand"  href="{{ url('/') }}">
@@ -77,7 +77,7 @@
 @notify_js
 @notify_render
 <style>
-    body {
+    .color-bg-animated {
         font-family: 'Lato', serif;
         background: linear-gradient(0deg, #ff6a00 40%, #ee0979 100%);
         background-size: 300% 200%;

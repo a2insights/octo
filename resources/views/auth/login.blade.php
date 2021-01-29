@@ -7,7 +7,7 @@
                 <div class="col align-self-start">
                 </div>
                 <div class="col-md-3 align-self-center">
-                    <div class="card bg-dark mt-4 mx-2">
+                    <div class="card border-0 color-bg-animated mt-4 mx-2">
                         <div class="card-body px-4 pb-2 pt-4">
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
