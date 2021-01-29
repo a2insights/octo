@@ -1,37 +1,55 @@
 {
-    "name": "a2ensite/octo-web",
+    "name": "a2ensite/octo",
     "type": "project",
-    "description": "The web cms.",
+    "description": "The web network.",
     "keywords": [
-        "blog",
-        "cms"
+        "system"
     ],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../clean-blog"
+        },
+        {
+            "type": "path",
+            "url": "../material-admin"
+        },
+        {
+            "type": "path",
+            "url": "../material-blog"
+        },
+        {
+            "type": "path",
+            "url": "../octo-core"
+        }
+    ],
     "require": {
-        "php": "^7.2.5",
+        "php": "^7.3|^8.0",
         "a2insights/clean-blog": "dev-master",
         "a2insights/material-admin": "dev-master",
         "a2insights/material-blog": "dev-master",
         "a2insights/octo-core": "dev-master",
         "davejamesmiller/laravel-breadcrumbs": "5.x",
-        "fideloper/proxy": "^4.2",
-        "guzzlehttp/guzzle": "^6.3",
+        "fideloper/proxy": "^4.4",
+        "fruitcake/laravel-cors": "^2.0",
+        "guzzlehttp/guzzle": "^7.0.1",
         "kris/laravel-form-builder": "^1.20",
-        "laravel/framework": "^7.0",
+        "laravel/framework": "^8.12",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "^2.1",
+        "laravel/ui": "^3.0",
         "stancl/tenancy": "^3.0"
     },
     "require-dev": {
-        "facade/ignition": "^2.0",
-        "fzaninotto/faker": "^1.9.1",
-        "mockery/mockery": "^1.3.1",
-        "nunomaduro/collision": "^4.1",
-        "phpunit/phpunit": "^8.5",
-        "laravel/tinker": "^2.0",
+        "facade/ignition": "^2.5",
+        "fakerphp/faker": "^1.9.1",
+        "laravel/sail": "^1.0.1",
+        "mockery/mockery": "^1.4.2",
+        "nunomaduro/collision": "^5.0",
+        "phpunit/phpunit": "^9.3.3",
         "beyondcode/laravel-dump-server": "^1.0",
         "filp/whoops": "^2.0",
-        "laravel/dusk": "^5.5"
+        "laravel/dusk": "^6.11"
     },
     "config": {
         "optimize-autoloader": true,
@@ -45,12 +63,10 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
-        },
-        "classmap": [
-            "database/seeds",
-            "database/factories"
-        ]
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
     },
     "autoload-dev": {
         "psr-4": {
