@@ -56,5 +56,9 @@
                 </x-jet-button>
             </div>
         </form>
+
+        @if (JoelButcher\Socialstream\Socialstream::show())
+            <x-socialstream-providers />
+        @endif
     </x-jet-authentication-card>
 </x-guest-layout>
