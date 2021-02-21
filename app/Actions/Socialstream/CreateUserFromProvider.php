@@ -2,12 +2,13 @@
 
 namespace App\Actions\Socialstream;
 
+use App\Models\Team;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use JoelButcher\Socialstream\Contracts\CreatesConnectedAccounts;
 use JoelButcher\Socialstream\Contracts\CreatesUserFromProvider;
 use Laravel\Jetstream\Features;
-use Laravel\Socialite\Contracts\User as ProviderUser;
+use Laravel\Socialite\Contracts\User as ProviderUserContract;
 
 class CreateUserFromProvider implements CreatesUserFromProvider
 {
@@ -35,7 +36,7 @@ class CreateUserFromProvider implements CreatesUserFromProvider
      * @param  \Laravel\Socialite\Contracts\User  $providerUser
      * @return \App\Models\User
      */
-    public function create(string $provider, ProviderUser $providerUser)
+    public function create(string $provider, ProviderUserContract $providerUser)
     {
         return DB::transaction(function () use ($provider, $providerUser) {
             return tap(User::create([
@@ -53,7 +54,24 @@ class CreateUserFromProvider implements CreatesUserFromProvider
                 $user->switchConnectedAccount(
                     $this->createsConnectedAccounts->create($user, $provider, $providerUser)
                 );
+
+                $this->createTeam($user);
             });
         });
+    }
+
+    /**
+     * Create a personal team for the user.
+     *
+     * @param  \App\Models\User  $user
+     * @return void
+     */
+    protected function createTeam(User $user)
+    {
+        $user->ownedTeams()->save(Team::forceCreate([
+            'user_id' => $user->id,
+            'name' => explode(' ', $user->name, 2)[0]."'s Team",
+            'personal_team' => true,
+        ]));
     }
 }
