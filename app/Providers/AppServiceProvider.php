@@ -2,25 +2,35 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
     public function register()
     {
-        //
+        $sidebarItems = [
+            [
+                'label' => 'Dashboard',
+                'route' => 'dashboard',
+                'icon' => 'zondicon-dashboard',
+            ],
+            [
+                'label' => 'User',
+                'icon' => 'heroicon-o-bell',
+                'url' => '#',
+                'children' => [
+                    [
+                        'label' => 'Profile',
+                        'route' => 'profile.show'
+                    ],
+                ],
+            ]
+        ];
+
+        View::share('sidebar',  ['items' => $sidebarItems]);
     }
 
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
     public function boot()
     {
         //
