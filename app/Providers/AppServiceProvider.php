@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
             ],
             [
                 'label' => 'User',
-                'icon' => 'heroicon-o-bell',
+                'icon' => 'heroicon-o-user',
                 'url' => '#',
                 'children' => [
                     [
