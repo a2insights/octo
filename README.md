@@ -4,7 +4,7 @@
 
 [![GitHub license](https://img.shields.io/github/license/gothinkster/laravel-realworld-example-app.svg)](https://raw.githubusercontent.com/gothinkster/laravel-realworld-example-app/master/LICENSE)
 
-> ### Use the laravel power to implement your websites with a PHP OO
+> ### Use the laravel power to implement your idea
 
 PRs and issues is welcome!
 
@@ -23,7 +23,7 @@ Clone the repository
 
 Switch to the repo folder
 
-    cd has-blog
+    cd octo
 
 Install all the dependencies using composer
 
@@ -54,7 +54,7 @@ You can now access the server at http://localhost:8000
 **TL;DR command list**
 
     git clone https://github.com/a2insights/octo.git
-    cd has-blog
+    cd octo
     composer install
     cp .env.example .env
     php artisan key:generate
