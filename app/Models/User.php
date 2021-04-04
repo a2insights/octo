@@ -19,7 +19,9 @@ class User extends Authenticatable
     use HasProfilePhoto {
         getProfilePhotoUrlAttribute as getPhotoUrl;
     }
+    use Notifiable;
     use HasTeams;
+    use HasInitials;
     use HasConnectedAccounts;
     use Notifiable;
     use TwoFactorAuthenticatable;
@@ -40,7 +42,7 @@ class User extends Authenticatable
     ];
 
     protected $appends = [
-        'profile_photo_url',
+        'profile_photo_url', 'initials'
     ];
 
     public function getProfilePhotoUrlAttribute()
