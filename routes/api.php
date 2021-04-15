@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 // Public Routes
 Route::post('auth/login', [\App\Http\Controllers\AuthController::class, 'login']);
 Route::get('ziggy', [\App\Http\Controllers\ZiggyController::class, 'index']);
+Route::get('app-dev/table', [\App\Http\Controllers\App\Dev\TableAppDevExampleController::class, 'index'])->name('app-dev.table.index');
 
 Route::middleware([
     'auth:sanctum'
