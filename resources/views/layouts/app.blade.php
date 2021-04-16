@@ -11,8 +11,8 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
+    <x-jet-banner />
     <div class="md:flex flex-col md:flex-row md:min-h-screen w-full bg-gray-100">
-        <x-jet-banner />
         <x-octo-tailwind-sidebar :items="$sidebar['items']"/>
         <div class="flex flex-col w-full">
             @livewire('navigation-menu')
