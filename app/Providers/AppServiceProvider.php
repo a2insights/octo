@@ -16,15 +16,9 @@ class AppServiceProvider extends ServiceProvider
                 'icon' => 'zondicon-dashboard',
             ],
             [
-                'label' => 'User',
                 'icon' => 'heroicon-o-user',
-                'url' => '#',
-                'children' => [
-                    [
-                        'label' => 'Profile',
-                        'route' => 'profile.show'
-                    ],
-                ],
+                'label' => 'Profile',
+                'route' => 'profile.show'
             ]
         ];
 
