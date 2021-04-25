@@ -42,9 +42,9 @@ class OTableAppDevExampleTable implements OAppTableQuasar
     public function actions($model)
     {
         return [
-            octo_action('app-dev.table.destroy', $model->id)->setDisabled(true)->get(),
             octo_action('app-dev.table.show', $model->id)->setDisabled(true)->get(),
-            octo_action('app-dev.table.edit', $model->id)->setDisabled(true)->get()
+            octo_action('app-dev.table.edit', $model->id)->setDisabled(true)->get(),
+            octo_action('app-dev.table.destroy', $model->id)->setDisabled(true)->get()
         ];
     }
 }
