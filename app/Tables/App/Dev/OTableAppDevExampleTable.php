@@ -35,16 +35,16 @@ class OTableAppDevExampleTable implements OAppTableQuasar
             'id' => $model->id,
             'name'=> $model->name,
             'email'=> $model->email,
-            'created_at' => $model->created_at
+            'created_at' => $model->created_at->diffForhumans()
         ];
     }
 
     public function actions($model)
     {
         return [
-            //octo_action('app-dev.table.destroy', $model->id),
-            //octo_action('app-dev.table.show', $model->id),
-            //octo_action('app-dev.table.edit', $model->id),
+            octo_action('app-dev.table.destroy', $model->id)->setDisabled(true)->get(),
+            octo_action('app-dev.table.show', $model->id)->setDisabled(true)->get(),
+            octo_action('app-dev.table.edit', $model->id)->setDisabled(true)->get()
         ];
     }
 }

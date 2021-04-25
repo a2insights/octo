@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Request;
 use Octo\Resources\OAppTableResource;
 use Octo\Response\OAppResponse;
 
-class TableAppDevExampleController
+class AppDevTableExampleController
 {
     public function index(Request $request)
     {
