@@ -11,7 +11,8 @@ class OTableAppDevExampleTable implements OAppTableQuasar
 
     public function repository()
     {
-        return User::query();
+        return User::query()
+            ->orderBy('updated_at', 'desc');
     }
 
     public function route()
