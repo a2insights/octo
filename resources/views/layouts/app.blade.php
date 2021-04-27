@@ -13,7 +13,13 @@
     <body class="font-sans antialiased">
     <x-jet-banner />
     <div class="md:flex flex-col md:flex-row md:min-h-screen w-full bg-gray-100">
-        <x-octo-tailwind-sidebar :items="$sidebar['items']"/>
+        <x-octo-tailwind-sidebar :items="$sidebar['items']">
+            <div class="flex-shrink-0 py-3 border-gray-100 border-b flex justify-center">
+                <a class="mr-2" href="{{ route('dashboard') }}">
+                    <x-octo-application-mark class="block h-9 w-auto" />
+                </a>
+            </div>
+        </x-octo-tailwind-sidebar>
         <div class="flex flex-col w-full">
             @livewire('navigation-menu')
             @if (isset($header))
