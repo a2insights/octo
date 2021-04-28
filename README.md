@@ -1,10 +1,6 @@
-# OctoWeb
-
-### A new system concept
+# Octo
 
 [![GitHub license](https://img.shields.io/github/license/gothinkster/laravel-realworld-example-app.svg)](https://raw.githubusercontent.com/gothinkster/laravel-realworld-example-app/master/LICENSE)
-
-> ### Use the laravel power to implement your idea
 
 PRs and issues is welcome!
 
