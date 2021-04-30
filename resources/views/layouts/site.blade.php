@@ -61,9 +61,9 @@
 <main role="main" class="flex-shrink-0" id="app">
     @yield('content')
 </main>
-<footer class="bg-dark footer mt-auto py-3">
+<footer class="bg-white footer mt-auto py-1">
     <div class="container">
-        <p class="m-0 text-center text-white small">Copyright &copy; {{ config('app.name') }} - {{ date('Y') }}</p>
+        <p class="m-0 text-center small">Copyright &copy; {{ config('app.name') }} - {{ date('Y') }}</p>
     </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

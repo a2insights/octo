@@ -1,11 +1,10 @@
 @extends('layouts.site')
 @section('content')
-    <div style="padding-bottom: 7rem;padding-top: calc(7rem + 72px);" class="masthead text-white text-center">
+    <div style="padding-bottom: 5rem;padding-top: calc(4rem + 50px);" class="masthead text-white text-center">
         <div class="masthead-content">
             <div class="container">
                 <h2 class="masthead-heading mb-0">Start a web!</h2>
                 <h5 class="masthead-subheading mb-0 mb-0">Create a web under laravel power. It’s easy and free.</h5>
-                <a href="{{ auth()->user() ? route('dashboard') : route('register') }}" class="btn btn-primary btn-xl rounded-pill mt-5">Register now</a>
             </div>
         </div>
         <div class="bg-circle-1 bg-circle"></div>
@@ -13,26 +12,40 @@
         <div class="bg-circle-3 bg-circle"></div>
         <div class="bg-circle-4 bg-circle"></div>
     </div>
-    <section class="bg-white">
+    <section style="background: #f7f7f7">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 order-lg-2">
-                    <div class="p-5">
-                        <img class="img-fluid rounded-circle" src="{{ asset('img/networks.jpg') }}" alt="">
+            <div class="row pt-5 align-items-center">
+                <div class="col-lg-6 order-lg-1">
+                    <div>
+                        <h2 class="display-4">web/mobile api's</h2>
+                        <p>This project was created to help other developers makes web/mobile api's in a easy way.</p>
+                        <p>Demo is also linked to <a target="_blank" href="https://www.octo.app.a2insights.com.br">Vue Project</a> that shows how this backend can be integrated to a front-end.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 order-lg-1">
-                    <div class="p-5">
-                        <h2 class="display-4">A new system concept</h2>
-                        <p>Use the laravel power to implement your websites with a PHP OO</p>
-                        <code><var>$blogs</var> = Blog::all()</code>
+                <div class="col-lg-6 order-lg-2">
+                    <div>
+                        <img class="img-fluid " src="{{ asset('img/social-media.png') }}" alt="Social média">
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <section class="bg-white">
-        <div class="container pb-5">
+        <div class="container py-5">
+            <h2 class="text-center pt-3 mb-4">Octo Web</h2>
+            <div class="col-lg-12">
+                <div class="text-center">
+                    <a href="https://octo.docs.a2insights.com.br" rel="noopener" target="_blank" class="mx-3">Api Docs</a>
+                    <a href="https://octo.a2insights.com.br/login" rel="noopener" target="_blank" class="mx-3">Api Demo</a>
+                    <a href="https://octo.app.docs.a2insights.com.br" rel="noopener" target="_blank" class="mx-3">Mobile Docs</a>
+                    <a href="https://www.octo.app.a2insights.com.br" rel="noopener" target="_blank" class="mx-3">Mobile Demo</a>
+                    <a href="https://github.com/a2insights/octo" rel="noopener" target="_blank" class="mx-3">Github</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-white">
+        <div class="container py-5">
             <h2 class="text-center pt-3 mb-4">Made with:</h2>
             <div class="row">
                 <div class="col align-self-start">
