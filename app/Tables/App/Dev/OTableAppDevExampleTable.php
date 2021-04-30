@@ -3,6 +3,7 @@
 namespace App\Tables\App\Dev;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Octo\Resources\Components\quasar\OAppTableQuasar;
 
 class OTableAppDevExampleTable implements OAppTableQuasar
@@ -34,8 +35,8 @@ class OTableAppDevExampleTable implements OAppTableQuasar
     {
         return [
             'id' => $model->id,
-            'name'=> $model->name,
-            'email'=> $model->email,
+            'name'=> $model->initials,
+            'email'=> Str::lower($model->initials) . '*****@' . Str::of($model->email)->afterLast('@'),
             'created_at' => $model->created_at->diffForhumans()
         ];
     }
