@@ -6,31 +6,45 @@
         "system"
     ],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../octo-core",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
     "require": {
         "php": "^7.3|^8.0",
         "a2insights/octo-core": "dev-master",
+        "codespb/livewire-notifier": "^1.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "joelbutcher/socialstream": "^3.0",
+        "laravel-views/laravel-views": "^2.2",
         "laravel/framework": "^8.12",
         "laravel/jetstream": "^2.1",
         "laravel/sanctum": "^2.6",
-        "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
+        "livewire-ui/modal": "^0.1.4",
         "livewire/livewire": "^2.0",
         "pusher/pusher-php-server": "^5.0",
+        "spatie/laravel-enum": "^2.5",
         "tightenco/ziggy": "^1.1"
     },
     "require-dev": {
+        "beyondcode/laravel-dump-server": "^1.0",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
-        "laravel/sail": "^1.0.1",
+        "filp/whoops": "^2.0",
+        "laravel-shift/blueprint": "^1.24",
+        "laravel/sail": "^1.5",
+        "laravel/tinker": "^2.6",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
-        "phpunit/phpunit": "^9.3.3",
-        "beyondcode/laravel-dump-server": "^1.0",
-        "filp/whoops": "^2.0"
+        "phpunit/phpunit": "^9.3.3"
     },
     "config": {
         "optimize-autoloader": true,

@@ -19,6 +19,11 @@ class AppServiceProvider extends ServiceProvider
                 'icon' => 'heroicon-o-user',
                 'label' => 'Profile',
                 'route' => 'profile.show'
+            ],
+            [
+                'icon' => 'heroicon-o-key',
+                'label' => 'API Tokens',
+                'route' => 'api-tokens.index'
             ]
         ];
 

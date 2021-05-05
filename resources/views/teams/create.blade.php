@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-octo-app-sidebar-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-purple-500 leading-tight">
             {{ __('Create Team') }}
@@ -10,4 +10,4 @@
             @livewire('teams.create-team-form')
         </div>
     </div>
-</x-app-layout>
+</x-octo-app-sidebar-layout>
