@@ -1,7 +1,7 @@
-<x-guest-layout>
+<x-octo-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-octo-authentication-card-logo />
+            <x-jet-authentication-card-logo />
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
@@ -31,4 +31,4 @@
             </div>
         </form>
     </x-jet-authentication-card>
-</x-guest-layout>
+</x-octo-guest-layout>

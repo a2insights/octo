@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('octo-core.src.views.layouts.app')
 
 @section('content')
 <div class="container">

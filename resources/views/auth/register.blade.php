@@ -1,7 +1,7 @@
-<x-guest-layout>
+<x-octo-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-octo-authentication-card-logo />
+            <x-jet-authentication-card-logo />
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
@@ -61,4 +61,4 @@
             <x-socialstream-providers />
         @endif
     </x-jet-authentication-card>
-</x-guest-layout>
+</x-octo-guest-layout>
