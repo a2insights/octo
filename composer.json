@@ -6,15 +6,6 @@
         "system"
     ],
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../octo-core",
-            "options": {
-                "symlink": true
-            }
-        }
-    ],
     "require": {
         "php": "^7.3|^8.0",
         "a2insights/octo-core": "dev-master",
