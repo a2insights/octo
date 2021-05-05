@@ -4,7 +4,7 @@ namespace App\Tables\App\Dev;
 
 use App\Models\User;
 use Illuminate\Support\Str;
-use Octo\Resources\Components\quasar\OAppTableQuasar;
+use Octo\Resources\Components\Quasar\OAppTableQuasar;
 
 class OTableAppDevExampleTable implements OAppTableQuasar
 {
