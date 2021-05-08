@@ -1,4 +1,4 @@
-<x-octo-guest-layout>
+<x-guest-layout>
     <x-octo-hero>
         <x-slot name="headline">
             Start a web! <br /><span class="text-blue-400">It’s easy and free.</span>
@@ -44,4 +44,4 @@
             <img width="500px" src="{{ asset('img/social-media.png') }}" alt="Octo Docs large logo" class="mx-auto mb-6 lg:mb-0 hidden md:block">
         </div>
     </section>
-</x-octo-guest-layout>
+</x-guest-layout>

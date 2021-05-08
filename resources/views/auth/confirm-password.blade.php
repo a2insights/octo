@@ -1,4 +1,4 @@
-<x-octo-guest-layout>
+<x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -25,4 +25,4 @@
             </div>
         </form>
     </x-jet-authentication-card>
-</x-octo-guest-layout>
+</x-guest-layout>

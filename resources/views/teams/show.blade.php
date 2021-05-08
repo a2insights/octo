@@ -1,4 +1,4 @@
-<x-octo-app-sidebar-layout>
+<x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-purple-500 leading-tight">
             {{ __('Team Settings') }}
@@ -20,4 +20,4 @@
             @endif
         </div>
     </div>
-</x-octo-app-sidebar-layout>
+</x-app-layout>

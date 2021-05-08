@@ -1,4 +1,4 @@
-<x-octo-app-sidebar-layout>
+<x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-purple-500 leading-tight">
             {{ __('API Tokens') }}
@@ -10,4 +10,4 @@
             @livewire('api.api-token-manager')
         </div>
     </div>
-</x-octo-app-sidebar-layout>
+</x-app-layout>
