@@ -13,7 +13,7 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
-        "joelbutcher/socialstream": "^3.0",
+        "joelbutcher/socialstream": "^3.2",
         "laravel-views/laravel-views": "^2.2",
         "laravel/framework": "^8.12",
         "laravel/jetstream": "^2.1",

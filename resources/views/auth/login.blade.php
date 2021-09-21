@@ -33,23 +33,20 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
+                @if (Route::has('password.request'))
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                        {{ __('Forgot your password?') }}
+                    </a>
+                @endif
+
                 <x-jet-button class="ml-4">
                     {{ __('Login') }}
                 </x-jet-button>
             </div>
-
-            @if (JoelButcher\Socialstream\Socialstream::show())
-                <x-socialstream-providers />
-            @endif
-
-            <div class="flex items-center justify-between mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                    {{ __('Forgot password?') }}
-                </a>
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
-                    {{ __('Create account?') }}
-                </a>
-            </div>
         </form>
+
+        @if (JoelButcher\Socialstream\Socialstream::show())
+            <x-socialstream-providers />
+        @endif
     </x-jet-authentication-card>
 </x-guest-layout>

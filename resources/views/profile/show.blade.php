@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-purple-500 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Profile') }}
         </h2>
     </x-slot>
@@ -50,7 +50,7 @@
                 </div>
             @endif
 
-            @if (! is_null($user->password))
+            @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures() && ! is_null($user->password))
                 <x-jet-section-border />
 
                 <div class="mt-10 sm:mt-0">

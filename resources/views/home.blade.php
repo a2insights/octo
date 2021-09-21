@@ -3,7 +3,7 @@
         <x-slot name="headline">
             Start a web! <br /><span class="text-blue-400">It’s easy and free.</span>
         </x-slot>
-        <x-slot name="description">
+        <x-slot name="tagline">
             Create a web under laravel power<br />
             <strong class="text-white">easy and faster application & fully open source</strong>
             <br />than you can imagine.
