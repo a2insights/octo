@@ -15,6 +15,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "joelbutcher/socialstream": "^3.2",
         "laravel-views/laravel-views": "^2.2",
+        "laravel/cashier": "^13.5",
         "laravel/framework": "^8.12",
         "laravel/jetstream": "^2.1",
         "laravel/sanctum": "^2.6",
@@ -23,7 +24,8 @@
         "livewire/livewire": "^2.0",
         "pusher/pusher-php-server": "^5.0",
         "spatie/laravel-enum": "^2.5",
-        "tightenco/ziggy": "^1.1"
+        "tightenco/ziggy": "^1.1",
+        "renoki-co/jetstream-cashier-billing-portal": "dev-master"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

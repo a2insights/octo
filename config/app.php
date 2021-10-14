@@ -163,11 +163,11 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
         /*
          * Package Service Providers...
          */
-
+        App\Providers\CashierRegisterServiceProvider::class,
+        App\Providers\BillingPortalServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -178,7 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
-        App\Providers\SocialstreamServiceProvider::class,
+        App\Providers\SocialstreamServiceProvider::class
     ],
 
     /*
