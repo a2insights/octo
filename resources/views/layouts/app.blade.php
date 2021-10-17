@@ -39,11 +39,12 @@
         </main>
     </div>
 
+    {{--Jetstream--}}
     @stack('modals')
 
     @livewire('livewire-ui-modal')
-    @livewireUIScripts
     @livewireScripts
+
 </body>
 </html>
 

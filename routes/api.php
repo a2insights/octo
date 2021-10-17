@@ -31,8 +31,4 @@ Route::middleware([
     // Auth
     Route::delete('auth/logout', [\App\Http\Controllers\AuthController::class, 'logout']);
     Route::get('auth/session', [\App\Http\Controllers\AuthController::class, 'session']);
-    // Notifications
-    Route::get('notifications', [\App\Http\Controllers\NotificationsController::class, 'index']);
-    Route::delete('notifications/{id}', [\App\Http\Controllers\NotificationsController::class, 'read']);
-    Route::get('notifications/{type}', [\App\Http\Controllers\NotificationsController::class, 'find']);
 });

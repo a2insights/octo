@@ -6,6 +6,15 @@
         "system"
     ],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../octo-core",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
     "require": {
         "php": "^7.3|^8.0",
         "a2insights/octo-core": "dev-master",
@@ -17,15 +26,13 @@
         "laravel-views/laravel-views": "^2.2",
         "laravel/cashier": "^13.5",
         "laravel/framework": "^8.12",
-        "laravel/jetstream": "^2.1",
+        "laravel/jetstream": "^2.4",
         "laravel/sanctum": "^2.6",
-        "laravel/ui": "^3.0",
-        "livewire-ui/modal": "^0.1.4",
-        "livewire/livewire": "^2.0",
+        "livewire/livewire": "^2.5",
         "pusher/pusher-php-server": "^5.0",
+        "renoki-co/jetstream-cashier-billing-portal": "dev-master",
         "spatie/laravel-enum": "^2.5",
-        "tightenco/ziggy": "^1.1",
-        "renoki-co/jetstream-cashier-billing-portal": "dev-master"
+        "tightenco/ziggy": "^1.1"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

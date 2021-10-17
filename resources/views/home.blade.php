@@ -30,7 +30,7 @@
         </x-slot>
     </x-octo-hero>
 
-    <section style="background: #f7f7f7" class="container mt-5 max-w-6xl mx-auto px-6 pb-5 md:py-2">
+    <section class="container mt-5 max-w-6xl mx-auto px-6 pb-5 md:py-2">
         <div class="flex items-center flex-col-reverse mb-5 lg:flex-row lg:mb-24">
             <div class="mt-5">
                 <h2 class="text-6xl mb-3 font-bold">web/mobile api's</h2>

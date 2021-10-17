@@ -4,7 +4,7 @@ namespace App\Http\Controllers\App\Dev;
 
 
 use App\Tables\App\Dev\OTableAppDevExampleTable;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 use Octo\Resources\OAppTableResource;
 use Octo\Response\OAppResponse;
 
