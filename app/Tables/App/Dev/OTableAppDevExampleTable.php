@@ -4,13 +4,13 @@ namespace App\Tables\App\Dev;
 
 use App\Models\User;
 use Illuminate\Support\Str;
-use Octo\Resources\Components\Quasar\OAppTableQuasar;
+use Octo\Resources\Quasar\Table\TableContract;
 
-class OTableAppDevExampleTable implements OAppTableQuasar
+class OTableAppDevExampleTable implements TableContract
 {
     public $name = 'OTableAppDevExampleTable';
 
-    public function repository()
+    public function model()
     {
         return User::query()
             ->orderBy('updated_at', 'desc');
@@ -44,9 +44,9 @@ class OTableAppDevExampleTable implements OAppTableQuasar
     public function actions($model)
     {
         return [
-            octo_action('app-dev.table.show', $model->id)->setDisabled(true)->get(),
-            octo_action('app-dev.table.edit', $model->id)->setDisabled(true)->get(),
-            octo_action('app-dev.table.destroy', $model->id)->setDisabled(true)->get()
+            octo_action('app-dev.table.show', ['id' => $model->id])->setDisabled()->get(),
+            octo_action('app-dev.table.edit', ['id' => $model->id])->setDisabled()->get(),
+            octo_action('app-dev.table.destroy', ['id' => $model->id])->setDisabled()->get()
         ];
     }
 }

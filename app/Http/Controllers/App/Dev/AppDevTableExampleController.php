@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers\App\Dev;
 
-
 use App\Tables\App\Dev\OTableAppDevExampleTable;
 use Illuminate\Http\Request;
-use Octo\Resources\OAppTableResource;
-use Octo\Response\OAppResponse;
+use Octo\Resources\Quasar\Table\Table;
+use Octo\QuasarResponse;
 
 class AppDevTableExampleController
 {
     public function index(Request $request)
     {
-        return (new OAppResponse('table'))
+        return (new QuasarResponse('table'))
             ->addComponent(
-                (new OAppTableResource(OTableAppDevExampleTable::class))
+                (new Table(OTableAppDevExampleTable::class))
             )->toResponse($request);
     }
 }

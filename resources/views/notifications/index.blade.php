@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-purple-500 leading-tight">
-            Notifications
+            {{ __('Notifications') }}
         </h2>
     </x-slot>
 

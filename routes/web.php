@@ -19,5 +19,4 @@ Route::group([
     Route::prefix('dashboard')->group(function () {
         Route::get('/', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
     });
-    Route::get('user/notifications', [\App\Http\Controllers\NotificationsController::class, 'index'])->name('notifications');
 });
