@@ -4,6 +4,7 @@ namespace App\Tables\App\Dev;
 
 use App\Models\User;
 use Illuminate\Support\Str;
+use Octo\Resources\Quasar\Action;
 use Octo\Resources\Quasar\Table\TableContract;
 
 class OTableAppDevExampleTable implements TableContract
@@ -44,9 +45,9 @@ class OTableAppDevExampleTable implements TableContract
     public function actions($model)
     {
         return [
-            octo_action('app-dev.table.show', ['id' => $model->id])->setDisabled()->get(),
-            octo_action('app-dev.table.edit', ['id' => $model->id])->setDisabled()->get(),
-            octo_action('app-dev.table.destroy', ['id' => $model->id])->setDisabled()->get()
+            (new Action(octo_route('app-dev.table.show', ['id' => $model->id])))->setDisabled()->get(),
+            (new Action(octo_route('app-dev.table.edit', ['id' => $model->id])))->setDisabled()->get(),
+            (new Action(octo_route('app-dev.table.destroy', ['id' => $model->id])))->setDisabled()->get(),
         ];
     }
 }
