@@ -15,7 +15,7 @@ return [
 
     'name' => env('APP_NAME', 'Octo Web'),
 
-    'description' => env('APP_DESCRIPTION', 'Create a web under laravel power. It’s easy and free.'),
+    'description' => env('APP_DESCRIPTION', 'This project is created to help other web developers create a app in an easy way.'),
 
     /*
     |--------------------------------------------------------------------------

@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Actions\Fortify\CreateNewUser;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Console\Command;
 
 class SetupCommand extends Command
@@ -57,7 +58,7 @@ class SetupCommand extends Command
     {
         $this->info("Creating default own account");
 
-        (new CreateNewUser)->create([
+        $user = (new CreateNewUser)->create([
             'name' => self::DEFAULT_ADMIN_NAME,
             'email' => self::DEFAULT_ADMIN_EMAIL,
             'password' => self::DEFAULT_ADMIN_PASSWORD,
@@ -65,8 +66,10 @@ class SetupCommand extends Command
             'terms' => true,
         ]);
 
-        $this->comment(
-            sprintf('Log in with email %s and password %s', self::DEFAULT_ADMIN_EMAIL, self::DEFAULT_ADMIN_PASSWORD)
-        );
+        event(new Registered($user));
+
+        $user->markEmailAsVerified();
+
+        $this->comment(sprintf('Log in with email %s and password %s', self::DEFAULT_ADMIN_EMAIL, self::DEFAULT_ADMIN_PASSWORD));
     }
 }
