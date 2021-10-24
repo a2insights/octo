@@ -51,5 +51,6 @@ return [
         \Octo\Features::notifications(['pusher' => true]),
         \Octo\Features::billingDasboard(),
         \Octo\Features::welcomeUserNotifications(['queued' => true]),
+        \Octo\Features::phoneUser()
     ],
 ];
