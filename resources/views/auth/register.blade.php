@@ -1,6 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
+            <div class="mt-5"></div>
             <x-jet-authentication-card-logo />
         </x-slot>
 
