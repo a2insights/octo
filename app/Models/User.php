@@ -69,6 +69,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'profile_photo_url',
     ];
 
+    /**
+     * Get the URL to the user's profile photo.
+     *
+     * @return string
+     */
     public function getProfilePhotoUrlAttribute()
     {
         if (filter_var($this->profile_photo_path, FILTER_VALIDATE_URL)) {
