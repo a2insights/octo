@@ -13,6 +13,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+use Octo\Concerns\HasRouteSmsProviders;
 use Octo\Concerns\MustVerifyEmailQueued;
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -29,6 +30,7 @@ class User extends Authenticatable implements MustVerifyEmail
     use TwoFactorAuthenticatable;
     use Billable;
     use MustVerifyEmailQueued;
+    use HasRouteSmsProviders;
 
     /**
      * The attributes that are mass assignable.
@@ -36,7 +38,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var string[]
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'phone_number'
     ];
 
     /**

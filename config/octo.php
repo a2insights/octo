@@ -50,7 +50,8 @@ return [
     'features' => [
         \Octo\Features::notifications(['pusher' => true]),
         \Octo\Features::billingDasboard(),
-        \Octo\Features::welcomeUserNotifications(['queued' => true]),
-        \Octo\Features::phoneUser()
+        \Octo\Features::welcomeUserNotifications(['queued' => false, 'sms' => true]),
+        \Octo\Features::phoneUser(),
+        \Octo\Features::sms(['provider' => 'twilio'])
     ],
 ];

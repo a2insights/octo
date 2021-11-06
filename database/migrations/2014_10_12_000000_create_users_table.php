@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->foreignId('current_team_id')->nullable();
             $table->foreignId('current_connected_account_id')->nullable();
             $table->text('profile_photo_path')->nullable();
+            $table->string('phone_number')->nullable()->unique();
             $table->timestamps();
         });
     }

@@ -20,8 +20,6 @@ class SetupCommand extends Command
 
     public function handle()
     {
-        $this->call('octo:install');
-
         $this->info("\nOcto Setup");
         $this->info("--------------------\n");
 
@@ -43,7 +41,6 @@ class SetupCommand extends Command
                 $this->call('migrate:fresh', ['--force' => true]);
                 $this->info('Seeding required data in database');
                 $this->call('db:seed', ['--force' => true]);
-                $this->call('octo:install');
                 $this->info('Seeding fake data in database');
                 $this->call('db:seed', ['--force' => true, '--class' => 'Database\Seeders\FakerDatabaseSeeder']);
                 $this->info('Set up admin account');
@@ -61,6 +58,8 @@ class SetupCommand extends Command
         $user = (new CreateNewUser)->create([
             'name' => self::DEFAULT_ADMIN_NAME,
             'email' => self::DEFAULT_ADMIN_EMAIL,
+            'calling_code' => '55',
+            'phone' => '91 989242304',
             'password' => self::DEFAULT_ADMIN_PASSWORD,
             'password_confirmation' => self::DEFAULT_ADMIN_PASSWORD,
             'terms' => true,
