@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6359f281e8b112ac74c5c0a4cceb910c",
+    "content-hash": "666c580011b96069ca2e43137a439eb4",
     "packages": [
         {
             "name": "a2insights/octo-core",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a2insights/octo-core.git",
-                "reference": "8b28c1677ac2c2862afa8c5d2eba4fa986a36fef"
+                "reference": "9d254674e9e56e44df1fcfb390bc6b6683af6d92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/8b28c1677ac2c2862afa8c5d2eba4fa986a36fef",
-                "reference": "8b28c1677ac2c2862afa8c5d2eba4fa986a36fef",
+                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/9d254674e9e56e44df1fcfb390bc6b6683af6d92",
+                "reference": "9d254674e9e56e44df1fcfb390bc6b6683af6d92",
                 "shasum": ""
             },
             "require": {
@@ -28,7 +28,7 @@
                 "hieu-le/active": "^8.0",
                 "illuminate/support": "^8.0",
                 "laravel/ui": "^3.0",
-                "livewire/livewire": "^2.4",
+                "livewire/livewire": "^2.7",
                 "php": "^7.3|^8.0",
                 "pragmarx/countries": "dev-master",
                 "spatie/laravel-newsletter": "dev-master",
@@ -82,7 +82,7 @@
                 "issues": "https://github.com/a2insights/octo-core/issues",
                 "source": "https://github.com/a2insights/octo-core/tree/master"
             },
-            "time": "2021-11-06T04:49:07+00:00"
+            "time": "2021-11-06T22:58:02+00:00"
         },
         {
             "name": "asm89/stack-cors",
@@ -532,16 +532,16 @@
         },
         {
             "name": "colinodell/json5",
-            "version": "v2.2.0",
+            "version": "v2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/colinodell/json5.git",
-                "reference": "dd7f788c5de3837d1483a216dc9b30e5d9c8c00a"
+                "reference": "361fd1bc9175432b789401b616cd3a7b0f862cde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/colinodell/json5/zipball/dd7f788c5de3837d1483a216dc9b30e5d9c8c00a",
-                "reference": "dd7f788c5de3837d1483a216dc9b30e5d9c8c00a",
+                "url": "https://api.github.com/repos/colinodell/json5/zipball/361fd1bc9175432b789401b616cd3a7b0f862cde",
+                "reference": "361fd1bc9175432b789401b616cd3a7b0f862cde",
                 "shasum": ""
             },
             "require": {
@@ -599,7 +599,7 @@
             ],
             "support": {
                 "issues": "https://github.com/colinodell/json5/issues",
-                "source": "https://github.com/colinodell/json5/tree/v2.2.0"
+                "source": "https://github.com/colinodell/json5/tree/v2.2.1"
             },
             "funding": [
                 {
@@ -619,7 +619,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-11-29T14:52:27+00:00"
+            "time": "2021-11-06T05:25:47+00:00"
         },
         {
             "name": "composer/package-versions-deprecated",
@@ -6014,16 +6014,16 @@
         },
         {
             "name": "pusher/pusher-php-server",
-            "version": "5.0.3",
+            "version": "v4.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pusher/pusher-http-php.git",
-                "reference": "1024077ff60beebaf5706b4e0208a1e648d20cf4"
+                "reference": "251f22602320c1b1aff84798fe74f3f7ee0504a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pusher/pusher-http-php/zipball/1024077ff60beebaf5706b4e0208a1e648d20cf4",
-                "reference": "1024077ff60beebaf5706b4e0208a1e648d20cf4",
+                "url": "https://api.github.com/repos/pusher/pusher-http-php/zipball/251f22602320c1b1aff84798fe74f3f7ee0504a9",
+                "reference": "251f22602320c1b1aff84798fe74f3f7ee0504a9",
                 "shasum": ""
             },
             "require": {
@@ -6033,13 +6033,12 @@
                 "psr/log": "^1.0"
             },
             "require-dev": {
-                "overtrue/phplint": "^2.3",
                 "phpunit/phpunit": "^7.2|^8.5|^9.3"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.0-dev"
+                    "dev-master": "3.4-dev"
                 }
             },
             "autoload": {
@@ -6067,9 +6066,9 @@
             ],
             "support": {
                 "issues": "https://github.com/pusher/pusher-http-php/issues",
-                "source": "https://github.com/pusher/pusher-http-php/tree/5.0.3"
+                "source": "https://github.com/pusher/pusher-http-php/tree/v4.1.5"
             },
-            "time": "2021-03-15T09:17:01+00:00"
+            "time": "2020-12-09T09:38:19+00:00"
         },
         {
             "name": "ralouphie/getallheaders",

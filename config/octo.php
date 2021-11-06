@@ -48,7 +48,7 @@ return [
     ],
 
     'features' => [
-        \Octo\Features::notifications(['pusher' => true]),
+        \Octo\Features::notifications(['pusher' => true, 'pusher-queued' => false]),
         \Octo\Features::billingDasboard(),
         \Octo\Features::welcomeUserNotifications(['queued' => false, 'sms' => true]),
         \Octo\Features::phoneUser(),

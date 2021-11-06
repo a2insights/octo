@@ -11,6 +11,4 @@
 |
 */
 
-Broadcast::channel('user-notification.{userId}', function ($user){
-    return $user;
-});
+
