@@ -12,25 +12,23 @@ class HandleSubscriptions implements HandleSubscriptionsContract
     /**
      * Mutate the checkout object before redirecting the user to subscribe to a certain plan.
      *
-     * @param  \Illuminate\Database\Eloquent\Model  $billable
-     * @param  \RenokiCo\CashierRegister\Plan  $plan
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Database\Eloquent\Model $billable
+     *
      * @return mixed
      */
     public function checkoutOnSubscription($subscription, $billable, Plan $plan, Request $request)
     {
         return $subscription->checkout([
             'success_url' => route('billing-portal.subscription.index', ['success' => "You have successfully subscribed to {$plan->getName()}!"]),
-            'cancel_url' => route('billing-portal.subscription.index', ['error' => "The subscription to {$plan->getName()} was cancelled!"]),
+            'cancel_url'  => route('billing-portal.subscription.index', ['error' => "The subscription to {$plan->getName()} was cancelled!"]),
         ]);
     }
 
     /**
      * Subscribe the user to a given plan.
      *
-     * @param  \Illuminate\Database\Eloquent\Model  $billable
-     * @param  \RenokiCo\CashierRegister\Plan  $plan
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Database\Eloquent\Model $billable
+     *
      * @return \RenokiCo\CashierRegister\Models\Stripe\Subscription
      */
     public function subscribeToPlan($billable, Plan $plan, Request $request)
@@ -43,10 +41,9 @@ class HandleSubscriptions implements HandleSubscriptionsContract
     /**
      * Swap the current subscription plan.
      *
-     * @param  \RenokiCo\CashierRegister\Models\Stripe\Subscription  $subscription
-     * @param  \Illuminate\Database\Eloquent\Model  $billable
-     * @param  \RenokiCo\CashierRegister\Plan  $plan
-     * @param  \Illuminate\Http\Request  $request
+     * @param \RenokiCo\CashierRegister\Models\Stripe\Subscription $subscription
+     * @param \Illuminate\Database\Eloquent\Model                  $billable
+     *
      * @return \RenokiCo\CashierRegister\Models\Stripe\Subscription
      */
     public function swapToPlan($subscription, $billable, Plan $plan, Request $request)
@@ -61,9 +58,9 @@ class HandleSubscriptions implements HandleSubscriptionsContract
     /**
      * Define the logic to be called when the user requests resuming a subscription.
      *
-     * @param  \RenokiCo\CashierRegister\Models\Stripe\Subscription  $subscription
-     * @param  \Illuminate\Database\Eloquent\Model  $billable
-     * @param  \Illuminate\Http\Request  $request
+     * @param \RenokiCo\CashierRegister\Models\Stripe\Subscription $subscription
+     * @param \Illuminate\Database\Eloquent\Model                  $billable
+     *
      * @return void
      */
     public function resumeSubscription($subscription, $billable, Request $request)
@@ -74,9 +71,9 @@ class HandleSubscriptions implements HandleSubscriptionsContract
     /**
      * Define the subscriptioncancellation action.
      *
-     * @param  \RenokiCo\CashierRegister\Models\Stripe\Subscription  $subscription
-     * @param  \Illuminate\Database\Eloquent\Model  $billable
-     * @param  \Illuminate\Http\Request  $request
+     * @param \RenokiCo\CashierRegister\Models\Stripe\Subscription $subscription
+     * @param \Illuminate\Database\Eloquent\Model                  $billable
+     *
      * @return void
      */
     public function cancelSubscription($subscription, $billable, Request $request)

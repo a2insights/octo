@@ -28,16 +28,16 @@ class SetupCommand extends Command
         $migrateStatus = $this->call('migrate:status');
         $this->call('migrate', ['--force' => true]);
 
-        if (!$migrateStatus){
+        if (!$migrateStatus) {
             $overwriteDatabase = $this->choice(
                 'Database already migrated, you want overwrite ?',
                 [
                     'Not',
-                    'Yes'
+                    'Yes',
                 ],
                 'Not'
             );
-            if ($overwriteDatabase === 'Yes'){
+            if ($overwriteDatabase === 'Yes') {
                 $this->call('migrate:fresh', ['--force' => true]);
                 $this->info('Seeding required data in database');
                 $this->call('db:seed', ['--force' => true]);
@@ -53,16 +53,16 @@ class SetupCommand extends Command
 
     private function setUpAdminAccount(): void
     {
-        $this->info("Creating default own account");
+        $this->info('Creating default own account');
 
-        $user = (new CreateNewUser)->create([
-            'name' => self::DEFAULT_ADMIN_NAME,
-            'email' => self::DEFAULT_ADMIN_EMAIL,
-            'calling_code' => '55',
-            'phone' => '91 989242304',
-            'password' => self::DEFAULT_ADMIN_PASSWORD,
+        $user = (new CreateNewUser())->create([
+            'name'                  => self::DEFAULT_ADMIN_NAME,
+            'email'                 => self::DEFAULT_ADMIN_EMAIL,
+            'calling_code'          => '55',
+            'phone'                 => '91 989242304',
+            'password'              => self::DEFAULT_ADMIN_PASSWORD,
             'password_confirmation' => self::DEFAULT_ADMIN_PASSWORD,
-            'terms' => true,
+            'terms'                 => true,
         ]);
 
         event(new Registered($user));

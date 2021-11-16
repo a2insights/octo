@@ -13,26 +13,23 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'email' => 'required|email',
+            'email'    => 'required|email',
             'password' => 'required',
         ]);
 
         $user = User::where('email', $request->email)->first();
 
         if (!$user || !Hash::check($request->password, $user->password)) {
-            throw ValidationException::withMessages([
-                'email' => [''],
-                'password' => ['Email ou senhas incorretos'],
-            ]);
+            throw ValidationException::withMessages(['email' => [''], 'password' => ['Email ou senhas incorretos']]);
         }
 
         $token = $user->createToken($request->device_name)->plainTextToken;
 
         return response()->json([
             'data' => [
-                'user' => $user,
+                'user'  => $user,
                 'token' => $token,
-            ]
+            ],
         ]);
     }
 
@@ -45,7 +42,7 @@ class AuthController extends Controller
             ->delete();
 
         return response()->json([
-            'message' => 'Logout realizado com sucesso'
+            'message' => 'Logout realizado com sucesso',
         ]);
     }
 
@@ -55,9 +52,9 @@ class AuthController extends Controller
 
         return response()->json([
             'data' => [
-                'user' => $user,
-                'token' => $request->bearerToken()
-            ]
+                'user'  => $user,
+                'token' => $request->bearerToken(),
+            ],
         ]);
     }
 }

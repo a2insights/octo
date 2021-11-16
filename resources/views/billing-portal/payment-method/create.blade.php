@@ -9,7 +9,7 @@
             >
                 &larr;
             </a>
-            Billing: Add Payment Method
+            {{ __('Billing') }}: {{ __('Add Payment Method') }}
         </h2>
     </x-slot>
     <div class="py-12">
@@ -76,22 +76,9 @@
                         <div id="add-payment-method-button-loading" class="flex hidden mr-2 justify-center items-center">
                             <div class="animate-spin rounded-full h-3 w-3 border-b-2 border-white-900"></div>
                         </div>
-                        Add Payment Method
+                        {{ __('Add Payment Method') }}
                     </x-jet-button>
                 </div>
-            </div>
-
-            <div class="text-center">
-                The payment is
-                <a
-                    href="https://stripe.com"
-                    target="_blank"
-                >
-                    <img
-                        src="/images/stripe_blurple.svg"
-                        class="w-32 h-auto inline ml-1"
-                    />
-                </a>
             </div>
         </div>
     </div>

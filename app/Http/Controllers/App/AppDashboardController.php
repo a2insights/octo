@@ -8,6 +8,5 @@ class AppDashboardController extends Controller
 {
     public function index()
     {
-       //
     }
 }

@@ -2,7 +2,7 @@
 
 @section('header')
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        Billing Portal: Subscriptions
+        {{ __('Billing Portal') }}: {{ __('Subscriptions') }}
     </h2>
 @endsection
 

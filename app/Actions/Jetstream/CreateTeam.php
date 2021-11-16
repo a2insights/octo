@@ -13,8 +13,8 @@ class CreateTeam implements CreatesTeams
     /**
      * Validate and create a new team for the given user.
      *
-     * @param  mixed  $user
-     * @param  array  $input
+     * @param mixed $user
+     *
      * @return mixed
      */
     public function create($user, array $input)
@@ -28,7 +28,7 @@ class CreateTeam implements CreatesTeams
         AddingTeam::dispatch($user);
 
         $user->switchTeam($team = $user->ownedTeams()->create([
-            'name' => $input['name'],
+            'name'          => $input['name'],
             'personal_team' => false,
         ]));
 

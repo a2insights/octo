@@ -5,10 +5,10 @@
                 <thead>
                 <tr>
                     <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                        Card number
+                        {{ __('Card number') }}
                     </th>
                     <th class="px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                        Default
+                        {{ __('Default')}}
                     </th>
                     <th class="px-6 py-3 bg-gray-50" />
                 </tr>
@@ -26,7 +26,7 @@
                                 </div>
 
                                 <div class="text-gray-500 text-xs">
-                                    Expires on: {{ $method->month }}/{{ $method->year }}
+                                    {{ __('Expires on')}}: {{ $method->month }}/{{ $method->year }}
                                 </div>
                             </td>
 
@@ -49,7 +49,7 @@
                                         wire:loading.attr="disabled"
                                         wire:click="setAsDefault('{{ $method->id }}')"
                                     >
-                                        Set as default
+                                        {{ __('Set as default') }}
                                     </x-jet-secondary-button>
                                 @endif
                             </td>
@@ -59,7 +59,7 @@
                                     wire:loading.attr="disabled"
                                     wire:click="deletePaymentMethod('{{ $method->id }}')"
                                 >
-                                    Delete
+                                    {{ __('Delete') }}
                                 </x-jet-danger-button>
                             </td>
                         </tr>

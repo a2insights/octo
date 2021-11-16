@@ -1,0 +1,16 @@
+languageIds:
+  - javascript
+  - typescript
+  - php
+  - blade
+
+usageMatchRegex:
+  - "(?:i18n[ (\n]\\s*path=|v-t=['\"`{]|(?:this\\.|\\$|i18n\\.|[^\\w\\d])(?:t|tc|te)\\()\\s*['\"`]({key})['\"`]"
+  - "[^\\w\\d](?:__|trans|@lang|trans_choice|tc)\\(['\"`]({key})['\"`]"
+
+refactorTemplates:
+  # - "{{ $t('$1') }}"
+  # - "this.$t('$1')"
+  - "__('$1')"
+  - "{{ __('$1') }}"
+  - "this.__('$1')"

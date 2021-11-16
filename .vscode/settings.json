@@ -1,0 +1,82 @@
+{
+    "[php]": {
+        "editor.defaultFormatter": "junstyle.php-cs-fixer"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.formatOnSave": true,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+
+    "eslint.format.enable": true,
+    "explorer.confirmDelete": false,
+
+    "files.watcherExclude": {
+        "**/vendor/**": true
+    },
+
+    "importCost.javascriptExtensions": ["\\.jsx?$", "\\.vue$"],
+
+    "php.suggest.basic": false,
+    "phpcs.standard": "PSR2",
+    "phpunit.logpanel": true,
+    "phpunit.shell": "bash",
+
+    "tabnine.experimentalAutoImports": true,
+    "todohighlight.exclude": [
+        "**/node_modules/**",
+        "**/bower_components/**",
+        "**/dist/**",
+        "**/build/**",
+        "**/.vscode/**",
+        "**/.github/**",
+        "**/_output/**",
+        "**/*.min.*",
+        "**/*.map",
+        "**/.next/**",
+        "public/**",
+        "vendor/**"
+    ],
+
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true,
+        "resources/old": true
+    },
+
+    "sqltools.useNodeRuntime": true,
+
+    // i18n
+    "i18n-ally.keystyle": "flat", // Laravel cant deal with nested
+    "i18n-ally.sourceLanguage": "pt",
+    "i18n-ally.displayLanguage": "pt",
+    "i18n-ally.sortKeys": true,
+    "i18n-ally.localesPaths": ["resources/lang"],
+    "i18n-ally.enabledFrameworks": [
+        // "vue",
+        "vue-sfc",
+        "custom"
+        // "laravel"
+    ],
+    "i18n-ally.enabledParsers": ["json"],
+    "i18n-ally.extract.targetPickingStrategy": "file-previous",
+    "i18n-ally.extract.keyMaxLength": 32,
+    "i18n-ally.annotationMaxLength": 128,
+    "i18n-ally.dirStructure": "file",
+    "i18n-ally.namespace": true,
+    "i18n-ally.review.enabled": false,
+    "i18n-ally.review.gutters": false
+}

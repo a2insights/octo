@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,7 +22,7 @@ Route::delete('app-dev/table/{id}', [\App\Http\Controllers\App\Dev\AppDevTableEx
 Route::get('app-dev/table/{id}/show', [\App\Http\Controllers\App\Dev\AppDevTableExampleController::class, 'edit'])->name('app-dev.table.edit');
 
 Route::middleware([
-    'auth:sanctum'
+    'auth:sanctum',
 ])->group(function () {
     // App Dashboard
     Route::get('app/dashboard', [\App\Http\Controllers\App\AppDashboardController::class, 'index'])->name('app.dashboard');

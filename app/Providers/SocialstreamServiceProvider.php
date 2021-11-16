@@ -21,7 +21,6 @@ class SocialstreamServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
     }
 
     /**

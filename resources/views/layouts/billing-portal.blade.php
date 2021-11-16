@@ -42,7 +42,7 @@
                             class="font-semibold"
                             class="{{ request()->routeIs('billing-portal.payment-method.index') ? 'text-gray-700' : '' }} font-semibold"
                         >
-                            Payment Methods
+                            {{ __('Payment Methods') }}
                         </div>
                     </a>
                     <a
@@ -60,7 +60,7 @@
                         </svg>
                         <div
                             class="{{ request()->routeIs('billing-portal.invoice.index') ? 'text-gray-700' : '' }} font-semibold">
-                            Invoices
+                            {{ __('Invoices')}}
                         </div>
                     </a>
                     <div
@@ -72,7 +72,7 @@
                             as="button"
                         >
                             <div class="font-semibold text-gray-700">
-                                Stripe Billing Portal
+                                {{ __('Stripe Billing Portal') }}
                                 <svg
                                     viewBox="0 0 24 24"
                                     class="w-4 h-4 ml-1 inline"

@@ -15,10 +15,9 @@ class AddTeamMember implements AddsTeamMembers
     /**
      * Add a new team member to the given team.
      *
-     * @param  mixed  $user
-     * @param  mixed  $team
-     * @param  string  $email
-     * @param  string|null  $role
+     * @param mixed $user
+     * @param mixed $team
+     *
      * @return void
      */
     public function add($user, $team, string $email, string $role = null)
@@ -41,16 +40,15 @@ class AddTeamMember implements AddsTeamMembers
     /**
      * Validate the add member operation.
      *
-     * @param  mixed  $team
-     * @param  string  $email
-     * @param  string|null  $role
+     * @param mixed $team
+     *
      * @return void
      */
     protected function validate($team, string $email, ?string $role)
     {
         Validator::make([
             'email' => $email,
-            'role' => $role,
+            'role'  => $role,
         ], $this->rules(), [
             'email.exists' => __('We were unable to find a registered user with this email address.'),
         ])->after(
@@ -67,8 +65,8 @@ class AddTeamMember implements AddsTeamMembers
     {
         return array_filter([
             'email' => ['required', 'email', 'exists:users'],
-            'role' => Jetstream::hasRoles()
-                            ? ['required', 'string', new Role]
+            'role'  => Jetstream::hasRoles()
+                            ? ['required', 'string', new Role()]
                             : null,
         ]);
     }
@@ -76,8 +74,8 @@ class AddTeamMember implements AddsTeamMembers
     /**
      * Ensure that the user is not already on the team.
      *
-     * @param  mixed  $team
-     * @param  string  $email
+     * @param mixed $team
+     *
      * @return \Closure
      */
     protected function ensureUserIsNotAlreadyOnTeam($team, string $email)

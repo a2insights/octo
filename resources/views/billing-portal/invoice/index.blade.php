@@ -2,7 +2,7 @@
 
 @section('header')
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        Billing Portal: Invoices
+        {{ __('Billing Portal')}}: {{ __('Invoices') }}
     </h2>
 @endsection
 
@@ -15,10 +15,10 @@
                         <thead>
                             <tr>
                                 <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                    Plan
+                                    {{ __('Plan') }}
                                 </th>
                                 <th class="px-6 py-3 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                    Status
+                                    {{ __('Status') }}
                                 </th>
                                 <th class="px-6 py-3 bg-gray-50" />
                             </tr>
@@ -45,7 +45,7 @@
                                             class="text-indigo-400 hover:text-indigo-500 font-semibold"
                                             target="_blank"
                                         >
-                                            Download
+                                            {{ __('Download') }}
                                         </a>
                                     </td>
                                 </tr>
