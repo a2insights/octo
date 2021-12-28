@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "af0c01bde3dbc177c194e9026702e978",
+    "content-hash": "fe12a87b0bfb91ef50cabc971e32af2c",
     "packages": [
         {
             "name": "a2insights/octo-core",
@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "../octo-core",
-                "reference": "05ed91c5af3583e87aee290eeb73b16c335674db"
+                "reference": "a8d22e2abb369792356feae9f1c67af70fc273eb"
             },
             "require": {
                 "blade-ui-kit/blade-heroicons": "^0.3",
@@ -25,6 +25,7 @@
                 "livewire/livewire": "^2.7",
                 "php": "^7.3|^8.0",
                 "pragmarx/countries": "dev-master",
+                "rappasoft/laravel-livewire-tables": "dev-master",
                 "spatie/laravel-newsletter": "dev-main",
                 "stidges/laravel-country-flags": "dev-master",
                 "symfony/intl": "^3.4",
@@ -33,7 +34,6 @@
                 "wire-elements/modal": "^1.0.1"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "dev-master",
                 "orchestra/testbench": "^6.0",
                 "phpunit/phpunit": "^9.3"
             },
@@ -6355,6 +6355,79 @@
             "time": "2021-09-25T23:10:38+00:00"
         },
         {
+            "name": "rappasoft/laravel-livewire-tables",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rappasoft/laravel-livewire-tables.git",
+                "reference": "5ec4a23cc7c937d305afb64fc32a57a5881f824e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rappasoft/laravel-livewire-tables/zipball/5ec4a23cc7c937d305afb64fc32a57a5881f824e",
+                "reference": "5ec4a23cc7c937d305afb64fc32a57a5881f824e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^8.0",
+                "livewire/livewire": "^2.6",
+                "php": "^7.4|^8.0",
+                "spatie/laravel-package-tools": "^1.4.3"
+            },
+            "require-dev": {
+                "ext-sqlite3": "*",
+                "orchestra/testbench": "^6.13",
+                "phpunit/phpunit": "^9.3",
+                "spatie/laravel-ray": "^1.9",
+                "vimeo/psalm": "^4.4"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Rappasoft\\LaravelLivewireTables\\LaravelLivewireTablesServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Rappasoft\\LaravelLivewireTables\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anthony Rappa",
+                    "email": "rappa819@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A dynamic table component for Laravel Livewire",
+            "homepage": "https://github.com/rappasoft/laravel-livewire-tables",
+            "keywords": [
+                "datatables",
+                "laravel",
+                "livewire",
+                "rappasoft",
+                "tables"
+            ],
+            "support": {
+                "issues": "https://github.com/rappasoft/laravel-livewire-tables/issues",
+                "source": "https://github.com/rappasoft/laravel-livewire-tables/tree/v1.21.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/rappasoft",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-11-21T03:43:55+00:00"
+        },
+        {
             "name": "renoki-co/cashier-register",
             "version": "6.0.2",
             "source": {
@@ -10679,16 +10752,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.17.3",
+            "version": "2.17.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "29f1be7f45f6fe4ffcf59a1c87bb469d47f1d227"
+                "reference": "95c80bd35ee6858e9e1439b2f6a698295eeb2070"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/29f1be7f45f6fe4ffcf59a1c87bb469d47f1d227",
-                "reference": "29f1be7f45f6fe4ffcf59a1c87bb469d47f1d227",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/95c80bd35ee6858e9e1439b2f6a698295eeb2070",
+                "reference": "95c80bd35ee6858e9e1439b2f6a698295eeb2070",
                 "shasum": ""
             },
             "require": {
@@ -10753,7 +10826,7 @@
                 "issues": "https://github.com/facade/ignition/issues",
                 "source": "https://github.com/facade/ignition"
             },
-            "time": "2021-12-23T13:28:01+00:00"
+            "time": "2021-12-27T15:11:24+00:00"
         },
         {
             "name": "facade/ignition-contracts",
@@ -13506,16 +13579,16 @@
         },
         {
             "name": "spatie/laravel-ray",
-            "version": "1.26.5",
+            "version": "1.27.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ray.git",
-                "reference": "857d8fe465dbc025cbeb2735fe690ff9496f5f98"
+                "reference": "63facbd443b3ba0e920054ca7f48a08e2870b740"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ray/zipball/857d8fe465dbc025cbeb2735fe690ff9496f5f98",
-                "reference": "857d8fe465dbc025cbeb2735fe690ff9496f5f98",
+                "url": "https://api.github.com/repos/spatie/laravel-ray/zipball/63facbd443b3ba0e920054ca7f48a08e2870b740",
+                "reference": "63facbd443b3ba0e920054ca7f48a08e2870b740",
                 "shasum": ""
             },
             "require": {
@@ -13572,7 +13645,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-ray/issues",
-                "source": "https://github.com/spatie/laravel-ray/tree/1.26.5"
+                "source": "https://github.com/spatie/laravel-ray/tree/1.27.2"
             },
             "funding": [
                 {
@@ -13584,7 +13657,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2021-12-21T13:51:47+00:00"
+            "time": "2021-12-27T21:05:04+00:00"
         },
         {
             "name": "spatie/macroable",
@@ -14290,7 +14363,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "a2insights/octo-core": 20,
-        "renoki-co/jetstream-cashier-billing-portal": 20
+        "renoki-co/jetstream-cashier-billing-portal": 20,
+        "rappasoft/laravel-livewire-tables": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

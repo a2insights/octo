@@ -25,28 +25,13 @@ class SetupCommand extends Command
 
         $this->info('Migrating database');
 
-        $migrateStatus = $this->call('migrate:status');
-        $this->call('migrate', ['--force' => true]);
-
-        if (!$migrateStatus) {
-            $overwriteDatabase = $this->choice(
-                'Database already migrated, you want overwrite ?',
-                [
-                    'Not',
-                    'Yes',
-                ],
-                'Not'
-            );
-            if ($overwriteDatabase === 'Yes') {
-                $this->call('migrate:fresh', ['--force' => true]);
-                $this->info('Seeding required data in database');
-                $this->call('db:seed', ['--force' => true]);
-                $this->info('Seeding fake data in database');
-                $this->call('db:seed', ['--force' => true, '--class' => 'Database\Seeders\FakerDatabaseSeeder']);
-                $this->info('Set up admin account');
-                $this->setUpAdminAccount();
-            }
-        }
+        $this->call('migrate:fresh', ['--force' => true]);
+        $this->info('Seeding required data in database');
+        $this->call('db:seed', ['--force' => true]);
+        $this->info('Seeding fake data in database');
+        $this->call('db:seed', ['--force' => true, '--class' => 'Database\Seeders\FakerDatabaseSeeder']);
+        $this->info('Set up admin account');
+        $this->setUpAdminAccount();
 
         $this->info('✅ Everything succeeded ✅');
     }

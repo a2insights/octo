@@ -1,21 +1,21 @@
 <?php
-return [
 
+return [
     'network' => [
-        'facebook' => '#',
+        'facebook'  => '#',
         'instagram' => '#',
-        'youtube' => '#',
+        'youtube'   => '#',
     ],
 
     'footer' => [
-        'tagline' => "Copyright © " . date('Y') . " " . config('app.name')
+        'tagline' => 'Copyright © ' . date('Y') . ' ' . config('app.name'),
     ],
 
     'plugins' => [
         'subscribe' => [
             'headline' => 'Something new is coming!',
-            'tagline' => 'This application is on for testers. But you can test too. If you want to receive updates join our newsletter.'
-        ]
+            'tagline'  => 'This application is on for testers. But you can test too. If you want to receive updates join our newsletter.',
+        ],
     ],
 
     'features' => [
@@ -23,6 +23,6 @@ return [
         \Octo\Features::billingDasboard(),
         \Octo\Features::welcomeUserNotifications(['queued' => false, 'sms' => true]),
         \Octo\Features::phoneUser(),
-        \Octo\Features::sms(['provider' => 'twilio'])
+        \Octo\Features::sms(['provider' => 'twilio']),
     ],
 ];

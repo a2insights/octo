@@ -5,7 +5,8 @@
     "keywords": [
         "system"
     ],
-    "license": "MIT","repositories": [
+    "license": "MIT",
+    "repositories": [
         {
             "type": "path",
             "url": "../octo-core",
@@ -13,7 +14,7 @@
                 "symlink": true
             }
         }
-     ],
+    ],
     "require": {
         "php": "^7.3|^8.0",
         "a2insights/octo-core": "dev-master",
@@ -34,6 +35,7 @@
         "nexmo/laravel": "^2.4",
         "pusher/pusher-php-server": "~4.0",
         "renoki-co/jetstream-cashier-billing-portal": "dev-master",
+        "rappasoft/laravel-livewire-tables": "dev-master",
         "spatie/laravel-enum": "^2.5",
         "tightenco/ziggy": "^1.1"
     },
@@ -84,8 +86,6 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ],
-        "post-install-cmd": [
-
-        ]
+        "post-install-cmd": []
     }
 }
