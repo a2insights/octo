@@ -34,7 +34,6 @@
         "livewire/livewire": "^2.7",
         "nexmo/laravel": "^2.4",
         "pusher/pusher-php-server": "~4.0",
-        "renoki-co/jetstream-cashier-billing-portal": "dev-master",
         "rappasoft/laravel-livewire-tables": "dev-master",
         "spatie/laravel-enum": "^2.5",
         "tightenco/ziggy": "^1.1"

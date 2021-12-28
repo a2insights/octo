@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use RenokiCo\CashierRegister\CashierRegisterServiceProvider as BaseServiceProvider;
-use RenokiCo\CashierRegister\Saas;
+use Octo\Billing\Saas;
+use Octo\OctoServiceProvider;
 
-class CashierRegisterServiceProvider extends BaseServiceProvider
+class CashierRegisterServiceProvider extends OctoServiceProvider
 {
     /**
      * Boot the service provider.

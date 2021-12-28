@@ -3,9 +3,9 @@
 namespace App\Actions\BillingPortal;
 
 use Illuminate\Http\Request;
-use RenokiCo\BillingPortal\BillingPortal;
-use RenokiCo\BillingPortal\Contracts\HandleSubscriptions as HandleSubscriptionsContract;
-use RenokiCo\CashierRegister\Plan;
+use Octo\Billing\BillingPortal;
+use Octo\Billing\Contracts\HandleSubscriptions as HandleSubscriptionsContract;
+use Octo\Billing\Plan;
 
 class HandleSubscriptions implements HandleSubscriptionsContract
 {
@@ -29,7 +29,7 @@ class HandleSubscriptions implements HandleSubscriptionsContract
      *
      * @param \Illuminate\Database\Eloquent\Model $billable
      *
-     * @return \RenokiCo\CashierRegister\Models\Stripe\Subscription
+     * @return \Octo\Billing\Models\Stripe\Subscription
      */
     public function subscribeToPlan($billable, Plan $plan, Request $request)
     {
@@ -41,10 +41,10 @@ class HandleSubscriptions implements HandleSubscriptionsContract
     /**
      * Swap the current subscription plan.
      *
-     * @param \RenokiCo\CashierRegister\Models\Stripe\Subscription $subscription
-     * @param \Illuminate\Database\Eloquent\Model                  $billable
+     * @param \Octo\Billing\Models\Stripe\Subscription $subscription
+     * @param \Illuminate\Database\Eloquent\Model      $billable
      *
-     * @return \RenokiCo\CashierRegister\Models\Stripe\Subscription
+     * @return \Octo\Billing\Models\Stripe\Subscription
      */
     public function swapToPlan($subscription, $billable, Plan $plan, Request $request)
     {
@@ -58,8 +58,8 @@ class HandleSubscriptions implements HandleSubscriptionsContract
     /**
      * Define the logic to be called when the user requests resuming a subscription.
      *
-     * @param \RenokiCo\CashierRegister\Models\Stripe\Subscription $subscription
-     * @param \Illuminate\Database\Eloquent\Model                  $billable
+     * @param \Octo\Billing\Models\Stripe\Subscription $subscription
+     * @param \Illuminate\Database\Eloquent\Model      $billable
      *
      * @return void
      */
@@ -71,8 +71,8 @@ class HandleSubscriptions implements HandleSubscriptionsContract
     /**
      * Define the subscriptioncancellation action.
      *
-     * @param \RenokiCo\CashierRegister\Models\Stripe\Subscription $subscription
-     * @param \Illuminate\Database\Eloquent\Model                  $billable
+     * @param \Octo\Billing\Models\Stripe\Subscription $subscription
+     * @param \Illuminate\Database\Eloquent\Model      $billable
      *
      * @return void
      */

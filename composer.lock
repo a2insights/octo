@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe12a87b0bfb91ef50cabc971e32af2c",
+    "content-hash": "8d681f09b3fcd876019a15e85fd2be85",
     "packages": [
         {
             "name": "a2insights/octo-core",
@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "../octo-core",
-                "reference": "a8d22e2abb369792356feae9f1c67af70fc273eb"
+                "reference": "e5320367ec9f979affa7c9679d37ad2e2ff7dfe7"
             },
             "require": {
                 "blade-ui-kit/blade-heroicons": "^0.3",
@@ -6426,168 +6426,6 @@
                 }
             ],
             "time": "2021-11-21T03:43:55+00:00"
-        },
-        {
-            "name": "renoki-co/cashier-register",
-            "version": "6.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/renoki-co/cashier-register.git",
-                "reference": "ffe383d984ce129cb305327dbb02137179d67dd1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/renoki-co/cashier-register/zipball/ffe383d984ce129cb305327dbb02137179d67dd1",
-                "reference": "ffe383d984ce129cb305327dbb02137179d67dd1",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/database": "^8.40",
-                "illuminate/support": "^8.40"
-            },
-            "require-dev": {
-                "laravel/legacy-factories": "^1.1",
-                "mockery/mockery": "^1.4",
-                "orchestra/database": "^5.0|^6.0",
-                "orchestra/testbench": "^5.0|^6.0"
-            },
-            "suggest": {
-                "doctrine/dbal": "Required by Cashier to modify tables in the database.",
-                "laravel/cashier": "Required in case you are using Stripe.",
-                "laravel/cashier-paddle": "Required in case you are using Paddle."
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "RenokiCo\\CashierRegister\\CashierRegisterServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "RenokiCo\\CashierRegister\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Alex Renoki",
-                    "homepage": "https://github.com/rennokki",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Cashier Register is a simple quota feature usage tracker for Laravel Cashier subscriptions.",
-            "homepage": "https://github.com/renoki-co/cashier-register",
-            "keywords": [
-                " subscription",
-                "cashier",
-                "laravel",
-                "paddle",
-                "php",
-                "plans",
-                "quota",
-                "quotas",
-                "saas",
-                "stripe"
-            ],
-            "support": {
-                "issues": "https://github.com/renoki-co/cashier-register/issues",
-                "source": "https://github.com/renoki-co/cashier-register/tree/6.0.2"
-            },
-            "funding": [
-                {
-                    "url": "https://www.patreon.com/rennokki",
-                    "type": "patreon"
-                }
-            ],
-            "abandoned": true,
-            "time": "2021-10-18T12:22:22+00:00"
-        },
-        {
-            "name": "renoki-co/jetstream-cashier-billing-portal",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/renoki-co/jetstream-cashier-billing-portal.git",
-                "reference": "51a91e498563673299af4d705fcfdb48b93bd9aa"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/renoki-co/jetstream-cashier-billing-portal/zipball/51a91e498563673299af4d705fcfdb48b93bd9aa",
-                "reference": "51a91e498563673299af4d705fcfdb48b93bd9aa",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/jetstream": "^2.3",
-                "renoki-co/cashier-register": "^6.0"
-            },
-            "require-dev": {
-                "claudiodekker/inertia-laravel-testing": "^1.2.0",
-                "doctrine/dbal": "^2.6|^3.0",
-                "laravel/legacy-factories": "^1.1",
-                "mockery/mockery": "^1.4",
-                "orchestra/database": "^6.0",
-                "orchestra/testbench": "^6.22"
-            },
-            "suggest": {
-                "doctrine/dbal": "Required by Cashier to modify tables in the database.",
-                "laravel/cashier": "Required to use with the Stripe scaffolding."
-            },
-            "default-branch": true,
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "RenokiCo\\BillingPortal\\BillingPortalServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "RenokiCo\\BillingPortal\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Alex Renoki",
-                    "homepage": "https://github.com/rennokki",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Cashierstream is a simple Spark alternative written for Laravel Jetstream.",
-            "homepage": "https://github.com/renoki-co/jetstream-cashier-billing-portal",
-            "keywords": [
-                "billing",
-                "cashier",
-                "jetstream",
-                "laravel",
-                "php",
-                "plans",
-                "portal",
-                "saas",
-                "stripe",
-                "subscription"
-            ],
-            "support": {
-                "issues": "https://github.com/renoki-co/jetstream-cashier-billing-portal/issues",
-                "source": "https://github.com/renoki-co/jetstream-cashier-billing-portal/tree/master"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/rennokki",
-                    "type": "github"
-                }
-            ],
-            "abandoned": true,
-            "time": "2021-11-08T12:54:18+00:00"
         },
         {
             "name": "sabberworm/php-css-parser",
@@ -14363,7 +14201,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "a2insights/octo-core": 20,
-        "renoki-co/jetstream-cashier-billing-portal": 20,
         "rappasoft/laravel-livewire-tables": 20
     },
     "prefer-stable": true,

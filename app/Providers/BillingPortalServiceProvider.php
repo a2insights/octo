@@ -3,10 +3,10 @@
 namespace App\Providers;
 
 use App\Actions\BillingPortal\HandleSubscriptions;
-use RenokiCo\BillingPortal\BillingPortal;
-use RenokiCo\BillingPortal\BillingPortalServiceProvider as BaseProvider;
+use Illuminate\Support\ServiceProvider;
+use Octo\Billing\BillingPortal;
 
-class BillingPortalServiceProvider extends BaseProvider
+class BillingPortalServiceProvider extends ServiceProvider
 {
     /**
      * Boot the service provider.
@@ -15,20 +15,8 @@ class BillingPortalServiceProvider extends BaseProvider
      */
     public function boot()
     {
-        parent::boot();
-
         // BillingPortal::dontProrateOnSwap();
 
         BillingPortal::handleSubscriptionsUsing(HandleSubscriptions::class);
-    }
-
-    /**
-     * Register the service provider.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        parent::register();
     }
 }
