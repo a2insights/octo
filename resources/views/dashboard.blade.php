@@ -67,7 +67,7 @@
                             <div class="mt-2 text-sm text-gray-500">
                                 Notifications panel
                             </div>
-                            <a href="{{ route('notifications.index') }}">
+                            <a href="{{ route('notifications') }}">
                                 <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
                                     <div>Go to module</div>
                                     <div class="ml-1 text-indigo-500">

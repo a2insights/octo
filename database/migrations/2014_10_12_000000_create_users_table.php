@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->foreignId('current_connected_account_id')->nullable();
             $table->text('profile_photo_path')->nullable();
             $table->string('phone_number')->nullable()->unique();
+            $table->boolean('super_admin')->default(0);
             $table->timestamps();
         });
     }

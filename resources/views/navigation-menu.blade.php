@@ -16,10 +16,13 @@
                         {{ __('Home') }}
                     </x-jet-nav-link>
                     @auth
-                        <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                            {{ __('Dashboard') }}
-                        </x-jet-nav-link>
+                        @foreach ($menu as $item)
+                            <x-jet-nav-link href="{{ route($item['route']) }}" :active="request()->routeIs($item['route'])">
+                                {{ __($item['name']) }}
+                            </x-jet-nav-link>
+                        @endforeach
                     @endauth
+
                 </div>
             </div>
 
@@ -130,7 +133,7 @@
                                 @endif
 
                                 @if (Octo\Octo::hasNotificationsFeatures())
-                                    <x-jet-dropdown-link href="{{ route('notifications.index') }}">
+                                    <x-jet-dropdown-link href="{{ route('notifications') }}">
                                         {{ __('Notifications') }}
                                     </x-jet-dropdown-link>
                                 @endif
@@ -226,7 +229,7 @@
                     @endif
 
                     @if (Octo\Octo::hasNotificationsFeatures())
-                        <x-jet-responsive-nav-link href="{{ route('notifications.index') }}" :active="request()->routeIs('notifications.index')">
+                        <x-jet-responsive-nav-link href="{{ route('notifications') }}" :active="request()->routeIs('notifications')">
                             {{ __('Notifications') }}
                         </x-jet-responsive-nav-link>
                     @endif
