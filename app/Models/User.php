@@ -14,7 +14,6 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 use Octo\Concerns\HasRouteSmsProviders;
-use Octo\Concerns\MustVerifyEmailQueued;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -29,7 +28,6 @@ class User extends Authenticatable implements MustVerifyEmail
     use SetsProfilePhotoFromUrl;
     use TwoFactorAuthenticatable;
     use Billable;
-    use MustVerifyEmailQueued;
     use HasRouteSmsProviders;
 
     /**

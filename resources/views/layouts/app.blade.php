@@ -33,6 +33,8 @@
             </header>
         @endif
 
+        @livewire('switch-dashboard')
+
         <!-- Page Content -->
         <main>
             {{ $slot }}

@@ -91,9 +91,7 @@
                     @endif
 
                     <!-- Notification Dropdown -->
-                    @if (Octo\Features::hasNotificationsFeatures())
-                        @livewire('octo-dropdown-notifications')
-                    @endif
+                    @livewire('octo-dropdown-notifications')
 
                     <!-- Settings Dropdown -->
                     <div class="ml-3 relative">
@@ -132,17 +130,13 @@
                                     </x-jet-dropdown-link>
                                 @endif
 
-                                @if (Octo\Octo::hasNotificationsFeatures())
-                                    <x-jet-dropdown-link href="{{ route('notifications') }}">
-                                        {{ __('Notifications') }}
-                                    </x-jet-dropdown-link>
-                                @endif
+                                <x-jet-dropdown-link href="{{ route('notifications') }}">
+                                    {{ __('Notifications') }}
+                                </x-jet-dropdown-link>
 
-                                @if (Octo\Octo::hasBillingDashboardFeatures())
-                                    <x-jet-dropdown-link href="{{ route('billing-portal.dashboard') }}">
-                                        {{ __('Billing Dashboard') }}
-                                    </x-jet-dropdown-link>
-                                @endif
+                                <x-jet-dropdown-link href="{{ route('billing-portal.dashboard') }}">
+                                    {{ __('Billing Dashboard') }}
+                                </x-jet-dropdown-link>
 
                                 <div class="border-t border-gray-100"></div>
 
@@ -165,9 +159,7 @@
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
                 @auth
-                    @if (Octo\Features::hasNotificationsFeatures())
-                        @livewire('octo-dropdown-notifications')
-                    @endif
+                    @livewire('octo-dropdown-notifications')
                 @endauth
                 <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -228,17 +220,13 @@
                         </x-jet-responsive-nav-link>
                     @endif
 
-                    @if (Octo\Octo::hasNotificationsFeatures())
-                        <x-jet-responsive-nav-link href="{{ route('notifications') }}" :active="request()->routeIs('notifications')">
-                            {{ __('Notifications') }}
-                        </x-jet-responsive-nav-link>
-                    @endif
+                    <x-jet-responsive-nav-link href="{{ route('notifications') }}" :active="request()->routeIs('notifications')">
+                        {{ __('Notifications') }}
+                    </x-jet-responsive-nav-link>
 
-                    @if (Octo\Octo::hasBillingDashboardFeatures())
-                        <x-jet-responsive-nav-link href="{{ route('billing-portal.subscription.index') }}" :active="request()->routeIs('billing-portal.subscription.index')">
-                            {{ __('Billing Dashboard') }}
-                        </x-jet-responsive-nav-link>
-                    @endif
+                    <x-jet-responsive-nav-link href="{{ route('billing-portal.subscription.index') }}" :active="request()->routeIs('billing-portal.subscription.index')">
+                        {{ __('Billing Dashboard') }}
+                    </x-jet-responsive-nav-link>
 
                     <!-- Authentication -->
                     <form method="POST" action="{{ route('logout') }}">

@@ -3,7 +3,6 @@
 namespace App\Console\Commands;
 
 use App\Actions\Fortify\CreateNewUser;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Console\Command;
 
 class SetupCommand extends Command
@@ -49,8 +48,6 @@ class SetupCommand extends Command
             'password_confirmation' => self::DEFAULT_ADMIN_PASSWORD,
             'terms'                 => true,
         ]);
-
-        event(new Registered($user));
 
         $user->markEmailAsVerified();
 
