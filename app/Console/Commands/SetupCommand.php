@@ -49,6 +49,10 @@ class SetupCommand extends Command
             'terms'                 => true,
         ]);
 
+        $user->forceFill([
+            'super_admin' => true,
+        ])->save();
+
         $user->markEmailAsVerified();
 
         $this->comment(sprintf('Log in with email %s and password %s', self::DEFAULT_ADMIN_EMAIL, self::DEFAULT_ADMIN_PASSWORD));
