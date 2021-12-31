@@ -48,6 +48,12 @@ class MenuServiceProvider extends ServiceProvider
                 'route'  => 'system.users',
                 'active' => Route::is('system.users'),
             ],
+            [
+                'name'   => 'Site',
+                'icon'   => 'site',
+                'route'  => 'system.site',
+                'active' => Route::is('system.site'),
+            ],
         ];
     }
 }

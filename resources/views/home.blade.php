@@ -33,12 +33,9 @@
     <section class="container mt-5 max-w-6xl mx-auto px-6 pb-5 md:py-2">
         <div class="flex items-center flex-col-reverse mb-5 lg:flex-row lg:mb-24">
             <div class="mt-5">
-                <h2 class="text-6xl mb-3 font-bold">web/mobile api's</h2>
+                <h2 class="text-6xl mb-3 font-bold">TALL Stack</h2>
                 <h3 class="text-2xl">
-                    This project was created to help other developers makes web/mobile api's in a easy way.
-                </h3>
-                <h3 class="text-2xl mt-4">
-                    Demo is also linked to <a class="text-green-500 font-semibold" target="_blank" rel="noopener" href="https://www.octo.app.a2insights.com.br">Vue Project</a> that shows how this backend can be integrated to a front-end.
+                    This project was created to help other developers makes web app in a easy way using TALL Stack.
                 </h3>
             </div>
             <img width="500px" src="{{ asset('img/social-media.png') }}" alt="Octo Docs large logo" class="mx-auto mb-6 lg:mb-0 hidden md:block">
