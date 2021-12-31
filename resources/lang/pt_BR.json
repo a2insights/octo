@@ -62,6 +62,7 @@
     "Please confirm your removal of this account - this action cannot be undone.": "Confirme a remoção desta conta - esta ação não pode ser desfeita.",
     "Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices.": "Por favor, digite sua senha para confirmar que você gostaria de sair das outras sessões de navegação em todos os seus dispositivos.",
     "Please provide the email address of the person you would like to add to this team.": "Por favor, forneça o endereço de e-mail da pessoa que você gostaria de adicionar a este time.",
+    "Please wait...": "Por favor, aguarde...",
     "Privacy Policy": "Politíca de privacidade",
     "Profile": "Perfil",
     "Profile Information": "Informações do Perfil",
@@ -91,6 +92,7 @@
     "Update Password": "Atualizar senha",
     "Update your account's profile information and email address.": "Atualize suas informações de perfil e endereço de e-mail.",
     "Use Avatar as Profile Photo": "Use Avatar como foto de perfil",
+    "Users": "Usuários",
     "When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone's Google Authenticator application.": "Quando a autenticação de dois fatores está habilitada, você será solicitado um token aleatório seguro durante a autenticação. Você pode recuperar esse token a partir da aplicação Google Authenticator do seu telefone.",
     "You are free to connect any social accounts to your profile and may remove any connected accounts at any time. If you feel any of your connected accounts have been compromised, you should disconnect them immediately and change your password.": "Você pode conectar qualquer conta social ao seu perfil e pode remover qualquer conta conectada a qualquer momento. Se você acha que alguma das contas conectadas foi comprometida, você deve desconectá-la imediatamente e alterar sua senha.",
     "You have enabled two factor authentication.": "Você habilitou a autenticação de dois fatores.",
@@ -98,5 +100,5 @@
     "You have not enabled two factor authentication.": "Você não habilitou a autenticação de dois fatores.",
     "privacy_policy": "Política de Privacidade",
     "terms_of_service": "Termos de Serviço",
-    "Please wait...": "Por favor, aguarde..."
+    "Done": "Pronto"
 }

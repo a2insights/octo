@@ -78,5 +78,17 @@
     "i18n-ally.dirStructure": "file",
     "i18n-ally.namespace": true,
     "i18n-ally.review.enabled": false,
-    "i18n-ally.review.gutters": false
+    "i18n-ally.review.gutters": false,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "postgres",
+            "database": "octo",
+            "username": "",
+            "password": ""
+        }
+    ]
 }
