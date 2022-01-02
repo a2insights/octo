@@ -13,7 +13,7 @@
 
 <x-livewire-tables::table.cell>
     <div class="flex-1 text-left pr-10">
-        <span>{{ $row->created_at->diffForHumans() }}</span>
+        <span>{{ $row?->created_at?->diffForHumans() }}</span>
     </div>
 </x-livewire-tables::table.cell>
 

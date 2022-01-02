@@ -1,6 +1,8 @@
-require('./bootstrap');
+require("./bootstrap");
 
-import Alpine from 'alpinejs';
+import "livewire-sortable";
+
+import Alpine from "alpinejs";
 
 window.Alpine = Alpine;
 
