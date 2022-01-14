@@ -30,18 +30,7 @@
             {{ $slot }}
         </main>
 
-        <x-footer>
-            <div class="flex flex-col md:flex-row md:justify-between">
-                @livewire('octo-subscribe', ['closable' => false, 'bg' => ''])
-            </div>
-            <x-slot name="navigation">
-                <p>{{ config('app.name') }}</p>
-                <a class="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">About</a>
-                <a class="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">Services</a>
-                <a class="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">Why us</a>
-                <a class="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">Contact</a>
-            </x-slot>
-        </x-footer>
+        <x-footer />
     </div>
 
     {{--Jetstream--}}
