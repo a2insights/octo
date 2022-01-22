@@ -16,3 +16,4 @@ composer.dev.json
 composer.dev.lock
 .tool-versions
 .php-cs-fixer.cache
+/octo-core
