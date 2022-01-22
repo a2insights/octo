@@ -21,7 +21,7 @@ class CreateNewUser implements CreatesNewUsers
      */
     public function create(array $input)
     {
-        $input['phone_number'] = $input['calling_code'] . ' ' . $input['phone'];
+        $input['phone_number'] = @$input['calling_code'] . ' ' . @$input['phone'];
 
         Validator::make($input, [
             'name'         => ['required', 'string', 'max:255'],
