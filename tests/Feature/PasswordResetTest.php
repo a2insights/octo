@@ -70,8 +70,6 @@ class PasswordResetTest extends TestCase
             return $this->markTestSkipped('Password updates are not enabled.');
         }
 
-        $this->withoutMiddleware();
-
         Notification::fake();
 
         $user = User::factory()->create();

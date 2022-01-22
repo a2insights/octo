@@ -13,7 +13,7 @@
                 <x-jet-section-border />
             @endif
 
-            @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()) && ! is_null($user->password))
+            @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()) && !is_null($user->password))
                 <div class="mt-10 sm:mt-0">
                     @livewire('profile.update-password-form')
                 </div>
@@ -27,7 +27,7 @@
                 <x-jet-section-border />
             @endif
 
-            @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication() && ! is_null($user->password))
+            @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication() && !is_null($user->password))
                 <div class="mt-10 sm:mt-0">
                     @livewire('profile.two-factor-authentication-form')
                 </div>
@@ -42,7 +42,7 @@
             @endif
 
 
-            @if ( ! is_null($user->password))
+            @if (!is_null($user->password))
                 <x-jet-section-border />
 
                 <div class="mt-10 sm:mt-0">
@@ -50,7 +50,7 @@
                 </div>
             @endif
 
-            @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures() && ! is_null($user->password))
+            @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures() && !is_null($user->password))
                 <x-jet-section-border />
 
                 <div class="mt-10 sm:mt-0">

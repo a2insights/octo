@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable();
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
+            $table->string('profile_photo_path', 2048)->nullable();
             $table->foreignId('current_connected_account_id')->nullable();
-            $table->text('profile_photo_path')->nullable();
             $table->string('phone_number')->nullable()->unique();
             $table->boolean('super_admin')->default(false);
             $table->string('dashboard')->default('platform');
