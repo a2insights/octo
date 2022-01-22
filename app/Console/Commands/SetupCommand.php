@@ -40,13 +40,13 @@ class SetupCommand extends Command
         $this->info('Creating default own account');
 
         $user = (new CreateNewUser())->create([
-            'name'                  => self::DEFAULT_ADMIN_NAME,
-            'email'                 => self::DEFAULT_ADMIN_EMAIL,
-            'calling_code'          => '55',
-            'phone'                 => '91 989242304',
-            'password'              => self::DEFAULT_ADMIN_PASSWORD,
+            'name' => self::DEFAULT_ADMIN_NAME,
+            'email' => self::DEFAULT_ADMIN_EMAIL,
+            'calling_code' => '55',
+            'phone' => '91 989242304',
+            'password' => self::DEFAULT_ADMIN_PASSWORD,
             'password_confirmation' => self::DEFAULT_ADMIN_PASSWORD,
-            'terms'                 => true,
+            'terms' => true,
         ]);
 
         $user->forceFill([
