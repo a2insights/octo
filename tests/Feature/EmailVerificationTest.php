@@ -6,7 +6,6 @@ use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\URL;
 use Laravel\Fortify\Features;
@@ -15,7 +14,6 @@ use Tests\TestCase;
 class EmailVerificationTest extends TestCase
 {
     use RefreshDatabase;
-    use WithoutMiddleware;
 
     public function test_email_verification_screen_can_be_rendered()
     {
@@ -27,7 +25,7 @@ class EmailVerificationTest extends TestCase
             'email_verified_at' => null,
         ]);
 
-        $response = $this->actingAs($user)->get('/email/verify');
+        $response = $this->actingAs($user, 'web')->get('/email/verify');
 
         $response->assertStatus(200);
     }
@@ -50,7 +48,7 @@ class EmailVerificationTest extends TestCase
             ['id' => $user->id, 'hash' => sha1($user->email)]
         );
 
-        $response = $this->actingAs($user)->get($verificationUrl);
+        $response = $this->actingAs($user, 'web')->get($verificationUrl);
 
         Event::assertDispatched(Verified::class);
 
