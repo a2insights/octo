@@ -25,7 +25,17 @@ module.exports = {
         "xl:max-w-4xl",
         "xl:max-w-5xl",
         "2xl:max-w-6xl",
-        "2xl:max-w-7xl'",
+        "2xl:max-w-7xl",
+        "grid",
+        "bg-gradient-to-tl",
+        "from-yellow-200",
+        "to-orange-500",
+        "rounded-full",
+        "hover:from-orange-300",
+        "hover:to-red-400",
+        "transition-all",
+        "duration-150",
+        "delay-100",
     ],
     theme: {
         extend: {
