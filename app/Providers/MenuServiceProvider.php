@@ -27,8 +27,8 @@ class MenuServiceProvider extends ServiceProvider
             [
                 'name'   => 'Dashboard',
                 'icon'   => 'dashboard',
-                'route'  => 'dashboard',
-                'active' => Route::is('dashboard'),
+                'route'  => 'filament.pages.dashboard',
+                'active' => Route::is('filament.pages.dashboard'),
             ],
         ];
     }
@@ -39,14 +39,14 @@ class MenuServiceProvider extends ServiceProvider
             [
                 'name'   => 'Dashboard',
                 'icon'   => 'dashboard',
-                'route'  => 'dashboard',
-                'active' => Route::is('dashboard'),
+                'route'  => 'system.dashboard',
+                'active' => Route::is('system.dashboard'),
             ],
             [
                 'name'   => 'Users',
                 'icon'   => 'users',
-                'route'  => 'system.users',
-                'active' => Route::is('system.users'),
+                'route'  => 'system.users.index',
+                'active' => Route::is('system.users.index'),
             ],
             [
                 'name'   => 'Site',
