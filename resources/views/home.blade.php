@@ -1,55 +1,57 @@
 <x-guest-layout>
     @foreach (Octo\Site::getSections() as $section)
         @if ($section['theme'] === 'Hero')
-            <section>
-                <div class="bg-gradient-to-br pb-5 from-indigo-900 to-green-900 overflow-auto">
-                    <div class="container max-w-5xl mx-auto px-4">
-                        <h1 class="mt-10 text-white text-5xl font-bold" :class="$section['title_color']">
-                            {{ $section['title'] }}
+            <section class="py-8 overflow-auto {{ $section['theme_color'] }} ">
+                <div class="justify-center">
+                    <div class="container py-8 max-w-5xl mx-auto px-4 text-center">
+                        <h1 class="text-5xl font-bold {{ $section['title_color'] }}">
+                            {{ @$section['title'] }}
                         </h1>
                         <div class="my-5">
-                            <h3 class="text-gray-300" :class="$section['description_color']">
-                                {{ $section['description'] }}
+                            <h3 class="{{ @$section['description_color'] }}">
+                                {{ @$section['description'] }}
                             </h3>
                         </div>
                     </div>
                 </div>
             </section>
         @endif
-        @if ($section['theme'] === 'Light')
-            <section class="container mt-5 max-w-6xl mx-auto px-6 pb-5 md:py-2">
-                <div class="flex items-center flex-col-reverse mb-5 lg:flex-row lg:mb-24">
-                    @if ($section['image_align'] !== 'right')
+        @if (@$section['theme'] === 'Light')
+            <section class="mx-auto px-6 pb-5 md:py-2 {{ @$section['theme_color'] }}">
+                <div class="flex items-center py-10 justify-center">
+                    @if (@$section['image_align'] !== 'right')
                         <div class="w-full lg:w-1/2 lg:pr-10">
-                            <img width="500px" src="{{ $section['image_url'] }}" alt="Octo Docs large logo"
+                            <img width="500px" src="{{ @$section['image_url'] }}" alt="{{ @$section['title'] }}"
                                 class="mx-auto mb-6 lg:mb-0 hidden md:block">
                         </div>
                     @endif
                     <div class="mt-5">
-                        <h2 class="text-6xl mb-3 font-bold">
-                            {{ $section['title'] }}
+                        <h2 class="text-6xl mb-3 font-bold {{ @$section['title_color'] }}">
+                            {{ @$section['title'] }}
                         </h2>
-                        <h3 class="text-2xl">
-                            {{ $section['description'] }}
+                        <h3 class="text-2xl {{ @$section['description_color'] }}">
+                            {{ @$section['description'] }}
                         </h3>
                     </div>
-                    @if ($section['image_align'] === 'right')
+                    @if (@$section['image_align'] === 'right')
                         <div class="w-full lg:w-1/2 lg:pr-10">
-                            <img width="500px" src="{{ $section['image_url'] }}" alt="Octo Docs large logo"
+                            <img width="500px" src="{{ @$section['image_url'] }}" alt="{{ @$section['title'] }}"
                                 class="mx-auto mb-6 lg:mb-0 hidden md:block">
                         </div>
                     @endif
                 </div>
             </section>
+
         @endif
         @if ($section['theme'] === 'Clean')
-            <section class="bg-indigo-600 mx-auto px-6 pb-5 md:py-2">
-                <div class="flex items-center py-10 justify-center">
-                    <div class="py-14 text-center px-5 sm:px-0">
-                        <h2 class="text-3xl sm:text-4xl text-white font-extrabold tracking-tight">
+            <section class="mx-auto px-6 pb-5 md:py-2 {{ $section['theme_color'] }} ">
+                <div class="flex items-center py-8 justify-center">
+                    <div class="py-8 text-center px-5 sm:px-0">
+                        <h2
+                            class="text-3xl sm:text-4xl font-extrabold tracking-tight {{ @$section['title_color'] }}">
                             <span class="block">{{ $section['title'] }}</span>
                         </h2>
-                        <h2 class="text-white mt-5 tracking-wide text-sm sm:text-base">
+                        <h2 class="mt-5 tracking-wide text-sm sm:text-base {{ @$section['description_color'] }}">
                             <span class="block">{{ $section['description'] }}</span>
                         </h2>
                     </div>
