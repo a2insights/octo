@@ -49,38 +49,38 @@ class SiteTest extends TestCase
     {
         Livewire::test(SiteSection::class)
                     ->set([
-                        'name' => 'Section Name',
-                        'content' => 'Section Content',
+                        'title' => 'Section Title',
+                        'description' => 'Section Description',
                     ])
                     ->call('submit');
 
-        $section = collect(Site::sections())->firstWhere('name', 'Section Name');
+        $section = collect(Site::sections())->firstWhere('title', 'Section Title');
 
         $this->assertNotNull($section);
     }
 
     public function test_section_can_be_updated()
     {
-        $sectionName = Str::random(10);
+        $sectionTitle = Str::random(10);
 
         Livewire::test(SiteSection::class)
                 ->set([
-                    'name' => $sectionName,
-                    'content' => 'Section Content',
+                    'title' => $sectionTitle,
+                    'description' => 'Section Description',
                 ])
                 ->call('submit');
 
-        $section = collect(Site::sections())->firstWhere('name', $sectionName);
+        $section = collect(Site::sections())->firstWhere('title', $sectionTitle);
 
         Livewire::test(SiteSection::class)
                 ->set([
                     'section_id' => $section['id'],
-                    'name' => 'Section New Name',
-                    'content' => 'Section Content',
+                    'title' => 'Section New Title',
+                    'description' => 'Section Description',
                 ])
                 ->call('submit');
 
-        $section = collect(Site::sections())->firstWhere('name', 'Section New Name');
+        $section = collect(Site::sections())->firstWhere('title', 'Section New Title');
 
         $this->assertNotNull($section);
     }
@@ -89,12 +89,12 @@ class SiteTest extends TestCase
     {
         Livewire::test(SiteSection::class)
                 ->set([
-                    'name' => 'Section Name',
-                    'content' => 'Section Content',
+                    'title' => 'Section Title',
+                    'description' => 'Section Description',
                 ])
                 ->call('submit');
 
-        $section = collect(Site::sections())->firstWhere('name',  'Section Name');
+        $section = collect(Site::sections())->firstWhere('title',  'Section Title');
 
         Livewire::test(SiteSections::class)->call('delete', $section['id']);
 

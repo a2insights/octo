@@ -18,3 +18,4 @@ composer.dev.lock
 .php-cs-fixer.cache
 /octo-core
 /public/storage
+/wireui
