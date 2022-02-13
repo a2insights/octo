@@ -29,7 +29,7 @@ class CreateGeneralSettings extends SettingsMigration
                     ],
                     [
                         'id' => 'E7GlSOf1LT',
-                        'title' => 'TITLE',
+                        'title' => 'CONTACT',
                         'url' => 'https://example.com'
                    ]
                 ],
