@@ -10,6 +10,52 @@ class CreateGeneralSettings extends SettingsMigration
             'name' => 'Octo',
             'description' => 'This project was created to help other developers makes web app in a easy way using TALL Stack.',
             'active' => true,
+            'footer' => [
+                'links' => [
+                    [
+                      'id' => 'WHfAcI3kEW',
+                      'title' => 'ABOUT',
+                      'url' => 'https://example.com'
+                    ],
+                    [
+                        'id' => '2fG4vHjNNx',
+                        'title' => 'SERVICES',
+                        'url' => 'https://example.com'
+                    ],
+                    [
+                        'id' => 'GuruDgBf6V',
+                        'title' => ' WHY US',
+                        'url' => 'https://example.com'
+                    ],
+                    [
+                        'id' => 'E7GlSOf1LT',
+                        'title' => 'TITLE',
+                        'url' => 'https://example.com'
+                   ]
+                ],
+                'networks' => [
+                    [
+                        'id' => 'Vc46UE86ZV',
+                        'title' => 'Facebook',
+                        'url' => 'https://facebook.com'
+                    ],
+                    [
+                        'id' => 'J6DYynAh3v',
+                        'title' => 'Twiter',
+                        'url' => 'https://facebook.com'
+                    ],
+                    [
+                        'id' => 'ecq4mPVrMx',
+                        'title' => 'Instagram',
+                        'url' => 'https://facebook.com'
+                    ],
+                    [
+                        'id' => 'Azvj3nLpD2',
+                        'title' => 'Youtube',
+                        'url' => 'https://facebook.com'
+                    ]
+                ]
+            ],
             'sections' => [
                 [
                     'id' => '27d4asd232s4',
