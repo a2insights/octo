@@ -87,8 +87,8 @@
             "driver": "PostgreSQL",
             "name": "postgres",
             "database": "octo",
-            "username": "",
-            "password": ""
+            "username": "postgres",
+            "password": "password"
         }
     ]
 }
