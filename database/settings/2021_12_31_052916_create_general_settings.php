@@ -42,17 +42,17 @@ class CreateGeneralSettings extends SettingsMigration
                     [
                         'id' => 'J6DYynAh3v',
                         'title' => 'Twiter',
-                        'url' => 'https://facebook.com'
+                        'url' => 'https://twitter.com'
                     ],
                     [
                         'id' => 'ecq4mPVrMx',
                         'title' => 'Instagram',
-                        'url' => 'https://facebook.com'
+                        'url' => 'https://instagram.com'
                     ],
                     [
                         'id' => 'Azvj3nLpD2',
                         'title' => 'Youtube',
-                        'url' => 'https://facebook.com'
+                        'url' => 'https://youtube.com'
                     ]
                 ]
             ],
