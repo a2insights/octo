@@ -23,7 +23,7 @@
         </whitelist>
     </filter>
     <php>
-          <env name="APP_ENV" value="testing"/>
+        <env name="APP_ENV" value="testing"/>
         <env name="APP_KEY" value="base64:NXoQgjw2ZlOxnGbo5ZRhYgTdM6xLYsgYElNAgcTQJkE="/>
         <env name="CACHE_DRIVER" value="array"/>
         <env name="DB_CONNECTION" value="sqlite"/>
@@ -31,5 +31,6 @@
         <env name="MAIL_MAILER" value="array"/>
         <env name="SESSION_DRIVER" value="array"/>
         <env name="QUEUE_CONNECTION" value="sync"/>
+        <env name="TELESCOPE_ENABLED" value="false" />
     </php>
 </phpunit>
