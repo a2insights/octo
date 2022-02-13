@@ -17,7 +17,7 @@
             </section>
         @endif
         @if (@$section['theme'] === 'Light')
-            <section class="mx-auto px-6 pb-5 md:py-2 {{ @$section['theme_color'] }}">
+            <section class="mx-auto max-w-5xl px-6 pb-5 md:py-2 {{ @$section['theme_color'] }}">
                 <div class="flex items-center py-10 justify-center">
                     @if (@$section['image_align'] !== 'right')
                         <div class="w-full lg:w-1/2 lg:pr-10">
@@ -41,7 +41,6 @@
                     @endif
                 </div>
             </section>
-
         @endif
         @if ($section['theme'] === 'Clean')
             <section class="mx-auto px-6 pb-5 md:py-2 {{ $section['theme_color'] }} ">
