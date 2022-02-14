@@ -41,7 +41,7 @@ class CreateGeneralSettings extends SettingsMigration
                     ],
                     [
                         'id' => 'J6DYynAh3v',
-                        'title' => 'Twiter',
+                        'title' => 'Twitter',
                         'url' => 'https://twitter.com'
                     ],
                     [
