@@ -28,6 +28,8 @@
 
         @livewire('navigation-menu')
 
+        @livewire('switch-dashboard')
+
         <main class="font-sans antialiased">
             {{ $slot }}
         </main>
