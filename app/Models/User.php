@@ -15,7 +15,7 @@ use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 use Octo\Concerns\HasRouteSmsProviders;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable
 {
     use HasApiTokens;
     use HasFactory;
