@@ -148,7 +148,7 @@
                                     {{ __('Notifications') }}
                                 </x-jet-dropdown-link>
 
-                                <x-jet-dropdown-link href="{{ route('billing-portal.dashboard') }}">
+                                <x-jet-dropdown-link href="{{ route('billing.dashboard') }}">
                                     {{ __('Billing Dashboard') }}
                                 </x-jet-dropdown-link>
 
@@ -251,8 +251,8 @@
                         {{ __('Notifications') }}
                     </x-jet-responsive-nav-link>
 
-                    <x-jet-responsive-nav-link href="{{ route('billing-portal.subscription.index') }}"
-                        :active="request()->routeIs('billing-portal.subscription.index')">
+                    <x-jet-responsive-nav-link href="{{ route('billing.subscription.index') }}"
+                        :active="request()->routeIs('billing.subscription.index')">
                         {{ __('Billing Dashboard') }}
                     </x-jet-responsive-nav-link>
 

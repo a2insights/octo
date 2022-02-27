@@ -164,8 +164,7 @@ return [
         /*
          * Package Service Providers...
          */
-        App\Providers\CashierRegisterServiceProvider::class,
-        App\Providers\BillingPortalServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -177,7 +176,6 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
         App\Providers\SocialstreamServiceProvider::class,
-        App\Providers\MenuServiceProvider::class,
     ],
 
     /*

@@ -1,5 +1,9 @@
 # Octo
 
+## Introduction
+
+The purpose of this project is provide a simple way to create web aplications like Saas, ecommerce, etc. We use [Laravel](https://laravel.com/) as a framework with [Laravel Jetstream](https://github.com/laravel/jetstream), Laravel Jetstream is a great starter kit for a new project. To build admin dashborads, we use [Filament Admin](https://filamentphp.com/) as a customer dashoard.
+
 [![GitHub license](https://img.shields.io/github/license/gothinkster/laravel-realworld-example-app.svg)](https://raw.githubusercontent.com/gothinkster/laravel-realworld-example-app/master/LICENSE)
 
 PRs and issues is welcome!
@@ -31,7 +35,7 @@ Install all the node dependencies using npm:
 Compile the css and javascript assets:
 
     npm run dev #For local
-    npm run prod #For Production
+    npm run prod #For production
 
 Install required application things:
 
@@ -50,19 +54,18 @@ GITHUB_CLIENT_SECRET=
 GITHUB_CLIENT_CALLBACK=
 ```
 
+See all env vars available in the .env.example file.
+
 Generate a new application key:
 
     php artisan key:generate
 
 Flush de application cache:
 
-    php artisan cache:clear
-    php artisan route:clear
-    php artisan config:clear
     php artisan view:clear
     php artisan optimize
 
-Run the database migrations (**Set the database connection in .env before migrating**).
+Run the database migrations (**Set the database connection in .env before migrate**).
 
     php artisan migrate
 
@@ -70,73 +73,24 @@ Start the local development server:
 
     php artisan serve
 
-#### Demo Application:
-
-You can set faker data using our assistant:
-
-    php artisan octo:setup
-
-This will create a user with the follow credentials:
-
-**E-mail**: admin@octo.dev
-
-**Password**: octoAdmin
-
 You can now access the server at http://localhost:8000
 
 **TL;DR command list**
 
-    git clone https://github.com/Atiladanvi/octo.git
+    git clone https://github.com/a2insights/octo.git
     cd octo
     composer install
     npm install
     npm run dev
-    cp .env.example .env
-    php artisan octo:install
-    php artisan cache:clear
-    php artisan route:clear
-    php artisan config:clear
-    php artisan view:clear
-    php artisan optimize
     php artisan migrate
     php artisan serve
 
 **Make sure you set the correct database connection information before running the migrations** [Environment variables](#environment-variables).
 
-#### Using Docker
+#### Using Laravel Sail to develop
+For more information: [Sail Documentation](http://https://laravel.com/docs/9.x/sail)
 
-**Default: mysql**
-
-Make sure if you have docker-compose installed and perform this command:
-
-Set database environment like this:
-```.env
-DB_CONNECTION=mysql
-DB_HOST=mysql
-DB_PORT=3306
-DB_DATABASE=octo
-DB_USERNAME=root
-DB_PASSWORD=
-```
-
-**PS: Check if you can execute docker commands:**  https://docs.docker.com/engine/install/linux-postinstall
-
-Up de docker services:
-
-    ./vendor/bin/sail up -d
-
-For the first time you need install dependencies, compile assets, install octo, flush the cache, migrate & seed database:
-
-    ./vendor/bin/sail composer install
-    ./vendor/bin/sail npm install
-    ./vendor/bin/sail npm run dev
-    ./vendor/bin/sail artisan octo:install
-    ./vendor/bin/sail artisan cache:clear
-    ./vendor/bin/sail artisan route:clear
-    ./vendor/bin/sail artisan view:clear
-    ./vendor/bin/sail artisan optimize
-    ./vendor/bin/sail artisan migrate
-    ./vendor/bin/sail artisan db:seed
+    sail up
 
 You can now access the server at http://localhost
 
@@ -144,17 +98,13 @@ You can now access the server at http://localhost
 
 You can set up the new application with faker data using our assistant:
 
-    ./vendor/bin/sail artisan octo:setup
+    php artisan octo:setup
 
-This will create a user with the follow credentials:
+This will create a sys admin user with the follow credentials:
 
-**E-mail**: admin@octo.dev
+**E-mail**: super-admin@octo.dev
 
-**Password**: octoAdmin
-
-Down the service:
-
-    ./vendor/bin/sail down
+**Password**: octoSuperAdmin
 
 **For more information: https://laravel.com/docs/sail**
 
@@ -166,7 +116,7 @@ https://docs.docker.com/engine/reference/commandline/system_prune/
 
 Need rebuild?
 
-    ./vendor/bin/sail build --no-cache
+    sail build --no-cache
 
 ## Changelog
 

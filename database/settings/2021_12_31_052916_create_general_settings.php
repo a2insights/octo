@@ -2,14 +2,14 @@
 
 use Spatie\LaravelSettings\Migrations\SettingsMigration;
 
-return new class () extends SettingsMigration
-{
+return new class() extends SettingsMigration {
     public function up(): void
     {
         $this->migrator->add('general.site', [
             'name' => 'Octo',
             'description' => 'This project was created to help other developers makes web app in a easy way using TALL Stack.',
             'active' => true,
+            'demo' => false,
             'footer' => [
                 'links' => [
                     [
