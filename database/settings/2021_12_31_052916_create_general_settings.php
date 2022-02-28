@@ -62,7 +62,7 @@ return new class() extends SettingsMigration {
                     'title' => 'Start a web! It’s easy and free.',
                     'description' => 'Create a web under laravel power. Easy and faster application & fully open source. Than you can imagine.',
                     'theme' => 'Hero',
-                    'theme_color' => 'bg-gradient-to-br from-indigo-900 to-green-900',
+                    'theme_color' => 'bg-positive-500',
                     'title_color' => 'text-white',
                     'description_color' => 'text-gray-300',
                 ],

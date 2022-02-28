@@ -12,6 +12,12 @@ echo "Deploying application ..."
     # Composer update
     composer update
 
+    # NPM update
+    npm update
+
+    # Build assets
+    npm run production
+
     # Migrate database
     php artisan migrate --force
 

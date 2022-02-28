@@ -1,10 +1,10 @@
 <x-guest-layout>
     @foreach (Octo\Octo::site()->sections as $section)
         @if ($section['theme'] === 'Hero')
-            <section class="py-8 overflow-auto {{ $section['theme_color'] }}">
+            <section class="py-8 overflow-auto {{ @$section['theme_color'] }}">
                 <div class="justify-center py-8">
                     <div class="container py-8 max-w-5xl mx-auto px-4 text-center">
-                        <h1 class="text-5xl font-bold {{ $section['title_color'] }}">
+                        <h1 class="text-5xl font-bold {{ @$section['title_color'] }}">
                             {{ @$section['title'] }}
                         </h1>
                         <div class="my-5">
