@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('phone_number')->nullable()->unique();
             $table->boolean('super_admin')->default(false);
             $table->string('dashboard')->default('platform');
+            $table->string('current_plan_id')->nullable();
             $table->timestamps();
         });
     }
