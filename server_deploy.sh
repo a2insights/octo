@@ -18,7 +18,7 @@ echo "Deploying application ..."
     # Build assets
     npm run production
 
-    # Migrate database
+    # Setup new aplication
     php artisan octo:setup
 
     # Reload PHP to update opcache
