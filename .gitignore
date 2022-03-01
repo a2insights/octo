@@ -19,3 +19,4 @@ composer.dev.lock
 /octo-core
 /public/storage
 /wireui
+.blueprint
