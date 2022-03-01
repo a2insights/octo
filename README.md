@@ -98,7 +98,7 @@ You can now access the server at http://localhost
 
 You can set up the new application with faker data using our assistant:
 
-    php artisan octo:setup
+    php artisan octo:demo
 
 This will create a sys admin user with the follow credentials:
 
