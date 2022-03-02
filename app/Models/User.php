@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -15,7 +15,7 @@ use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 use Octo\Concerns\HasRouteSmsProviders;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
     use HasApiTokens;
     use HasFactory;
@@ -84,5 +84,15 @@ class User extends Authenticatable
         }
 
         return $this->getPhotoUrl();
+    }
+
+    /**
+     * Grant filament access to the user.
+     *
+     * @return string
+     */
+    public function canAccessFilament(): bool
+    {
+        return true;
     }
 }

@@ -74,7 +74,7 @@ return [
     */
 
     'auth' => [
-        'guard' => env('FILAMENT_AUTH_GUARD', 'web'),
+        'guard' => 'sanctum',
         'pages' => [
             'login' => \Filament\Http\Livewire\Auth\Login::class,
         ],
@@ -219,7 +219,7 @@ return [
             EncryptCookies::class,
             AddQueuedCookiesToResponse::class,
             StartSession::class,
-            // AuthenticateSession::class, // Check this. !!!important!!!
+            // AuthenticateSession::class, //  Session drive not enable. Instead we use sanctum!!!
             ShareErrorsFromSession::class,
             VerifyCsrfToken::class,
             SubstituteBindings::class,
