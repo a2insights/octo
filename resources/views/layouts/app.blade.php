@@ -36,12 +36,12 @@
             </header>
         @endif
 
-        @livewire('switch-dashboard')
-
         <!-- Page Content -->
         <main>
             {{ $slot }}
         </main>
+
+        @livewire('switch-dashboard')
     </div>
 
     {{-- Jetstream --}}

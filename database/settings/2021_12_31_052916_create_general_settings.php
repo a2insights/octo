@@ -9,7 +9,7 @@ return new class() extends SettingsMigration {
             'name' => 'Octo',
             'description' => 'This project was created to help other developers makes web app in a easy way using TALL Stack.',
             'active' => true,
-            'demo' => false,
+            'demo' => config('app.env') === 'demo',
             'footer' => [
                 'links' => [
                     [

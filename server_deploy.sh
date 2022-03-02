@@ -28,7 +28,7 @@ echo "Deploying application ..."
     php artisan config:clear
 
     # Clear route cache
-    php artisan route:clear
+    php artisan route:cache
 
     # Clear view cache
     php artisan view:clear
