@@ -74,7 +74,7 @@ return [
     */
 
     'auth' => [
-        'guard' => 'sanctum',
+        'guard' => 'web',
         'pages' => [
             'login' => \Filament\Http\Livewire\Auth\Login::class,
         ],
