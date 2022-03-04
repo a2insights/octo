@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a2insights/octo-core.git",
-                "reference": "f97909a991060bcec87303bba5b26dbba8fdbba9"
+                "reference": "9b787118d3dd89bc6a48bc8871938d67b2440e51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/f97909a991060bcec87303bba5b26dbba8fdbba9",
-                "reference": "f97909a991060bcec87303bba5b26dbba8fdbba9",
+                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/9b787118d3dd89bc6a48bc8871938d67b2440e51",
+                "reference": "9b787118d3dd89bc6a48bc8871938d67b2440e51",
                 "shasum": ""
             },
             "require": {
@@ -93,7 +93,7 @@
                 "issues": "https://github.com/a2insights/octo-core/issues",
                 "source": "https://github.com/a2insights/octo-core/tree/master"
             },
-            "time": "2022-03-04T05:22:00+00:00"
+            "time": "2022-03-04T05:36:45+00:00"
         },
         {
             "name": "akaunting/laravel-money",
