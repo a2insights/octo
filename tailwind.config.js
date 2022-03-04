@@ -45,7 +45,10 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                green: colors.green,
+                danger: colors.rose,
+                primary: colors.indigo,
+                success: colors.green,
+                warning: colors.yellow,
             },
             fontFamily: {
                 sans: ["Nunito", ...defaultTheme.fontFamily.sans],
