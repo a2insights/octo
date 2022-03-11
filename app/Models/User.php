@@ -13,6 +13,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+use Octo\Billing\Models\Subscription;
 use Octo\Concerns\HasRouteSmsProviders;
 
 class User extends Authenticatable implements FilamentUser
@@ -94,5 +95,10 @@ class User extends Authenticatable implements FilamentUser
     public function canAccessFilament(): bool
     {
         return true;
+    }
+
+    public function currentSubscription()
+    {
+        return $this->belongsTo(Subscription::class, 'current_subscription_id', 'stripe_price')->where('user_id', $this->id);
     }
 }

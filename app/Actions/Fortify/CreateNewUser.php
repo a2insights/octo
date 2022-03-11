@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
+use Octo\Billing\Saas;
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -40,6 +41,14 @@ class CreateNewUser implements CreatesNewUsers
                 'password' => Hash::make($input['password']),
             ]), function (User $user) {
                 $this->createTeam($user);
+
+                $planFree = Saas::getFreePlan();
+
+                $subscription = $user->newSubscription($planFree->getName(), $planFree->getId())->create();
+
+                $user->forceFill(['current_subscription_id' => $subscription->stripe_price])->save();
+
+                $subscription->recordFeatureUsage('teams', 1);
             });
         });
     }
