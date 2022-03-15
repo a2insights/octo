@@ -20,3 +20,4 @@ composer.dev.lock
 /public/storage
 /wireui
 .blueprint
+/filament

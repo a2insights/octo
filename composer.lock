@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3142959ccac69f10a3fde76804be5a56",
+    "content-hash": "d149228da8d0112ecdb25df2f7065e6a",
     "packages": [
         {
             "name": "a2insights/octo-core",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a2insights/octo-core.git",
-                "reference": "1f61c88f43f11ca7a9ca37d6fc82b2c6e282ca9d"
+                "reference": "dce9bd550149c7675cea6ca45e48a82edbfef5d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/1f61c88f43f11ca7a9ca37d6fc82b2c6e282ca9d",
-                "reference": "1f61c88f43f11ca7a9ca37d6fc82b2c6e282ca9d",
+                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/dce9bd550149c7675cea6ca45e48a82edbfef5d6",
+                "reference": "dce9bd550149c7675cea6ca45e48a82edbfef5d6",
                 "shasum": ""
             },
             "require": {
@@ -37,13 +37,14 @@
                 "php": "^8.0",
                 "pragmarx/countries": "^0.7.2",
                 "rappasoft/laravel-livewire-tables": "dev-master",
+                "spatie/laravel-enum": "^3.0",
                 "spatie/laravel-newsletter": "dev-main",
                 "stidges/laravel-country-flags": "dev-master",
                 "symfony/intl": "^3.4",
                 "torann/geoip": "^3.0",
                 "whitecube/lingua": "dev-master",
                 "wire-elements/modal": "^1.0",
-                "wireui/wireui": "dev-master"
+                "wireui/wireui": "^1.0"
             },
             "require-dev": {
                 "orchestra/testbench": "^6.0",
@@ -93,7 +94,7 @@
                 "issues": "https://github.com/a2insights/octo-core/issues",
                 "source": "https://github.com/a2insights/octo-core/tree/master"
             },
-            "time": "2022-03-11T00:02:26+00:00"
+            "time": "2022-03-15T03:35:48+00:00"
         },
         {
             "name": "akaunting/laravel-money",
@@ -218,16 +219,16 @@
         },
         {
             "name": "bacon/bacon-qr-code",
-            "version": "2.0.6",
+            "version": "2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Bacon/BaconQrCode.git",
-                "reference": "0069435e2a01a57193b25790f105a5d3168653c1"
+                "reference": "d70c840f68657ce49094b8d91f9ee0cc07fbf66c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/0069435e2a01a57193b25790f105a5d3168653c1",
-                "reference": "0069435e2a01a57193b25790f105a5d3168653c1",
+                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/d70c840f68657ce49094b8d91f9ee0cc07fbf66c",
+                "reference": "d70c840f68657ce49094b8d91f9ee0cc07fbf66c",
                 "shasum": ""
             },
             "require": {
@@ -266,9 +267,9 @@
             "homepage": "https://github.com/Bacon/BaconQrCode",
             "support": {
                 "issues": "https://github.com/Bacon/BaconQrCode/issues",
-                "source": "https://github.com/Bacon/BaconQrCode/tree/2.0.6"
+                "source": "https://github.com/Bacon/BaconQrCode/tree/2.0.7"
             },
-            "time": "2022-02-04T20:16:05+00:00"
+            "time": "2022-03-14T02:02:36+00:00"
         },
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -1683,16 +1684,16 @@
         },
         {
             "name": "filament/filament",
-            "version": "v2.10.24",
+            "version": "v2.10.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-filament/admin.git",
-                "reference": "12cd140be9fc7f38878eb11b8a4abe8740bf64b4"
+                "reference": "8ce0482114629ae797831b68fd5606752a2905aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-filament/admin/zipball/12cd140be9fc7f38878eb11b8a4abe8740bf64b4",
-                "reference": "12cd140be9fc7f38878eb11b8a4abe8740bf64b4",
+                "url": "https://api.github.com/repos/laravel-filament/admin/zipball/8ce0482114629ae797831b68fd5606752a2905aa",
+                "reference": "8ce0482114629ae797831b68fd5606752a2905aa",
                 "shasum": ""
             },
             "require": {
@@ -1739,20 +1740,20 @@
                 "issues": "https://github.com/laravel-filament/filament/issues",
                 "source": "https://github.com/laravel-filament/filament"
             },
-            "time": "2022-03-09T09:18:23+00:00"
+            "time": "2022-03-13T13:04:10+00:00"
         },
         {
             "name": "filament/forms",
-            "version": "v2.10.24",
+            "version": "v2.10.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-filament/forms.git",
-                "reference": "c9f96c2df77826dacbaf377b47e938e661816b0b"
+                "reference": "208b747075f83865f4628c41f6297e5fbe8d12fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-filament/forms/zipball/c9f96c2df77826dacbaf377b47e938e661816b0b",
-                "reference": "c9f96c2df77826dacbaf377b47e938e661816b0b",
+                "url": "https://api.github.com/repos/laravel-filament/forms/zipball/208b747075f83865f4628c41f6297e5fbe8d12fc",
+                "reference": "208b747075f83865f4628c41f6297e5fbe8d12fc",
                 "shasum": ""
             },
             "require": {
@@ -1795,20 +1796,20 @@
                 "issues": "https://github.com/laravel-filament/filament/issues",
                 "source": "https://github.com/laravel-filament/filament"
             },
-            "time": "2022-03-09T09:18:23+00:00"
+            "time": "2022-03-13T13:04:09+00:00"
         },
         {
             "name": "filament/spatie-laravel-settings-plugin",
-            "version": "v2.10.24",
+            "version": "v2.10.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-filament/spatie-laravel-settings-plugin.git",
-                "reference": "c5e38ba2f8b9ba56e5c9f72a17d085a199003342"
+                "reference": "fe431f063571429ce920b7827744ab0c6d1bd15b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-filament/spatie-laravel-settings-plugin/zipball/c5e38ba2f8b9ba56e5c9f72a17d085a199003342",
-                "reference": "c5e38ba2f8b9ba56e5c9f72a17d085a199003342",
+                "url": "https://api.github.com/repos/laravel-filament/spatie-laravel-settings-plugin/zipball/fe431f063571429ce920b7827744ab0c6d1bd15b",
+                "reference": "fe431f063571429ce920b7827744ab0c6d1bd15b",
                 "shasum": ""
             },
             "require": {
@@ -1842,11 +1843,11 @@
                 "issues": "https://github.com/laravel-filament/filament/issues",
                 "source": "https://github.com/laravel-filament/filament"
             },
-            "time": "2022-03-09T09:18:19+00:00"
+            "time": "2022-03-13T13:04:01+00:00"
         },
         {
             "name": "filament/spatie-laravel-tags-plugin",
-            "version": "v2.10.24",
+            "version": "v2.10.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-filament/spatie-laravel-tags-plugin.git",
@@ -1883,16 +1884,16 @@
         },
         {
             "name": "filament/tables",
-            "version": "v2.10.24",
+            "version": "v2.10.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-filament/tables.git",
-                "reference": "da575397bef545c8cce3e200278237eeaacecb9d"
+                "reference": "cce7a83277e33f149fffcbc02554a949a19d2a65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-filament/tables/zipball/da575397bef545c8cce3e200278237eeaacecb9d",
-                "reference": "da575397bef545c8cce3e200278237eeaacecb9d",
+                "url": "https://api.github.com/repos/laravel-filament/tables/zipball/cce7a83277e33f149fffcbc02554a949a19d2a65",
+                "reference": "cce7a83277e33f149fffcbc02554a949a19d2a65",
                 "shasum": ""
             },
             "require": {
@@ -1932,7 +1933,7 @@
                 "issues": "https://github.com/laravel-filament/filament/issues",
                 "source": "https://github.com/laravel-filament/filament"
             },
-            "time": "2022-03-09T09:18:21+00:00"
+            "time": "2022-03-11T21:17:26+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",
@@ -4016,16 +4017,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "2.3.5",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "fd4380d6fc37626e2f799f29d91195040137eba9"
+                "reference": "d7fd7450628561ba697b7097d86db72662f54aef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fd4380d6fc37626e2f799f29d91195040137eba9",
-                "reference": "fd4380d6fc37626e2f799f29d91195040137eba9",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/d7fd7450628561ba697b7097d86db72662f54aef",
+                "reference": "d7fd7450628561ba697b7097d86db72662f54aef",
                 "shasum": ""
             },
             "require": {
@@ -4047,7 +4048,7 @@
                 "phpstan/phpstan": "^0.12.91",
                 "phpunit/phpunit": "^8.5",
                 "predis/predis": "^1.1",
-                "rollbar/rollbar": "^1.3",
+                "rollbar/rollbar": "^1.3 || ^2 || ^3",
                 "ruflin/elastica": ">=0.90@dev",
                 "swiftmailer/swiftmailer": "^5.3|^6.0"
             },
@@ -4099,7 +4100,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/2.3.5"
+                "source": "https://github.com/Seldaek/monolog/tree/2.4.0"
             },
             "funding": [
                 {
@@ -4111,7 +4112,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-10-01T21:08:31+00:00"
+            "time": "2022-03-14T12:44:37+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -6446,25 +6447,25 @@
         },
         {
             "name": "spatie/laravel-enum",
-            "version": "2.5.2",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-enum.git",
-                "reference": "dd3d3462d5c0d31d61db2120292e87f1ed234de3"
+                "reference": "b1bd1c1be50dfdccdefdd5a988d95b292d031d48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-enum/zipball/dd3d3462d5c0d31d61db2120292e87f1ed234de3",
-                "reference": "dd3d3462d5c0d31d61db2120292e87f1ed234de3",
+                "url": "https://api.github.com/repos/spatie/laravel-enum/zipball/b1bd1c1be50dfdccdefdd5a988d95b292d031d48",
+                "reference": "b1bd1c1be50dfdccdefdd5a988d95b292d031d48",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "illuminate/console": "^8.0",
-                "illuminate/contracts": "^8.0",
-                "illuminate/database": "^8.0",
-                "illuminate/http": "^8.0",
-                "illuminate/support": "^8.0",
+                "illuminate/console": "^8.0 || ^9.0",
+                "illuminate/contracts": "^8.0 || ^9.0",
+                "illuminate/database": "^8.0 || ^9.0",
+                "illuminate/http": "^8.0 || ^9.0",
+                "illuminate/support": "^8.0 || ^9.0",
                 "php": "^7.4 || ^8.0",
                 "spatie/enum": "^3.9"
             },
@@ -6472,10 +6473,10 @@
                 "bensampo/laravel-enum": "*"
             },
             "require-dev": {
-                "fakerphp/faker": "^1.9.1",
+                "fakerphp/faker": "^1.16",
                 "mockery/mockery": "^1.4.0",
-                "orchestra/testbench": "^6.0",
-                "phpunit/phpunit": "^9.3",
+                "orchestra/testbench": "^6.0 || ^7.0",
+                "phpunit/phpunit": "^9.5",
                 "vimeo/psalm": "^4.0"
             },
             "suggest": {
@@ -6522,7 +6523,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-enum/issues",
-                "source": "https://github.com/spatie/laravel-enum/tree/2.5.2"
+                "source": "https://github.com/spatie/laravel-enum/tree/3.0.1"
             },
             "funding": [
                 {
@@ -6534,7 +6535,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-07-24T20:11:47+00:00"
+            "time": "2022-02-05T09:53:41+00:00"
         },
         {
             "name": "spatie/laravel-newsletter",
@@ -7031,16 +7032,16 @@
         },
         {
             "name": "spatie/temporary-directory",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/temporary-directory.git",
-                "reference": "06fe0f10d068fdf145c9b2235030e568c913bb61"
+                "reference": "79f138f2b81adae583d04d3727a4538dd394023f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/temporary-directory/zipball/06fe0f10d068fdf145c9b2235030e568c913bb61",
-                "reference": "06fe0f10d068fdf145c9b2235030e568c913bb61",
+                "url": "https://api.github.com/repos/spatie/temporary-directory/zipball/79f138f2b81adae583d04d3727a4538dd394023f",
+                "reference": "79f138f2b81adae583d04d3727a4538dd394023f",
                 "shasum": ""
             },
             "require": {
@@ -7076,7 +7077,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/temporary-directory/issues",
-                "source": "https://github.com/spatie/temporary-directory/tree/2.0.0"
+                "source": "https://github.com/spatie/temporary-directory/tree/2.1.0"
             },
             "funding": [
                 {
@@ -7088,7 +7089,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-03-30T19:46:13+00:00"
+            "time": "2022-03-11T08:16:01+00:00"
         },
         {
             "name": "stidges/country-flags",
@@ -10196,7 +10197,7 @@
         },
         {
             "name": "wireui/wireui",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wireui/wireui.git",
@@ -10221,7 +10222,6 @@
                 "phpunit/phpunit": "^9.5",
                 "psy/psysh": "@stable"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -10256,7 +10256,7 @@
             ],
             "support": {
                 "issues": "https://github.com/wireui/wireui/issues",
-                "source": "https://github.com/wireui/wireui/tree/master"
+                "source": "https://github.com/wireui/wireui/tree/v1.0.0"
             },
             "time": "2022-02-17T02:54:51+00:00"
         }

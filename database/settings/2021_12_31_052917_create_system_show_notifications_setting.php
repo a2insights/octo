@@ -6,6 +6,6 @@ return new class () extends SettingsMigration
 {
     public function up(): void
     {
-        $this->migrator->add('user.show_notifications', true);
+        $this->migrator->add('system.show_notifications', true);
     }
 };
