@@ -44,9 +44,23 @@ class CreateNewUser implements CreatesNewUsers
 
                 $planFree = Saas::getFreePlan();
 
-                $subscription = $user->newSubscription($planFree->getName(), $planFree->getId())->create();
+                $subscription = $user->newSubscription($planFree->getName(), $planFree->getId());
 
-                $user->forceFill(['current_subscription_id' => $subscription->stripe_price])->save();
+                $meteredFeatures = $planFree->getMeteredFeatures();
+
+                if (! $meteredFeatures->isEmpty()) {
+                    foreach ($meteredFeatures as $feature) {
+                        $subscription->meteredPrice($feature->getMeteredId());
+                    }
+                }
+
+                $subscription = $subscription->create();
+
+                $subscription->stripe_price = $planFree->getId();
+
+                $subscription->save();
+
+                $user->forceFill(['current_subscription_id' => $planFree->getId()])->save();
 
                 $subscription->recordFeatureUsage('teams', 1);
             });
