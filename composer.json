@@ -26,6 +26,7 @@
         "pusher/pusher-php-server": "~4.0",
         "rappasoft/laravel-livewire-tables": "dev-master",
         "spatie/laravel-settings": "^2.3",
+        "spatie/laravel-stats": "^2.0",
         "spatie/laravel-tail": "^4.4"
     },
     "require-dev": {
