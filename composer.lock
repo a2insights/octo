@@ -4,15 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6fa2edf1f023db4640f3278e6f305cb9",
+    "content-hash": "a2557ee59f743ca7a468a6390bc057ac",
     "packages": [
         {
             "name": "a2insights/octo-core",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/a2insights/octo-core.git",
+                "reference": "afcd3e025dcf5beb54226d59555b849751c8452d"
+            },
             "dist": {
-                "type": "path",
-                "url": "./octo-core",
-                "reference": "62a250960f7515a187587781fc7e801d3f9fb719"
+                "type": "zip",
+                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/afcd3e025dcf5beb54226d59555b849751c8452d",
+                "reference": "afcd3e025dcf5beb54226d59555b849751c8452d",
+                "shasum": ""
             },
             "require": {
                 "blade-ui-kit/blade-heroicons": "^1.2",
@@ -49,6 +55,7 @@
                 "doctrine/dbal": "Required by Cashier to modify tables in the database.",
                 "laravel/cashier": "Required to use with the Stripe scaffolding."
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -65,16 +72,7 @@
                     "Octo\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Octo\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "vendor/bin/phpunit"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -93,10 +91,11 @@
                 "php",
                 "sass"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/a2insights/octo-core/issues",
+                "source": "https://github.com/a2insights/octo-core/tree/master"
+            },
+            "time": "2022-04-11T00:44:03+00:00"
         },
         {
             "name": "akaunting/laravel-money",
