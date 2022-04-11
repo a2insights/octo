@@ -1,11 +1,11 @@
 # Octo
 
+[![CD](https://github.com/a2insights/octo/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/a2insights/octo/actions/workflows/main.yml)
+[![GitHub license](https://img.shields.io/github/license/gothinkster/laravel-realworld-example-app.svg)](https://raw.githubusercontent.com/gothinkster/laravel-realworld-example-app/master/LICENSE)
+
 ## Introduction
 
 The purpose of this project is provide a simple way to create web aplications of kind SaaS. We use [Laravel](https://laravel.com/) framework with [Laravel Jetstream](https://github.com/laravel/jetstream) and [Filament Admin](https://filamentphp.com/). Laravel Jetstream and Filament are greats starters kits to create awesome projects..
-
-[![CD](https://github.com/a2insights/octo/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/a2insights/octo/actions/workflows/main.yml)
-[![GitHub license](https://img.shields.io/github/license/gothinkster/laravel-realworld-example-app.svg)](https://raw.githubusercontent.com/gothinkster/laravel-realworld-example-app/master/LICENSE)
 
 ## Getting started
 
@@ -37,15 +37,7 @@ Copy the example env file and config the database credentials.
 
     cp .env.example .env
 
-### Social login
-
-If you want to activate the social login make sure if you put the follows credentials below.
-
-    GITHUB_CLIENT_ID=
-    GITHUB_CLIENT_SECRET=
-    GITHUB_CLIENT_CALLBACK=
-
-See all env vars available in the .env.example file.
+> See all env vars available in the .env.example file.
 
 Generate a new application key:
 
@@ -68,8 +60,6 @@ Start the local development server:
 
 You can now access the server at <http://localhost:8000>
 
-**** [Environment variables](#environment-variables).
-
 ### Demo application
 
 You can set up the new application with faker data using our assistant:
@@ -78,7 +68,7 @@ You can set up the new application with faker data using our assistant:
 
 This will create two users:
 
-#### Sys Admin
+#### Super Admin
 
 E-mail: super-admin@octo.dev
 
@@ -106,7 +96,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-### Security
+## Security
 
 If you discover any security related issues, please email atila.danvi@outlook.com instead of using the issue tracker.
 
