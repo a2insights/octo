@@ -15,6 +15,7 @@ use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 use Octo\Billing\Models\Subscription;
 use Octo\Concerns\HasRouteSmsProviders;
+use Stancl\Tenancy\Database\Concerns\CentralConnection;
 
 class User extends Authenticatable implements FilamentUser
 {
@@ -30,6 +31,7 @@ class User extends Authenticatable implements FilamentUser
     use TwoFactorAuthenticatable;
     use Billable;
     use HasRouteSmsProviders;
+    use CentralConnection;
 
     /**
      * The attributes that are mass assignable.
@@ -97,8 +99,23 @@ class User extends Authenticatable implements FilamentUser
         return true;
     }
 
+    /*
+    * Get the user's subscription.
+    *
+    * @return \Illuminate\Database\Eloquent\Relations\belongsTo
+    */
     public function currentSubscription()
     {
         return $this->belongsTo(Subscription::class, 'current_subscription_id', 'stripe_price')->where('user_id', $this->id);
+    }
+
+    /*
+    * Get tenant.
+    *
+    * @return \Illuminate\Database\Eloquent\Relations\belongsTo
+    */
+    public function tenant()
+    {
+        return $this->belongsTo(Tenant::class);
     }
 }

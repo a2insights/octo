@@ -3,8 +3,8 @@
 namespace App\Actions\Fortify;
 
 use App\Models\Team;
+use App\Models\Tenant;
 use App\Models\User;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
@@ -33,37 +33,38 @@ class CreateNewUser implements CreatesNewUsers
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
         ])->validate();
 
-        return DB::transaction(function () use ($input) {
-            return tap(User::create([
-                'name' => $input['name'],
-                'email' => $input['email'],
-                'phone_number' => $input['phone_number'],
-                'password' => Hash::make($input['password']),
-            ]), function (User $user) {
-                $this->createTeam($user);
+        $tenant = $this->createTenant();
 
-                $planFree = Saas::getFreePlan();
+        return tap(User::forceCreate([
+            'name' => $input['name'],
+            'email' => $input['email'],
+            'phone_number' => $input['phone_number'],
+            'password' => Hash::make($input['password']),
+            'tenant_id' => $tenant->id
+        ]), function (User $user) {
+            $this->createTeam($user);
 
-                $subscription = $user->newSubscription($planFree->getName(), $planFree->getId());
+            $planFree = Saas::getFreePlan();
 
-                $meteredFeatures = $planFree->getMeteredFeatures();
+            $subscription = $user->newSubscription($planFree->getName(), $planFree->getId());
 
-                if (! $meteredFeatures->isEmpty()) {
-                    foreach ($meteredFeatures as $feature) {
-                        $subscription->meteredPrice($feature->getMeteredId());
-                    }
+            $meteredFeatures = $planFree->getMeteredFeatures();
+
+            if (! $meteredFeatures->isEmpty()) {
+                foreach ($meteredFeatures as $feature) {
+                    $subscription->meteredPrice($feature->getMeteredId());
                 }
+            }
 
-                $subscription = $subscription->create();
+            $subscription = $subscription->create();
 
-                $subscription->stripe_price = $planFree->getId();
+            $subscription->stripe_price = $planFree->getId();
 
-                $subscription->save();
+            $subscription->save();
 
-                $user->forceFill(['current_subscription_id' => $planFree->getId()])->save();
+            $user->forceFill(['current_subscription_id' => $planFree->getId()])->save();
 
-                $subscription->recordFeatureUsage('teams', 1);
-            });
+            $subscription->recordFeatureUsage('teams', 1);
         });
     }
 
@@ -80,5 +81,15 @@ class CreateNewUser implements CreatesNewUsers
             'name' => explode(' ', $user->name, 2)[0] . "'s Team",
             'personal_team' => true,
         ]));
+    }
+
+    /*
+    * Create a tenant for the user.
+    *
+    * @return \App\Models\Tenant
+    */
+    private function createTenant()
+    {
+        return Tenant::create();
     }
 }

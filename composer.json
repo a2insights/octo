@@ -6,6 +6,15 @@
         "system"
     ],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./octo-core",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
     "require": {
         "php": "^8.0",
         "a2insights/octo-core": "dev-master",
@@ -24,10 +33,11 @@
         "laravel/tinker": "^2.6",
         "livewire/livewire": "^2.7",
         "pusher/pusher-php-server": "~4.0",
-        "rappasoft/laravel-livewire-tables": "dev-master",
+        "rappasoft/laravel-livewire-tables": "^1.25",
         "spatie/laravel-settings": "^2.3",
         "spatie/laravel-stats": "^2.0",
-        "spatie/laravel-tail": "^4.4"
+        "spatie/laravel-tail": "^4.4",
+        "stancl/tenancy": "^3.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

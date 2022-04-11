@@ -8,11 +8,13 @@ use Laravel\Jetstream\Events\TeamDeleted;
 use Laravel\Jetstream\Events\TeamUpdated;
 use Laravel\Jetstream\Team as JetstreamTeam;
 use Octo\ObservableModel;
+use Stancl\Tenancy\Database\Concerns\CentralConnection;
 
 class Team extends JetstreamTeam
 {
     use HasFactory;
     use ObservableModel;
+    use CentralConnection;
 
     /**
      * The attributes that should be cast.

@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Laravel\Jetstream\Jetstream;
 use Laravel\Jetstream\TeamInvitation as JetstreamTeamInvitation;
+use Stancl\Tenancy\Database\Concerns\CentralConnection;
 
 class TeamInvitation extends JetstreamTeamInvitation
 {
+    use CentralConnection;
     /**
      * The attributes that are mass assignable.
      *
