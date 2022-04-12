@@ -34,7 +34,6 @@
 
         @livewire('switch-dashboard')
 
-        <x-footer />
     </div>
 
     {{-- Jetstream --}}
