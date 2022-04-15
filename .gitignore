@@ -17,6 +17,7 @@ composer.dev.lock
 .tool-versions
 .php-cs-fixer.cache
 /octo-core
+/octo-theme
 /public/storage
 /wireui
 .blueprint

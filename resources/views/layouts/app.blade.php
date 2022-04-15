@@ -16,6 +16,7 @@
 
     @livewireStyles
     @wireUiScripts
+    @laravelViewsStyles(laravel-views)
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
@@ -49,6 +50,7 @@
 
     @livewire('livewire-ui-modal')
     @livewireScripts
+    @laravelViewsScripts(laravel-views)
 </body>
 
 </html>

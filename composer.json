@@ -17,7 +17,7 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "joelbutcher/socialstream": "^3.2",
-        "laravel-views/laravel-views": "^2.2",
+        "laravel-views/laravel-views": "^2.4",
         "laravel/framework": "^8.12",
         "laravel/jetstream": "^2.6",
         "laravel/sanctum": "^2.11",
@@ -28,7 +28,8 @@
         "spatie/laravel-settings": "^2.3",
         "spatie/laravel-stats": "^2.0",
         "spatie/laravel-tail": "^4.4",
-        "stancl/tenancy": "^3.5"
+        "stancl/tenancy": "^3.5",
+        "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -45,11 +46,27 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "wikimedia/composer-merge-plugin": true
+        }
     },
     "extra": {
         "laravel": {
             "dont-discover": []
+        },
+        "merge-plugin": {
+            "include": [
+                "storage/app/addons/composer.json",
+                "storage/app/addons/composer-dev.json"
+            ],
+            "recurse": true,
+            "replace": false,
+            "ignore-duplicates": false,
+            "merge-dev": true,
+            "merge-extra": false,
+            "merge-extra-deep": false,
+            "merge-scripts": false
         }
     },
     "autoload": {
