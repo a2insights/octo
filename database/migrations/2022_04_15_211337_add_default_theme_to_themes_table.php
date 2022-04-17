@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
 
 class AddDefaultThemeToThemesTable extends Migration
 {
@@ -20,8 +18,9 @@ class AddDefaultThemeToThemesTable extends Migration
             'description' => 'This project was created to help other developers makes web app in a easy way using TALL Stack.',
             'author' => 'Octo',
             'license' => 'MIT',
-            'active' => true,
+            'active' => false,
             'private' => false,
+            'installed' => false,
             'token' => null,
             'secret' => null,
             'version' => '0.0.1',
@@ -38,8 +37,6 @@ class AddDefaultThemeToThemesTable extends Migration
      */
     public function down()
     {
-        Schema::table('themes', function (Blueprint $table) {
-            //
-        });
+       DB::table('themes')->where('slug', 'octo')->delete();
     }
 }

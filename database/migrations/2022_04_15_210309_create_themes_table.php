@@ -24,6 +24,7 @@ class CreateThemesTable extends Migration
             $table->string('license');
 
             $table->boolean('active')->default(false);
+            $table->boolean('installed')->default(false);
 
             $table->boolean('private')->default(false);
 
@@ -33,7 +34,7 @@ class CreateThemesTable extends Migration
             $table->string('version');
 
             $table->string('thumbnail')->nullable();
-            $table->string('repository_url');
+            $table->string('repository_url')->nullable();
             $table->string('packagist_url')->nullable();
 
             $table->timestamps();
