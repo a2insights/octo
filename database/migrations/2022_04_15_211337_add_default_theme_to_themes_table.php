@@ -13,18 +13,18 @@ class AddDefaultThemeToThemesTable extends Migration
     public function up()
     {
         DB::table('themes')->insert([
-            'name' => 'Octo',
-            'slug' => 'octo',
+            'name' => 'a2insights/octo-theme',
+            'title' => 'Octo Theme',
             'description' => 'This project was created to help other developers makes web app in a easy way using TALL Stack.',
-            'author' => 'Octo',
+            'author' => 'Atila Silva',
             'license' => 'MIT',
             'active' => false,
             'private' => false,
             'installed' => false,
             'token' => null,
             'secret' => null,
-            'version' => '0.0.1',
-            'thumbnail' => null,
+            'version' => 'dev-main',
+            'thumbnail' => 'https://raw.githubusercontent.com/a2insights/octo-theme/main/images/thumbnail.png',
             'repository_url' => 'https://github.com/a2insights/octo-theme.git',
             'packagist_url' => null,
         ]);
@@ -37,6 +37,6 @@ class AddDefaultThemeToThemesTable extends Migration
      */
     public function down()
     {
-       DB::table('themes')->where('slug', 'octo')->delete();
+       DB::table('themes')->where('name', 'a2insights/octo-theme')->delete();
     }
 }

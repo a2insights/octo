@@ -17,7 +17,7 @@ class CreateThemesTable extends Migration
             $table->id();
 
             $table->string('name');
-            $table->string('slug');
+            $table->string('title');
             $table->string('description')->nullable();
 
             $table->string('author');

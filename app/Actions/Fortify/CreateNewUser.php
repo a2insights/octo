@@ -44,27 +44,30 @@ class CreateNewUser implements CreatesNewUsers
         ]), function (User $user) {
             $this->createTeam($user);
 
-            $planFree = Saas::getFreePlan();
+            if_feature_is_enabled('billing' , function () use ($user) {
+                $planFree = Saas::getFreePlan();
 
-            $subscription = $user->newSubscription($planFree->getName(), $planFree->getId());
+                $subscription = $user->newSubscription($planFree->getName(), $planFree->getId());
 
-            $meteredFeatures = $planFree->getMeteredFeatures();
+                $meteredFeatures = $planFree->getMeteredFeatures();
 
-            if (! $meteredFeatures->isEmpty()) {
-                foreach ($meteredFeatures as $feature) {
-                    $subscription->meteredPrice($feature->getMeteredId());
+                if (! $meteredFeatures->isEmpty()) {
+                    foreach ($meteredFeatures as $feature) {
+                        $subscription->meteredPrice($feature->getMeteredId());
+                    }
                 }
-            }
 
-            $subscription = $subscription->create();
+                $subscription = $subscription->create();
 
-            $subscription->stripe_price = $planFree->getId();
+                $subscription->stripe_price = $planFree->getId();
 
-            $subscription->save();
+                $subscription->save();
 
-            $user->forceFill(['current_subscription_id' => $planFree->getId()])->save();
+                $user->forceFill(['current_subscription_id' => $planFree->getId()])->save();
 
-            $subscription->recordFeatureUsage('teams', 1);
+                $subscription->recordFeatureUsage('teams', 1);
+            });
+
         });
     }
 

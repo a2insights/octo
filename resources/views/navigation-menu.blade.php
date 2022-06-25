@@ -17,8 +17,7 @@
                     </x-jet-nav-link>
                     @auth
                         @foreach ($menu as $item)
-                            <x-jet-nav-link href="{{ route($item['route']) }}"
-                                :active="request()->routeIs($item['route'])">
+                            <x-jet-nav-link href="{{ route($item['route']) }}" :active="request()->routeIs($item['route'])">
                                 {{ __($item['name']) }}
                             </x-jet-nav-link>
                         @endforeach
@@ -148,9 +147,11 @@
                                     {{ __('Notifications') }}
                                 </x-jet-dropdown-link>
 
-                                <x-jet-dropdown-link href="{{ route('billing.dashboard') }}">
-                                    {{ __('Billing Dashboard') }}
-                                </x-jet-dropdown-link>
+                                @feature('billing')
+                                    <x-jet-dropdown-link href="{{ route('billing.dashboard') }}">
+                                        {{ __('Billing Dashboard') }}
+                                    </x-jet-dropdown-link>
+                                @endfeature
 
                                 <div class="border-t border-gray-100"></div>
 
@@ -158,7 +159,8 @@
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
 
-                                    <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    <x-jet-dropdown-link href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
                                                                 this.closest('form').submit();">
                                         {{ __('Log Out') }}
                                     </x-jet-dropdown-link>
@@ -177,11 +179,11 @@
                 <button @click="open = ! open"
                     class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex"
+                        <path :class="{ 'hidden': open, 'inline-flex': !open }" class="inline-flex"
                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        <path :class="{ 'hidden': !open, 'inline-flex': open }" class="hidden" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
@@ -189,7 +191,7 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+    <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
                 {{ __('Home') }}
@@ -207,8 +209,7 @@
             @endauth
             @auth
                 @foreach ($menu as $item)
-                    <x-jet-responsive-nav-link href="{{ route($item['route']) }}"
-                        :active="request()->routeIs($item['route'])">
+                    <x-jet-responsive-nav-link href="{{ route($item['route']) }}" :active="request()->routeIs($item['route'])">
                         {{ __($item['name']) }}
                     </x-jet-responsive-nav-link>
                 @endforeach
@@ -234,33 +235,33 @@
 
                 <div class="mt-3 space-y-1">
                     <!-- Account Management -->
-                    <x-jet-responsive-nav-link href="{{ route('profile.show') }}"
-                        :active="request()->routeIs('profile.show')">
+                    <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                         {{ __('Profile') }}
                     </x-jet-responsive-nav-link>
 
                     @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                        <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}"
-                            :active="request()->routeIs('api-tokens.index')">
+                        <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
                             {{ __('API Tokens') }}
                         </x-jet-responsive-nav-link>
                     @endif
 
-                    <x-jet-responsive-nav-link href="{{ route('notifications') }}"
-                        :active="request()->routeIs('notifications')">
+                    <x-jet-responsive-nav-link href="{{ route('notifications') }}" :active="request()->routeIs('notifications')">
                         {{ __('Notifications') }}
                     </x-jet-responsive-nav-link>
 
-                    <x-jet-responsive-nav-link href="{{ route('billing.subscription.index') }}"
-                        :active="request()->routeIs('billing.subscription.index')">
-                        {{ __('Billing Dashboard') }}
-                    </x-jet-responsive-nav-link>
+                    @feature('billing')
+                        <x-jet-responsive-nav-link href="{{ route('billing.subscription.index') }}" :active="request()->routeIs('billing.subscription.index')">
+                            {{ __('Billing Dashboard') }}
+                        </x-jet-responsive-nav-link>
+                    @endfeature
+
 
                     <!-- Authentication -->
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
 
-                        <x-jet-responsive-nav-link href="{{ route('logout') }}" onclick="event.preventDefault();
+                        <x-jet-responsive-nav-link href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
                                                         this.closest('form').submit();">
                             {{ __('Log Out') }}
                         </x-jet-responsive-nav-link>
@@ -281,8 +282,7 @@
                         </x-jet-responsive-nav-link>
 
                         @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                            <x-jet-responsive-nav-link href="{{ route('teams.create') }}"
-                                :active="request()->routeIs('teams.create')">
+                            <x-jet-responsive-nav-link href="{{ route('teams.create') }}" :active="request()->routeIs('teams.create')">
                                 {{ __('Create New Team') }}
                             </x-jet-responsive-nav-link>
                         @endcan
