@@ -9,7 +9,7 @@
     "require": {
         "php": "^7.2|^8.0",
         "a2insights/octo-core": "dev-master",
-        "a2insights/octo-theme": "dev-main",
+        "a2insights/octo-billing": "dev-main",
         "codespb/livewire-notifier": "^1.0",
         "fideloper/proxy": "^4.4",
         "filament/filament": "^2.12",
