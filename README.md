@@ -1,26 +1,14 @@
 # Octo
 
+## **Currently broken**
+
 [![GitHub license](https://img.shields.io/github/license/gothinkster/laravel-realworld-example-app.svg)](https://raw.githubusercontent.com/gothinkster/laravel-realworld-example-app/master/LICENSE)
 
 ## Introduction
 
 **Project currently in development, do not use in production.**
 
-The purpose of this project is provide a simple way to create web aplications of kind SaaS. We use [Laravel](https://laravel.com/) framework with [Laravel Jetstream](https://github.com/laravel/jetstream) and [Filament Admin](https://filamentphp.com/). Laravel Jetstream and Filament are greats starters kits to create awesome projects..
-
-## Screnshots
-
-### User dashboard
-
-![User dashboard](/public/images/screenshots/user-dashboard.gif)
-
-### Sysadmin dashboard
-
-![Sysadmin dashboard](/public/images/screenshots/sysadmin-dashboard.gif)
-
-### Billing dashboard
-
-![Billing dashboard](/public/images/screenshots/billing-dashboard.png)
+The purpose of this project is provide a simple way to create web aplications of kind SaaS. We use [Laravel](https://laravel.com/) framework with [Filament Admin](https://filamentphp.com/).
 
 ## Getting started
 
