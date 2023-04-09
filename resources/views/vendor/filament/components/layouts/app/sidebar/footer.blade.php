@@ -3,18 +3,9 @@
         $user = \Filament\Facades\Filament::auth()->user();
     @endphp
 
-    @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-        <div class="flex-shrink-0 mr-3">
-            <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}"
-                alt="{{ Auth::user()->name }}" />
-        </div>
-    @else
-        <div class="w-11 h-11 rounded-full bg-gray-200 bg-cover bg-center"
-            style="background-image: url('{{ \Filament\Facades\Filament::getUserAvatarUrl($user) }}')"></div>
-    @endif
 
     <div>
-        <a href="{{ route('profile.show') }}">
+        <a href="#">
             <p class="text-sm font-bold">
                 {{ \Filament\Facades\Filament::getUserName($user) }}
             </p>

@@ -1,7 +1,5 @@
 # Octo
 
-## **Currently broken**
-
 [![GitHub license](https://img.shields.io/github/license/gothinkster/laravel-realworld-example-app.svg)](https://raw.githubusercontent.com/gothinkster/laravel-realworld-example-app/master/LICENSE)
 
 ## Introduction
@@ -105,8 +103,8 @@ If you discover any security related issues, please email atila.danvi@outlook.co
 
 ## Credits
 
-* [Atila Silva](https://github.com/Atiladanvi)
-* [All Contributors](../../contributors)
+-   [Atila Silva](https://github.com/Atiladanvi)
+-   [All Contributors](../../contributors)
 
 ## License
 

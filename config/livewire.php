@@ -81,11 +81,7 @@ return [
     |
     */
 
-    'middleware_group' => [
-        'web',
-        'universal',
-       \App\Http\Middleware\Tenant::class,
-    ],
+    'middleware_group' => 'web',
 
     /*
     |--------------------------------------------------------------------------

@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'path' => env('FILAMENT_PATH', 'dashboard'),
+    'path' => env('FILAMENT_PATH', '/'),
 
     /*
     |--------------------------------------------------------------------------
@@ -76,7 +76,7 @@ return [
     'auth' => [
         'guard' => 'web',
         'pages' => [
-            // 'login' => \Filament\Http\Livewire\Auth\Login::class,
+             'login' => \Filament\Http\Livewire\Auth\Login::class,
         ],
     ],
 
@@ -213,14 +213,13 @@ return [
 
     'middleware' => [
         'auth' => [
-            \App\Http\Middleware\Tenant::class,
             Authenticate::class,
         ],
         'base' => [
             EncryptCookies::class,
             AddQueuedCookiesToResponse::class,
             StartSession::class,
-            // AuthenticateSession::class, //  Session drive not enable. Instead we use sanctum!!!
+            AuthenticateSession::class, //  Session drive not enable. Instead we use sanctum!!!
             ShareErrorsFromSession::class,
             VerifyCsrfToken::class,
             SubstituteBindings::class,
