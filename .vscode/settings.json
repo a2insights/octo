@@ -1,6 +1,6 @@
 {
     "[php]": {
-        "editor.defaultFormatter": "junstyle.php-cs-fixer"
+        "editor.defaultFormatter": "open-southeners.laravel-pint"
     },
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -12,6 +12,9 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[vue]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
 
@@ -30,11 +33,7 @@
     "importCost.javascriptExtensions": ["\\.jsx?$", "\\.vue$"],
 
     "php.suggest.basic": false,
-    "phpcs.standard": "PSR2",
-    "phpunit.logpanel": true,
-    "phpunit.shell": "bash",
 
-    "tabnine.experimentalAutoImports": true,
     "todohighlight.exclude": [
         "**/node_modules/**",
         "**/bower_components/**",
@@ -57,8 +56,6 @@
         "resources/old": true
     },
 
-    "sqltools.useNodeRuntime": true,
-
     // i18n
     "i18n-ally.keystyle": "flat", // Laravel cant deal with nested
     "i18n-ally.sourceLanguage": "pt",
@@ -78,6 +75,5 @@
     "i18n-ally.dirStructure": "file",
     "i18n-ally.namespace": true,
     "i18n-ally.review.enabled": false,
-    "i18n-ally.review.gutters": false,
-    "sqltools.connections": []
+    "i18n-ally.review.gutters": false
 }

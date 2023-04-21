@@ -26,7 +26,7 @@
         "fakerphp/faker": "^1.9.1",
         "jasonmccreary/laravel-test-assertions": "^2.3",
         "laravel-shift/blueprint": "^2.5",
-        "laravel/pint": "^1.0",
+        "laravel/pint": "^1.9",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",

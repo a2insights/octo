@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "be1c99233dd10b7ce986f76747798e23",
+    "content-hash": "ed23fff662018c94585be2a9eb229aad",
     "packages": [
         {
             "name": "a2insights/octo-core",
