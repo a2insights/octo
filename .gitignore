@@ -22,6 +22,5 @@ composer.dev.lock
 /octo-core
 /octo-billing
 /public/storage
-/wireui
 .blueprint
 /filament
