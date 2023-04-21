@@ -42,29 +42,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Homepage URL
-    |--------------------------------------------------------------------------
-    |
-    | This is the URL that Filament will redirect the user to when they click
-    | on the sidebar's header.
-    |
-    */
-
-    'home_url' => '/',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Brand Name
-    |--------------------------------------------------------------------------
-    |
-    | This will be displayed on the login page and in the sidebar's header.
-    |
-    */
-
-    'brand' => env('APP_NAME'),
-
-    /*
-    |--------------------------------------------------------------------------
     | Auth
     |--------------------------------------------------------------------------
     |
@@ -74,9 +51,9 @@ return [
     */
 
     'auth' => [
-        'guard' => 'web',
+        'guard' => env('FILAMENT_AUTH_GUARD', 'web'),
         'pages' => [
-             'login' => \Filament\Http\Livewire\Auth\Login::class,
+            'login' => \Filament\Http\Livewire\Auth\Login::class,
         ],
     ],
 
@@ -128,24 +105,59 @@ return [
         'namespace' => 'App\\Filament\\Widgets',
         'path' => app_path('Filament/Widgets'),
         'register' => [
-            // Widgets\AccountWidget::class,
-            // Widgets\FilamentInfoWidget::class,
+            Widgets\AccountWidget::class,
+            Widgets\FilamentInfoWidget::class,
         ],
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Livewire
+    | Dark mode
     |--------------------------------------------------------------------------
     |
-    | This is the namespace and directory that Filament will automatically
-    | register Livewire components inside.
+    | By enabling this feature, your users are able to select between a light
+    | and dark appearance for the admin panel, or let their system decide.
     |
     */
 
-    'livewire' => [
-        'namespace' => 'App\\Filament',
-        'path' => app_path('Filament'),
+    'dark_mode' => true,
+
+    /*
+     |--------------------------------------------------------------------------
+     | Database notifications
+     |--------------------------------------------------------------------------
+     |
+     | By enabling this feature, your users are able to open a slide-over within
+     | the admin panel to view their database notifications.
+     |
+     */
+
+    'database_notifications' => [
+        'enabled' => true,
+        'polling_interval' => '30s',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Broadcasting
+    |--------------------------------------------------------------------------
+    |
+    | By uncommenting the Laravel Echo configuration, you may connect your
+    | admin panel to any Pusher-compatible websockets server.
+    |
+    | This will allow your admin panel to receive real-time notifications.
+    |
+    */
+
+    'broadcasting' => [
+
+        // 'echo' => [
+        //     'broadcaster' => 'pusher',
+        //     'key' => env('VITE_PUSHER_APP_KEY'),
+        //     'cluster' => env('VITE_PUSHER_APP_CLUSTER'),
+        //     'forceTLS' => true,
+        // ],
+
     ],
 
     /*
@@ -161,18 +173,13 @@ return [
     */
 
     'layout' => [
+        'max_content_width' => null,
+        'sidebar' => [
+            'is_collapsible_on_desktop' => true,
+        ],
         'forms' => [
             'actions' => [
                 'alignment' => 'left',
-            ],
-        ],
-        'footer' => [
-            'should_show_logo' => true,
-        ],
-        'max_content_width' => null,
-        'tables' => [
-            'actions' => [
-                'type' => \Filament\Tables\Actions\LinkAction::class,
             ],
         ],
     ],
@@ -219,7 +226,7 @@ return [
             EncryptCookies::class,
             AddQueuedCookiesToResponse::class,
             StartSession::class,
-            AuthenticateSession::class, //  Session drive not enable. Instead we use sanctum!!!
+            AuthenticateSession::class,
             ShareErrorsFromSession::class,
             VerifyCsrfToken::class,
             SubstituteBindings::class,
