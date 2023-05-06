@@ -1,4 +1,4 @@
-/.idea
+/.phpunit.cache
 /node_modules
 /public/build
 /public/hot
@@ -11,16 +11,11 @@
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
+auth.json
 npm-debug.log
 yarn-error.log
-/public/js/*
-/public/css/*
-composer.dev.json
-composer.dev.lock
-.tool-versions
-.php-cs-fixer.cache
-/octo-core
-/octo-billing
-/public/storage
+/.fleet
+/.idea
+/.vscode
 .blueprint
-/filament
+

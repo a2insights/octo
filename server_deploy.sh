@@ -7,13 +7,7 @@ echo "Deploying application ..."
 (php artisan down) || true
     # Update codebase
     git checkout .
-    git pull
-
-    # Composer update
-    composer update
-
-    # Setup new aplication
-    php artisan octo:demo
+    git pull origin master
 
     # Reload PHP to update opcache
     echo "" | sudo -S service php8.0-fpm reload
