@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c0ed937dfc7033ef33f1b5889ef7b57",
+    "content-hash": "f093cd41f6d2d4a89766fdc83ce2d78c",
     "packages": [
         {
             "name": "a2insights/octo-core",
@@ -1926,70 +1926,6 @@
                 }
             ],
             "time": "2023-04-03T17:57:52+00:00"
-        },
-        {
-            "name": "laravel/fortify",
-            "version": "v1.17.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/fortify.git",
-                "reference": "76908639d6c58a4996ce8bbacea9ec7f610b2ec6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/fortify/zipball/76908639d6c58a4996ce8bbacea9ec7f610b2ec6",
-                "reference": "76908639d6c58a4996ce8bbacea9ec7f610b2ec6",
-                "shasum": ""
-            },
-            "require": {
-                "bacon/bacon-qr-code": "^2.0",
-                "ext-json": "*",
-                "illuminate/support": "^8.82|^9.0|^10.0",
-                "php": "^7.3|^8.0",
-                "pragmarx/google2fa": "^7.0|^8.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.0",
-                "orchestra/testbench": "^6.0|^7.0|^8.0",
-                "phpstan/phpstan": "^1.10",
-                "phpunit/phpunit": "^9.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Laravel\\Fortify\\FortifyServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Laravel\\Fortify\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                }
-            ],
-            "description": "Backend controllers and scaffolding for Laravel authentication.",
-            "keywords": [
-                "auth",
-                "laravel"
-            ],
-            "support": {
-                "issues": "https://github.com/laravel/fortify/issues",
-                "source": "https://github.com/laravel/fortify"
-            },
-            "time": "2023-04-19T15:48:59+00:00"
         },
         {
             "name": "laravel/framework",
@@ -7737,82 +7673,6 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
-        },
-        {
-            "name": "wychoong/filament-fortify",
-            "version": "v0.3.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wychoong/filament-fortify.git",
-                "reference": "40d36d0d3602f0f6ea2a500d120c619029af5664"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wychoong/filament-fortify/zipball/40d36d0d3602f0f6ea2a500d120c619029af5664",
-                "reference": "40d36d0d3602f0f6ea2a500d120c619029af5664",
-                "shasum": ""
-            },
-            "require": {
-                "filament/filament": "^2.12.18",
-                "illuminate/contracts": "^9.0|^10.0",
-                "laravel/fortify": "^1.11",
-                "php": "^8.0|^8.1|^8.2",
-                "spatie/laravel-package-tools": "^1.9.2"
-            },
-            "require-dev": {
-                "nunomaduro/collision": "^6.0",
-                "orchestra/testbench": "^7.0",
-                "pestphp/pest": "^1.21",
-                "pestphp/pest-plugin-laravel": "^1.1",
-                "phpunit/phpunit": "^9.5",
-                "spatie/laravel-ray": "^1.26"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "WyChoong\\FilamentFortify\\FilamentFortifyServiceProvider"
-                    ],
-                    "aliases": {
-                        "FilamentFortify": "WyChoong\\FilamentFortify\\Facades\\FilamentFortify"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "WyChoong\\FilamentFortify\\": "src",
-                    "WyChoong\\FilamentFortify\\Database\\Factories\\": "database/factories"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "wychoong",
-                    "email": "wychoong@outlook.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Laravel Fortify for Filament Admin",
-            "homepage": "https://github.com/wychoong/filament-fortify",
-            "keywords": [
-                "filament-fortify",
-                "laravel",
-                "wychoong"
-            ],
-            "support": {
-                "issues": "https://github.com/wychoong/filament-fortify/issues",
-                "source": "https://github.com/wychoong/filament-fortify/tree/v0.3.4"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/wychoong",
-                    "type": "github"
-                }
-            ],
-            "time": "2023-02-20T12:53:58+00:00"
         }
     ],
     "packages-dev": [

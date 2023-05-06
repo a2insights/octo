@@ -13,15 +13,13 @@
         "filament/spatie-laravel-settings-plugin": "^2.17",
         "guzzlehttp/guzzle": "^7.2",
         "jeffgreco13/filament-breezy": "^1.5",
-        "laravel/fortify": "^1.17",
         "laravel/framework": "^10.8",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^2.12",
         "spatie/laravel-settings": "^2.8",
         "spatie/laravel-stats": "^2.0",
-        "spatie/laravel-tail": "^4.4",
-        "wychoong/filament-fortify": "^0.3.4"
+        "spatie/laravel-tail": "^4.4"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
