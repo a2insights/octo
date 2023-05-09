@@ -10,10 +10,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use JeffGreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
 use Laravel\Sanctum\HasApiTokens;
+use Octo\Concerns\CanAccessFilament;
 
 class User extends Authenticatable implements FilamentUser
 {
-    use HasApiTokens, HasFactory, Notifiable, TwoFactorAuthenticatable;
+    use HasApiTokens, HasFactory, Notifiable, TwoFactorAuthenticatable, CanAccessFilament;
 
     /**
      * The attributes that are mass assignable.
@@ -44,14 +45,4 @@ class User extends Authenticatable implements FilamentUser
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    /**
-     * Grant filament access to the user.
-     *
-     * @return string
-     */
-    public function canAccessFilament(): bool
-    {
-        return true;
-    }
 }
