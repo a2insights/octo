@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e4e6fba6f3e19cba0e37ee53b8329c9",
+    "content-hash": "077c638bcdd727c6c3ae373a631bfb31",
     "packages": [
         {
             "name": "a2insights/octo-core",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a2insights/octo-core.git",
-                "reference": "af78af9eb0c4170b9dafbcd8c3f67c789bc126e8"
+                "reference": "2d0fed1e018f543077dff78cfdf2c4e608d0635b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/af78af9eb0c4170b9dafbcd8c3f67c789bc126e8",
-                "reference": "af78af9eb0c4170b9dafbcd8c3f67c789bc126e8",
+                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/2d0fed1e018f543077dff78cfdf2c4e608d0635b",
+                "reference": "2d0fed1e018f543077dff78cfdf2c4e608d0635b",
                 "shasum": ""
             },
             "require": {
@@ -26,9 +26,12 @@
                 "illuminate/support": "^10.0",
                 "livewire/livewire": "^2.12",
                 "php": "^8.1",
-                "spatie/laravel-enum": "^3.0"
+                "spatie/laravel-enum": "^3.0",
+                "spatie/laravel-stats": "^2.1",
+                "symfony/intl": "^6.2"
             },
             "require-dev": {
+                "laravel/pint": "dev-main",
                 "orchestra/testbench-core": "^8.0",
                 "phpunit/phpunit": "^9.3"
             },
@@ -76,7 +79,7 @@
                 "issues": "https://github.com/a2insights/octo-core/issues",
                 "source": "https://github.com/a2insights/octo-core/tree/main"
             },
-            "time": "2023-05-09T00:55:26+00:00"
+            "time": "2023-05-11T04:16:37+00:00"
         },
         {
             "name": "akaunting/laravel-money",
@@ -2126,6 +2129,82 @@
                 "source": "https://github.com/laravel/framework"
             },
             "time": "2023-05-09T13:08:05+00:00"
+        },
+        {
+            "name": "laravel/pennant",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/pennant.git",
+                "reference": "783ea43eaa51867247192b30505af0ef5f19ccf1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/pennant/zipball/783ea43eaa51867247192b30505af0ef5f19ccf1",
+                "reference": "783ea43eaa51867247192b30505af0ef5f19ccf1",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^10.0",
+                "illuminate/container": "^10.0",
+                "illuminate/contracts": "^10.0",
+                "illuminate/database": "^10.0",
+                "illuminate/queue": "^10.0",
+                "illuminate/support": "^10.0",
+                "php": "^8.1",
+                "symfony/finder": "^6.0"
+            },
+            "require-dev": {
+                "laravel/octane": "^1.4",
+                "orchestra/testbench": "^8.0",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Pennant\\PennantServiceProvider"
+                    ],
+                    "aliases": {
+                        "Feature": "Laravel\\Pennant\\Feature"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Laravel\\Pennant\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "A simple, lightweight library for managing feature flags.",
+            "homepage": "https://github.com/laravel/pennant",
+            "keywords": [
+                "feature",
+                "flags",
+                "laravel",
+                "pennant"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/pennant/issues",
+                "source": "https://github.com/laravel/pennant"
+            },
+            "time": "2023-03-17T18:08:19+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -4970,137 +5049,6 @@
             "time": "2023-02-10T15:33:25+00:00"
         },
         {
-            "name": "spatie/laravel-tail",
-            "version": "4.4.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-tail.git",
-                "reference": "485ba5df30e10c914f633b88174bb1a247136b79"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-tail/zipball/485ba5df30e10c914f633b88174bb1a247136b79",
-                "reference": "485ba5df30e10c914f633b88174bb1a247136b79",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/console": "^8.0|^9.0|^10.0",
-                "illuminate/support": "^8.0|^9.0|^10.0",
-                "php": "^8.0",
-                "spatie/laravel-package-tools": "^1.9",
-                "spatie/ssh": "^1.4",
-                "symfony/process": "^5.0|^6.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.4",
-                "orchestra/testbench": "^6.0|^7.0|^8.0",
-                "phpunit/phpunit": "^9.5"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Spatie\\Tail\\TailServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\Tail\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://murze.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Easily tail application logs",
-            "homepage": "https://github.com/spatie/laravel-tail",
-            "keywords": [
-                "development",
-                "laravel",
-                "laravel-tail",
-                "log",
-                "tail"
-            ],
-            "support": {
-                "source": "https://github.com/spatie/laravel-tail/tree/4.4.2"
-            },
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                }
-            ],
-            "time": "2023-01-25T16:03:32+00:00"
-        },
-        {
-            "name": "spatie/ssh",
-            "version": "1.8.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/ssh.git",
-                "reference": "d1d895455eeb788fb0f1aeeecaff5f57ecd05bbb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/ssh/zipball/d1d895455eeb788fb0f1aeeecaff5f57ecd05bbb",
-                "reference": "d1d895455eeb788fb0f1aeeecaff5f57ecd05bbb",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.4|^8.0",
-                "symfony/process": "^4.4|^5.3|^6.0"
-            },
-            "require-dev": {
-                "pestphp/pest": "^1.22",
-                "spatie/pest-plugin-snapshots": "^1.1",
-                "symfony/var-dumper": "^5.3|6.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\Ssh\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A lightweight package to execute commands over an SSH connection",
-            "homepage": "https://github.com/spatie/ssh",
-            "keywords": [
-                "spatie",
-                "ssh"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/ssh/issues",
-                "source": "https://github.com/spatie/ssh/tree/1.8.3"
-            },
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                }
-            ],
-            "time": "2023-05-05T11:44:19+00:00"
-        },
-        {
             "name": "spatie/temporary-directory",
             "version": "2.1.2",
             "source": {
@@ -5874,6 +5822,87 @@
                 }
             ],
             "time": "2023-04-28T13:50:28+00:00"
+        },
+        {
+            "name": "symfony/intl",
+            "version": "v6.2.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/intl.git",
+                "reference": "860c99e53149d22df1900d3aefdaeb17adb7669d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/intl/zipball/860c99e53149d22df1900d3aefdaeb17adb7669d",
+                "reference": "860c99e53149d22df1900d3aefdaeb17adb7669d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "symfony/filesystem": "^5.4|^6.0",
+                "symfony/finder": "^5.4|^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Intl\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                },
+                {
+                    "name": "Eriksen Costa",
+                    "email": "eriksen.costa@infranology.com.br"
+                },
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides access to the localization data of the ICU library",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "i18n",
+                "icu",
+                "internationalization",
+                "intl",
+                "l10n",
+                "localization"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/intl/tree/v6.2.10"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-04-14T16:23:31+00:00"
         },
         {
             "name": "symfony/mailer",
@@ -8380,23 +8409,23 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.21.5",
+            "version": "v1.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "27af207bb1c53faddcba34c7528b3e969f6a646d"
+                "reference": "923e1e112b6a8598664dbb0ee79dd3137f1c9d56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/27af207bb1c53faddcba34c7528b3e969f6a646d",
-                "reference": "27af207bb1c53faddcba34c7528b3e969f6a646d",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/923e1e112b6a8598664dbb0ee79dd3137f1c9d56",
+                "reference": "923e1e112b6a8598664dbb0ee79dd3137f1c9d56",
                 "shasum": ""
             },
             "require": {
                 "illuminate/console": "^8.0|^9.0|^10.0",
                 "illuminate/contracts": "^8.0|^9.0|^10.0",
                 "illuminate/support": "^8.0|^9.0|^10.0",
-                "php": "^7.3|^8.0",
+                "php": "^8.0",
                 "symfony/yaml": "^6.0"
             },
             "require-dev": {
@@ -8441,7 +8470,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2023-04-24T13:29:38+00:00"
+            "time": "2023-05-04T14:52:56+00:00"
         },
         {
             "name": "mockery/mockery",
