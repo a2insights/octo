@@ -17,7 +17,8 @@
         "laravel/pennant": "^1.2",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
-        "livewire/livewire": "^2.12"
+        "livewire/livewire": "^2.12",
+        "pxlrbt/filament-environment-indicator": "^1.0"
     },
     "require-dev": {
         "doctrine/dbal": "^3.6",

@@ -61,26 +61,6 @@ Start the local development server:
 
 You can now access the server at <http://localhost:8000>
 
-### Demo application
-
-You can set up the new application with faker data using our assistant:
-
-    php artisan octo:demo
-
-This will create two users:
-
-#### Super Admin
-
-E-mail: super-admin@octo.dev
-
-Password: octoSuperAdmin
-
-#### User
-
-E-mail: user@octo.dev
-
-Password: octoUser
-
 ### Using Laravel Sail to develop
 
     sail up
