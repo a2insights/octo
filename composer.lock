@@ -4,21 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2fb228f5f8334370e7dc31b51405c918",
+    "content-hash": "2ebaec1de541359ce70b335f64bf88f0",
     "packages": [
         {
             "name": "a2insights/octo-core",
             "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/a2insights/octo-core.git",
-                "reference": "ac7edfd01c5f3a9963cd5cd99389b98f2b599eff"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/ac7edfd01c5f3a9963cd5cd99389b98f2b599eff",
-                "reference": "ac7edfd01c5f3a9963cd5cd99389b98f2b599eff",
-                "shasum": ""
+                "type": "path",
+                "url": "../octo-core",
+                "reference": "ac7edfd01c5f3a9963cd5cd99389b98f2b599eff"
             },
             "require": {
                 "ext-json": "*",
@@ -40,7 +34,6 @@
                 "doctrine/dbal": "Required by Cashier to modify tables in the database.",
                 "laravel/cashier": "Required to use with the Stripe scaffolding."
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -57,7 +50,16 @@
                     "Octo\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Octo\\Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "vendor/bin/phpunit"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -76,11 +78,9 @@
                 "php",
                 "sass"
             ],
-            "support": {
-                "issues": "https://github.com/a2insights/octo-core/issues",
-                "source": "https://github.com/a2insights/octo-core/tree/main"
-            },
-            "time": "2023-06-08T05:54:42+00:00"
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "akaunting/laravel-money",
@@ -409,6 +409,81 @@
                 }
             ],
             "time": "2023-01-15T23:15:59+00:00"
+        },
+        {
+            "name": "brickx/laravel-filament-maintenance",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Keysaw/laravel-filament-maintenance.git",
+                "reference": "af59cb19ff6c80b9ed8f25ac976d80ae8fe4b336"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Keysaw/laravel-filament-maintenance/zipball/af59cb19ff6c80b9ed8f25ac976d80ae8fe4b336",
+                "reference": "af59cb19ff6c80b9ed8f25ac976d80ae8fe4b336",
+                "shasum": ""
+            },
+            "require": {
+                "blade-ui-kit/blade-icons": "^1.5",
+                "filament/filament": "^2.17",
+                "filament/notifications": "^2.17",
+                "illuminate/contracts": "^10.11",
+                "livewire/livewire": "^2.10",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.15"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.10",
+                "nunomaduro/collision": "^7.9",
+                "orchestra/testbench": "^8.5",
+                "pestphp/pest": "^2.6",
+                "pestphp/pest-plugin-arch": "^2.1",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "pestphp/pest-plugin-livewire": "^2.0",
+                "spatie/laravel-ray": "^1.32"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Brickx\\Filament\\Maintenance\\MaintenanceServiceProvider"
+                    ],
+                    "aliases": {
+                        "FilamentMaintenance": "Brickx\\Filament\\Maintenance\\Facades\\FilamentMaintenance"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Brickx\\Filament\\Maintenance\\": "src/",
+                    "Brickx\\Filament\\Maintenance\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Florian PLAMONT",
+                    "email": "keysaw@brickx.fr",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Simple plugin to toggle maintenance mode from Filament",
+            "homepage": "https://github.com/brickx/laravel-filament-maintenance",
+            "keywords": [
+                "brickx",
+                "filament",
+                "laravel",
+                "maintenance"
+            ],
+            "support": {
+                "issues": "https://github.com/Keysaw/laravel-filament-maintenance/issues",
+                "source": "https://github.com/Keysaw/laravel-filament-maintenance/tree/1.0.1"
+            },
+            "time": "2023-05-27T08:59:08+00:00"
         },
         {
             "name": "danharrin/date-format-converter",
@@ -8898,16 +8973,16 @@
         },
         {
             "name": "orchestra/testbench-core",
-            "version": "v8.5.5",
+            "version": "v8.5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench-core.git",
-                "reference": "ea9a5388c124320594ff30384c835cab110fa5ea"
+                "reference": "b9295f845d376d51e6a1629c116103e7a55c99c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/ea9a5388c124320594ff30384c835cab110fa5ea",
-                "reference": "ea9a5388c124320594ff30384c835cab110fa5ea",
+                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/b9295f845d376d51e6a1629c116103e7a55c99c8",
+                "reference": "b9295f845d376d51e6a1629c116103e7a55c99c8",
                 "shasum": ""
             },
             "require": {
@@ -8976,7 +9051,7 @@
                 "issues": "https://github.com/orchestral/testbench/issues",
                 "source": "https://github.com/orchestral/testbench-core"
             },
-            "time": "2023-06-07T12:11:33+00:00"
+            "time": "2023-06-08T06:22:10+00:00"
         },
         {
             "name": "phar-io/manifest",
