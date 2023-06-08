@@ -4,19 +4,26 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e07449ee0b7afa15ce81f2a163ca3389",
+    "content-hash": "4db75a49aa441e0ff0875b4e5057d79b",
     "packages": [
         {
             "name": "a2insights/octo-core",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/a2insights/octo-core.git",
+                "reference": "e51fa1e5b0dd6da74ad0f9dd2b2b18c3461cc18e"
+            },
             "dist": {
-                "type": "path",
-                "url": "../octo-core",
-                "reference": "e1f4bf061c926d9446e3b452098ff268e7cc30d0"
+                "type": "zip",
+                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/e51fa1e5b0dd6da74ad0f9dd2b2b18c3461cc18e",
+                "reference": "e51fa1e5b0dd6da74ad0f9dd2b2b18c3461cc18e",
+                "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "filament/filament": "^2.17",
+                "filament/spatie-laravel-settings-plugin": "^2.0",
                 "illuminate/support": "^10.0",
                 "livewire/livewire": "^2.12",
                 "php": "^8.1",
@@ -34,6 +41,7 @@
                 "doctrine/dbal": "Required by Cashier to modify tables in the database.",
                 "laravel/cashier": "Required to use with the Stripe scaffolding."
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -50,16 +58,7 @@
                     "Octo\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Octo\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "vendor/bin/phpunit"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -78,9 +77,11 @@
                 "php",
                 "sass"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/a2insights/octo-core/issues",
+                "source": "https://github.com/a2insights/octo-core/tree/main"
+            },
+            "time": "2023-06-08T21:36:50+00:00"
         },
         {
             "name": "akaunting/laravel-firewall",
@@ -2287,16 +2288,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.13.2",
+            "version": "v10.13.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "fd4619b56b56308e2c2c1840fedd0b8ebb73dfc5"
+                "reference": "03106ae9ba2ec4b36dc973b7bdca6fad81e032b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/fd4619b56b56308e2c2c1840fedd0b8ebb73dfc5",
-                "reference": "fd4619b56b56308e2c2c1840fedd0b8ebb73dfc5",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/03106ae9ba2ec4b36dc973b7bdca6fad81e032b4",
+                "reference": "03106ae9ba2ec4b36dc973b7bdca6fad81e032b4",
                 "shasum": ""
             },
             "require": {
@@ -2483,83 +2484,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-06-05T15:48:15+00:00"
-        },
-        {
-            "name": "laravel/pennant",
-            "version": "v1.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/pennant.git",
-                "reference": "16dff80b784d7f633fe1957348efeb457ca7d652"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/pennant/zipball/16dff80b784d7f633fe1957348efeb457ca7d652",
-                "reference": "16dff80b784d7f633fe1957348efeb457ca7d652",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/console": "^10.0",
-                "illuminate/container": "^10.0",
-                "illuminate/contracts": "^10.0",
-                "illuminate/database": "^10.0",
-                "illuminate/queue": "^10.0",
-                "illuminate/support": "^10.0",
-                "php": "^8.1",
-                "symfony/finder": "^6.0"
-            },
-            "require-dev": {
-                "laravel/octane": "^1.4",
-                "orchestra/testbench": "^8.0",
-                "phpstan/phpstan": "^1.10",
-                "phpunit/phpunit": "^9.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Laravel\\Pennant\\PennantServiceProvider"
-                    ],
-                    "aliases": {
-                        "Feature": "Laravel\\Pennant\\Feature"
-                    }
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "Laravel\\Pennant\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                }
-            ],
-            "description": "A simple, lightweight library for managing feature flags.",
-            "homepage": "https://github.com/laravel/pennant",
-            "keywords": [
-                "feature",
-                "flags",
-                "laravel",
-                "pennant"
-            ],
-            "support": {
-                "issues": "https://github.com/laravel/pennant/issues",
-                "source": "https://github.com/laravel/pennant"
-            },
-            "time": "2023-05-17T12:47:45+00:00"
+            "time": "2023-06-08T20:25:36+00:00"
         },
         {
             "name": "laravel/sanctum",
