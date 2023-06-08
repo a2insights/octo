@@ -22,7 +22,6 @@
         "guzzlehttp/guzzle": "^7.2",
         "jeffgreco13/filament-breezy": "^1.5",
         "laravel/framework": "^10.8",
-        "laravel/pennant": "^1.2",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^2.12",
