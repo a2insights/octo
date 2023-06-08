@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2ebaec1de541359ce70b335f64bf88f0",
+    "content-hash": "e07449ee0b7afa15ce81f2a163ca3389",
     "packages": [
         {
             "name": "a2insights/octo-core",
@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "../octo-core",
-                "reference": "ac7edfd01c5f3a9963cd5cd99389b98f2b599eff"
+                "reference": "e1f4bf061c926d9446e3b452098ff268e7cc30d0"
             },
             "require": {
                 "ext-json": "*",
@@ -81,6 +81,73 @@
             "transport-options": {
                 "relative": true
             }
+        },
+        {
+            "name": "akaunting/laravel-firewall",
+            "version": "2.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/akaunting/laravel-firewall.git",
+                "reference": "050981051cfceb18bd903e63969d7e7748d50d61"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/akaunting/laravel-firewall/zipball/050981051cfceb18bd903e63969d7e7748d50d61",
+                "reference": "050981051cfceb18bd903e63969d7e7748d50d61",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7.4",
+                "jenssegers/agent": "2.6.*",
+                "laravel/framework": "^9.0|^10.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^7.4|^8.0",
+                "phpunit/phpunit": "^9.5|^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Akaunting\\Firewall\\Provider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Akaunting\\Firewall\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Denis Duliçi",
+                    "email": "info@akaunting.com",
+                    "homepage": "https://akaunting.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Web Application Firewall (WAF) package for Laravel",
+            "keywords": [
+                "blacklist",
+                "firewall",
+                "laravel",
+                "lfi",
+                "rfi",
+                "security",
+                "sqli",
+                "waf",
+                "xss"
+            ],
+            "support": {
+                "issues": "https://github.com/akaunting/laravel-firewall/issues",
+                "source": "https://github.com/akaunting/laravel-firewall/tree/2.1.4"
+            },
+            "time": "2023-03-30T07:45:04+00:00"
         },
         {
             "name": "akaunting/laravel-money",
@@ -484,6 +551,82 @@
                 "source": "https://github.com/Keysaw/laravel-filament-maintenance/tree/1.0.1"
             },
             "time": "2023-05-27T08:59:08+00:00"
+        },
+        {
+            "name": "cms-multi/filament-clear-cache",
+            "version": "1.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cms-multi/filament-clear-cache.git",
+                "reference": "a87530259769698fc2b5c29d985e905dec6dfaed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cms-multi/filament-clear-cache/zipball/a87530259769698fc2b5c29d985e905dec6dfaed",
+                "reference": "a87530259769698fc2b5c29d985e905dec6dfaed",
+                "shasum": ""
+            },
+            "require": {
+                "blade-ui-kit/blade-heroicons": "^1.2",
+                "filament/filament": "^2.0",
+                "filament/notifications": "^2.0",
+                "livewire/livewire": "^2.10.7",
+                "php": "^8.0|^8.1",
+                "spatie/laravel-package-tools": "^1.13.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^6.0",
+                "nunomaduro/larastan": "^2.0",
+                "orchestra/testbench": "^7.0",
+                "pestphp/pest": "^1.21",
+                "pestphp/pest-plugin-laravel": "^1.1",
+                "pestphp/pest-plugin-livewire": "^1.1",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^9.5",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "CmsMulti\\FilamentClearCache\\FilamentClearCacheServiceProvider"
+                    ],
+                    "aliases": {
+                        "FilamentClearCache": "CmsMulti\\FilamentClearCache\\Facades\\FilamentClearCache"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CmsMulti\\FilamentClearCache\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "howdu",
+                    "email": "cms.multi2@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Clear your cache easily from within filament",
+            "homepage": "https://github.com/cms-multi/filament-clear-cache",
+            "keywords": [
+                "filament",
+                "filament-clear-cache",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/cms-multi/filament-clear-cache/issues",
+                "source": "https://github.com/cms-multi/filament-clear-cache/tree/1.0.8"
+            },
+            "time": "2023-03-12T13:35:47+00:00"
         },
         {
             "name": "danharrin/date-format-converter",
@@ -1927,6 +2070,58 @@
             "time": "2021-10-07T12:57:01+00:00"
         },
         {
+            "name": "jaybizzle/crawler-detect",
+            "version": "v1.2.115",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JayBizzle/Crawler-Detect.git",
+                "reference": "4531e4a70d55d10cbe7d41ac1ff0d75a5fe2ef1e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/4531e4a70d55d10cbe7d41ac1ff0d75a5fe2ef1e",
+                "reference": "4531e4a70d55d10cbe7d41ac1ff0d75a5fe2ef1e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8|^5.5|^6.5|^9.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jaybizzle\\CrawlerDetect\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Beech",
+                    "email": "m@rkbee.ch",
+                    "role": "Developer"
+                }
+            ],
+            "description": "CrawlerDetect is a PHP class for detecting bots/crawlers/spiders via the user agent",
+            "homepage": "https://github.com/JayBizzle/Crawler-Detect/",
+            "keywords": [
+                "crawler",
+                "crawler detect",
+                "crawler detector",
+                "crawlerdetect",
+                "php crawler detect"
+            ],
+            "support": {
+                "issues": "https://github.com/JayBizzle/Crawler-Detect/issues",
+                "source": "https://github.com/JayBizzle/Crawler-Detect/tree/v1.2.115"
+            },
+            "time": "2023-06-05T21:32:18+00:00"
+        },
+        {
             "name": "jeffgreco13/filament-breezy",
             "version": "v1.5.6",
             "source": {
@@ -2006,6 +2201,89 @@
                 }
             ],
             "time": "2023-06-06T13:45:52+00:00"
+        },
+        {
+            "name": "jenssegers/agent",
+            "version": "v2.6.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jenssegers/agent.git",
+                "reference": "daa11c43729510b3700bc34d414664966b03bffe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jenssegers/agent/zipball/daa11c43729510b3700bc34d414664966b03bffe",
+                "reference": "daa11c43729510b3700bc34d414664966b03bffe",
+                "shasum": ""
+            },
+            "require": {
+                "jaybizzle/crawler-detect": "^1.2",
+                "mobiledetect/mobiledetectlib": "^2.7.6",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^5.0|^6.0|^7.0"
+            },
+            "suggest": {
+                "illuminate/support": "Required for laravel service providers"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Jenssegers\\Agent\\AgentServiceProvider"
+                    ],
+                    "aliases": {
+                        "Agent": "Jenssegers\\Agent\\Facades\\Agent"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jenssegers\\Agent\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jens Segers",
+                    "homepage": "https://jenssegers.com"
+                }
+            ],
+            "description": "Desktop/mobile user agent parser with support for Laravel, based on Mobiledetect",
+            "homepage": "https://github.com/jenssegers/agent",
+            "keywords": [
+                "Agent",
+                "browser",
+                "desktop",
+                "laravel",
+                "mobile",
+                "platform",
+                "user agent",
+                "useragent"
+            ],
+            "support": {
+                "issues": "https://github.com/jenssegers/agent/issues",
+                "source": "https://github.com/jenssegers/agent/tree/v2.6.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/jenssegers",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/jenssegers/agent",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-06-13T08:05:20+00:00"
         },
         {
             "name": "laravel/framework",
@@ -3078,6 +3356,62 @@
                 "source": "https://github.com/Masterminds/html5-php/tree/2.8.0"
             },
             "time": "2023-04-26T07:27:39+00:00"
+        },
+        {
+            "name": "mobiledetect/mobiledetectlib",
+            "version": "2.8.41",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/serbanghita/Mobile-Detect.git",
+                "reference": "fc9cccd4d3706d5a7537b562b59cc18f9e4c0cb1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/fc9cccd4d3706d5a7537b562b59cc18f9e4c0cb1",
+                "reference": "fc9cccd4d3706d5a7537b562b59cc18f9e4c0cb1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8.35||~5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Detection": "namespaced/"
+                },
+                "classmap": [
+                    "Mobile_Detect.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Serban Ghita",
+                    "email": "serbanghita@gmail.com",
+                    "homepage": "http://mobiledetect.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Mobile_Detect is a lightweight PHP class for detecting mobile devices. It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
+            "homepage": "https://github.com/serbanghita/Mobile-Detect",
+            "keywords": [
+                "detect mobile devices",
+                "mobile",
+                "mobile detect",
+                "mobile detector",
+                "php mobile detect"
+            ],
+            "support": {
+                "issues": "https://github.com/serbanghita/Mobile-Detect/issues",
+                "source": "https://github.com/serbanghita/Mobile-Detect/tree/2.8.41"
+            },
+            "time": "2022-11-08T18:31:26+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -4723,6 +5057,83 @@
                 }
             ],
             "time": "2023-02-14T16:54:54+00:00"
+        },
+        {
+            "name": "solution-forest/filament-firewall",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/solutionforest/filament-firewall.git",
+                "reference": "9b1188f8eb99a99dd423f692fc75c5f71923be99"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/solutionforest/filament-firewall/zipball/9b1188f8eb99a99dd423f692fc75c5f71923be99",
+                "reference": "9b1188f8eb99a99dd423f692fc75c5f71923be99",
+                "shasum": ""
+            },
+            "require": {
+                "akaunting/laravel-firewall": "^2.1",
+                "filament/filament": "^2.0",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.13.5"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^6.0",
+                "nunomaduro/larastan": "^2.0.1",
+                "orchestra/testbench": "^7.0",
+                "pestphp/pest": "^1.21",
+                "pestphp/pest-plugin-laravel": "^1.1",
+                "pestphp/pest-plugin-livewire": "^1.0",
+                "pestphp/pest-plugin-parallel": "^0.3",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^9.5",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "SolutionForest\\FilamentFirewall\\FilamentFirewallServiceProvider"
+                    ],
+                    "aliases": {
+                        "FilamentFirewall": "SolutionForest\\FilamentFirewall\\Facades\\FilamentFirewall"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SolutionForest\\FilamentFirewall\\": "src",
+                    "SolutionForest\\FilamentFirewall\\Database\\Seeders\\": "database/seeders",
+                    "SolutionForest\\FilamentFirewall\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carly",
+                    "email": "info@solutionforest.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This is a middleware for whitelisting/blacklisting for Filament Admin",
+            "homepage": "https://github.com/solution-forest/filament-firewall",
+            "keywords": [
+                "Solution Forest",
+                "filament-firewall",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/solution-forest/filament-firewall/issues",
+                "source": "https://github.com/solution-forest/filament-firewall"
+            },
+            "time": "2023-05-18T02:18:43+00:00"
         },
         {
             "name": "spatie/enum",

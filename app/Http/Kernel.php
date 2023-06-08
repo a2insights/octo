@@ -21,6 +21,8 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        \SolutionForest\FilamentFirewall\Middleware\WhitelistRangeMiddleware::class,
+        \Octo\Settings\Http\Middleware\RestrictIps::class,
     ];
 
     /**

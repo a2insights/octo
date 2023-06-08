@@ -235,6 +235,7 @@ return [
             SubstituteBindings::class,
             DispatchServingFilamentEvent::class,
             MirrorConfigToSubpackages::class,
+            \Octo\Settings\Http\Middleware\Locale::class,
         ],
     ],
 
