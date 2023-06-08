@@ -11,6 +11,7 @@ use Illuminate\Notifications\Notifiable;
 use JeffGreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
 use Laravel\Sanctum\HasApiTokens;
 use Octo\Concerns\CanAccessFilament;
+use Octo\User\Settings;
 
 class User extends Authenticatable implements FilamentUser
 {
@@ -43,6 +44,6 @@ class User extends Authenticatable implements FilamentUser
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'email_verified_at' => 'datetime', 'settings' => Settings::class,
     ];
 }
