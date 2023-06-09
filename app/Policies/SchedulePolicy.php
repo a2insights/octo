@@ -3,9 +3,10 @@
 namespace App\Policies;
 
 use App\Models\User;
+use HusamTariq\FilamentDatabaseSchedule\Models\Schedule;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class UserPolicy
+class SchedulePolicy
 {
     use HandlesAuthorization;
 
@@ -16,7 +17,7 @@ class UserPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->can('view_any_octo::user::filament::user');
+        return $user->can('view_any_schedule');
     }
 
     /**
@@ -24,9 +25,9 @@ class UserPolicy
      *
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user)
+    public function view(User $user, Schedule $schedule)
     {
-        return $user->can('view_octo::user::filament::user');
+        return $user->can('view_schedule');
     }
 
     /**
@@ -36,7 +37,7 @@ class UserPolicy
      */
     public function create(User $user)
     {
-        return $user->can('create_octo::user::filament::user');
+        return $user->can('create_schedule');
     }
 
     /**
@@ -44,9 +45,9 @@ class UserPolicy
      *
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user)
+    public function update(User $user, Schedule $schedule)
     {
-        return $user->can('update_octo::user::filament::user');
+        return $user->can('update_schedule');
     }
 
     /**
@@ -54,9 +55,9 @@ class UserPolicy
      *
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user)
+    public function delete(User $user, Schedule $schedule)
     {
-        return $user->can('delete_octo::user::filament::user');
+        return $user->can('delete_schedule');
     }
 
     /**
@@ -66,7 +67,7 @@ class UserPolicy
      */
     public function deleteAny(User $user)
     {
-        return $user->can('delete_any_octo::user::filament::user');
+        return $user->can('delete_any_schedule');
     }
 
     /**
@@ -74,9 +75,9 @@ class UserPolicy
      *
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user)
+    public function forceDelete(User $user, Schedule $schedule)
     {
-        return $user->can('force_delete_octo::user::filament::user');
+        return $user->can('force_delete_schedule');
     }
 
     /**
@@ -86,7 +87,7 @@ class UserPolicy
      */
     public function forceDeleteAny(User $user)
     {
-        return $user->can('force_delete_any_octo::user::filament::user');
+        return $user->can('force_delete_any_schedule');
     }
 
     /**
@@ -94,9 +95,9 @@ class UserPolicy
      *
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user)
+    public function restore(User $user, Schedule $schedule)
     {
-        return $user->can('restore_octo::user::filament::user');
+        return $user->can('restore_schedule');
     }
 
     /**
@@ -106,17 +107,17 @@ class UserPolicy
      */
     public function restoreAny(User $user)
     {
-        return $user->can('restore_any_octo::user::filament::user');
+        return $user->can('restore_any_schedule');
     }
 
     /**
-     * Determine whether the user can bulk restore.
+     * Determine whether the user can replicate.
      *
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function replicate(User $user)
+    public function replicate(User $user, Schedule $schedule)
     {
-        return $user->can('replicate_octo::user::filament::user');
+        return $user->can('replicate_schedule');
     }
 
     /**
@@ -126,6 +127,6 @@ class UserPolicy
      */
     public function reorder(User $user)
     {
-        return $user->can('reorder_octo::user::filament::user');
+        return $user->can('reorder_schedule');
     }
 }

@@ -3,9 +3,10 @@
 namespace App\Policies;
 
 use App\Models\User;
+use Croustibat\FilamentJobsMonitor\Models\QueueMonitor;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class UserPolicy
+class QueueMonitorPolicy
 {
     use HandlesAuthorization;
 
@@ -16,7 +17,7 @@ class UserPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->can('view_any_octo::user::filament::user');
+        return $user->can('view_any_queue::monitor');
     }
 
     /**
@@ -24,9 +25,9 @@ class UserPolicy
      *
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user)
+    public function view(User $user, QueueMonitor $queueMonitor)
     {
-        return $user->can('view_octo::user::filament::user');
+        return $user->can('view_queue::monitor');
     }
 
     /**
@@ -36,7 +37,7 @@ class UserPolicy
      */
     public function create(User $user)
     {
-        return $user->can('create_octo::user::filament::user');
+        return $user->can('create_queue::monitor');
     }
 
     /**
@@ -44,9 +45,9 @@ class UserPolicy
      *
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user)
+    public function update(User $user, QueueMonitor $queueMonitor)
     {
-        return $user->can('update_octo::user::filament::user');
+        return $user->can('update_queue::monitor');
     }
 
     /**
@@ -54,9 +55,9 @@ class UserPolicy
      *
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user)
+    public function delete(User $user, QueueMonitor $queueMonitor)
     {
-        return $user->can('delete_octo::user::filament::user');
+        return $user->can('delete_queue::monitor');
     }
 
     /**
@@ -66,7 +67,7 @@ class UserPolicy
      */
     public function deleteAny(User $user)
     {
-        return $user->can('delete_any_octo::user::filament::user');
+        return $user->can('delete_any_queue::monitor');
     }
 
     /**
@@ -74,9 +75,9 @@ class UserPolicy
      *
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user)
+    public function forceDelete(User $user, QueueMonitor $queueMonitor)
     {
-        return $user->can('force_delete_octo::user::filament::user');
+        return $user->can('force_delete_queue::monitor');
     }
 
     /**
@@ -86,7 +87,7 @@ class UserPolicy
      */
     public function forceDeleteAny(User $user)
     {
-        return $user->can('force_delete_any_octo::user::filament::user');
+        return $user->can('force_delete_any_queue::monitor');
     }
 
     /**
@@ -94,9 +95,9 @@ class UserPolicy
      *
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user)
+    public function restore(User $user, QueueMonitor $queueMonitor)
     {
-        return $user->can('restore_octo::user::filament::user');
+        return $user->can('restore_queue::monitor');
     }
 
     /**
@@ -106,17 +107,17 @@ class UserPolicy
      */
     public function restoreAny(User $user)
     {
-        return $user->can('restore_any_octo::user::filament::user');
+        return $user->can('restore_any_queue::monitor');
     }
 
     /**
-     * Determine whether the user can bulk restore.
+     * Determine whether the user can replicate.
      *
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function replicate(User $user)
+    public function replicate(User $user, QueueMonitor $queueMonitor)
     {
-        return $user->can('replicate_octo::user::filament::user');
+        return $user->can('replicate_queue::monitor');
     }
 
     /**
@@ -126,6 +127,6 @@ class UserPolicy
      */
     public function reorder(User $user)
     {
-        return $user->can('reorder_octo::user::filament::user');
+        return $user->can('reorder_queue::monitor');
     }
 }

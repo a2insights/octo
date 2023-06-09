@@ -2,9 +2,13 @@
 
 namespace App\Providers;
 
-// use Illuminate\Support\Facades\Gate;
+use App\Models\User;
+use Croustibat\FilamentJobsMonitor\Models\QueueMonitor;
+use HusamTariq\FilamentDatabaseSchedule\Models\Schedule;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Marjose123\FilamentWebhookServer\Models\FilamentWebhookServer;
 use SolutionForest\FilamentFirewall\Models\Ip;
+use Spatie\Permission\Models\Role;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -15,6 +19,11 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         Ip::class => \App\Policies\IpPolicy::class,
+        QueueMonitor::class => \App\Policies\QueueMonitorPolicy::class,
+        FilamentWebhookServer::class => \App\Policies\WebhookPolicy::class,
+        Role::class => \App\Policies\RolePolicy::class,
+        User::class => \App\Policies\UserPolicy::class,
+        Schedule::class => \App\Policies\SchedulePolicy::class,
     ];
 
     /**

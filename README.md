@@ -59,13 +59,31 @@ Start the local development server:
 
     php artisan serve
 
-You can now access the server at <http://localhost:8000>
+You can now access the server at <http://127.0.0.1:8000>
 
 ### Using Laravel Sail to develop
 
     sail up
 
 You can now access the server at <http://localhost>
+
+### Dev app
+
+To generate data for development purposes, run the following command:
+
+    php artisan dev:app
+
+This command will generate data that can be used for testing and development. You can find the implementation details of this command [here](https://github.com/a2insights/octo-core/blob/main/src/Console/SetupDevCommand.php).
+
+got to <http://127.0.0.1:8000/dashboard/login> and login with the following credentials:
+
+email: super-admin@octo.dev
+password: 123456
+
+or
+
+email: user@octo.dev
+password:123456
 
 **For more information: <https://laravel.com/docs/sail>**
 
