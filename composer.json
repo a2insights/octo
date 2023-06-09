@@ -20,8 +20,10 @@
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^2.12",
+        "opcodesio/log-viewer": "^2.4",
         "pxlrbt/filament-environment-indicator": "^1.0",
-        "solution-forest/filament-firewall": "^1.0"
+        "solution-forest/filament-firewall": "^1.0",
+        "xlite-dev/filament-impersonate": "^1.1"
     },
     "require-dev": {
         "doctrine/dbal": "^3.6",
