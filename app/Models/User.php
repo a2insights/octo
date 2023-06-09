@@ -12,10 +12,11 @@ use JeffGreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
 use Laravel\Sanctum\HasApiTokens;
 use Octo\Concerns\CanAccessFilament;
 use Octo\User\Settings;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements FilamentUser
 {
-    use HasApiTokens, HasFactory, Notifiable, TwoFactorAuthenticatable, CanAccessFilament;
+    use HasApiTokens, HasFactory, Notifiable, TwoFactorAuthenticatable, CanAccessFilament, HasRoles;
 
     /**
      * The attributes that are mass assignable.

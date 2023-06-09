@@ -9,6 +9,7 @@
     "require": {
         "php": "^8.1",
         "a2insights/octo-core": "dev-main",
+        "bezhansalleh/filament-shield": "^2.4",
         "brickx/laravel-filament-maintenance": "^1.0",
         "cms-multi/filament-clear-cache": "^1.0",
         "filament/filament": "^2.17",
