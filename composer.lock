@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fca00616c57b4bb9db9e4ed22ff1240f",
+    "content-hash": "07f2c79fd40cd2fb58f7f34a43b2f864",
     "packages": [
         {
             "name": "a2insights/octo-core",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a2insights/octo-core.git",
-                "reference": "7128d538cf5820afb6844a263944d4a7cc3fa6ef"
+                "reference": "9f3e448c441412e1191dc2bd29f05a5bfe4c068d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/7128d538cf5820afb6844a263944d4a7cc3fa6ef",
-                "reference": "7128d538cf5820afb6844a263944d4a7cc3fa6ef",
+                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/9f3e448c441412e1191dc2bd29f05a5bfe4c068d",
+                "reference": "9f3e448c441412e1191dc2bd29f05a5bfe4c068d",
                 "shasum": ""
             },
             "require": {
@@ -80,7 +80,7 @@
                 "issues": "https://github.com/a2insights/octo-core/issues",
                 "source": "https://github.com/a2insights/octo-core/tree/main"
             },
-            "time": "2023-06-10T07:10:17+00:00"
+            "time": "2023-06-10T22:38:50+00:00"
         },
         {
             "name": "akaunting/laravel-firewall",
@@ -217,6 +217,87 @@
                 "source": "https://github.com/akaunting/laravel-money/tree/4.0.1"
             },
             "time": "2023-03-16T14:39:27+00:00"
+        },
+        {
+            "name": "archilex/filament-toggle-icon-column",
+            "version": "v1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/archilex/filament-toggle-icon-column.git",
+                "reference": "9752404be98d570e38da053d8f67976745eca098"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/archilex/filament-toggle-icon-column/zipball/9752404be98d570e38da053d8f67976745eca098",
+                "reference": "9752404be98d570e38da053d8f67976745eca098",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^2.0",
+                "illuminate/contracts": "^9.0|^10.0",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.13.5"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^6.0|^7.0",
+                "orchestra/testbench": "^7.0|^8.0",
+                "pestphp/pest": "^1.21",
+                "pestphp/pest-plugin-laravel": "^1.1",
+                "pestphp/pest-plugin-livewire": "^1.0",
+                "pestphp/pest-plugin-parallel": "^0.3",
+                "phpunit/phpunit": "^9.5|^10.0",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Archilex\\ToggleIconColumn\\ToggleIconColumnServiceProvider"
+                    ],
+                    "aliases": {
+                        "ToggleIconColumn": "Archilex\\ToggleIconColumn\\Facades\\ToggleIconColumn"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Archilex\\ToggleIconColumn\\": "src",
+                    "Archilex\\ToggleIconColumn\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kenneth Sese",
+                    "email": "kmsese@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A toggle icon column for Filament",
+            "homepage": "https://github.com/archilex/filament-toggle-icon-column",
+            "keywords": [
+                "admin panel",
+                "archilex",
+                "column",
+                "filament-toggle-icon-column",
+                "laravel",
+                "tables"
+            ],
+            "support": {
+                "issues": "https://github.com/archilex/filament-toggle-icon-column/issues",
+                "source": "https://github.com/archilex/filament-toggle-icon-column/tree/v1.0.6"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/archilex",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-05-09T14:23:34+00:00"
         },
         {
             "name": "awcodes/filament-table-repeater",
@@ -804,12 +885,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cms-multi/filament-clear-cache.git",
-                "reference": "35f74af79281198c6afb442e66f5f8e633e676df"
+                "reference": "92da5d095bcefe976c5cafc687d78070ec9b3b8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cms-multi/filament-clear-cache/zipball/35f74af79281198c6afb442e66f5f8e633e676df",
-                "reference": "35f74af79281198c6afb442e66f5f8e633e676df",
+                "url": "https://api.github.com/repos/cms-multi/filament-clear-cache/zipball/92da5d095bcefe976c5cafc687d78070ec9b3b8b",
+                "reference": "92da5d095bcefe976c5cafc687d78070ec9b3b8b",
                 "shasum": ""
             },
             "require": {
@@ -873,7 +954,7 @@
                 "issues": "https://github.com/cms-multi/filament-clear-cache/issues",
                 "source": "https://github.com/cms-multi/filament-clear-cache/tree/main"
             },
-            "time": "2023-05-29T04:02:31+00:00"
+            "time": "2023-06-10T09:52:13+00:00"
         },
         {
             "name": "croustibat/filament-jobs-monitor",
