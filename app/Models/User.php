@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-
+use Cog\Contracts\Ban\Bannable as BannableContract;
+use Cog\Laravel\Ban\Traits\Bannable;
 use Filament\Models\Contracts\FilamentUser;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -15,9 +16,9 @@ use Octo\Concerns\CanAccessFilament;
 use Octo\User\Settings;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements FilamentUser
+class User extends Authenticatable implements FilamentUser, BannableContract, MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable, TwoFactorAuthenticatable, CanAccessFilament, HasRoles, SoftDeletes;
+    use HasApiTokens, HasFactory, Notifiable, TwoFactorAuthenticatable, CanAccessFilament, HasRoles, SoftDeletes, Bannable;
 
     /**
      * The attributes that are mass assignable.

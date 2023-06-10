@@ -9,14 +9,15 @@
     "require": {
         "php": "^8.1",
         "a2insights/octo-core": "dev-main",
+        "barryvdh/laravel-debugbar": "^3.8",
         "bezhansalleh/filament-shield": "^2.4",
         "brickx/laravel-filament-maintenance": "^1.0",
-        "cms-multi/filament-clear-cache": "^1.0",
+        "cms-multi/filament-clear-cache": "dev-main",
         "croustibat/filament-jobs-monitor": "^1.0",
         "filament/filament": "^2.17",
         "filament/spatie-laravel-settings-plugin": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
-        "husam-tariq/filament-database-schedule": "*",
+        "husam-tariq/filament-database-schedule": "^1.0",
         "jeffgreco13/filament-breezy": "^1.5",
         "laravel/framework": "^10.8",
         "laravel/sanctum": "^3.2",
@@ -27,6 +28,7 @@
         "opcodesio/log-viewer": "^2.4",
         "pxlrbt/filament-environment-indicator": "^1.0",
         "solution-forest/filament-firewall": "^1.0",
+        "widiu7omo/filament-bandel": "^1.0",
         "xlite-dev/filament-impersonate": "^1.1"
     },
     "require-dev": {

@@ -224,6 +224,8 @@ return [
     'middleware' => [
         'auth' => [
             Authenticate::class,
+            \Cog\Laravel\Ban\Http\Middleware\ForbidBannedUser::class,
+            'verified',
         ],
         'base' => [
             EncryptCookies::class,

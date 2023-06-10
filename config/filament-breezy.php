@@ -105,7 +105,7 @@ return [
     |--------------------------------------------------------------------------
     | Where to redirect the user after registration.
     */
-    'registration_redirect_url' => config('filament.home_url', '/'),
+    'registration_redirect_url' => config('filament.home_url', config('filament.path', '/')),
     /*
     |--------------------------------------------------------------------------
     | Enable sanctum api token management.
