@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a2insights/octo-core.git",
-                "reference": "3d225ed2e8b52f215d64c879b4843812c0ce36b4"
+                "reference": "d224dae446693919468518cbdda63692697c27f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/3d225ed2e8b52f215d64c879b4843812c0ce36b4",
-                "reference": "3d225ed2e8b52f215d64c879b4843812c0ce36b4",
+                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/d224dae446693919468518cbdda63692697c27f1",
+                "reference": "d224dae446693919468518cbdda63692697c27f1",
                 "shasum": ""
             },
             "require": {
@@ -80,7 +80,7 @@
                 "issues": "https://github.com/a2insights/octo-core/issues",
                 "source": "https://github.com/a2insights/octo-core/tree/main"
             },
-            "time": "2023-06-11T03:52:43+00:00"
+            "time": "2023-06-11T04:25:05+00:00"
         },
         {
             "name": "akaunting/laravel-firewall",
