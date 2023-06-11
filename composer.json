@@ -30,7 +30,8 @@
         "pxlrbt/filament-environment-indicator": "^1.0",
         "solution-forest/filament-firewall": "^1.0",
         "widiu7omo/filament-bandel": "^1.0",
-        "xlite-dev/filament-impersonate": "^1.1"
+        "xlite-dev/filament-impersonate": "^1.1",
+        "z3d0x/filament-logger": "^0.5.4"
     },
     "require-dev": {
         "doctrine/dbal": "^3.6",
