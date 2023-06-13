@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a2insights/octo-core.git",
-                "reference": "f2d7c8ebfbe9e999062affaa2101dd7ec3d56442"
+                "reference": "600424b8121ca2a0a2f6b171c1acca9d2232493d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/f2d7c8ebfbe9e999062affaa2101dd7ec3d56442",
-                "reference": "f2d7c8ebfbe9e999062affaa2101dd7ec3d56442",
+                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/600424b8121ca2a0a2f6b171c1acca9d2232493d",
+                "reference": "600424b8121ca2a0a2f6b171c1acca9d2232493d",
                 "shasum": ""
             },
             "require": {
@@ -80,7 +80,7 @@
                 "issues": "https://github.com/a2insights/octo-core/issues",
                 "source": "https://github.com/a2insights/octo-core/tree/main"
             },
-            "time": "2023-06-13T06:29:36+00:00"
+            "time": "2023-06-13T13:22:34+00:00"
         },
         {
             "name": "abanoubnassem/filament-grecaptcha-field",
