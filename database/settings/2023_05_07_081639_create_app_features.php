@@ -12,5 +12,7 @@ return new class extends SettingsMigration
         $this->migrator->add('features.auth_login', true);
         $this->migrator->add('features.auth_2fa', true);
         $this->migrator->add('features.webhooks', false);
+        $this->migrator->add('features.recaptcha', false);
+        $this->migrator->add('features.terms', true);
     }
 };

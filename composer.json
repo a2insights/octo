@@ -9,6 +9,7 @@
     "require": {
         "php": "^8.1",
         "a2insights/octo-core": "dev-main",
+        "abanoubnassem/filament-grecaptcha-field": "^0.0.5",
         "archilex/filament-toggle-icon-column": "^1.0",
         "barryvdh/laravel-debugbar": "^3.8",
         "bezhansalleh/filament-shield": "^2.4",
@@ -29,6 +30,7 @@
         "opcodesio/log-viewer": "^2.4",
         "pxlrbt/filament-environment-indicator": "^1.0",
         "solution-forest/filament-firewall": "^1.0",
+        "spatie/filament-markdown-editor": "^1.2",
         "widiu7omo/filament-bandel": "^1.0",
         "xlite-dev/filament-impersonate": "^1.1",
         "z3d0x/filament-logger": "^0.5.4"
