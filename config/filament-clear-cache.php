@@ -6,5 +6,5 @@ return [
     ],
     'changes_count' => 'session_key',
     'permissions' => false,
-    'role' => 'super_admin',
+    'role' => 'super-admin',
 ];

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2962cbca8de221e489aad34d7a3f37b8",
+    "content-hash": "1a93818f92684660a75ecdc70ee70278",
     "packages": [
         {
             "name": "a2insights/octo-core",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a2insights/octo-core.git",
-                "reference": "600424b8121ca2a0a2f6b171c1acca9d2232493d"
+                "reference": "8354453d388a208702af5c521d370f81198d8aa1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/600424b8121ca2a0a2f6b171c1acca9d2232493d",
-                "reference": "600424b8121ca2a0a2f6b171c1acca9d2232493d",
+                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/8354453d388a208702af5c521d370f81198d8aa1",
+                "reference": "8354453d388a208702af5c521d370f81198d8aa1",
                 "shasum": ""
             },
             "require": {
@@ -80,7 +80,7 @@
                 "issues": "https://github.com/a2insights/octo-core/issues",
                 "source": "https://github.com/a2insights/octo-core/tree/main"
             },
-            "time": "2023-06-13T13:22:34+00:00"
+            "time": "2023-06-14T02:31:40+00:00"
         },
         {
             "name": "abanoubnassem/filament-grecaptcha-field",
@@ -436,6 +436,81 @@
                 }
             ],
             "time": "2023-05-09T14:23:34+00:00"
+        },
+        {
+            "name": "awcodes/filament-badgeable-column",
+            "version": "v1.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/awcodes/filament-badgeable-column.git",
+                "reference": "ed64aceeade63c62c5adecdd32714e48120b7827"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/awcodes/filament-badgeable-column/zipball/ed64aceeade63c62c5adecdd32714e48120b7827",
+                "reference": "ed64aceeade63c62c5adecdd32714e48120b7827",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^2.0",
+                "illuminate/contracts": "^9.0|^10.0",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.13.5"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^6.0|^7.0",
+                "orchestra/testbench": "^7.0|^8.0",
+                "pestphp/pest": "^1.21",
+                "pestphp/pest-plugin-laravel": "^1.1",
+                "pestphp/pest-plugin-livewire": "^1.0",
+                "pestphp/pest-plugin-parallel": "^0.3",
+                "phpunit/phpunit": "^9.5|^10.0",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Awcodes\\FilamentBadgeableColumn\\BadgeableColumnServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Awcodes\\FilamentBadgeableColumn\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "awcodes",
+                    "email": "awcodes1@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Filament Tables column with appendable badges.",
+            "homepage": "https://github.com/awcodes/filament-badgeable-column",
+            "keywords": [
+                "awcodes",
+                "filament",
+                "filament-badgeable-column",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/awcodes/filament-badgeable-column/issues",
+                "source": "https://github.com/awcodes/filament-badgeable-column/tree/v1.2.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/awcodes",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-05-05T16:54:44+00:00"
         },
         {
             "name": "awcodes/filament-table-repeater",
@@ -1096,16 +1171,16 @@
         },
         {
             "name": "croustibat/filament-jobs-monitor",
-            "version": "1.0.4",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/croustibat/filament-jobs-monitor.git",
-                "reference": "df74f14a88807ea05306662ee0ab0fcc386c60c8"
+                "reference": "ee4fbcb2d7a97d27544e92e6ae2a01ac03da3d91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/croustibat/filament-jobs-monitor/zipball/df74f14a88807ea05306662ee0ab0fcc386c60c8",
-                "reference": "df74f14a88807ea05306662ee0ab0fcc386c60c8",
+                "url": "https://api.github.com/repos/croustibat/filament-jobs-monitor/zipball/ee4fbcb2d7a97d27544e92e6ae2a01ac03da3d91",
+                "reference": "ee4fbcb2d7a97d27544e92e6ae2a01ac03da3d91",
                 "shasum": ""
             },
             "require": {
@@ -1155,7 +1230,7 @@
             ],
             "support": {
                 "issues": "https://github.com/croustibat/filament-jobs-monitor/issues",
-                "source": "https://github.com/croustibat/filament-jobs-monitor/tree/1.0.4"
+                "source": "https://github.com/croustibat/filament-jobs-monitor/tree/1.1.0"
             },
             "funding": [
                 {
@@ -1163,7 +1238,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-05-29T14:44:16+00:00"
+            "time": "2023-06-13T15:17:19+00:00"
         },
         {
             "name": "cybercog/laravel-ban",
@@ -10126,6 +10201,60 @@
             "time": "2022-03-08T17:03:00+00:00"
         },
         {
+            "name": "webbingbrasil/filament-copyactions",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webbingbrasil/filament-copyactions.git",
+                "reference": "e744ea5f29c2c8878a504dfa825d30eaf926021c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webbingbrasil/filament-copyactions/zipball/e744ea5f29c2c8878a504dfa825d30eaf926021c",
+                "reference": "e744ea5f29c2c8878a504dfa825d30eaf926021c",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^2.16",
+                "php": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Webbingbrasil\\FilamentCopyActions\\FilamentCopyActionsProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webbingbrasil\\FilamentCopyActions\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Danilo Andrade",
+                    "email": "danilo@webbingbrasil.com.br",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A easy-to-use copy actions for Filament Admin.",
+            "homepage": "https://github.com/webbingbrasil/filament-copyactions",
+            "keywords": [
+                "filament",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/webbingbrasil/filament-copyactions/issues",
+                "source": "https://github.com/webbingbrasil/filament-copyactions/tree/1.1.2"
+            },
+            "time": "2023-04-20T22:05:14+00:00"
+        },
+        {
             "name": "webmozart/assert",
             "version": "1.11.0",
             "source": {
@@ -10244,6 +10373,52 @@
                 "source": "https://github.com/widiu7omo/filament-bandel/tree/v1.0.2"
             },
             "time": "2023-04-13T02:20:19+00:00"
+        },
+        {
+            "name": "wiebenieuwenhuis/filament-char-counter",
+            "version": "1.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sweebee/filament-char-counter.git",
+                "reference": "acabba8f1917286ac028bef6a429544b0f85bf14"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sweebee/filament-char-counter/zipball/acabba8f1917286ac028bef6a429544b0f85bf14",
+                "reference": "acabba8f1917286ac028bef6a429544b0f85bf14",
+                "shasum": ""
+            },
+            "require": {
+                "filament/forms": "^2.9",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.10"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Wiebenieuwenhuis\\FilamentCharCounter\\FilamentCharCounterProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Wiebenieuwenhuis\\FilamentCharCounter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Wiebe Nieuwenhuis",
+                    "email": "wiebenieuwenhuis@gmail.com"
+                }
+            ],
+            "description": "Count the amount of characters in a field",
+            "support": {
+                "issues": "https://github.com/sweebee/filament-char-counter/issues",
+                "source": "https://github.com/sweebee/filament-char-counter/tree/1.1.5"
+            },
+            "time": "2023-06-07T11:39:46+00:00"
         },
         {
             "name": "xlite-dev/filament-impersonate",
@@ -13046,16 +13221,16 @@
         },
         {
             "name": "spatie/backtrace",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/backtrace.git",
-                "reference": "ec4dd16476b802dbdc6b4467f84032837e316b8c"
+                "reference": "47794d19e3215ace9e005a8f200cd7cc7be52572"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/backtrace/zipball/ec4dd16476b802dbdc6b4467f84032837e316b8c",
-                "reference": "ec4dd16476b802dbdc6b4467f84032837e316b8c",
+                "url": "https://api.github.com/repos/spatie/backtrace/zipball/47794d19e3215ace9e005a8f200cd7cc7be52572",
+                "reference": "47794d19e3215ace9e005a8f200cd7cc7be52572",
                 "shasum": ""
             },
             "require": {
@@ -13092,7 +13267,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/backtrace/tree/1.4.0"
+                "source": "https://github.com/spatie/backtrace/tree/1.4.1"
             },
             "funding": [
                 {
@@ -13104,7 +13279,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2023-03-04T08:57:24+00:00"
+            "time": "2023-06-13T14:35:04+00:00"
         },
         {
             "name": "spatie/flare-client-php",

@@ -11,6 +11,7 @@
         "a2insights/octo-core": "dev-main",
         "abanoubnassem/filament-grecaptcha-field": "^0.0.5",
         "archilex/filament-toggle-icon-column": "^1.0",
+        "awcodes/filament-badgeable-column": "^1.2",
         "barryvdh/laravel-debugbar": "^3.8",
         "bezhansalleh/filament-shield": "^2.4",
         "brickx/laravel-filament-maintenance": "^1.0",
@@ -31,7 +32,9 @@
         "pxlrbt/filament-environment-indicator": "^1.0",
         "solution-forest/filament-firewall": "^1.0",
         "spatie/filament-markdown-editor": "^1.2",
+        "webbingbrasil/filament-copyactions": "^1.1",
         "widiu7omo/filament-bandel": "^1.0",
+        "wiebenieuwenhuis/filament-char-counter": "^1.1",
         "xlite-dev/filament-impersonate": "^1.1",
         "z3d0x/filament-logger": "^0.5.4"
     },
