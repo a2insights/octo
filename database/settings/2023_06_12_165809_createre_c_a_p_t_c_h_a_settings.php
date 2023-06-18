@@ -6,8 +6,8 @@ return new class extends SettingsMigration
 {
     public function up(): void
     {
-        $this->migrator->add('settings_recaptcha.project_id', false);
-        $this->migrator->add('settings_recaptcha.site_key', null);
-        $this->migrator->add('settings_recaptcha.secret_key', null);
+        $this->migrator->add('recaptcha_settings.project_id', false);
+        $this->migrator->add('recaptcha_settings.site_key', null);
+        $this->migrator->add('recaptcha_settings.secret_key', null);
     }
 };

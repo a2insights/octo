@@ -13,6 +13,7 @@
         "archilex/filament-toggle-icon-column": "^1.0",
         "awcodes/filament-badgeable-column": "^1.2",
         "barryvdh/laravel-debugbar": "^3.8",
+        "bezhansalleh/filament-exceptions": "^1.1",
         "bezhansalleh/filament-shield": "^2.4",
         "brickx/laravel-filament-maintenance": "^1.0",
         "cms-multi/filament-clear-cache": "dev-main",

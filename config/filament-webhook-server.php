@@ -7,13 +7,13 @@ return [
      *  Models that you want to be part of the webhooks options
      */
     'models' => [
-        \App\Models\User::class,
+        // \App\Models\User::class,
     ],
     /*
      */
     'polling' => '10s',
     'webhook' => [
-        'keep_history' => false,
+        'keep_history' => true,
     ],
     'pages' => [
         \Octo\Webhook\Filament\Pages\Webhooks::class,

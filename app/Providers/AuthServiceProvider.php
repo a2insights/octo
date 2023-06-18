@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\User;
 use App\Policies\ActivityPolicy;
+use BezhanSalleh\FilamentExceptions\Models\Exception;
 use Croustibat\FilamentJobsMonitor\Models\QueueMonitor;
 use HusamTariq\FilamentDatabaseSchedule\Models\Schedule;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -27,6 +28,7 @@ class AuthServiceProvider extends ServiceProvider
         User::class => \App\Policies\UserPolicy::class,
         Schedule::class => \App\Policies\SchedulePolicy::class,
         Activity::class => ActivityPolicy::class,
+        Exception::class => \App\Policies\ExceptionPolicy::class,
     ];
 
     /**
