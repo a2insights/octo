@@ -71,7 +71,7 @@ You can now access the server at <http://localhost>
 
 To generate data for development purposes, run the following command:
 
-    php artisan dev:app
+    php artisan app:dev
 
 This command will generate data that can be used for testing and development. You can find the implementation details of this command [here](https://github.com/a2insights/octo-core/blob/main/src/Console/SetupDevCommand.php).
 
