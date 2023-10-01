@@ -17,12 +17,12 @@ return [
 
     'super_admin' => [
         'enabled' => true,
-        'name' => 'super-admin',
+        'name' => 'super_admin',
         'define_via_gate' => false,
         'intercept_gate' => 'before', // after
     ],
 
-    'filament_user' => [
+    'panel_user' => [
         'enabled' => true,
         'name' => 'user',
     ],
@@ -70,6 +70,12 @@ return [
         ],
 
         'resources' => [],
+    ],
+
+    'discovery' => [
+        'discover_all_resources' => false,
+        'discover_all_widgets' => false,
+        'discover_all_pages' => false,
     ],
 
     'register_role_policy' => [

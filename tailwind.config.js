@@ -1,7 +1,14 @@
 const colors = require("tailwindcss/colors");
+import preset from "./vendor/filament/support/tailwind.config.preset";
 
 module.exports = {
-    content: ["./resources/**/*.blade.php", "./vendor/filament/**/*.blade.php"],
+    presets: [preset],
+    darkMode: "class",
+    content: [
+        "./app/Filament/**/*.php",
+        "./resources/views/filament/**/*.blade.php",
+        "./vendor/filament/**/*.blade.php",
+    ],
     theme: {
         extend: {
             colors: {

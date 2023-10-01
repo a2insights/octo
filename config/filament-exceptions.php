@@ -15,12 +15,12 @@ return [
 
     /** Icons to use for navigation (if enabled) and pills */
     'icons' => [
-        'navigation' => 'heroicon-o-exclamation',
-        'exception' => 'heroicon-o-exclamation',
-        'headers' => 'heroicon-o-switch-horizontal',
-        'cookies' => 'heroicon-o-database',
+        'navigation' => 'heroicon-o-exclamation-circle',
+        'exception' => 'heroicon-o-exclamation-circle',
+        'headers' => 'heroicon-m-minus-circle',
+        'cookies' => 'heroicon-m-minus-circle',
         'body' => 'heroicon-s-code',
-        'queries' => 'heroicon-s-database',
+        'queries' => 'heroicon-m-minus-circle',
     ],
 
     'is_globally_searchable' => false,

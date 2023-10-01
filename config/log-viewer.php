@@ -33,7 +33,7 @@ return [
     |
     */
 
-    'route_path' => config('filament.path').'/log-viewer',
+    'route_path' => '/admin/log-viewer',
 
     /*
     |--------------------------------------------------------------------------
@@ -46,7 +46,7 @@ return [
     |
     */
 
-    'back_to_system_url' => config('filament.path'),
+    'back_to_system_url' => '/admin',
 
     'back_to_system_label' => null, // Displayed by default: "Back to {{ app.name }}"
 
@@ -86,7 +86,6 @@ return [
     'api_middleware' => [
         \Opcodes\LogViewer\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
         \Opcodes\LogViewer\Http\Middleware\AuthorizeLogViewer::class,
-        \Octo\Middleware\Http\Middleware\LogViewer::class,
     ],
 
     /*

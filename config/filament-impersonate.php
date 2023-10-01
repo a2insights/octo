@@ -7,7 +7,7 @@ return [
     'guard' => env('FILAMENT_IMPERSONATE_GUARD', 'web'),
 
     // After impersonating this is where we'll redirect you to.
-    'redirect_to' => env('FILAMENT_IMPERSONATE_REDIRECT', config('filament.path')),
+    'redirect_to' => env('FILAMENT_IMPERSONATE_REDIRECT', '/admin'),
 
     // We wire up a route for the "leave" button. You can change the middleware stack here if needed.
     'leave_middlewares' => [

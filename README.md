@@ -77,7 +77,7 @@ This command will generate data that can be used for testing and development. Yo
 
 got to <http://127.0.0.1:8000/dashboard/login> and login with the following credentials:
 
-email: super-admin@octo.dev
+email: super_admin@octo.dev
 password: 123456
 
 or
