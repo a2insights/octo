@@ -5,20 +5,22 @@ namespace App\Models;
 use Cog\Contracts\Ban\Bannable as BannableContract;
 use Cog\Laravel\Ban\Traits\Bannable;
 use Filament\Models\Contracts\FilamentUser;
+use Filament\Models\Contracts\HasAvatar;
+use Filament\Panel;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use JeffGreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
+use Illuminate\Support\Facades\Storage;
+use Jeffgreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
 use Laravel\Sanctum\HasApiTokens;
-use Octo\Concerns\CanAccessFilament;
 use Octo\User\Settings;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements FilamentUser, BannableContract, MustVerifyEmail
+class User extends Authenticatable implements BannableContract, FilamentUser, HasAvatar, MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable, TwoFactorAuthenticatable, CanAccessFilament, HasRoles, SoftDeletes, Bannable;
+    use Bannable, HasApiTokens, HasFactory, HasRoles, Notifiable, SoftDeletes, TwoFactorAuthenticatable;
 
     /**
      * The attributes that are mass assignable.
@@ -28,6 +30,7 @@ class User extends Authenticatable implements FilamentUser, BannableContract, Mu
     protected $fillable = [
         'name',
         'email',
+        'avatar_url',
         'password',
     ];
 
@@ -49,4 +52,16 @@ class User extends Authenticatable implements FilamentUser, BannableContract, Mu
     protected $casts = [
         'email_verified_at' => 'datetime', 'settings' => Settings::class,
     ];
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        $settings = app(\Octo\Settings\Settings::class);
+
+        return ! in_array($this->id, $settings->restrict_users) && $this->hasVerifiedEmail();
+    }
+
+    public function getFilamentAvatarUrl(): ?string
+    {
+        return $this->avatar_url ? Storage::url($this->avatar_url) : null;
+    }
 }

@@ -4,8 +4,6 @@
 
 ## Introduction
 
-**Project currently in development, do not use in production.**
-
 The purpose of this project is provide a simple way to create web aplications of kind SaaS. We use [Laravel](https://laravel.com/) framework with [Filament Admin](https://filamentphp.com/).
 
 ## Getting started
@@ -67,17 +65,17 @@ You can now access the server at <http://127.0.0.1:8000>
 
 You can now access the server at <http://localhost>
 
-### Dev app
+### Install app
 
-To generate data for development purposes, run the following command:
+To install, run the following command:
 
-    php artisan app:dev
+    php artisan octo:install
 
-This command will generate data that can be used for testing and development. You can find the implementation details of this command [here](https://github.com/a2insights/octo-core/blob/main/src/Console/SetupDevCommand.php).
+This command will install the octo app. You can find the implementation details of this command [here](https://github.com/a2insights/octo-core/blob/main/src/Console/OctoInstallCommand.php).
 
 got to <http://127.0.0.1:8000/dashboard/login> and login with the following credentials:
 
-email: super-admin@octo.dev
+email: super_admin@octo.dev
 password: 123456
 
 or
@@ -101,7 +99,7 @@ If you discover any security related issues, please email atila.danvi@outlook.co
 
 ## Credits
 
--   [Atila Silva](https://github.com/Atiladanvi)
+-   [Atila Silva](https://github.com/a21ns1g4ts)
 -   [All Contributors](../../contributors)
 
 ## License

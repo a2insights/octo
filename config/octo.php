@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'features' => [
-        'billing' => env('BILLING_FEATURE', true),
+    'admin_path' => 'admin',
+    'users' => [
+        'model' => App\Models\User::class,
     ],
-    'free-plan-price-id' => env('FREE_PLAN_PRICE_ID', null),
 ];
