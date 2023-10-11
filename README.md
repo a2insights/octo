@@ -1,10 +1,10 @@
 # Octo
 
-[![GitHub license](https://img.shields.io/github/license/gothinkster/laravel-realworld-example-app.svg)](https://raw.githubusercontent.com/gothinkster/laravel-realworld-example-app/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/gothinkster/laravel-realworld-example-app.svg)](/LICENSE)
 
 ## Introduction
 
-The purpose of this project is provide a simple way to create web aplications of kind SaaS. We use [Laravel](https://laravel.com/) framework with [Filament Admin](https://filamentphp.com/).
+The purpose of this project is provide a simple way to create web aplications. We use [Laravel](https://laravel.com/) framework with [Filament Admin](https://filamentphp.com/).
 
 ## Getting started
 
