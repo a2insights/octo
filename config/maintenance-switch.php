@@ -19,6 +19,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Refresh Interval
+    |--------------------------------------------------------------------------
+    | Specifies the interval (in seconds) at which the page will be refreshed.
+    | If set to false, auto-refresh will be disabled. This corresponds to
+    | the '--refresh' option of the Artisan 'down' command.
+    |
+    */
+
+    'refresh' => false,
+
+    /*
+    |--------------------------------------------------------------------------
     | Permissions
     |--------------------------------------------------------------------------
     | Only users with the following permissions will be able to toggle the
@@ -43,7 +55,30 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Toggle Button
+    | Render Hook
+    |--------------------------------------------------------------------------
+    | You may customize the render hook used to display the maintenance mode
+    | toggle button. If null, this will be set to 'global-search.before'.
+    | The 'panels::' prefix will be added automatically if omitted.
+    |
+    */
+
+    'render_hook' => 'global-search.before',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Icon
+    |--------------------------------------------------------------------------
+    | You may select a different Heroicon to display for the maintenance
+    | toggle button. If null, the default will be 'heroicon-m-beaker'.
+    |
+    */
+
+    'icon' => 'heroicon-m-beaker',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Minify Button
     |--------------------------------------------------------------------------
     | Setting this to true will only display a small icon as a toggle button.
     | Otherwise, the button will display the maintenance current state.
