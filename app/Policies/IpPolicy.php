@@ -14,9 +14,9 @@ class IpPolicy
      * Determine whether the user can view any models.
      *
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @return bool
      */
-    public function viewAny(User $user)
+    public function viewAny(User $user): bool
     {
         return $user->can('view_any_firewall::ip');
     }
@@ -26,9 +26,9 @@ class IpPolicy
      *
      * @param  \App\Models\User  $user
      * @param  \SolutionForest\FilamentFirewall\Models\Ip  $ip
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @return bool
      */
-    public function view(User $user, Ip $ip)
+    public function view(User $user, Ip $ip): bool
     {
         return $user->can('view_firewall::ip');
     }
@@ -37,9 +37,9 @@ class IpPolicy
      * Determine whether the user can create models.
      *
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @return bool
      */
-    public function create(User $user)
+    public function create(User $user): bool
     {
         return $user->can('create_firewall::ip');
     }
@@ -49,9 +49,9 @@ class IpPolicy
      *
      * @param  \App\Models\User  $user
      * @param  \SolutionForest\FilamentFirewall\Models\Ip  $ip
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @return bool
      */
-    public function update(User $user, Ip $ip)
+    public function update(User $user, Ip $ip): bool
     {
         return $user->can('update_firewall::ip');
     }
@@ -61,9 +61,9 @@ class IpPolicy
      *
      * @param  \App\Models\User  $user
      * @param  \SolutionForest\FilamentFirewall\Models\Ip  $ip
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @return bool
      */
-    public function delete(User $user, Ip $ip)
+    public function delete(User $user, Ip $ip): bool
     {
         return $user->can('delete_firewall::ip');
     }
@@ -72,9 +72,9 @@ class IpPolicy
      * Determine whether the user can bulk delete.
      *
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @return bool
      */
-    public function deleteAny(User $user)
+    public function deleteAny(User $user): bool
     {
         return $user->can('delete_any_firewall::ip');
     }
@@ -84,9 +84,9 @@ class IpPolicy
      *
      * @param  \App\Models\User  $user
      * @param  \SolutionForest\FilamentFirewall\Models\Ip  $ip
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @return bool
      */
-    public function forceDelete(User $user, Ip $ip)
+    public function forceDelete(User $user, Ip $ip): bool
     {
         return $user->can('force_delete_firewall::ip');
     }
@@ -95,9 +95,9 @@ class IpPolicy
      * Determine whether the user can permanently bulk delete.
      *
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @return bool
      */
-    public function forceDeleteAny(User $user)
+    public function forceDeleteAny(User $user): bool
     {
         return $user->can('force_delete_any_firewall::ip');
     }
@@ -107,9 +107,9 @@ class IpPolicy
      *
      * @param  \App\Models\User  $user
      * @param  \SolutionForest\FilamentFirewall\Models\Ip  $ip
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @return bool
      */
-    public function restore(User $user, Ip $ip)
+    public function restore(User $user, Ip $ip): bool
     {
         return $user->can('restore_firewall::ip');
     }
@@ -118,9 +118,9 @@ class IpPolicy
      * Determine whether the user can bulk restore.
      *
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @return bool
      */
-    public function restoreAny(User $user)
+    public function restoreAny(User $user): bool
     {
         return $user->can('restore_any_firewall::ip');
     }
@@ -130,9 +130,9 @@ class IpPolicy
      *
      * @param  \App\Models\User  $user
      * @param  \SolutionForest\FilamentFirewall\Models\Ip  $ip
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @return bool
      */
-    public function replicate(User $user, Ip $ip)
+    public function replicate(User $user, Ip $ip): bool
     {
         return $user->can('replicate_firewall::ip');
     }
@@ -141,9 +141,9 @@ class IpPolicy
      * Determine whether the user can reorder.
      *
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @return bool
      */
-    public function reorder(User $user)
+    public function reorder(User $user): bool
     {
         return $user->can('reorder_firewall::ip');
     }

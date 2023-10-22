@@ -17,6 +17,8 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Octo\User\Filament\Components\Phone;
+use Octo\User\Filament\Components\Username;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -59,8 +61,8 @@ class AdminPanelProvider extends PanelProvider
                     // action: CustomTwoFactorPage::class // optionally, use a custom 2FA page
                 )->enableSanctumTokens(
                     permissions: ['create', 'update', 'view', 'delete'] // optional, customize the permissions (default = ["create", "view", "update", "delete"])
-                ),
-                \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn () => auth()->user()?->hasRole('super_admin')),
+                )->myProfileComponents([Phone::class, Username::class]),
+                \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn () => auth()->user() ? auth()->user()?->hasRole('super_admin') : false),
                 \Marjose123\FilamentWebhookServer\WebhookPlugin::make(),
                 \HusamTariq\FilamentDatabaseSchedule\FilamentDatabaseSchedulePlugin::make(),
                 \SolutionForest\FilamentFirewall\FilamentFirewallPanel::make(),

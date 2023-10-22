@@ -18,7 +18,9 @@ use Laravel\Sanctum\HasApiTokens;
 use Octo\User\Settings;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements BannableContract, FilamentUser, HasAvatar, MustVerifyEmail
+class User extends Authenticatable implements BannableContract, FilamentUser, HasAvatar
+    // TODO: Waiting for filament breezy implementation
+    // MustVerifyEmail
 {
     use Bannable, HasApiTokens, HasFactory, HasRoles, Notifiable, SoftDeletes, TwoFactorAuthenticatable;
 
@@ -30,6 +32,8 @@ class User extends Authenticatable implements BannableContract, FilamentUser, Ha
     protected $fillable = [
         'name',
         'email',
+        'phone',
+        'username',
         'avatar_url',
         'password',
     ];
@@ -57,7 +61,9 @@ class User extends Authenticatable implements BannableContract, FilamentUser, Ha
     {
         $settings = app(\Octo\Settings\Settings::class);
 
-        return ! in_array($this->id, $settings->restrict_users) && $this->hasVerifiedEmail();
+        return ! in_array($this->id, $settings->restrict_users);
+        // TODO: Waiting for filament breezy implementation
+        // $this->hasVerifiedEmail() && ;
     }
 
     public function getFilamentAvatarUrl(): ?string
