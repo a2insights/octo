@@ -33,6 +33,7 @@ class User extends Authenticatable implements BannableContract, FilamentUser, Ha
         'name',
         'email',
         'phone',
+        'username',
         'avatar_url',
         'password',
     ];
