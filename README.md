@@ -61,6 +61,19 @@ You can now access the server at <http://127.0.0.1:8000>
 
 ### Using Laravel Sail to develop
 
+make .env config:
+
+    DB_CONNECTION=mysql
+    DB_HOST=sail
+    DB_PORT=3306
+    DB_DATABASE=mydb
+    DB_USERNAME=sail
+    DB_PASSWORD=password
+
+And run:
+
+    php artisan config:clear
+
     sail up
 
 You can now access the server at <http://localhost>
