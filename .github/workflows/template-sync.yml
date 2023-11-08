@@ -15,7 +15,7 @@ jobs:
       - name: actions-template-sync
         uses: AndreasAugustin/actions-template-sync@v1.1.3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.TOKEN_GITHUB }}
           source_repo_path: a2insights/octo
           upstream_branch: labels # defaults to main
           pr_labels: octo,update,upstream # optional, no default
