@@ -17,12 +17,15 @@ use Jeffgreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
 use Laravel\Sanctum\HasApiTokens;
 use Octo\User\Settings;
 use Spatie\Permission\Traits\HasRoles;
+use TaylorNetwork\UsernameGenerator\FindSimilarUsernames;
+use TaylorNetwork\UsernameGenerator\GeneratesUsernames;
 
 class User extends Authenticatable implements BannableContract, FilamentUser, HasAvatar
     // TODO: Waiting for filament breezy implementation
     // MustVerifyEmail
 {
     use Bannable, HasApiTokens, HasFactory, HasRoles, Notifiable, SoftDeletes, TwoFactorAuthenticatable;
+    use FindSimilarUsernames, GeneratesUsernames;
 
     /**
      * The attributes that are mass assignable.
