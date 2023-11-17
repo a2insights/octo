@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "23e091ce1ad0b7498f9c6298f5746730",
+    "content-hash": "75f3683917aa5db30fd2d6b7ff2a6059",
     "packages": [
         {
             "name": "a2insights/octo-core",
-            "version": "1.2.2-beta",
+            "version": "1.2.4-beta",
             "source": {
                 "type": "git",
                 "url": "https://github.com/a2insights/octo-core.git",
-                "reference": "1dddc30be32d346e57f2eb277ed786c47daaf7a4"
+                "reference": "78860ab614b8ff8e4861f68a3967e92086b42674"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/1dddc30be32d346e57f2eb277ed786c47daaf7a4",
-                "reference": "1dddc30be32d346e57f2eb277ed786c47daaf7a4",
+                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/78860ab614b8ff8e4861f68a3967e92086b42674",
+                "reference": "78860ab614b8ff8e4861f68a3967e92086b42674",
                 "shasum": ""
             },
             "require": {
@@ -104,9 +104,9 @@
             ],
             "support": {
                 "issues": "https://github.com/a2insights/octo-core/issues",
-                "source": "https://github.com/a2insights/octo-core/tree/1.2.2-beta"
+                "source": "https://github.com/a2insights/octo-core/tree/1.2.4-beta"
             },
-            "time": "2023-11-16T04:58:45+00:00"
+            "time": "2023-11-17T02:34:05+00:00"
         },
         {
             "name": "akaunting/laravel-firewall",
@@ -2224,7 +2224,7 @@
         },
         {
             "name": "filament/actions",
-            "version": "v3.0.96",
+            "version": "v3.0.97",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/actions.git",
@@ -2274,7 +2274,7 @@
         },
         {
             "name": "filament/filament",
-            "version": "v3.0.96",
+            "version": "v3.0.97",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/panels.git",
@@ -2339,16 +2339,16 @@
         },
         {
             "name": "filament/forms",
-            "version": "v3.0.96",
+            "version": "v3.0.97",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/forms.git",
-                "reference": "4a3e9d90591cca860e8a687ab225cb473b6a0191"
+                "reference": "ed55409ba339e921d21d1c99816767d3c6e3f391"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/forms/zipball/4a3e9d90591cca860e8a687ab225cb473b6a0191",
-                "reference": "4a3e9d90591cca860e8a687ab225cb473b6a0191",
+                "url": "https://api.github.com/repos/filamentphp/forms/zipball/ed55409ba339e921d21d1c99816767d3c6e3f391",
+                "reference": "ed55409ba339e921d21d1c99816767d3c6e3f391",
                 "shasum": ""
             },
             "require": {
@@ -2391,20 +2391,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-11-15T11:34:56+00:00"
+            "time": "2023-11-16T11:21:55+00:00"
         },
         {
             "name": "filament/infolists",
-            "version": "v3.0.96",
+            "version": "v3.0.97",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/infolists.git",
-                "reference": "45d7644d1066f84d9fa2e612ff1bdc0ee20cd446"
+                "reference": "c4585485e32e8eca21d11855cbc512e2703e3879"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/infolists/zipball/45d7644d1066f84d9fa2e612ff1bdc0ee20cd446",
-                "reference": "45d7644d1066f84d9fa2e612ff1bdc0ee20cd446",
+                "url": "https://api.github.com/repos/filamentphp/infolists/zipball/c4585485e32e8eca21d11855cbc512e2703e3879",
+                "reference": "c4585485e32e8eca21d11855cbc512e2703e3879",
                 "shasum": ""
             },
             "require": {
@@ -2442,11 +2442,11 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-11-14T12:07:17+00:00"
+            "time": "2023-11-16T11:21:58+00:00"
         },
         {
             "name": "filament/notifications",
-            "version": "v3.0.96",
+            "version": "v3.0.97",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/notifications.git",
@@ -2498,7 +2498,7 @@
         },
         {
             "name": "filament/spatie-laravel-settings-plugin",
-            "version": "v3.0.96",
+            "version": "v3.0.97",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/spatie-laravel-settings-plugin.git",
@@ -2545,7 +2545,7 @@
         },
         {
             "name": "filament/support",
-            "version": "v3.0.96",
+            "version": "v3.0.97",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/support.git",
@@ -2602,7 +2602,7 @@
         },
         {
             "name": "filament/tables",
-            "version": "v3.0.96",
+            "version": "v3.0.97",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/tables.git",
@@ -2655,7 +2655,7 @@
         },
         {
             "name": "filament/widgets",
-            "version": "v3.0.96",
+            "version": "v3.0.97",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/widgets.git",

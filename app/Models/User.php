@@ -62,9 +62,6 @@ class User extends Authenticatable implements BannableContract, FilamentUser, Ha
 
     public function canAccessPanel(Panel $panel): bool
     {
-        $settings = app(\Octo\Settings\Settings::class);
-
-        return ! in_array($this->id, $settings->restrict_users);
         // TODO: Waiting for filament breezy implementation
         // $this->hasVerifiedEmail() && ;
     }
