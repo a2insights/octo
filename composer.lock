@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "75f3683917aa5db30fd2d6b7ff2a6059",
+    "content-hash": "23e091ce1ad0b7498f9c6298f5746730",
     "packages": [
         {
             "name": "a2insights/octo-core",
-            "version": "1.2.4-beta",
+            "version": "v1.2.2-beta",
             "source": {
                 "type": "git",
                 "url": "https://github.com/a2insights/octo-core.git",
-                "reference": "78860ab614b8ff8e4861f68a3967e92086b42674"
+                "reference": "cfff2117b594592c69e51415e49f8960303be342"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/78860ab614b8ff8e4861f68a3967e92086b42674",
-                "reference": "78860ab614b8ff8e4861f68a3967e92086b42674",
+                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/cfff2117b594592c69e51415e49f8960303be342",
+                "reference": "cfff2117b594592c69e51415e49f8960303be342",
                 "shasum": ""
             },
             "require": {
@@ -104,9 +104,9 @@
             ],
             "support": {
                 "issues": "https://github.com/a2insights/octo-core/issues",
-                "source": "https://github.com/a2insights/octo-core/tree/1.2.4-beta"
+                "source": "https://github.com/a2insights/octo-core/tree/v1.2.2-beta"
             },
-            "time": "2023-11-17T02:34:05+00:00"
+            "time": "2023-11-17T21:18:50+00:00"
         },
         {
             "name": "akaunting/laravel-firewall",
