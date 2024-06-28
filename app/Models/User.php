@@ -52,18 +52,24 @@ class User extends Authenticatable implements BannableContract, FilamentUser, Ha
     ];
 
     /**
-     * The attributes that should be cast.
+     * Get the attributes that should be cast.
      *
-     * @var array<string, string>
+     * @return array<string, string>
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime', 'settings' => Settings::class,
-    ];
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+            'settings' => Settings::class,
+        ];
+    }
 
     public function canAccessPanel(Panel $panel): bool
     {
         // TODO: Waiting for filament breezy implementation
         // $this->hasVerifiedEmail() && ;
+        return true;
     }
 
     public function getFilamentAvatarUrl(): ?string
