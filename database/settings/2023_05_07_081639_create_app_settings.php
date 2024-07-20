@@ -18,7 +18,7 @@ return new class extends SettingsMigration
         $this->migrator->add('settings.restrict_users', []);
 
         $this->migrator->add('settings.timezone', 'America/New_York');
-        $this->migrator->add('settings.locales', ['en_US', 'pt_BR', 'es']);
-        $this->migrator->add('settings.locale', 'en_US');
+        $this->migrator->add('settings.locales', ['en', 'pt_BR', 'es']);
+        $this->migrator->add('settings.locale', 'en');
     }
 };
