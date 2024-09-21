@@ -16,5 +16,6 @@ return new class extends SettingsMigration
         $this->migrator->add('features.terms', false);
         $this->migrator->add('features.user_phone', false);
         $this->migrator->add('features.username', false);
+        $this->migrator->add('features.switch_language', true);
     }
 };
