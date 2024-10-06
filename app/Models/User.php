@@ -20,9 +20,7 @@ use Spatie\Permission\Traits\HasRoles;
 use TaylorNetwork\UsernameGenerator\FindSimilarUsernames;
 use TaylorNetwork\UsernameGenerator\GeneratesUsernames;
 
-class User extends Authenticatable implements BannableContract, FilamentUser, HasAvatar
-    // TODO: Waiting for filament breezy implementation
-    // MustVerifyEmail
+class User extends Authenticatable implements BannableContract, FilamentUser, HasAvatar, MustVerifyEmail
 {
     use Bannable, HasApiTokens, HasFactory, HasRoles, Notifiable, SoftDeletes, TwoFactorAuthenticatable;
     use FindSimilarUsernames, GeneratesUsernames;
@@ -67,8 +65,6 @@ class User extends Authenticatable implements BannableContract, FilamentUser, Ha
 
     public function canAccessPanel(Panel $panel): bool
     {
-        // TODO: Waiting for filament breezy implementation
-        // $this->hasVerifiedEmail() && ;
         return true;
     }
 

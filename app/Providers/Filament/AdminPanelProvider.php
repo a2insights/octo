@@ -71,8 +71,7 @@ class AdminPanelProvider extends PanelProvider
                 \HusamTariq\FilamentDatabaseSchedule\FilamentDatabaseSchedulePlugin::make(),
                 \SolutionForest\FilamentFirewall\FilamentFirewallPanel::make(),
                 \pxlrbt\FilamentEnvironmentIndicator\EnvironmentIndicatorPlugin::make(),
-                // TODO: Navigation inconfigurable
-                // \BezhanSalleh\FilamentExceptions\FilamentExceptionsPlugin::make(),
+                \BezhanSalleh\FilamentExceptions\FilamentExceptionsPlugin::make(),
                 \Croustibat\FilamentJobsMonitor\FilamentJobsMonitorPlugin::make()
                     ->label('Job')
                     ->pluralLabel('Jobs')
@@ -110,7 +109,6 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
                 \Cog\Laravel\Ban\Http\Middleware\ForbidBannedUser::class,
-                'verified',
             ]);
     }
 }

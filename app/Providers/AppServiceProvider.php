@@ -6,7 +6,9 @@ use App\Models\User;
 use App\Policies\ActivityPolicy;
 use BezhanSalleh\FilamentExceptions\Models\Exception;
 use Croustibat\FilamentJobsMonitor\Models\QueueMonitor;
+use Filament\Events\Auth\Registered;
 use HusamTariq\FilamentDatabaseSchedule\Models\Schedule;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Marjose123\FilamentWebhookServer\Models\FilamentWebhookServer;
@@ -37,5 +39,11 @@ class AppServiceProvider extends ServiceProvider
         Gate::policy(Schedule::class, \App\Policies\SchedulePolicy::class);
         Gate::policy(Activity::class, ActivityPolicy::class);
         Gate::policy(Exception::class, \App\Policies\ExceptionPolicy::class);
+
+        Event::listen(function (Registered $event) {
+            /* @var User $user */
+            $user = $event->getUser();
+            $user?->assignRole('user');
+        });
     }
 }
