@@ -1,7 +1,23 @@
 <?php
 
-namespace App\Providers\Filament;
+namespace App\Providers;
 
+use App\Actions\FilamentCompanies\AddCompanyEmployee;
+use App\Actions\FilamentCompanies\CreateConnectedAccount;
+use App\Actions\FilamentCompanies\CreateNewUser;
+use App\Actions\FilamentCompanies\CreateUserFromProvider;
+use App\Actions\FilamentCompanies\DeleteCompany;
+use App\Actions\FilamentCompanies\DeleteUser;
+use App\Actions\FilamentCompanies\HandleInvalidState;
+use App\Actions\FilamentCompanies\InviteCompanyEmployee;
+use App\Actions\FilamentCompanies\RemoveCompanyEmployee;
+use App\Actions\FilamentCompanies\ResolveSocialiteUser;
+use App\Actions\FilamentCompanies\SetUserPassword;
+use App\Actions\FilamentCompanies\UpdateCompanyName;
+use App\Actions\FilamentCompanies\UpdateConnectedAccount;
+use App\Actions\FilamentCompanies\UpdateUserPassword;
+use App\Actions\FilamentCompanies\UpdateUserProfileInformation;
+use App\Models\Company;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -16,24 +32,37 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Octo\User\Filament\Components\Phone;
 use Octo\User\Filament\Components\Username;
+use Wallo\FilamentCompanies\Actions\GenerateRedirectForProvider;
+use Wallo\FilamentCompanies\Enums\Feature;
+use Wallo\FilamentCompanies\Enums\Provider;
+use Wallo\FilamentCompanies\FilamentCompanies;
+use Wallo\FilamentCompanies\Pages\Auth\Login;
+use Wallo\FilamentCompanies\Pages\Auth\Register;
+use Wallo\FilamentCompanies\Pages\Company\CompanySettings;
+use Wallo\FilamentCompanies\Pages\Company\CreateCompany;
+use Wallo\FilamentCompanies\Pages\User\Profile;
 
-class AdminPanelProvider extends PanelProvider
+class FilamentCompaniesServiceProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
         return $panel
+            ->id('company')
+            ->path('company')
+            ->homeUrl(static fn (): string => url(Pages\Dashboard::getUrl(panel: 'company', tenant: Auth::user()?->personalCompany())))
             ->default()
-            ->id('admin')
-            ->path(config('octo.admin_path'))
-            ->authGuard('web')
-            ->login()
-            ->registration()
+            ->login(Login::class)
+            ->registration(Register::class)
             ->passwordReset()
             ->emailVerification()
             ->profile()
+            ->tenant(Company::class)
+            ->tenantProfile(CompanySettings::class)
+            ->tenantRegistration(CreateCompany::class)
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -83,7 +112,33 @@ class AdminPanelProvider extends PanelProvider
                     ->navigationCountBadge(true)
                     ->enablePruning(true)
                     ->pruningRetention(7),
-                // ->resource(\App\Filament\Resources\CustomJobMonitorResource::class),
+                FilamentCompanies::make()
+                    ->userPanel('company')
+                    ->switchCurrentCompany()
+                    ->updateProfileInformation()
+                    ->updatePasswords()
+                    ->setPasswords()
+                    ->connectedAccounts()
+                    ->manageBrowserSessions()
+                    ->accountDeletion()
+                    ->profilePhotos()
+                    ->api()
+                    ->companies(invitations: true)
+                    ->termsAndPrivacyPolicy()
+                    ->notifications()
+                    ->modals()
+                    ->socialite(
+                        providers: [Provider::Github],
+                        features: [
+                            Feature::RememberSession,
+                            Feature::ProviderAvatars,
+                            Feature::RememberSession,
+                            Feature::ProviderAvatars,
+                            Feature::GenerateMissingEmails,
+                            Feature::LoginOnRegistration,
+                            Feature::CreateAccountOnFirstLogin,
+                        ],
+                    ),
                 \Octo\User\UserPlugin::make(),
                 \Octo\Features\FeaturesPlugin::make(),
                 \Octo\Settings\SettingsPlugin::make(),
@@ -110,5 +165,54 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
                 \Cog\Laravel\Ban\Http\Middleware\ForbidBannedUser::class,
             ]);
+    }
+
+    /**
+     * Bootstrap any application services.
+     */
+    public function boot(): void
+    {
+        $this->configurePermissions();
+
+        FilamentCompanies::createUsersUsing(CreateNewUser::class);
+        FilamentCompanies::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
+        FilamentCompanies::updateUserPasswordsUsing(UpdateUserPassword::class);
+
+        FilamentCompanies::createCompaniesUsing(CreateCompany::class);
+        FilamentCompanies::updateCompanyNamesUsing(UpdateCompanyName::class);
+        FilamentCompanies::addCompanyEmployeesUsing(AddCompanyEmployee::class);
+        FilamentCompanies::inviteCompanyEmployeesUsing(InviteCompanyEmployee::class);
+        FilamentCompanies::removeCompanyEmployeesUsing(RemoveCompanyEmployee::class);
+        FilamentCompanies::deleteCompaniesUsing(DeleteCompany::class);
+        FilamentCompanies::deleteUsersUsing(DeleteUser::class);
+
+        FilamentCompanies::resolvesSocialiteUsersUsing(ResolveSocialiteUser::class);
+        FilamentCompanies::createUsersFromProviderUsing(CreateUserFromProvider::class);
+        FilamentCompanies::createConnectedAccountsUsing(CreateConnectedAccount::class);
+        FilamentCompanies::updateConnectedAccountsUsing(UpdateConnectedAccount::class);
+        FilamentCompanies::setUserPasswordsUsing(SetUserPassword::class);
+        FilamentCompanies::handlesInvalidStateUsing(HandleInvalidState::class);
+        FilamentCompanies::generatesProvidersRedirectsUsing(GenerateRedirectForProvider::class);
+    }
+
+    /**
+     * Configure the roles and permissions that are available within the application.
+     */
+    protected function configurePermissions(): void
+    {
+        // FilamentCompanies::defaultApiTokenPermissions(['read']);
+
+        // FilamentCompanies::role('admin', 'Administrator', [
+        //     'create',
+        //     'read',
+        //     'update',
+        //     'delete',
+        // ])->description('Administrator users can perform any action.');
+
+        // FilamentCompanies::role('editor', 'Editor', [
+        //     'read',
+        //     'create',
+        //     'update',
+        // ])->description('Editor users have the ability to read, create, and update.');
     }
 }
