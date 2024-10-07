@@ -30,7 +30,7 @@ class AdminPanelProvider extends PanelProvider
             ->path(config('octo.admin_path'))
             ->authGuard('web')
             ->login()
-            ->registration()
+            ->registration(\Octo\User\Filament\Pages\Register::class)
             ->passwordReset()
             ->emailVerification()
             ->profile()
@@ -53,15 +53,16 @@ class AdminPanelProvider extends PanelProvider
                 \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
                 \CmsMulti\FilamentClearCache\FilamentClearCachePlugin::make(),
                 \Brickx\MaintenanceSwitch\MaintenanceSwitchPlugin::make(),
-                \Jeffgreco13\FilamentBreezy\BreezyCore::make()->myProfile(
-                    shouldRegisterUserMenu: true, // Sets the 'account' link in the panel User Menu (default = true)
-                    shouldRegisterNavigation: false, // Adds a main navigation item for the My Profile page (default = false)
-                    hasAvatars: true, // Enables the avatar upload form component (default = false)
-                    slug: 'my-profile' // Sets the slug for the profile page (default = 'my-profile')
-                )->enableTwoFactorAuthentication(
-                    force: false, // force the user to enable 2FA before they can use the application (default = false)
-                    // action: CustomTwoFactorPage::class // optionally, use a custom 2FA page
-                )
+                \Jeffgreco13\FilamentBreezy\BreezyCore::make()
+                    ->myProfile(
+                        shouldRegisterUserMenu: true, // Sets the 'account' link in the panel User Menu (default = true)
+                        shouldRegisterNavigation: false, // Adds a main navigation item for the My Profile page (default = false)
+                        hasAvatars: true, // Enables the avatar upload form component (default = false)
+                        slug: 'my-profile' // Sets the slug for the profile page (default = 'my-profile')
+                    )->enableTwoFactorAuthentication(
+                        force: false, // force the user to enable 2FA before they can use the application (default = false)
+                        // action: CustomTwoFactorPage::class // optionally, use a custom 2FA page
+                    )
                 // TODO: Disable becouse we cant disable from features settings
                 // ->enableSanctumTokens(
                 //     permissions: ['create', 'update', 'view', 'delete'] // optional, customize the permissions (default = ["create", "view", "update", "delete"])
@@ -83,7 +84,6 @@ class AdminPanelProvider extends PanelProvider
                     ->navigationCountBadge(true)
                     ->enablePruning(true)
                     ->pruningRetention(7),
-                // ->resource(\App\Filament\Resources\CustomJobMonitorResource::class),
                 \Octo\User\UserPlugin::make(),
                 \Octo\Features\FeaturesPlugin::make(),
                 \Octo\Settings\SettingsPlugin::make(),

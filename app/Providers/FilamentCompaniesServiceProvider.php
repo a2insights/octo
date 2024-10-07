@@ -36,12 +36,13 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Octo\User\Filament\Components\Phone;
 use Octo\User\Filament\Components\Username;
+use Octo\User\Filament\Pages\TenantRegister;
+use Octo\User\Filament\Pages\TentantUserProfilePage;
 use Wallo\FilamentCompanies\Actions\GenerateRedirectForProvider;
 use Wallo\FilamentCompanies\Enums\Feature;
 use Wallo\FilamentCompanies\Enums\Provider;
 use Wallo\FilamentCompanies\FilamentCompanies;
 use Wallo\FilamentCompanies\Pages\Auth\Login;
-use Wallo\FilamentCompanies\Pages\Auth\Register;
 use Wallo\FilamentCompanies\Pages\Company\CompanySettings;
 use Wallo\FilamentCompanies\Pages\Company\CreateCompany;
 use Wallo\FilamentCompanies\Pages\User\Profile;
@@ -56,7 +57,7 @@ class FilamentCompaniesServiceProvider extends PanelProvider
             ->homeUrl(static fn (): string => url(Pages\Dashboard::getUrl(panel: 'company', tenant: Auth::user()?->personalCompany())))
             ->default()
             ->login(Login::class)
-            ->registration(Register::class)
+            ->registration(TenantRegister::class)
             ->passwordReset()
             ->emailVerification()
             ->profile()
@@ -91,10 +92,11 @@ class FilamentCompaniesServiceProvider extends PanelProvider
                     force: false, // force the user to enable 2FA before they can use the application (default = false)
                     // action: CustomTwoFactorPage::class // optionally, use a custom 2FA page
                 )
-                // TODO: Disable becouse we cant disable from features settings
+                // TODO: Make configurable
                 // ->enableSanctumTokens(
                 //     permissions: ['create', 'update', 'view', 'delete'] // optional, customize the permissions (default = ["create", "view", "update", "delete"])
                 // )
+                    ->customMyProfilePage(TentantUserProfilePage::class)
                     ->myProfileComponents([Phone::class, Username::class]),
                 \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn () => auth()->user() ? auth()->user()?->hasRole('super_admin') : false),
                 \Marjose123\FilamentWebhookServer\WebhookPlugin::make(),
@@ -128,7 +130,7 @@ class FilamentCompaniesServiceProvider extends PanelProvider
                     ->notifications()
                     ->modals()
                     ->socialite(
-                        providers: [Provider::Github],
+                        providers: [Provider::Google, Provider::Facebook, Provider::Github],
                         features: [
                             Feature::RememberSession,
                             Feature::ProviderAvatars,
