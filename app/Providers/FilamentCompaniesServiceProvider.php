@@ -17,6 +17,7 @@ use App\Actions\FilamentCompanies\UpdateCompanyName;
 use App\Actions\FilamentCompanies\UpdateConnectedAccount;
 use App\Actions\FilamentCompanies\UpdateUserPassword;
 use App\Actions\FilamentCompanies\UpdateUserProfileInformation;
+use App\Http\Middleware\TenancyInitialize;
 use App\Models\Company;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -24,7 +25,6 @@ use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
-use Filament\Support\Colors\Color;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -53,7 +53,7 @@ class FilamentCompaniesServiceProvider extends PanelProvider
     {
         return $panel
             ->id('company')
-            ->path('company')
+            ->path(config('octo.tenant_path'))
             ->homeUrl(static fn (): string => url(Pages\Dashboard::getUrl(panel: 'company', tenant: Auth::user()?->personalCompany())))
             ->default()
             ->login(Login::class)
@@ -64,9 +64,9 @@ class FilamentCompaniesServiceProvider extends PanelProvider
             ->tenant(Company::class)
             ->tenantProfile(CompanySettings::class)
             ->tenantRegistration(CreateCompany::class)
-            ->colors([
-                'primary' => Color::Amber,
-            ])
+            ->tenantMiddleware([
+                TenancyInitialize::class,
+            ], isPersistent: true)
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
@@ -97,7 +97,11 @@ class FilamentCompaniesServiceProvider extends PanelProvider
                 //     permissions: ['create', 'update', 'view', 'delete'] // optional, customize the permissions (default = ["create", "view", "update", "delete"])
                 // )
                     ->customMyProfilePage(TentantUserProfilePage::class)
-                    ->myProfileComponents([Phone::class, Username::class]),
+                    ->myProfileComponents([Phone::class, Username::class])
+                    ->avatarUploadComponent(fn ($fileUpload) => $fileUpload
+                        ->visibility('private')
+                        ->directory('avatars')
+                        ->disk('avatars')),
                 \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn () => auth()->user() ? auth()->user()?->hasRole('super_admin') : false),
                 \Marjose123\FilamentWebhookServer\WebhookPlugin::make(),
                 \HusamTariq\FilamentDatabaseSchedule\FilamentDatabaseSchedulePlugin::make(),
@@ -138,7 +142,7 @@ class FilamentCompaniesServiceProvider extends PanelProvider
                             Feature::ProviderAvatars,
                             Feature::GenerateMissingEmails,
                             Feature::LoginOnRegistration,
-                            Feature::CreateAccountOnFirstLogin,
+                            // Feature::CreateAccountOnFirstLogin,
                         ],
                     ),
                 \Octo\User\UserPlugin::make(),
@@ -161,7 +165,6 @@ class FilamentCompaniesServiceProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
                 \Octo\Settings\Http\Middleware\Locale::class,
-                \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
             ])
             ->authMiddleware([
                 Authenticate::class,

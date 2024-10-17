@@ -18,7 +18,7 @@ return [
     'navigation_badge' => true,
 
     /** Whether to scope exceptions to tenant */
-    'is_scoped_to_tenant' => true,
+    'is_scoped_to_tenant' => false,
 
     /** Icons to use for navigation (if enabled) and pills */
     'icons' => [

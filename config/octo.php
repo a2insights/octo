@@ -2,13 +2,11 @@
 
 return [
     'admin_path' => 'admin',
+    'tenant_path' => 'company',
+
     'users' => [
         'model' => App\Models\User::class,
-    ],
-    'features' => [
-        'terms_service_and_privacy_policy' => [
-            // public or private
-            'disk_visibility' => 'public',
-        ],
+        'resource' => Octo\User\Filament\UserResource::class,
+        'tenant_scope' => false,
     ],
 ];

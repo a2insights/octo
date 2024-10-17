@@ -63,7 +63,7 @@ class UserFactory extends Factory
         return $this->has(
             Company::factory()
                 ->state(fn (array $attributes, User $user) => [
-                    'name' => $user->name . '\'s Company',
+                    'name' => $user->name.'\'s Company',
                     'user_id' => $user->id,
                     'personal_company' => true,
                 ])

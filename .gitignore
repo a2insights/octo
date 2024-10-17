@@ -22,4 +22,4 @@ yarn-error.log
 /.idea
 /.vscode
 .blueprint
-/octo-core
+/storage/company_*

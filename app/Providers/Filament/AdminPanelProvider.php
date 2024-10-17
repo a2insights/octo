@@ -8,7 +8,6 @@ use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
-use Filament\Support\Colors\Color;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -34,9 +33,6 @@ class AdminPanelProvider extends PanelProvider
             ->passwordReset()
             ->emailVerification()
             ->profile()
-            ->colors([
-                'primary' => Color::Amber,
-            ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
@@ -104,7 +100,6 @@ class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
                 \Octo\Settings\Http\Middleware\Locale::class,
-                \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
             ])
             ->authMiddleware([
                 Authenticate::class,

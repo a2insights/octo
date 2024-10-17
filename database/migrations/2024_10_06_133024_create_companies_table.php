@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->index();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('name');
             $table->boolean('personal_company');
+            $table->json('data')->nullable();
             $table->timestamps();
         });
     }

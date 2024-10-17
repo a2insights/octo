@@ -83,6 +83,13 @@ class User extends Authenticatable implements BannableContract, FilamentUser, Ha
 
     public function getFilamentAvatarUrl(): ?string
     {
+        if ($this->avatar_url && config('filament.default_filesystem_disk') === 's3') {
+            return Storage::disk('avatars')->temporaryUrl(
+                $this->avatar_url,
+                now()->addMinutes(60),
+            );
+        }
+
         return $this->avatar_url ? Storage::url($this->avatar_url) : null;
     }
 
