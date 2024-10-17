@@ -50,7 +50,6 @@ class AppServiceProvider extends ServiceProvider
         Gate::policy(Schedule::class, \App\Policies\SchedulePolicy::class);
         Gate::policy(Activity::class, ActivityPolicy::class);
         Gate::policy(Exception::class, \App\Policies\ExceptionPolicy::class);
-        Gate::policy(FieldGroup::class, \App\Policies\FieldGroupPolicy::class);
 
         Event::listen(function (Registered $event) {
             $user = $event->getUser();
