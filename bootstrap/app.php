@@ -11,7 +11,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        $middleware->append(\SolutionForest\FilamentFirewall\Middleware\WhitelistRangeMiddleware::class);
+        // $middleware->append(\SolutionForest\FilamentFirewall\Middleware\WhitelistRangeMiddleware::class);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
