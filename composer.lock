@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9711b2e60c163815015dba72d1fafc98",
+    "content-hash": "c018aca0a6d63836d6d1b4043ad0e197",
     "packages": [
         {
             "name": "a21ns1g4ts/laravel-saas-billing",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a21ns1g4ts/laravel-saas-billing.git",
-                "reference": "73fae79e3bd04a4853bf5341f2f7f54777295f7a"
+                "reference": "5de596804f6ae2e8491d0947741b111270b707be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a21ns1g4ts/laravel-saas-billing/zipball/73fae79e3bd04a4853bf5341f2f7f54777295f7a",
-                "reference": "73fae79e3bd04a4853bf5341f2f7f54777295f7a",
+                "url": "https://api.github.com/repos/a21ns1g4ts/laravel-saas-billing/zipball/5de596804f6ae2e8491d0947741b111270b707be",
+                "reference": "5de596804f6ae2e8491d0947741b111270b707be",
                 "shasum": ""
             },
             "require": {
@@ -75,7 +75,7 @@
                 "issues": "https://github.com/a21ns1g4ts/laravel-saas-billing/issues",
                 "source": "https://github.com/a21ns1g4ts/laravel-saas-billing/tree/main"
             },
-            "time": "2024-10-18T02:10:08+00:00"
+            "time": "2024-10-19T05:10:35+00:00"
         },
         {
             "name": "a2insights/octo-core",
@@ -83,12 +83,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a2insights/octo-core.git",
-                "reference": "98dad75b7c6526734f0562f3c686edbca09120b1"
+                "reference": "eb7db94feff7983528460d5cbf23322374a8d441"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/98dad75b7c6526734f0562f3c686edbca09120b1",
-                "reference": "98dad75b7c6526734f0562f3c686edbca09120b1",
+                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/eb7db94feff7983528460d5cbf23322374a8d441",
+                "reference": "eb7db94feff7983528460d5cbf23322374a8d441",
                 "shasum": ""
             },
             "require": {
@@ -185,9 +185,9 @@
             ],
             "support": {
                 "issues": "https://github.com/a2insights/octo-core/issues",
-                "source": "https://github.com/a2insights/octo-core/tree/v1.5.2-beta"
+                "source": "https://github.com/a2insights/octo-core/tree/main"
             },
-            "time": "2024-10-17T18:13:15+00:00"
+            "time": "2024-10-19T05:11:01+00:00"
         },
         {
             "name": "akaunting/laravel-firewall",
@@ -1450,16 +1450,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.324.5",
+            "version": "3.324.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "052c5d429ccd8775f7eed2855c2ca8cae2be52cb"
+                "reference": "7412a44da62fd607efbaac4084e69d6621f29de1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/052c5d429ccd8775f7eed2855c2ca8cae2be52cb",
-                "reference": "052c5d429ccd8775f7eed2855c2ca8cae2be52cb",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/7412a44da62fd607efbaac4084e69d6621f29de1",
+                "reference": "7412a44da62fd607efbaac4084e69d6621f29de1",
                 "shasum": ""
             },
             "require": {
@@ -1542,9 +1542,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.324.5"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.324.6"
             },
-            "time": "2024-10-17T18:12:04+00:00"
+            "time": "2024-10-18T18:06:33+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -1602,16 +1602,16 @@
         },
         {
             "name": "barryvdh/laravel-debugbar",
-            "version": "v3.14.3",
+            "version": "v3.14.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "c0bee7c08ae2429e4a9ed2bc75679b012db6e3bd"
+                "reference": "14e4517bd49130d6119228107eb21ae47ae120ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/c0bee7c08ae2429e4a9ed2bc75679b012db6e3bd",
-                "reference": "c0bee7c08ae2429e4a9ed2bc75679b012db6e3bd",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/14e4517bd49130d6119228107eb21ae47ae120ab",
+                "reference": "14e4517bd49130d6119228107eb21ae47ae120ab",
                 "shasum": ""
             },
             "require": {
@@ -1670,7 +1670,7 @@
             ],
             "support": {
                 "issues": "https://github.com/barryvdh/laravel-debugbar/issues",
-                "source": "https://github.com/barryvdh/laravel-debugbar/tree/v3.14.3"
+                "source": "https://github.com/barryvdh/laravel-debugbar/tree/v3.14.6"
             },
             "funding": [
                 {
@@ -1682,7 +1682,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-10-02T09:17:49+00:00"
+            "time": "2024-10-18T13:15:12+00:00"
         },
         {
             "name": "bezhansalleh/filament-exceptions",
@@ -6477,16 +6477,16 @@
         },
         {
             "name": "league/csv",
-            "version": "9.17.0",
+            "version": "9.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/csv.git",
-                "reference": "8cab815fb11ec93aa2f7b8a57b3daa1f1a364011"
+                "reference": "b02d010e4055ae992247f6ffd1e7b103ef2a0790"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/csv/zipball/8cab815fb11ec93aa2f7b8a57b3daa1f1a364011",
-                "reference": "8cab815fb11ec93aa2f7b8a57b3daa1f1a364011",
+                "url": "https://api.github.com/repos/thephpleague/csv/zipball/b02d010e4055ae992247f6ffd1e7b103ef2a0790",
+                "reference": "b02d010e4055ae992247f6ffd1e7b103ef2a0790",
                 "shasum": ""
             },
             "require": {
@@ -6498,11 +6498,11 @@
                 "ext-xdebug": "*",
                 "friendsofphp/php-cs-fixer": "^3.64.0",
                 "phpbench/phpbench": "^1.3.1",
-                "phpstan/phpstan": "^1.12.5",
+                "phpstan/phpstan": "^1.12.6",
                 "phpstan/phpstan-deprecation-rules": "^1.2.1",
                 "phpstan/phpstan-phpunit": "^1.4.0",
                 "phpstan/phpstan-strict-rules": "^1.6.1",
-                "phpunit/phpunit": "^10.5.16 || ^11.4.0",
+                "phpunit/phpunit": "^10.5.16 || ^11.4.1",
                 "symfony/var-dumper": "^6.4.8 || ^7.1.5"
             },
             "suggest": {
@@ -6560,7 +6560,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-10-10T10:30:28+00:00"
+            "time": "2024-10-18T08:14:48+00:00"
         },
         {
             "name": "league/flysystem",
@@ -11351,16 +11351,16 @@
         },
         {
             "name": "spatie/laravel-activitylog",
-            "version": "4.8.0",
+            "version": "4.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-activitylog.git",
-                "reference": "eb6f37dd40af950ce10cf5280f0acfa3e08c3bff"
+                "reference": "e0fc28178515a5396f48e107ed697719189bbe02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-activitylog/zipball/eb6f37dd40af950ce10cf5280f0acfa3e08c3bff",
-                "reference": "eb6f37dd40af950ce10cf5280f0acfa3e08c3bff",
+                "url": "https://api.github.com/repos/spatie/laravel-activitylog/zipball/e0fc28178515a5396f48e107ed697719189bbe02",
+                "reference": "e0fc28178515a5396f48e107ed697719189bbe02",
                 "shasum": ""
             },
             "require": {
@@ -11426,7 +11426,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-activitylog/issues",
-                "source": "https://github.com/spatie/laravel-activitylog/tree/4.8.0"
+                "source": "https://github.com/spatie/laravel-activitylog/tree/4.9.0"
             },
             "funding": [
                 {
@@ -11438,7 +11438,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-03-08T22:28:17+00:00"
+            "time": "2024-10-18T13:38:47+00:00"
         },
         {
             "name": "spatie/laravel-data",
@@ -11710,16 +11710,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "11.9.1",
+            "version": "11.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "ff589ea5532a33d84faeb64bfdfd59057b4148b8"
+                "reference": "6a39eca52236bc1e1261f366d4022996521ae843"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/ff589ea5532a33d84faeb64bfdfd59057b4148b8",
-                "reference": "ff589ea5532a33d84faeb64bfdfd59057b4148b8",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/6a39eca52236bc1e1261f366d4022996521ae843",
+                "reference": "6a39eca52236bc1e1261f366d4022996521ae843",
                 "shasum": ""
             },
             "require": {
@@ -11803,7 +11803,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-medialibrary/issues",
-                "source": "https://github.com/spatie/laravel-medialibrary/tree/11.9.1"
+                "source": "https://github.com/spatie/laravel-medialibrary/tree/11.9.2"
             },
             "funding": [
                 {
@@ -11815,7 +11815,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-09-02T06:32:15+00:00"
+            "time": "2024-10-18T14:24:58+00:00"
         },
         {
             "name": "spatie/laravel-model-info",
@@ -17180,6 +17180,64 @@
             "time": "2024-05-21T05:55:05+00:00"
         },
         {
+            "name": "phpstan/phpstan",
+            "version": "1.12.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan.git",
+                "reference": "dc2b9976bd8b0f84ec9b0e50cc35378551de7af0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/dc2b9976bd8b0f84ec9b0e50cc35378551de7af0",
+                "reference": "dc2b9976bd8b0f84ec9b0e50cc35378551de7af0",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2|^8.0"
+            },
+            "conflict": {
+                "phpstan/phpstan-shim": "*"
+            },
+            "bin": [
+                "phpstan",
+                "phpstan.phar"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPStan - PHP Static Analysis Tool",
+            "keywords": [
+                "dev",
+                "static analysis"
+            ],
+            "support": {
+                "docs": "https://phpstan.org/user-guide/getting-started",
+                "forum": "https://github.com/phpstan/phpstan/discussions",
+                "issues": "https://github.com/phpstan/phpstan/issues",
+                "security": "https://github.com/phpstan/phpstan/security/policy",
+                "source": "https://github.com/phpstan/phpstan-src"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ondrejmirtes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/phpstan",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-10-18T11:12:07+00:00"
+        },
+        {
             "name": "phpunit/php-code-coverage",
             "version": "10.1.16",
             "source": {
@@ -17771,16 +17829,16 @@
         },
         {
             "name": "sebastian/comparator",
-            "version": "5.0.2",
+            "version": "5.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "2d3e04c3b4c1e84a5e7382221ad8883c8fbc4f53"
+                "reference": "a18251eb0b7a2dcd2f7aa3d6078b18545ef0558e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/2d3e04c3b4c1e84a5e7382221ad8883c8fbc4f53",
-                "reference": "2d3e04c3b4c1e84a5e7382221ad8883c8fbc4f53",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/a18251eb0b7a2dcd2f7aa3d6078b18545ef0558e",
+                "reference": "a18251eb0b7a2dcd2f7aa3d6078b18545ef0558e",
                 "shasum": ""
             },
             "require": {
@@ -17791,7 +17849,7 @@
                 "sebastian/exporter": "^5.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^10.4"
+                "phpunit/phpunit": "^10.5"
             },
             "type": "library",
             "extra": {
@@ -17836,7 +17894,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/comparator/issues",
                 "security": "https://github.com/sebastianbergmann/comparator/security/policy",
-                "source": "https://github.com/sebastianbergmann/comparator/tree/5.0.2"
+                "source": "https://github.com/sebastianbergmann/comparator/tree/5.0.3"
             },
             "funding": [
                 {
@@ -17844,7 +17902,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-08-12T06:03:08+00:00"
+            "time": "2024-10-18T14:56:07+00:00"
         },
         {
             "name": "sebastian/complexity",
@@ -18701,14 +18759,14 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "a21ns1g4ts/laravel-saas-billing": 20,
-        "a2insights/octo-core": 20
+        "a2insights/octo-core": 20,
+        "a21ns1g4ts/laravel-saas-billing": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.1"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "plugin-api-version": "2.6.0"
 }
