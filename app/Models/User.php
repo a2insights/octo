@@ -19,6 +19,7 @@ use Octo\User\Settings;
 use Spatie\Permission\Traits\HasRoles;
 use TaylorNetwork\UsernameGenerator\FindSimilarUsernames;
 use TaylorNetwork\UsernameGenerator\GeneratesUsernames;
+use Laravel\Cashier\Billable;
 
 class User extends Authenticatable implements BannableContract, FilamentUser, HasAvatar
     // TODO: Waiting for filament breezy implementation
@@ -26,6 +27,7 @@ class User extends Authenticatable implements BannableContract, FilamentUser, Ha
 {
     use Bannable, HasApiTokens, HasFactory, HasRoles, Notifiable, SoftDeletes, TwoFactorAuthenticatable;
     use FindSimilarUsernames, GeneratesUsernames;
+    use Billable;
 
     /**
      * The attributes that are mass assignable.
