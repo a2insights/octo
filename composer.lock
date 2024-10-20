@@ -4,15 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "705c5731a6ef476ba12f89bc6afd8e04",
+    "content-hash": "7828ca823d81f26ed05a9104f82970d5",
     "packages": [
         {
             "name": "a2insights/octo-core",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/a2insights/octo-core.git",
+                "reference": "137a9e7ce18bc4812088b86a3f7c0a59cbc6c753"
+            },
             "dist": {
-                "type": "path",
-                "url": "./octo-core",
-                "reference": "eb7db94feff7983528460d5cbf23322374a8d441"
+                "type": "zip",
+                "url": "https://api.github.com/repos/a2insights/octo-core/zipball/137a9e7ce18bc4812088b86a3f7c0a59cbc6c753",
+                "reference": "137a9e7ce18bc4812088b86a3f7c0a59cbc6c753",
+                "shasum": ""
             },
             "require": {
                 "amidesfahani/filament-tinyeditor": "^2.0",
@@ -70,6 +76,7 @@
                 "doctrine/dbal": "Required by Cashier to modify tables in the database.",
                 "laravel/cashier": "Required to use with the Stripe scaffolding."
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -86,16 +93,7 @@
                     "Octo\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Octo\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "vendor/bin/phpunit"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -114,9 +112,11 @@
                 "php",
                 "sass"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/a2insights/octo-core/issues",
+                "source": "https://github.com/a2insights/octo-core/tree/main"
+            },
+            "time": "2024-10-20T00:22:58+00:00"
         },
         {
             "name": "akaunting/laravel-firewall",
