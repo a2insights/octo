@@ -2,21 +2,6 @@
 
 namespace App\Providers;
 
-use App\Actions\FilamentCompanies\AddCompanyEmployee;
-use App\Actions\FilamentCompanies\CreateConnectedAccount;
-use App\Actions\FilamentCompanies\CreateNewUser;
-use App\Actions\FilamentCompanies\CreateUserFromProvider;
-use App\Actions\FilamentCompanies\DeleteCompany;
-use App\Actions\FilamentCompanies\DeleteUser;
-use App\Actions\FilamentCompanies\HandleInvalidState;
-use App\Actions\FilamentCompanies\InviteCompanyEmployee;
-use App\Actions\FilamentCompanies\RemoveCompanyEmployee;
-use App\Actions\FilamentCompanies\ResolveSocialiteUser;
-use App\Actions\FilamentCompanies\SetUserPassword;
-use App\Actions\FilamentCompanies\UpdateCompanyName;
-use App\Actions\FilamentCompanies\UpdateConnectedAccount;
-use App\Actions\FilamentCompanies\UpdateUserPassword;
-use App\Actions\FilamentCompanies\UpdateUserProfileInformation;
 use App\Http\Middleware\TenancyInitialize;
 use App\Models\Company;
 use Filament\Http\Middleware\Authenticate;
@@ -34,6 +19,21 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Octo\Tenant\Actions\FilamentCompanies\AddCompanyEmployee;
+use Octo\Tenant\Actions\FilamentCompanies\CreateConnectedAccount;
+use Octo\Tenant\Actions\FilamentCompanies\CreateNewUser;
+use Octo\Tenant\Actions\FilamentCompanies\CreateUserFromProvider;
+use Octo\Tenant\Actions\FilamentCompanies\DeleteCompany;
+use Octo\Tenant\Actions\FilamentCompanies\DeleteUser;
+use Octo\Tenant\Actions\FilamentCompanies\HandleInvalidState;
+use Octo\Tenant\Actions\FilamentCompanies\InviteCompanyEmployee;
+use Octo\Tenant\Actions\FilamentCompanies\RemoveCompanyEmployee;
+use Octo\Tenant\Actions\FilamentCompanies\ResolveSocialiteUser;
+use Octo\Tenant\Actions\FilamentCompanies\SetUserPassword;
+use Octo\Tenant\Actions\FilamentCompanies\UpdateCompanyName;
+use Octo\Tenant\Actions\FilamentCompanies\UpdateConnectedAccount;
+use Octo\Tenant\Actions\FilamentCompanies\UpdateUserPassword;
+use Octo\Tenant\Actions\FilamentCompanies\UpdateUserProfileInformation;
 use Octo\User\Filament\Components\Phone;
 use Octo\User\Filament\Components\Username;
 use Octo\User\Filament\Pages\TenantRegister;
@@ -142,13 +142,14 @@ class FilamentCompaniesServiceProvider extends PanelProvider
                             Feature::ProviderAvatars,
                             Feature::GenerateMissingEmails,
                             Feature::LoginOnRegistration,
-                            // Feature::CreateAccountOnFirstLogin,
+                            Feature::CreateAccountOnFirstLogin,
                         ],
                     ),
                 \Octo\User\UserPlugin::make(),
                 \Octo\Features\FeaturesPlugin::make(),
                 \Octo\Settings\SettingsPlugin::make(),
                 \Octo\System\SystemPlugin::make(),
+                \Octo\Tenant\TenantPlugin::make(),
             ])
             ->widgets([
                 // Widgets\AccountWidget::class,

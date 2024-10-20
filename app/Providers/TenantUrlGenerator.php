@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use Spatie\MediaLibrary\Support\UrlGenerator\BaseUrlGenerator;
+use Spatie\MediaLibrary\Support\UrlGenerator\DefaultUrlGenerator;
 use Throwable;
 
-class TenantUrlGenerator extends BaseUrlGenerator
+class TenantUrlGenerator extends DefaultUrlGenerator
 {
     public function getUrl(): string
     {

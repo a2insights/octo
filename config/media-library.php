@@ -96,7 +96,7 @@ return [
      * When urls to files get generated, this class will be called. Use the default
      * if your files are stored locally above the site root or on s3.
      */
-    'url_generator' => App\Providers\TenantUrlGenerator                                                                         ::class,
+    'url_generator' => App\Providers\TenantUrlGenerator::class,
 
     /*
      * Moves media on updating to keep path consistent. Enable it only with a custom
