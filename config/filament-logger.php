@@ -4,7 +4,7 @@ return [
     'datetime_format' => 'd/m/Y H:i:s',
     'date_format' => 'd/m/Y',
 
-    'activity_resource' => \Octo\System\Filament\ResourceLogger::class,
+    'activity_resource' => \Octo\System\Filament\LoggerResource::class,
 
     'resources' => [
         'enabled' => true,
