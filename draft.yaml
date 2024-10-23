@@ -1,0 +1,131 @@
+models:
+    Product:
+        id: id nullable
+        name: string nullable
+        active: boolean nullable default:true
+        description: string nullable
+        metadata: json nullable
+        default_price_data: json nullable
+        images: json nullable
+        marketing_features: json nullable
+        package_dimensions: json nullable
+        shippable: boolean nullable
+        statement_descriptor: string nullable
+        tax_code: string nullable
+        unit_label: string nullable
+        url: string nullable
+    Subscription:
+        id: id nullable
+        stripe_id: string nullable
+        customer_id: bigInteger index foreign:customer.id
+        customer: string nullable
+        price: string nullable
+        status: enum:"incomplete","incomplete_expired","trialing","active","past_due","canceled","unpaid","or paused" index nullable
+        cancel_at_period_end: boolean nullable default:false
+        currency: enum:"USD","AED","AFN","ALL","AMD","ANG","AOA","ARS","AUD","AWG","AZN","BAM","BBD","BDT","BGN","BIF","BMD","BND","BOB","BRL","BSD","BWP","BYN","BZD","CAD","CDF","CHF","CLP","CNY","COP","CRC","CVE","CZK","DJF","DKK","DOP","DZD","EGP","ETB","EUR","FJD","FKP","GBP","GEL","GIP","GMD","GNF","GTQ","GYD","HKD","HNL","HTG","HUF","IDR","ILS","INR","ISK","JMD","JPY","KES","KGS","KHR","KMF","KRW","KYD","KZT","LAK","LBP","LKR","LRD","LSL","MAD","MDL","MGA","MKD","MMK","MNT","MOP","MUR","MVR","MWK","MXN","MYR","MZN","NAD","NGN","NIO","NOK","NPR","NZD","PAB","PEN","PGK","PHP","PKR","PLN","PYG","QAR","RON","RSD","RUB","RWF","SAR","SBD","SCR","SEK","SGD","SHP","SLE","SOS","SRD","STD","SZL","THB","TJS","TOP","TRY","TTD","TWD","TZS","UAH","UGX","UYU","UZS","VND","VUV","WST","XAF","XCD","XOF","XPF","YER","ZAR","ZMW" nullable
+        current_period_end: timestamp nullable
+        current_period_start: timestamp nullable
+        default_payment_method: string nullable
+        description: string nullable
+        items: json nullable
+        metadata: json nullable
+        pending_setup_intent: string nullable
+        pending_update: json nullable
+        payment_behavior: enum:"allow_incomplete","default_incomplete","error_if_incomplete","pending_if_incomplete" nullable
+        add_invoice_items: json nullable
+        application_fee_percent: decimal nullable
+        automatic_tax: json nullable
+        backdate_start_date: timestamp nullable
+        billing_cycle_anchor: timestamp nullable
+        billing_cycle_anchor_config: json nullable
+        billing_thresholds: json nullable
+        cancel_at: timestamp nullable
+        collection_method: enum:"charge_automatically","send_invoice" nullable
+        coupon: string nullable
+        days_until_due: integer nullable
+        default_source: string nullable
+        default_tax_rates: json nullable
+        discounts: json nullable
+        invoice_settings: bigInteger nullable
+        off_session: boolean nullable
+        on_behalf_of: string nullable
+        payment_settings: json nullable
+        pending_invoice_item_interval: json nullable
+        promotion_code: string nullable
+        proration_behavior: enum:"always_invoice","create_prorations","none" nullable
+        transfer_data: json nullable
+        trial_from_plan: boolean nullable
+        trial_end: timestamp nullable
+        trial_settings: json nullable
+        trial_start: timestamp nullable
+    Price:
+        id: id
+        product_id: bigInteger foreign:products.id
+        stripe_id: bigInteger
+        product: string
+        active: boolean
+        currency: enum:"USD","AED","AFN","ALL","AMD","ANG","AOA","ARS","AUD","AWG","AZN","BAM","BBD","BDT","BGN","BIF","BMD","BND","BOB","BRL","BSD","BWP","BYN","BZD","CAD","CDF","CHF","CLP","CNY","COP","CRC","CVE","CZK","DJF","DKK","DOP","DZD","EGP","ETB","EUR","FJD","FKP","GBP","GEL","GIP","GMD","GNF","GTQ","GYD","HKD","HNL","HTG","HUF","IDR","ILS","INR","ISK","JMD","JPY","KES","KGS","KHR","KMF","KRW","KYD","KZT","LAK","LBP","LKR","LRD","LSL","MAD","MDL","MGA","MKD","MMK","MNT","MOP","MUR","MVR","MWK","MXN","MYR","MZN","NAD","NGN","NIO","NOK","NPR","NZD","PAB","PEN","PGK","PHP","PKR","PLN","PYG","QAR","RON","RSD","RUB","RWF","SAR","SBD","SCR","SEK","SGD","SHP","SLE","SOS","SRD","STD","SZL","THB","TJS","TOP","TRY","TTD","TWD","TZS","UAH","UGX","UYU","UZS","VND","VUV","WST","XAF","XCD","XOF","XPF","YER","ZAR","ZMW"
+        metadata: json
+        nickname: string
+        recurring: json
+        type: enum:"one_time","recurring"
+        unit_amount: integer
+        billing_scheme: enum:"per_unit","tiered"
+        created: timestamp
+        currency_options: json
+        custom_unit_amount: json
+        livemode: boolean
+        lookup_key: string
+        tax_behavior: enum:"exclusive","inclusive","unspecified"
+        tiers: json
+        tiers_mode: enum:"graduated","volume"
+        transform_quantity: json
+        unit_amount_decimal: decimal
+    Feature:
+        id: id
+        price_id: bigInteger foreign:prices.id
+        stripe_price: string nullable
+        product_id: bigInteger foreign:products.id
+        value: bigInteger
+        name: string
+        resetable: boolean
+        unlimited: boolean default:false
+        meteread: boolean default:false
+        unit: string comment:"charging_minute,imperial_gal,lon,kilogram,kilowatt_hour,liter,other,pound,us_gallon"
+        price: decimal nullable
+    Customer:
+        id: id
+        address: json
+        description: string nullable
+        email: string nullable
+        metadata: json nullable
+        name: string nullable
+        phone: string nullable
+        shipping: json nullable
+        object: string
+        created: timestamp
+        cash_balance: json nullable
+        balance: integer
+        default_source: json nullable
+        delinquent: boolean nullable
+        discount: json nullable
+        invoice_credit_balance: json
+        invoice_prefix: string nullable
+        invoice_settings: json
+        livemode: boolean
+        next_invoice_sequence: integer nullable
+        preferred_locales: json nullable
+        sources: bigInteger nullable
+        subscriptions: bigInteger
+        tax: bigInteger nullable
+        tax_exempt: enum:"exempt","none","reverse" nullable
+        tax_ids: integer nullable
+        test_clock: string nullable
+    SubscriptionItem:
+        id: id
+        stripe_id: string
+        subscription_id: bigInteger foreign:subscriptions.id
+        subscription: string
+        product: string
+        price: json
+        quantity: bigInteger

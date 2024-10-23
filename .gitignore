@@ -23,6 +23,3 @@ yarn-error.log
 /.vscode
 .blueprint
 /storage/company_*
-./laravel-saas-billing
-./octo-core
-

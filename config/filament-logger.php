@@ -1,9 +1,10 @@
 <?php
+
 return [
     'datetime_format' => 'd/m/Y H:i:s',
     'date_format' => 'd/m/Y',
 
-    'activity_resource' => \Z3d0X\FilamentLogger\Resources\ActivityResource::class,
+    'activity_resource' => \Octo\System\Filament\LoggerResource::class,
 
     'resources' => [
         'enabled' => true,
