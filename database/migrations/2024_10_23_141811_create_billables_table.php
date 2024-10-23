@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customers', function (Blueprint $table) {
+        Schema::create('billables', function (Blueprint $table) {
             $table->id();
             $table->string('stripe_id')->nullable();
             $table->json('address')->nullable();

@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use App\Models\Customer;
+use App\Models\Billable;
 use App\Models\Subscription;
 
 class SubscriptionFactory extends Factory
@@ -23,7 +23,7 @@ class SubscriptionFactory extends Factory
     {
         return [
             'stripe_id' => $this->faker->word(),
-            'customer_id' => Customer::factory(),
+            'billable_id' => Billable::factory(),
             'stripe_customer' => $this->faker->word(),
             'stripe_price' => $this->faker->word(),
             'status' => $this->faker->randomElement(["incomplete","incomplete_expired","trialing","active","past_due","canceled","unpaid","or paused"]),

@@ -1,13 +1,13 @@
 <?php
 
 use App\Models\Subscription;
-use App\Models\Customer;
+use App\Models\Billable;
 
 it('can create a subscription', function () {
-    $customer = Customer::factory()->create();
+    $billable = Billable::factory()->create();
 
     $subscription = Subscription::create([
-        'customer_id' => $customer->id,
+        'billable_id' => $billable->id,
         'stripe_id' => 'sub_fake_id',
         'price' => 29.99,
         'status' => 'active',
@@ -15,7 +15,7 @@ it('can create a subscription', function () {
 
     expect($subscription)->toBeInstanceOf(Subscription::class);
     expect($subscription->status)->toBe('active');
-    expect($subscription->customer_id)->toBe($customer->id);
+    expect($subscription->billable_id)->toBe($billable->id);
 });
 
 it('can update a subscription', function () {

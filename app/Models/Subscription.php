@@ -17,7 +17,7 @@ class Subscription extends Model
      */
     protected $fillable = [
         'stripe_id',
-        'customer_id',
+        'billable_id',
         'stripe_customer',
         'stripe_price',
         'status',
@@ -93,8 +93,8 @@ class Subscription extends Model
         'trial_start' => 'timestamp',
     ];
 
-    public function customer(): BelongsTo
+    public function billable(): BelongsTo
     {
-        return $this->belongsTo(Customer::class);
+        return $this->belongsTo(Billable::class);
     }
 }

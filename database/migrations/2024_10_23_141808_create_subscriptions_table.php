@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Customer;
+use App\Models\Billable;
 
 return new class extends Migration
 {
@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
             $table->string('stripe_id')->nullable();
-            $table->foreignIdFor(Customer::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Billable::class)->constrained()->cascadeOnDelete();
             $table->string('stripe_customer')->nullable();
             $table->string('stripe_price')->nullable();
             $table->enum('status', ["incomplete","incomplete_expired","trialing","active","past_due","canceled","unpaid","or paused"])->index()->nullable();
