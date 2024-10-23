@@ -45,16 +45,16 @@ class AppServiceProvider extends ServiceProvider
         Gate::policy(Activity::class, ActivityPolicy::class);
         Gate::policy(Exception::class, \App\Policies\ExceptionPolicy::class);
 
-        $freeStripePlan = Saas::plan('Free Plan', 'price_1QBHY2KBVLqcMf8uAIR0OecB')
-            ->features([
-                Saas::feature('Build Minutes', 'build.minutes', 10),
-                Saas::feature('Seats', 'teams', 5)->notResettable(),
-            ]);
-        $freeStripePlan = Saas::plan('Pro', 'price_1QBHY2KBVLqcMf8uAIR0sOecB')
-            ->features([
-                Saas::feature('Build Minutes', 'build.minutes', 10),
-                Saas::feature('Seats', 'teams', 5)->notResettable(),
-            ]);
+        // $freeStripePlan = Saas::plan('Free Plan', 'price_1QBHY2KBVLqcMf8uAIR0OecB')
+        //     ->features([
+        //         Saas::feature('Build Minutes', 'build.minutes', 10),
+        //         Saas::feature('Seats', 'teams', 5)->notResettable(),
+        //     ]);
+        // $freeStripePlan = Saas::plan('Pro', 'price_1QBHY2KBVLqcMf8uAIR0sOecB')
+        //     ->features([
+        //         Saas::feature('Build Minutes', 'build.minutes', 10),
+        //         Saas::feature('Seats', 'teams', 5)->notResettable(),
+        //     ]);
 
         // Saas::plan('Monthly $10', static::$billingMonthlyPlanId)
         //     ->inheritFeaturesFromPlan($freeStripePlan, [

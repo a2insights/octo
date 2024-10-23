@@ -18,7 +18,6 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 use Jeffgreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
-use Laravel\Cashier\Billable;
 use Laravel\Sanctum\HasApiTokens;
 use Octo\User\Settings;
 use Spatie\Permission\Traits\HasRoles;
@@ -31,7 +30,7 @@ use Wallo\FilamentCompanies\SetsProfilePhotoFromUrl;
 
 class User extends Authenticatable implements BannableContract, FilamentUser, HasAvatar, HasDefaultTenant, HasTenants, MustVerifyEmail
 {
-    use Bannable, Billable, FindSimilarUsernames, GeneratesUsernames, HasApiTokens, HasCompanies,
+    use Bannable, FindSimilarUsernames, GeneratesUsernames, HasApiTokens, HasCompanies,
         HasConnectedAccounts, HasFactory, HasProfilePhoto, HasRoles, Notifiable, SetsProfilePhotoFromUrl,
         SoftDeletes, TwoFactorAuthenticatable;
 
