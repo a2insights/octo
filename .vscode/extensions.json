@@ -1,29 +1,4 @@
 {
-    "recommendations": [
-        "alefragnani.bookmarks",
-        "alefragnani.project-manager",
-        "amiralizadeh9480.laravel-extra-intellisense",
-        "antsteyer.vue-property-decorator-snippets",
-        "bierner.color-info",
-        "bmewburn.vscode-intelephense-client",
-        "cjhowe7.laravel-blade",
-        "dariofuzinato.vue-peek",
-        "dbaeumer.vscode-eslint",
-        "editorconfig.editorconfig",
-        "esbenp.prettier-vscode",
-        "gaiyaobedmathias.vuetify-snippets",
-        "ikappas.phpcs",
-        "lokalise.i18n-ally",
-        "lukas-tr.materialdesignicons-intellisense",
-        "neilbrayfield.php-docblocker",
-        "onecentlin.laravel5-snippets",
-        "recca0120.vscode-phpunit",
-        "ryannaddy.laravel-artisan",
-        "shardulm94.trailing-spaces",
-        "stylelint.vscode-stylelint",
-        "vue.volar",
-        "wayou.vscode-todo-highlight",
-        "wix.vscode-import-cost"
-    ],
-    "unwantedRecommendations": ["octref.vetur"]
+    "recommendations": [],
+    "unwantedRecommendations": []
 }
