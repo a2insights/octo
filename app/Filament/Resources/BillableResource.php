@@ -25,13 +25,13 @@ class BillableResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('stripe_id')
                     ->maxLength(255),
-                // Forms\Components\TextInput::make('address'),
-                // Forms\Components\TextInput::make('description')
-                //     ->maxLength(255),
+                Forms\Components\TextInput::make('address'),
+                Forms\Components\TextInput::make('description')
+                    ->maxLength(255),
                 Forms\Components\TextInput::make('email')
                     ->email()
                     ->maxLength(255),
-                // Forms\Components\TextInput::make('metadata'),
+                Forms\Components\TextInput::make('metadata'),
                 Forms\Components\TextInput::make('name')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('phone')
@@ -51,15 +51,15 @@ class BillableResource extends Resource
                 Forms\Components\Toggle::make('livemode'),
                 Forms\Components\TextInput::make('next_invoice_sequence')
                     ->numeric(),
-                // Forms\Components\TextInput::make('preferred_locales'),
-                // Forms\Components\TextInput::make('sources'),
-                // Forms\Components\TextInput::make('subscriptions'),
-                // Forms\Components\TextInput::make('tax_exempt'),
-                // Forms\Components\TextInput::make('tax'),
-                // Forms\Components\TextInput::make('tax_ids'),
-                // Forms\Components\TextInput::make('test_clock')
-                //     ->maxLength(255),
-                // Forms\Components\DateTimePicker::make('created'),
+                Forms\Components\TextInput::make('preferred_locales'),
+                Forms\Components\TextInput::make('sources'),
+                Forms\Components\TextInput::make('subscriptions'),
+                Forms\Components\TextInput::make('tax_exempt'),
+                Forms\Components\TextInput::make('tax'),
+                Forms\Components\TextInput::make('tax_ids'),
+                Forms\Components\TextInput::make('test_clock')
+                    ->maxLength(255),
+                Forms\Components\DateTimePicker::make('created'),
             ]);
     }
 
