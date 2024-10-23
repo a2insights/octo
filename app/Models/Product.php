@@ -45,4 +45,19 @@ class Product extends Model
         'package_dimensions' => 'array',
         'shippable' => 'boolean',
     ];
+
+    public function productFeatures(): HasMany
+    {
+        return $this->hasMany(ProductFeature::class);
+    }
+
+
+
+    public function features(): BelongsToMany
+    {
+        return $this->belongsToMany(Service::class)
+            ->using(ProductFeature::class)
+            ->withPivot('value', 'sort')
+            ->withTimestamps();
+    }
 }

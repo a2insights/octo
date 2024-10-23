@@ -46,8 +46,8 @@ class Feature extends Model
         return $this->belongsTo(Price::class);
     }
 
-    public function product(): BelongsTo
+    public function products(): BelongsToMany
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsToMany(Feature::class, 'product_feature');
     }
 }
