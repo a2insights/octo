@@ -17,16 +17,19 @@ class Product extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
         'stripe_id',
-        'active',
+        'name',
         'description',
+        'active',
         'metadata',
+        'default_price',
         'default_price_data',
         'images',
         'marketing_features',
+        'livemode',
         'package_dimensions',
         'shippable',
+        'statement_descriptor',
         'tax_code',
         'unit_label',
         'url',
@@ -45,6 +48,7 @@ class Product extends Model
         'marketing_features' => 'array',
         'package_dimensions' => 'array',
         'shippable' => 'boolean',
+        'livemode' => 'boolean',
     ];
 
     public function productFeatures(): HasMany

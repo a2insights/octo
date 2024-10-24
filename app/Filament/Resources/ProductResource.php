@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Actions\Stripe\GetProducts;
 use App\Filament\Resources\ProductResource\Pages;
 use App\Models\Product;
 use Filament\Forms;
@@ -37,6 +38,8 @@ class ProductResource extends Resource
                     ->maxLength(255),
                 Forms\Components\Toggle::make('active')
                     ->disabled(),
+                Forms\Components\Toggle::make('livemode')
+                    ->disabled(),
                 Forms\Components\TextInput::make('description')
                     ->maxLength(255),
                 PrettyJson::make('metadata')->disabled(),
@@ -68,16 +71,10 @@ class ProductResource extends Resource
                     ->searchable(),
                 Tables\Columns\IconColumn::make('active')
                     ->boolean(),
-                // Tables\Columns\TextColumn::make('description')
-                //     ->searchable(),
+                Tables\Columns\IconColumn::make('livemode')
+                    ->boolean(),
                 Tables\Columns\IconColumn::make('shippable')
                     ->boolean(),
-                Tables\Columns\TextColumn::make('tax_code')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('unit_label')
-                    ->searchable(),
-                // Tables\Columns\TextColumn::make('url')
-                //     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -118,11 +115,7 @@ class ProductResource extends Resource
 
     public static function getProducts(): array
     {
-        $stripe = new \Stripe\StripeClient('sk_test_51F1LcNKBVLqcMf8uiZFt0152gJpn08YTEOx3zsssdL6CAJ0nPCJborB5n0euDV2l8LA2kZByttfGuAk0l02lPh04008199G2r0');
-
-        $products = $stripe->products->all(['limit' => 100])->data;
-
-        return collect($products)
+        return collect(GetProducts::run(100))
             ->map(fn ($product) => [
                 'id' => $product->id,
                 'text' => "{$product->name} - {$product->id}",

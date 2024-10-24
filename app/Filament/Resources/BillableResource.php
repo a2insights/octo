@@ -77,6 +77,9 @@ class BillableResource extends Resource
                 Forms\Components\TextInput::make('default_source')
                     ->readonly()
                     ->maxLength(255),
+                Forms\Components\TextInput::make('coupon')
+                    ->readonly()
+                    ->maxLength(255),
                 Forms\Components\TextInput::make('created')
                     ->readonly()
                     ->numeric()

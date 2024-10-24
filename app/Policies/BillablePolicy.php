@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Models\Billable;
 use App\Models\User;
+use App\Models\Billable;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class BillablePolicy

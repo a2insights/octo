@@ -8,7 +8,7 @@ class CreateCustomer extends StripeBaseAction
 {
     use AsAction;
 
-    public function handle(string $name, string $email, array $data): object
+    public function handle(string $name, string $email, array $data)
     {
         $data['email'] = $email;
         $data['name'] = $name;

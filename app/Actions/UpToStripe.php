@@ -3,6 +3,7 @@
 namespace App\Actions;
 
 use App\Actions\Stripe\UpdateCustomer;
+use App\Actions\Stripe\UpdateProduct;
 use Illuminate\Database\Eloquent\Model;
 use Lorisleiva\Actions\Concerns\AsAction;
 
@@ -13,19 +14,28 @@ class UpToStripe
     public function handle(Model $model, ?string $object = null)
     {
         return match ($object) {
-            'customer' => $this->handleCustomer($model, $object),
+            'customer' => $this->updateToStripe($model, UpdateCustomer::class),
+            'product' => $this->updateToStripe($model, UpdateProduct::class),
             default => null,
         };
     }
 
-    protected function handleCustomer(Model $model, ?string $object = null)
+    /**
+     * Updates data in Stripe using the corresponding action class.
+     *
+     * @param Model $model
+     * @param string $stripeActionClass
+     * @return Model|null
+     */
+    protected function updateToStripe(Model $model, string $stripeActionClass): ?Model
     {
         $stripeId = $model->stripe_id; // @phpstan-ignore-line
         if (is_null($stripeId)) {
             return null;
         }
 
-        $data = UpdateCustomer::run($stripeId, $model->toArray());
+        // Run the action to update data in Stripe and update the local model
+        $data = $stripeActionClass::run($stripeId, $model->toArray());
         $model->fill($data->toArray());
         $model->save();
 

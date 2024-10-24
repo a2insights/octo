@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\ProductResource\Pages;
 
+use App\Actions\UpFromStripe;
+use App\Actions\UpToStripe;
 use App\Filament\Resources\ProductResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
@@ -15,17 +17,19 @@ class EditProduct extends EditRecord
         return [
             Actions\DeleteAction::make(),
             Actions\Action::make('updateFromStripe')
-                ->label('Update From Stripe')
+                ->label('Up From Stripe')
                 ->action(function () {
+                    UpFromStripe::run($this->record, 'product');
+
                     return redirect($this->getUrl(['record' => $this->record->id])); // @phpstan-ignore-line
-                })
-                ->outlined(),
+                }),
             Actions\Action::make('updateToStripe')
-                ->label('Update To Stripe')
+                ->label('Up To Stripe')
                 ->action(function () {
+                    UpToStripe::run($this->record, 'product');
+
                     return redirect($this->getUrl(['record' => $this->record->id])); // @phpstan-ignore-line
-                })
-                ->outlined(),
+                }),
         ];
     }
 }

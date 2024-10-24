@@ -19,6 +19,7 @@ class Billable extends Model
         'stripe_id',
         'address',
         'balance',
+        'cash_balance',
         'created',
         'currency',
         'default_source',
@@ -35,8 +36,12 @@ class Billable extends Model
         'phone',
         'preferred_locales',
         'shipping',
+        'tax',
         'tax_exempt',
         'test_clock',
+        'coupon',
+        'promotion_code',
+        'source',
     ];
 
     /**
@@ -47,6 +52,7 @@ class Billable extends Model
     protected $casts = [
         'address' => 'array',
         'balance' => 'integer',
+        'cash_balance' => 'array',
         'created' => 'integer',
         'delinquent' => 'boolean',
         'discount' => 'array',
@@ -55,6 +61,7 @@ class Billable extends Model
         'metadata' => 'array',
         'preferred_locales' => 'array',
         'shipping' => 'array',
+        'tax' => 'array',
     ];
 
     public function subscriptions(): HasMany

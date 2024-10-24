@@ -29,8 +29,9 @@ class BillableFactory extends Factory
             'shipping' => [],
             'created' => $this->faker->numberBetween(1, 10000),
             'balance' => $this->faker->numberBetween(-10000, 10000),
-            'currency' => null,  // Se quiser adicionar um valor padrão nulo para a moeda
-            'default_source' => null,  // Também pode ser nulo ou um array
+            'cash_balance' => [],
+            'currency' => null,
+            'default_source' => null,
             'delinquent' => $this->faker->boolean(),
             'discount' => [],
             'invoice_prefix' => $this->faker->word(),
@@ -44,7 +45,7 @@ class BillableFactory extends Factory
             'next_invoice_sequence' => $this->faker->numberBetween(1, 10000),
             'preferred_locales' => [],
             'tax_exempt' => $this->faker->randomElement(['exempt', 'none', 'reverse']),
-            'test_clock' => null,  // Ou outro valor se necessário
+            'test_clock' => null,
         ];
     }
 }
