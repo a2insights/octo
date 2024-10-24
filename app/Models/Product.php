@@ -64,33 +64,8 @@ class Product extends Model
             ->withTimestamps();
     }
 
-    public function updateFromStripe()
+    public function prices(): HasMany
     {
-        $stripe = new \Stripe\StripeClient('sk_test_51F1LcNKBVLqcMf8uiZFt0152gJpn08YTEOx3zsssdL6CAJ0nPCJborB5n0euDV2l8LA2kZByttfGuAk0l02lPh04008199G2r0');
-
-        $customer = $stripe->products->retrieve($this->stripe_id, []);
-
-        $this->fill($customer->toArray());
-        $this->save();
-    }
-
-    public function updateToStripe()
-    {
-        $stripe = new \Stripe\StripeClient('sk_test_51F1LcNKBVLqcMf8uiZFt0152gJpn08YTEOx3zsssdL6CAJ0nPCJborB5n0euDV2l8LA2kZByttfGuAk0l02lPh04008199G2r0');
-
-        $data = [
-            'name' => $this->name,
-            'description' => $this->description,
-        ];
-
-        foreach ($data as $key => $value) {
-            if (is_null($value)) {
-                unset($data[$key]);
-            }
-        }
-
-        $customer = $stripe->products->update($this->stripe_id, $data);
-        $this->fill($customer->toArray());
-        $this->save();
+        return $this->hasMany(Price::class);
     }
 }
