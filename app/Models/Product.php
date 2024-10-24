@@ -14,7 +14,7 @@ class Product extends Model
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var array<int, string>
      */
     protected $fillable = [
         'name',
@@ -35,7 +35,7 @@ class Product extends Model
     /**
      * The attributes that should be cast to native types.
      *
-     * @var array
+     * @var array<string, string>
      */
     protected $casts = [
         'active' => 'boolean',
@@ -52,8 +52,6 @@ class Product extends Model
         return $this->hasMany(ProductFeature::class);
     }
 
-
-
     public function features(): BelongsToMany
     {
         return $this->belongsToMany(Feature::class)
@@ -66,7 +64,7 @@ class Product extends Model
     {
         $stripe = new \Stripe\StripeClient('sk_test_51F1LcNKBVLqcMf8uiZFt0152gJpn08YTEOx3zsssdL6CAJ0nPCJborB5n0euDV2l8LA2kZByttfGuAk0l02lPh04008199G2r0');
 
-        $customer =  $stripe->products->retrieve($this->stripe_id, []);
+        $customer = $stripe->products->retrieve($this->stripe_id, []);
 
         $this->fill($customer->toArray());
         $this->save();
@@ -77,8 +75,8 @@ class Product extends Model
         $stripe = new \Stripe\StripeClient('sk_test_51F1LcNKBVLqcMf8uiZFt0152gJpn08YTEOx3zsssdL6CAJ0nPCJborB5n0euDV2l8LA2kZByttfGuAk0l02lPh04008199G2r0');
 
         $data = [
-           'name' => $this->name,
-           'description' => $this->description
+            'name' => $this->name,
+            'description' => $this->description,
         ];
 
         foreach ($data as $key => $value) {
@@ -87,7 +85,7 @@ class Product extends Model
             }
         }
 
-        $customer =  $stripe->products->update($this->stripe_id, $data);
+        $customer = $stripe->products->update($this->stripe_id, $data);
         $this->fill($customer->toArray());
         $this->save();
     }

@@ -2,10 +2,9 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use App\Models\Subscription;
 use App\Models\SubscriptionItem;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class SubscriptionItemFactory extends Factory
 {

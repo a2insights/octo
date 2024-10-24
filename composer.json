@@ -13,6 +13,7 @@
         "laravel/framework": "^11.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
+        "lorisleiva/laravel-actions": "^2.8",
         "novadaemon/filament-pretty-json": "^2.3",
         "stripe/stripe-php": "^16.1"
     },
@@ -20,13 +21,13 @@
         "doctrine/dbal": "^3.6",
         "fakerphp/faker": "^1.23",
         "jasonmccreary/laravel-test-assertions": "^2.4",
+        "larastan/larastan": "^2.0",
         "laravel-shift/blueprint": "^2.10",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.0",
         "pestphp/pest": "^3.4",
-        "nunomaduro/larastan": "^2.6",
         "spatie/laravel-ignition": "^2.4"
     },
     "autoload": {

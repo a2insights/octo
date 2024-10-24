@@ -2,24 +2,22 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\Pivot;
-use Stancl\Tenancy\Database\Concerns\BelongsToTenant;
 
 class ProductFeature extends Pivot
 {
     /**
      * Indicates if the IDs are auto-incrementing.
      *
-     * @var string
+     * @var bool
      */
     public $incrementing = true;
 
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var array<int, string>
      */
     protected $fillable = [
         'sort',
@@ -29,7 +27,7 @@ class ProductFeature extends Pivot
     /**
      * The attributes that should be cast to native types.
      *
-     * @var array
+     * @var array<string, string>
      */
     protected $casts = [
         'sort' => 'integer',

@@ -17,7 +17,9 @@ class TenancyInitialize
     public function handle(Request $request, Closure $next): Response
     {
         $company = Filament::getTenant();
-        $company->initialize();
+        if ($company) {
+            $company->initialize(); // @phpstan-ignore-line
+        }
 
         return $next($request);
     }

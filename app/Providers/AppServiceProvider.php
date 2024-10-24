@@ -19,6 +19,7 @@ use Marjose123\FilamentWebhookServer\Models\FilamentWebhookServer;
 use SolutionForest\FilamentFirewall\Models\Ip;
 use Spatie\Activitylog\Models\Activity;
 use Spatie\Permission\Models\Role;
+use Stripe\Stripe;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -91,5 +92,7 @@ class AppServiceProvider extends ServiceProvider
 
             $company->end();
         });
+
+        Stripe::setApiKey(config('services.stripe.secret'));
     }
 }

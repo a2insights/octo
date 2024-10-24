@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources;
 
+use App\Actions\Stripe\GetCustomers;
 use App\Filament\Resources\BillableResource\Pages;
-use App\Filament\Resources\BillableResource\RelationManagers;
 use App\Models\Billable;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -11,8 +11,6 @@ use Filament\Forms\Get;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Novadaemon\FilamentPrettyJson\PrettyJson;
 
 class BillableResource extends Resource
@@ -29,7 +27,7 @@ class BillableResource extends Resource
             ->schema([
                 Forms\Components\Select::make('stripe_id')
                     ->required()
-                    ->options(fn(Get $get): array => self::getBillables())
+                    ->options(fn (Get $get): array => self::getBillables())
                     ->disableOptionWhen(fn (string $value): bool => $billables->has($value))
                     ->searchable()
                     ->columnSpan(3),
@@ -92,14 +90,8 @@ class BillableResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('stripe_id')
                     ->searchable(),
-                // Tables\Columns\TextColumn::make('description')
-                //     ->searchable(),
                 Tables\Columns\TextColumn::make('email')
                     ->searchable(),
-                // Tables\Columns\TextColumn::make('name')
-                //     ->searchable(),
-                // Tables\Columns\TextColumn::make('phone')
-                //     ->searchable(),
                 Tables\Columns\TextColumn::make('balance')
                     ->numeric()
                     ->sortable(),
@@ -112,12 +104,9 @@ class BillableResource extends Resource
                 Tables\Columns\TextColumn::make('next_invoice_sequence')
                     ->numeric()
                     ->sortable(),
-                // Tables\Columns\TextColumn::make('tax_exempt'),
-                // Tables\Columns\TextColumn::make('test_clock')
-                //     ->searchable(),
-                // Tables\Columns\TextColumn::make('created')
-                //     ->dateTime()
-                //     ->sortable(),
+                Tables\Columns\TextColumn::make('created')
+                    ->numeric()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -158,12 +147,8 @@ class BillableResource extends Resource
 
     public static function getBillables(): array
     {
-        $stripe = new \Stripe\StripeClient('sk_test_51F1LcNKBVLqcMf8uiZFt0152gJpn08YTEOx3zsssdL6CAJ0nPCJborB5n0euDV2l8LA2kZByttfGuAk0l02lPh04008199G2r0');
-
-        $customers = $stripe->customers->all(['limit' => 100])->data;
-
-        return collect($customers)
-            ->map(fn($customer) => [
+        return collect(GetCustomers::run())
+            ->map(fn ($customer) => [
                 'id' => $customer->id,
                 'text' => "{$customer->name} ({$customer->email}) - {$customer->id}",
             ])

@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\Subscription;
 use App\Models\Billable;
+use App\Models\Subscription;
 
 it('can create a subscription', function () {
     $billable = Billable::factory()->create();

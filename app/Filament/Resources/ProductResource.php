@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProductResource\Pages;
-use App\Filament\Resources\ProductResource\RelationManagers;
 use App\Models\Product;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -11,8 +10,6 @@ use Filament\Forms\Get;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Novadaemon\FilamentPrettyJson\PrettyJson;
 
 class ProductResource extends Resource
@@ -28,11 +25,11 @@ class ProductResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Select::make('stripe_id')
-                ->required()
-                ->options(fn(Get $get): array => self::getProducts())
-                ->disableOptionWhen(fn (string $value): bool => $products->has($value))
-                ->searchable()
-                ->columnSpan(3),
+                    ->required()
+                    ->options(fn (Get $get): array => self::getProducts())
+                    ->disableOptionWhen(fn (string $value): bool => $products->has($value))
+                    ->searchable()
+                    ->columnSpan(3),
                 Forms\Components\TextInput::make('stripe_id')
                     ->maxLength(255)
                     ->readOnly(),
@@ -126,7 +123,7 @@ class ProductResource extends Resource
         $products = $stripe->products->all(['limit' => 100])->data;
 
         return collect($products)
-            ->map(fn($product) => [
+            ->map(fn ($product) => [
                 'id' => $product->id,
                 'text' => "{$product->name} - {$product->id}",
             ])

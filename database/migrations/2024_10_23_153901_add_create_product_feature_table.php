@@ -1,10 +1,10 @@
 <?php
 
+use App\Models\Feature;
+use App\Models\Product;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Feature;
-use App\Models\Product;
 
 return new class extends Migration
 {

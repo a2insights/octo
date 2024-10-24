@@ -13,7 +13,7 @@ class Subscription extends Model
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var array<int, string>
      */
     protected $fillable = [
         'stripe_id',
@@ -63,7 +63,7 @@ class Subscription extends Model
     /**
      * The attributes that should be cast to native types.
      *
-     * @var array
+     * @var array<string, string>
      */
     protected $casts = [
         'cancel_at_period_end' => 'boolean',

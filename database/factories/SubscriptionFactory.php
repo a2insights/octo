@@ -2,10 +2,9 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use App\Models\Billable;
 use App\Models\Subscription;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class SubscriptionFactory extends Factory
 {
@@ -26,9 +25,9 @@ class SubscriptionFactory extends Factory
             'billable_id' => Billable::factory(),
             'stripe_customer' => $this->faker->word(),
             'stripe_price' => $this->faker->word(),
-            'status' => $this->faker->randomElement(["incomplete","incomplete_expired","trialing","active","past_due","canceled","unpaid","or paused"]),
+            'status' => $this->faker->randomElement(['incomplete', 'incomplete_expired', 'trialing', 'active', 'past_due', 'canceled', 'unpaid', 'or paused']),
             'cancel_at_period_end' => $this->faker->boolean(),
-            'currency' => $this->faker->randomElement(["USD","AED","AFN","ALL","AMD","ANG","AOA","ARS","AUD","AWG","AZN","BAM","BBD","BDT","BGN","BIF","BMD","BND","BOB","BRL","BSD","BWP","BYN","BZD","CAD","CDF","CHF","CLP","CNY","COP","CRC","CVE","CZK","DJF","DKK","DOP","DZD","EGP","ETB","EUR","FJD","FKP","GBP","GEL","GIP","GMD","GNF","GTQ","GYD","HKD","HNL","HTG","HUF","IDR","ILS","INR","ISK","JMD","JPY","KES","KGS","KHR","KMF","KRW","KYD","KZT","LAK","LBP","LKR","LRD","LSL","MAD","MDL","MGA","MKD","MMK","MNT","MOP","MUR","MVR","MWK","MXN","MYR","MZN","NAD","NGN","NIO","NOK","NPR","NZD","PAB","PEN","PGK","PHP","PKR","PLN","PYG","QAR","RON","RSD","RUB","RWF","SAR","SBD","SCR","SEK","SGD","SHP","SLE","SOS","SRD","STD","SZL","THB","TJS","TOP","TRY","TTD","TWD","TZS","UAH","UGX","UYU","UZS","VND","VUV","WST","XAF","XCD","XOF","XPF","YER","ZAR","ZMW"]),
+            'currency' => $this->faker->randomElement(['USD', 'AED', 'AFN', 'ALL', 'AMD', 'ANG', 'AOA', 'ARS', 'AUD', 'AWG', 'AZN', 'BAM', 'BBD', 'BDT', 'BGN', 'BIF', 'BMD', 'BND', 'BOB', 'BRL', 'BSD', 'BWP', 'BYN', 'BZD', 'CAD', 'CDF', 'CHF', 'CLP', 'CNY', 'COP', 'CRC', 'CVE', 'CZK', 'DJF', 'DKK', 'DOP', 'DZD', 'EGP', 'ETB', 'EUR', 'FJD', 'FKP', 'GBP', 'GEL', 'GIP', 'GMD', 'GNF', 'GTQ', 'GYD', 'HKD', 'HNL', 'HTG', 'HUF', 'IDR', 'ILS', 'INR', 'ISK', 'JMD', 'JPY', 'KES', 'KGS', 'KHR', 'KMF', 'KRW', 'KYD', 'KZT', 'LAK', 'LBP', 'LKR', 'LRD', 'LSL', 'MAD', 'MDL', 'MGA', 'MKD', 'MMK', 'MNT', 'MOP', 'MUR', 'MVR', 'MWK', 'MXN', 'MYR', 'MZN', 'NAD', 'NGN', 'NIO', 'NOK', 'NPR', 'NZD', 'PAB', 'PEN', 'PGK', 'PHP', 'PKR', 'PLN', 'PYG', 'QAR', 'RON', 'RSD', 'RUB', 'RWF', 'SAR', 'SBD', 'SCR', 'SEK', 'SGD', 'SHP', 'SLE', 'SOS', 'SRD', 'STD', 'SZL', 'THB', 'TJS', 'TOP', 'TRY', 'TTD', 'TWD', 'TZS', 'UAH', 'UGX', 'UYU', 'UZS', 'VND', 'VUV', 'WST', 'XAF', 'XCD', 'XOF', 'XPF', 'YER', 'ZAR', 'ZMW']),
             'current_period_end' => $this->faker->dateTime(),
             'current_period_start' => $this->faker->dateTime(),
             'default_payment_method' => $this->faker->word(),
@@ -37,7 +36,7 @@ class SubscriptionFactory extends Factory
             'metadata' => '{}',
             'pending_setup_intent' => $this->faker->word(),
             'pending_update' => '{}',
-            'payment_behavior' => $this->faker->randomElement(["allow_incomplete","default_incomplete","error_if_incomplete","pending_if_incomplete"]),
+            'payment_behavior' => $this->faker->randomElement(['allow_incomplete', 'default_incomplete', 'error_if_incomplete', 'pending_if_incomplete']),
             'add_invoice_items' => '{}',
             'application_fee_percent' => $this->faker->randomFloat(0, 0, 100),
             'automatic_tax' => '{}',
@@ -46,19 +45,19 @@ class SubscriptionFactory extends Factory
             'billing_cycle_anchor_config' => '{}',
             'billing_thresholds' => '{}',
             'cancel_at' => $this->faker->dateTime(),
-            'collection_method' => $this->faker->randomElement(["charge_automatically","send_invoice"]),
+            'collection_method' => $this->faker->randomElement(['charge_automatically', 'send_invoice']),
             'coupon' => $this->faker->word(),
             'days_until_due' => $this->faker->numberBetween(-10000, 10000),
             'default_source' => $this->faker->word(),
             'default_tax_rates' => '{}',
             'discounts' => '{}',
-            'invoice_settings' =>  '{}',
+            'invoice_settings' => '{}',
             'off_session' => $this->faker->boolean(),
             'on_behalf_of' => $this->faker->word(),
             'payment_settings' => '{}',
             'pending_invoice_item_interval' => '{}',
             'promotion_code' => $this->faker->word(),
-            'proration_behavior' => $this->faker->randomElement(["always_invoice","create_prorations","none"]),
+            'proration_behavior' => $this->faker->randomElement(['always_invoice', 'create_prorations', 'none']),
             'transfer_data' => '{}',
             'trial_from_plan' => $this->faker->boolean(),
             'trial_end' => $this->faker->dateTime(),

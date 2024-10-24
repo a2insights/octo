@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\BillableResource\Pages;
 
+use App\Actions\UpFromStripe;
+use App\Actions\UpToStripe;
 use App\Filament\Resources\BillableResource;
 use Filament\Actions;
-use Filament\Notifications\Notification;
 use Filament\Resources\Pages\EditRecord;
 
 class EditBillable extends EditRecord
@@ -16,21 +17,19 @@ class EditBillable extends EditRecord
         return [
             Actions\DeleteAction::make(),
             Actions\Action::make('updateFromStripe')
-                ->label('Update From Stripe')
+                ->label('Up From Stripe')
                 ->action(function () {
-                    $this->record->updateFromStripe();
+                    UpFromStripe::run($this->record, 'customer');
 
-                    return redirect($this->getUrl(['record' => $this->record->id]));
-                })
-                ->outlined(),
+                    return redirect($this->getUrl(['record' => $this->record->id])); // @phpstan-ignore-line
+                }),
             Actions\Action::make('updateToStripe')
-                ->label('Update To Stripe')
+                ->label('Up To Stripe')
                 ->action(function () {
-                    $this->record->updateToStripe();
+                    UpToStripe::run($this->record, 'customer');
 
-                    return redirect($this->getUrl(['record' => $this->record->id]));
-                })
-                ->outlined(),
+                    return redirect($this->getUrl(['record' => $this->record->id])); // @phpstan-ignore-line
+                }),
         ];
     }
 }

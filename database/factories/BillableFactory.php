@@ -2,9 +2,8 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use App\Models\Billable;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BillableFactory extends Factory
 {
@@ -21,31 +20,31 @@ class BillableFactory extends Factory
     public function definition(): array
     {
         return [
-            'address' => '{}',
+            'address' => [],
             'description' => $this->faker->text(),
             'email' => $this->faker->safeEmail(),
-            'metadata' => '{}',
+            'metadata' => [],
             'name' => $this->faker->name(),
             'phone' => $this->faker->phoneNumber(),
-            'shipping' => '{}',
+            'shipping' => [],
             'created' => $this->faker->numberBetween(1, 10000),
-            'cash_balance' => '{}',
             'balance' => $this->faker->numberBetween(-10000, 10000),
-            'default_source' => '{}',
+            'currency' => null,  // Se quiser adicionar um valor padrão nulo para a moeda
+            'default_source' => null,  // Também pode ser nulo ou um array
             'delinquent' => $this->faker->boolean(),
-            'discount' => '{}',
-            'invoice_credit_balance' => '{}',
+            'discount' => [],
             'invoice_prefix' => $this->faker->word(),
-            'invoice_settings' => '{}',
+            'invoice_settings' => [
+                'custom_fields' => null,
+                'default_payment_method' => null,
+                'footer' => null,
+                'rendering_options' => null,
+            ],
             'livemode' => $this->faker->boolean(),
             'next_invoice_sequence' => $this->faker->numberBetween(1, 10000),
-            'preferred_locales' => '{}',
-            'sources' => '{}',
-            'subscriptions' => '{}',
-            'tax_exempt' => $this->faker->randomElement(["exempt","none","reverse"]),
-            'tax' => '{}',
-            'tax_ids' => '{}',
-            'test_clock' => $this->faker->word(),
+            'preferred_locales' => [],
+            'tax_exempt' => $this->faker->randomElement(['exempt', 'none', 'reverse']),
+            'test_clock' => null,  // Ou outro valor se necessário
         ];
     }
 }

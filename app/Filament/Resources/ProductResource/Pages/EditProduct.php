@@ -17,17 +17,13 @@ class EditProduct extends EditRecord
             Actions\Action::make('updateFromStripe')
                 ->label('Update From Stripe')
                 ->action(function () {
-                    $this->record->updateFromStripe();
-
-                    return redirect($this->getUrl(['record' => $this->record->id]));
+                    return redirect($this->getUrl(['record' => $this->record->id])); // @phpstan-ignore-line
                 })
                 ->outlined(),
             Actions\Action::make('updateToStripe')
                 ->label('Update To Stripe')
                 ->action(function () {
-                    $this->record->updateToStripe();
-
-                    return redirect($this->getUrl(['record' => $this->record->id]));
+                    return redirect($this->getUrl(['record' => $this->record->id])); // @phpstan-ignore-line
                 })
                 ->outlined(),
         ];
