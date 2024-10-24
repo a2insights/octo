@@ -10,12 +10,6 @@ class UpdateProduct extends StripeBaseAction
 
     public function handle(string $stripeId, array $data)
     {
-        foreach ($data as $key => $value) {
-            if (is_null($value)) {
-                unset($data[$key]);
-            }
-        }
-
         return $this->stripe->products->update($stripeId,  [
             'name' => $data['name'],
             'description' => $data['description'],
