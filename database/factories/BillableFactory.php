@@ -28,7 +28,7 @@ class BillableFactory extends Factory
             'name' => $this->faker->name(),
             'phone' => $this->faker->phoneNumber(),
             'shipping' => '{}',
-            'created' => $this->faker->dateTime(),
+            'created' => $this->faker->numberBetween(1, 10000),
             'cash_balance' => '{}',
             'balance' => $this->faker->numberBetween(-10000, 10000),
             'default_source' => '{}',

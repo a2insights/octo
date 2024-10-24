@@ -31,7 +31,6 @@ class ProductFactory extends Factory
             'marketing_features' => '{}',
             'package_dimensions' => '{}',
             'shippable' => $this->faker->boolean(),
-            'statement_descriptor' => $this->faker->word(),
             'tax_code' => $this->faker->word(),
             'unit_label' => $this->faker->word(),
             'url' => $this->faker->url(),

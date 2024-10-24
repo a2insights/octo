@@ -12,7 +12,9 @@
         "barryvdh/laravel-debugbar": "^3.13",
         "laravel/framework": "^11.0",
         "laravel/sanctum": "^4.0",
-        "laravel/tinker": "^2.9"
+        "laravel/tinker": "^2.9",
+        "novadaemon/filament-pretty-json": "^2.3",
+        "stripe/stripe-php": "^16.1"
     },
     "require-dev": {
         "doctrine/dbal": "^3.6",

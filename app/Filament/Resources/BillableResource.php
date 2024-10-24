@@ -7,59 +7,82 @@ use App\Filament\Resources\BillableResource\RelationManagers;
 use App\Models\Billable;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Forms\Get;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Novadaemon\FilamentPrettyJson\PrettyJson;
 
 class BillableResource extends Resource
 {
     protected static ?string $model = Billable::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-users';
 
     public static function form(Form $form): Form
     {
+        $billables = Billable::pluck('name', 'stripe_id');
+
         return $form
             ->schema([
+                Forms\Components\Select::make('stripe_id')
+                    ->required()
+                    ->options(fn(Get $get): array => self::getBillables())
+                    ->disableOptionWhen(fn (string $value): bool => $billables->has($value))
+                    ->searchable()
+                    ->columnSpan(3),
                 Forms\Components\TextInput::make('stripe_id')
+                    ->readonly()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('address'),
+                Forms\Components\TextInput::make('name')
+                    ->maxLength(255),
                 Forms\Components\TextInput::make('description')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('email')
                     ->email()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('metadata'),
-                Forms\Components\TextInput::make('name')
-                    ->maxLength(255),
                 Forms\Components\TextInput::make('phone')
                     ->tel()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('shipping'),
-                Forms\Components\TextInput::make('cash_balance'),
                 Forms\Components\TextInput::make('balance')
+                    ->readonly()
                     ->numeric(),
-                Forms\Components\TextInput::make('default_source'),
-                Forms\Components\Toggle::make('delinquent'),
-                Forms\Components\TextInput::make('discount'),
-                Forms\Components\TextInput::make('invoice_credit_balance'),
+                PrettyJson::make('address')->disabled(),
+                PrettyJson::make('metadata')->disabled(),
+                PrettyJson::make('shipping')->disabled(),
+                PrettyJson::make('cash_balance')->disabled(),
+                PrettyJson::make('discount')->disabled(),
+                PrettyJson::make('invoice_credit_balance')->disabled(),
+                PrettyJson::make('invoice_settings')->disabled(),
+                PrettyJson::make('preferred_locales')->disabled(),
+                PrettyJson::make('sources')->disabled(),
+                Forms\Components\Toggle::make('delinquent')->disabled(),
                 Forms\Components\TextInput::make('invoice_prefix')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('invoice_settings'),
-                Forms\Components\Toggle::make('livemode'),
+                    ->maxLength(255)
+                    ->readonly(),
+                Forms\Components\Toggle::make('livemode')
+                    ->disabled(),
                 Forms\Components\TextInput::make('next_invoice_sequence')
+                    ->readonly()
                     ->numeric(),
-                Forms\Components\TextInput::make('preferred_locales'),
-                Forms\Components\TextInput::make('sources'),
-                Forms\Components\TextInput::make('subscriptions'),
-                Forms\Components\TextInput::make('tax_exempt'),
-                Forms\Components\TextInput::make('tax'),
-                Forms\Components\TextInput::make('tax_ids'),
+                Forms\Components\TextInput::make('tax_exempt')
+                    ->readonly(),
+                PrettyJson::make('tax')
+                    ->disabled(),
+                PrettyJson::make('tax_ids')
+                    ->disabled(),
                 Forms\Components\TextInput::make('test_clock')
+                    ->readonly()
                     ->maxLength(255),
-                Forms\Components\DateTimePicker::make('created'),
+                Forms\Components\TextInput::make('default_source')
+                    ->readonly()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('created')
+                    ->readonly()
+                    ->numeric()
+                    ->maxLength(255),
             ]);
     }
 
@@ -131,5 +154,20 @@ class BillableResource extends Resource
             'create' => Pages\CreateBillable::route('/create'),
             'edit' => Pages\EditBillable::route('/{record}/edit'),
         ];
+    }
+
+    public static function getBillables(): array
+    {
+        $stripe = new \Stripe\StripeClient('sk_test_51F1LcNKBVLqcMf8uiZFt0152gJpn08YTEOx3zsssdL6CAJ0nPCJborB5n0euDV2l8LA2kZByttfGuAk0l02lPh04008199G2r0');
+
+        $customers = $stripe->customers->all(['limit' => 100])->data;
+
+        return collect($customers)
+            ->map(fn($customer) => [
+                'id' => $customer->id,
+                'text' => "{$customer->name} ({$customer->email}) - {$customer->id}",
+            ])
+            ->pluck('text', 'id')
+            ->toArray();
     }
 }

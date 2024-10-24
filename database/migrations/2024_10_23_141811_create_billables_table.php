@@ -38,7 +38,7 @@ return new class extends Migration
             $table->json('tax')->nullable();
             $table->json('tax_ids')->nullable();
             $table->string('test_clock')->nullable();
-            $table->timestamp('created')->nullable();
+            $table->bigInteger('created')->nullable();
             $table->timestamps();
         });
     }

@@ -23,7 +23,6 @@ return new class extends Migration
             $table->json('marketing_features')->nullable();
             $table->json('package_dimensions')->nullable();
             $table->boolean('shippable')->nullable();
-            $table->string('statement_descriptor')->nullable();
             $table->string('tax_code')->nullable();
             $table->string('unit_label')->nullable();
             $table->string('url')->nullable();

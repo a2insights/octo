@@ -53,7 +53,7 @@ class Billable extends Model
         'address' => 'array',
         'metadata' => 'array',
         'shipping' => 'array',
-        'created' => 'timestamp',
+        'created' => 'integer',
         'cash_balance' => 'array',
         'default_source' => 'array',
         'delinquent' => 'boolean',
@@ -71,5 +71,37 @@ class Billable extends Model
     public function subscriptions(): HasMany
     {
         return $this->hasMany(Subscription::class);
+    }
+
+    public function updateFromStripe()
+    {
+        $stripe = new \Stripe\StripeClient('sk_test_51F1LcNKBVLqcMf8uiZFt0152gJpn08YTEOx3zsssdL6CAJ0nPCJborB5n0euDV2l8LA2kZByttfGuAk0l02lPh04008199G2r0');
+
+        $customer =  $stripe->customers->retrieve($this->stripe_id, []);
+
+        $this->fill($customer->toArray());
+        $this->save();
+    }
+
+    public function updateToStripe()
+    {
+        $stripe = new \Stripe\StripeClient('sk_test_51F1LcNKBVLqcMf8uiZFt0152gJpn08YTEOx3zsssdL6CAJ0nPCJborB5n0euDV2l8LA2kZByttfGuAk0l02lPh04008199G2r0');
+
+        $data = [
+            'description' => $this->description,
+            'email' => $this->email,
+            'name' => $this->name,
+            'phone' => $this->phone,
+        ];
+
+        foreach ($data as $key => $value) {
+            if (is_null($value)) {
+                unset($data[$key]);
+            }
+        }
+
+        $customer =  $stripe->customers->update($this->stripe_id, $data);
+        $this->fill($customer->toArray());
+        $this->save();
     }
 }
