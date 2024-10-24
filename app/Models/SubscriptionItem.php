@@ -19,7 +19,7 @@ class SubscriptionItem extends Model
         'stripe_id',
         'subscription_id',
         'stripe_subscription',
-        'stripe_product',
+        'product',
         'stripe_price',
         'quantity',
     ];

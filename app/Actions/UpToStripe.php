@@ -3,6 +3,7 @@
 namespace App\Actions;
 
 use App\Actions\Stripe\UpdateCustomer;
+use App\Actions\Stripe\UpdatePrice;
 use App\Actions\Stripe\UpdateProduct;
 use Illuminate\Database\Eloquent\Model;
 use Lorisleiva\Actions\Concerns\AsAction;
@@ -13,11 +14,14 @@ class UpToStripe
 
     public function handle(Model $model, ?string $object = null)
     {
-        return match ($object) {
-            'customer' => $this->updateToStripe($model, UpdateCustomer::class),
-            'product' => $this->updateToStripe($model, UpdateProduct::class),
+        $action = match ($object) {
+            'customer' => UpdateCustomer::class,
+            'product' => UpdateProduct::class,
+            'price' => UpdatePrice::class,
             default => null,
         };
+
+        return $action ? $this->updateToStripe($model, $action) : null;
     }
 
     /**

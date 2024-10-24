@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('stripe_id')->nullable();
             $table->foreignIdFor(Subscription::class)->constrained()->cascadeOnDelete();
             $table->string('stripe_subscription')->nullable();
-            $table->string('stripe_product')->nullable();
+            $table->string('product')->nullable();
             $table->json('stripe_price')->nullable();
             $table->unsignedBigInteger('quantity')->nullable();
             $table->timestamps();

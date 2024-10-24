@@ -18,7 +18,7 @@ class Price extends Model
     protected $fillable = [
         'product_id',
         'stripe_id',
-        'stripe_product',
+        'product',
         'active',
         'currency',
         'metadata',

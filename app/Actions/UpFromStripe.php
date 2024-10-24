@@ -3,6 +3,7 @@
 namespace App\Actions;
 
 use App\Actions\Stripe\GetCustomer;
+use App\Actions\Stripe\GetPrice;
 use App\Actions\Stripe\GetProduct;
 use Illuminate\Database\Eloquent\Model;
 use Lorisleiva\Actions\Concerns\AsAction;
@@ -13,11 +14,14 @@ class UpFromStripe
 
     public function handle(Model $model, ?string $object = null)
     {
-        return match ($object) {
-            'customer' => $this->updateFromStripe($model, GetCustomer::class),
-            'product' => $this->updateFromStripe($model, GetProduct::class),
+        $action = match ($object) {
+            'customer' => GetCustomer::class,
+            'product' => GetProduct::class,
+            'price' => GetPrice::class,
             default => null,
         };
+
+        return $action ? $this->updateFromStripe($model, $action) : null;
     }
 
     /**

@@ -80,10 +80,8 @@ class BillableResource extends Resource
                 Forms\Components\TextInput::make('coupon')
                     ->readonly()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('created')
-                    ->readonly()
-                    ->numeric()
-                    ->maxLength(255),
+                Forms\Components\DateTimePicker::make('created')
+                    ->readonly(),
             ]);
     }
 

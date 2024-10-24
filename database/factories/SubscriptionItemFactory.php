@@ -24,7 +24,7 @@ class SubscriptionItemFactory extends Factory
             'stripe_id' => $this->faker->word(),
             'subscription_id' => Subscription::factory(),
             'stripe_subscription' => $this->faker->word(),
-            'stripe_product' => $this->faker->word(),
+            'product' => $this->faker->word(),
             'stripe_price' => '{}',
             'quantity' => $this->faker->numberBetween(1, 100000),
         ];
