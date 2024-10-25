@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('features', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(Price::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Product::class)->constrained()->cascadeOnDelete();
             $table->string('stripe_price')->nullable();
             $table->bigInteger('value')->nullable();

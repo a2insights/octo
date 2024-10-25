@@ -32,7 +32,7 @@ class PriceFactory extends Factory
             'type' => $this->faker->randomElement(['one_time', 'recurring']),
             'unit_amount' => $this->faker->numberBetween(-10000, 10000),
             'billing_scheme' => $this->faker->randomElement(['per_unit', 'tiered']),
-            'created' => $this->faker->dateTime(),
+            'created' => $this->faker->randomNumber(4),
             'currency_options' => '{}',
             'custom_unit_amount' => '{}',
             'livemode' => $this->faker->boolean(),

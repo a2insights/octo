@@ -42,6 +42,11 @@ class Feature extends Model
         'price' => 'decimal',
     ];
 
+    public function price(): BelongsTo
+    {
+        return $this->belongsTo(Price::class);
+    }
+
     public function products(): BelongsToMany
     {
         return $this->belongsToMany(Feature::class, 'product_feature');
