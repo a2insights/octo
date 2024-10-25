@@ -24,7 +24,6 @@ use Illuminate\Database\Eloquent\Builder;
 
 class Billing extends Page
 {
-    use HasTabs;
     use InteractsWithInfolists;
     use InteractsWithForms;
 
@@ -100,14 +99,5 @@ class Billing extends Page
                     ])
                     ->activeTab(1),
             ]);
-    }
-
-    public function getTabs(): array
-    {
-        return [
-            'mounth' => Tab::make(),
-            'yearly' => Tab::make()
-                ->modifyQueryUsing(fn (Builder $query) => $query->where('active', true)),
-        ];
     }
 }
