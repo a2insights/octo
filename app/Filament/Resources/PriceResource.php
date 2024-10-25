@@ -26,67 +26,55 @@ class PriceResource extends Resource
     {
         $prices = Price::pluck('nickname', 'stripe_id');
 
-        return $form
-            ->schema([
-                Forms\Components\Select::make('stripe_id')
-                    ->required()
-                    ->options(fn(Get $get): array => self::getPrices())
-                    ->disableOptionWhen(fn(string $value): bool => $prices->has($value))
-                    ->searchable()
-                    ->columnSpan(3),
-                Forms\Components\Select::make('product_id')
-                    ->relationship('product', 'name')
-                    ->required(),
-                Forms\Components\TextInput::make('stripe_id')
-                    ->maxLength(255)
-                    ->readonly(),
-                Forms\Components\TextInput::make('product')
-                    ->maxLength(255)
-                    ->readonly(),
-                Forms\Components\TextInput::make('nickname')
-                    ->maxLength(255),
-                Forms\Components\Toggle::make('active')
-                    ->disabled(),
-                Forms\Components\TextInput::make('currency')
-                    ->maxLength(255)
-                    ->readonly(),
-                PrettyJson::make('recurring')
-                    ->disabled(),
-                PrettyJson::make('metadata')
-                    ->disabled(),
-                Forms\Components\TextInput::make('type')
-                    ->readonly(),
-                Forms\Components\TextInput::make('unit_amount')
-                    ->numeric()
-                    ->readonly(),
-                Forms\Components\TextInput::make('billing_scheme')
-                    ->readonly(),
-                Forms\Components\DateTimePicker::make('created')
-                    ->readonly(),
-                PrettyJson::make('currency_options')->disabled()
-                    ->disabled(),
-                PrettyJson::make('custom_unit_amount')
-                    ->disabled(),
-                Forms\Components\Toggle::make('livemode')
-                    ->disabled(),
-                Forms\Components\TextInput::make('lookup_key')
-                    ->maxLength(255)
-                    ->readonly(),
-                Forms\Components\TextInput::make('tax_behavior')
-                    ->maxLength(255)
-                    ->readonly(),
-                Forms\Components\TextInput::make('tiers_mode')
-                    ->maxLength(255)
-                    ->readonly(),
-                Forms\Components\TextInput::make('tiers_mode')
-                    ->maxLength(255)
-                    ->readonly(),
-                PrettyJson::make('transform_quantity')
-                    ->disabled(),
-                Forms\Components\TextInput::make('unit_amount_decimal')
-                    ->maxLength(255)
-                    ->readonly()
-            ]);
+        return $form->schema([
+            Forms\Components\Section::make('General Information')
+                ->schema([
+                    Forms\Components\Select::make('stripe_id')
+                        ->required()
+                        ->options(fn(Get $get): array => self::getPrices())
+                        ->disableOptionWhen(fn(string $value): bool => $prices->has($value))
+                        ->searchable()
+                        ->columnSpan(3),
+                    Forms\Components\Select::make('product_id')
+                        ->relationship('product', 'name')
+                        ->required(),
+                    Forms\Components\TextInput::make('nickname')
+                        ->maxLength(255),
+                    Forms\Components\Toggle::make('active')
+                        ->disabled(),
+                ])->columns(2),
+
+            Forms\Components\Section::make('Details')
+                ->schema([
+                    Forms\Components\TextInput::make('stripe_id')
+                        ->maxLength(255)
+                        ->readonly(),
+                    Forms\Components\TextInput::make('product')
+                        ->maxLength(255)
+                        ->readonly(),
+                    Forms\Components\TextInput::make('currency')
+                        ->maxLength(255)
+                        ->readonly(),
+                    PrettyJson::make('recurring')->disabled(),
+                    PrettyJson::make('metadata')->disabled(),
+                    Forms\Components\TextInput::make('type')->readonly(),
+                    Forms\Components\TextInput::make('unit_amount')->numeric()->readonly(),
+                ])->columns(3), // Definido como 3 colunas aqui
+
+            Forms\Components\Section::make('Advanced Settings')
+                ->schema([
+                    Forms\Components\TextInput::make('billing_scheme')->readonly(),
+                    Forms\Components\DateTimePicker::make('created')->readonly(),
+                    PrettyJson::make('currency_options')->disabled(),
+                    PrettyJson::make('custom_unit_amount')->disabled(),
+                    Forms\Components\Toggle::make('livemode')->disabled(),
+                    Forms\Components\TextInput::make('lookup_key')->maxLength(255)->readonly(),
+                    Forms\Components\TextInput::make('tax_behavior')->maxLength(255)->readonly(),
+                    Forms\Components\TextInput::make('tiers_mode')->maxLength(255)->readonly(),
+                    PrettyJson::make('transform_quantity')->disabled(),
+                    Forms\Components\TextInput::make('unit_amount_decimal')->maxLength(255)->readonly(),
+                ])->columns(3), // Aqui está definido para ter 3 colunas
+        ]);
     }
 
     public static function table(Table $table): Table

@@ -18,9 +18,9 @@ class PricesRelationManager extends RelationManager
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('nickname')
-                    ->required()
-                    ->maxLength(255),
+                // Forms\Components\TextInput::make('nickname')
+                //     ->required()
+                //     ->maxLength(255),
             ]);
     }
 
@@ -30,21 +30,26 @@ class PricesRelationManager extends RelationManager
             ->recordTitleAttribute('nickname')
             ->columns([
                 Tables\Columns\TextColumn::make('nickname'),
+                Tables\Columns\TextColumn::make('currency'),
+                Tables\Columns\TextColumn::make('unit_amount'),
+                Tables\Columns\TextColumn::make('type'),
+                Tables\Columns\TextColumn::make('created_at'),
+                Tables\Columns\TextColumn::make('updated_at'),
             ])
             ->filters([
                 //
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make(),
+                // Tables\Actions\CreateAction::make(),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                // Tables\Actions\EditAction::make(),
+                // Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                // Tables\Actions\BulkActionGroup::make([
+                //     Tables\Actions\DeleteBulkAction::make(),
+                // ]),
             ]);
     }
 }

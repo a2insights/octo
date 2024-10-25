@@ -26,41 +26,81 @@ class ProductResource extends Resource
 
         return $form
             ->schema([
-                Forms\Components\Select::make('stripe_id')
-                    ->required()
-                    ->options(fn (Get $get): array => self::getProducts())
-                    ->disableOptionWhen(fn (string $value): bool => $products->has($value))
-                    ->searchable()
-                    ->columnSpan(3),
-                Forms\Components\TextInput::make('stripe_id')
-                    ->maxLength(255)
-                    ->readOnly(),
-                Forms\Components\TextInput::make('name')
-                    ->maxLength(255),
-                Forms\Components\Toggle::make('active')
-                    ->disabled(),
-                Forms\Components\Toggle::make('livemode')
-                    ->disabled(),
-                Forms\Components\TextInput::make('description')
-                    ->maxLength(255),
-                PrettyJson::make('metadata')->disabled(),
-                PrettyJson::make('default_price_data')->disabled(),
-                PrettyJson::make('images')->disabled(),
-                PrettyJson::make('marketing_features')->disabled(),
-                PrettyJson::make('package_dimensions')->disabled(),
-                Forms\Components\Toggle::make('shippable')
-                    ->disabled(),
-                Forms\Components\TextInput::make('tax_code')
-                    ->maxLength(255)
-                    ->readOnly(),
-                Forms\Components\TextInput::make('unit_label')
-                    ->maxLength(255)
-                    ->readOnly(),
-                Forms\Components\TextInput::make('url')
-                    ->maxLength(255)
-                    ->readOnly(),
+                Forms\Components\Section::make('Stripe Information')
+                    ->schema([
+                        Forms\Components\Select::make('stripe_id')
+                            ->label('Stripe Product')
+                            ->required()
+                            ->options(fn(Get $get): array => self::getProducts())
+                            ->disableOptionWhen(fn(string $value): bool => $products->has($value))
+                            ->searchable()
+                            ->columnSpan(3),
+                        Forms\Components\TextInput::make('stripe_id')
+                            ->label('Stripe ID')
+                            ->maxLength(255)
+                            ->readOnly(),
+                        Forms\Components\TextInput::make('name')
+                            ->label('Product Name')
+                            ->maxLength(255)
+                            ->required(),
+                    ])->columns(3),
+
+                Forms\Components\Section::make('Product Attributes')
+                    ->schema([
+                        Forms\Components\TextInput::make('description')
+                            ->label('Description')
+                            ->maxLength(255)
+                            ->columnSpanFull(),
+                        Forms\Components\Group::make([
+                            Forms\Components\Toggle::make('active')
+                                ->label('Active')
+                                ->disabled(),
+                            Forms\Components\Toggle::make('livemode')
+                                ->label('Live Mode')
+                                ->disabled(),
+                            Forms\Components\Toggle::make('shippable')
+                                ->label('Shippable')
+                                ->disabled(),
+                        ]),
+                    ])->columns(3),
+
+                Forms\Components\Section::make('Additional Information')
+                    ->schema([
+                        PrettyJson::make('metadata')
+                            ->label('Metadata')
+                            ->disabled(),
+                        PrettyJson::make('default_price_data')
+                            ->label('Default Price Data')
+                            ->disabled(),
+                        PrettyJson::make('images')
+                            ->label('Images')
+                            ->disabled(),
+                        PrettyJson::make('marketing_features')
+                            ->label('Marketing Features')
+                            ->disabled(),
+                        PrettyJson::make('package_dimensions')
+                            ->label('Package Dimensions')
+                            ->disabled(),
+                    ])->columns(3),
+
+                Forms\Components\Section::make('Tax and URL Information')
+                    ->schema([
+                        Forms\Components\TextInput::make('tax_code')
+                            ->label('Tax Code')
+                            ->maxLength(255)
+                            ->readOnly(),
+                        Forms\Components\TextInput::make('unit_label')
+                            ->label('Unit Label')
+                            ->maxLength(255)
+                            ->readOnly(),
+                        Forms\Components\TextInput::make('url')
+                            ->label('Product URL')
+                            ->maxLength(255)
+                            ->readOnly(),
+                    ])->columns(3),
             ]);
     }
+
 
     public static function table(Table $table): Table
     {
@@ -117,7 +157,7 @@ class ProductResource extends Resource
     public static function getProducts(): array
     {
         return collect(GetProducts::run(100))
-            ->map(fn ($product) => [
+            ->map(fn($product) => [
                 'id' => $product->id,
                 'text' => "{$product->name} - {$product->id}",
             ])
