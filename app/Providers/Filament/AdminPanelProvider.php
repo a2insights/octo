@@ -33,6 +33,8 @@ class AdminPanelProvider extends PanelProvider
             ->passwordReset()
             ->emailVerification()
             ->profile()
+            ->sidebarCollapsibleOnDesktop()
+            // ->sidebarFullyCollapsibleOnDesktop()
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
@@ -64,7 +66,7 @@ class AdminPanelProvider extends PanelProvider
                 //     permissions: ['create', 'update', 'view', 'delete'] // optional, customize the permissions (default = ["create", "view", "update", "delete"])
                 // )
                     ->myProfileComponents([Phone::class, Username::class]),
-                \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn () => auth()->user() ? auth()->user()?->hasRole('super_admin') : false),
+                \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn () => auth()->user() ? auth()->user()->hasRole('super_admin') : false),
                 \Marjose123\FilamentWebhookServer\WebhookPlugin::make(),
                 \HusamTariq\FilamentDatabaseSchedule\FilamentDatabaseSchedulePlugin::make(),
                 \SolutionForest\FilamentFirewall\FilamentFirewallPanel::make(),

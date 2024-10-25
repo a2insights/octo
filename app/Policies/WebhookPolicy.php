@@ -15,11 +15,11 @@ class WebhookPolicy
      *
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function viewAny(User $user)
+    public function viewAny(User $user, Features $feature)
     {
         $features = app(Features::class);
 
-        return $user->hasRole('super_admin') || $features->webhook;
+        return $user->hasRole('super_admin') || $features->webhook; // @phpstan-ignore-line
     }
 
     /**
@@ -31,7 +31,7 @@ class WebhookPolicy
     {
         $features = app(Features::class);
 
-        return $user->hasRole('super_admin') || $features->webhook;
+        return $user->hasRole('super_admin') || $features->webhook; // @phpstan-ignore-line
     }
 
     /**
@@ -43,6 +43,6 @@ class WebhookPolicy
     {
         $features = app(Features::class);
 
-        return $user->hasRole('super_admin') || $features->webhook;
+        return $user->hasRole('super_admin') || $features->webhook; // @phpstan-ignore-line
     }
 }

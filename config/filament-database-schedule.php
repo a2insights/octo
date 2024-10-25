@@ -11,21 +11,19 @@ return [
      */
     'table' => [
         'schedules' => 'schedules',
-        'schedule_histories' => 'schedule_histories'
+        'schedule_histories' => 'schedule_histories',
     ],
     'model' => Schedule::class,
 
     'timezone' => env('FILAMENT_SCHEDULE_TIMEZONE', config('app.timezone')),
-
-
 
     /**
      * Cache settings
      */
     'cache' => [
         'store' => env('FILAMENT_SCHEDULE_CACHE_DRIVER', 'file'),
-        'key' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_schedule_'),
-        'enabled' => env('FILAMENT_SCHEDULE_CACHE_ENABLE', !config('app.debug')),
+        'key' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_schedule_'),
+        'enabled' => env('FILAMENT_SCHEDULE_CACHE_ENABLE', ! config('app.debug')),
     ],
 
     /**
@@ -80,12 +78,12 @@ return [
             'queue:*',
             'schedule:*',
             'view:*',
-            'phpunit:*'
-        ]
+            'phpunit:*',
+        ],
     ],
 
     'tool-help-cron-expression' => [
         'enable' => true,
-        'url' => 'https://crontab.cronhub.io/'
-    ]
+        'url' => 'https://crontab.cronhub.io/',
+    ],
 ];

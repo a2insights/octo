@@ -30,8 +30,9 @@ use Wallo\FilamentCompanies\SetsProfilePhotoFromUrl;
 
 class User extends Authenticatable implements BannableContract, FilamentUser, HasAvatar, HasDefaultTenant, HasTenants, MustVerifyEmail
 {
-    use Bannable, HasApiTokens, HasFactory, HasRoles, Notifiable, SoftDeletes, TwoFactorAuthenticatable;
-    use FindSimilarUsernames, GeneratesUsernames, HasApiTokens, HasCompanies, HasConnectedAccounts, HasProfilePhoto, SetsProfilePhotoFromUrl;
+    use Bannable, FindSimilarUsernames, GeneratesUsernames, HasApiTokens, HasCompanies,
+        HasConnectedAccounts, HasFactory, HasProfilePhoto, HasRoles, Notifiable, SetsProfilePhotoFromUrl,
+        SoftDeletes, TwoFactorAuthenticatable;
 
     /**
      * The attributes that are mass assignable.

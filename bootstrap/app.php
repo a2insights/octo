@@ -13,7 +13,6 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         // $middleware->append(\SolutionForest\FilamentFirewall\Middleware\WhitelistRangeMiddleware::class);
-        $middleware->append(\Hasnayeen\Themes\Http\Middleware\SetTheme::class);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
