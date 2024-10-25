@@ -11,9 +11,9 @@ class UpdateFeature extends StripeBaseAction
     public function handle(string $stripeId, array $data)
     {
         $data = [
-           'name' => $data['name'],
-           'metadata' => $data['metadata'],
-           'active' => $data['active'],
+            'name' => $data['name'],
+            'metadata' => $data['metadata'],
+            'active' => $data['active'],
         ];
 
         foreach ($data as $key => $value) {

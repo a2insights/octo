@@ -10,7 +10,7 @@ class UpdateProduct extends StripeBaseAction
 
     public function handle(string $stripeId, array $data)
     {
-        return $this->stripe->products->update($stripeId,  [
+        return $this->stripe->products->update($stripeId, [
             'name' => $data['name'],
             'description' => $data['description'],
             'metadata' => $data['metadata'],

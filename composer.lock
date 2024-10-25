@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "186a194329b9e3b7b6894f99392b04fe",
+    "content-hash": "d76e8ab2119e7e8a194289f80fd06bfc",
     "packages": [
         {
             "name": "a2insights/octo-core",
@@ -1246,6 +1246,111 @@
                 "source": "https://github.com/AnourValar/eloquent-serialize/tree/1.2.25"
             },
             "time": "2024-09-16T12:59:37+00:00"
+        },
+        {
+            "name": "archtechx/helpers",
+            "version": "v0.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/archtechx/helpers.git",
+                "reference": "818d7235be3720316d985f7a23bdc8e72b4a9d9a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/archtechx/helpers/zipball/818d7235be3720316d985f7a23bdc8e72b4a9d9a",
+                "reference": "818d7235be3720316d985f7a23bdc8e72b4a9d9a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^10.0|^11.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^8.0|^9.0",
+                "pestphp/pest": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Samuel Štancl",
+                    "email": "samuel@archte.ch"
+                }
+            ],
+            "description": "A collection of helpers we commonly use.",
+            "support": {
+                "source": "https://github.com/archtechx/helpers/tree/v0.3.2"
+            },
+            "time": "2024-03-29T01:08:57+00:00"
+        },
+        {
+            "name": "archtechx/money",
+            "version": "v0.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/archtechx/money.git",
+                "reference": "8a0eeae7c762c343f4bd1efac0e3a5575d3a03f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/archtechx/money/zipball/8a0eeae7c762c343f4bd1efac0e3a5575d3a03f5",
+                "reference": "8a0eeae7c762c343f4bd1efac0e3a5575d3a03f5",
+                "shasum": ""
+            },
+            "require": {
+                "archtechx/helpers": "^0.3.2",
+                "illuminate/support": "^10.0|^11.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "nunomaduro/larastan": "^2.4",
+                "orchestra/testbench": "^8.0|^9.0",
+                "pestphp/pest": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "phpstan/phpstan": "^1.9.8"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ArchTech\\Money\\MoneyServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php",
+                    "src/Wireable.php"
+                ],
+                "psr-4": {
+                    "ArchTech\\Money\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Samuel Štancl",
+                    "email": "samuel@archte.ch"
+                }
+            ],
+            "description": "A lightweight package for handling money math in PHP.",
+            "support": {
+                "issues": "https://github.com/archtechx/money/issues",
+                "source": "https://github.com/archtechx/money/tree/v0.5.1"
+            },
+            "time": "2024-03-29T01:12:37+00:00"
         },
         {
             "name": "awcodes/filament-table-repeater",

@@ -68,4 +68,16 @@ class Billable extends Model
     {
         return $this->hasMany(Subscription::class);
     }
+
+    public function subscribed(string $stripePrice): bool
+    {
+       $subscription = $this->subscriptions()->where('stripe_price', $stripePrice)->first();
+       if (!$subscription) {
+           $subscription = $this->subscriptions()->whereHas('items', function ($query) use ($stripePrice) {
+               $query->where('stripe_price', $stripePrice);
+           });
+       }
+
+       return $subscription ? true : false;
+    }
 }

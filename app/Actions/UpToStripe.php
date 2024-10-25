@@ -28,10 +28,6 @@ class UpToStripe
 
     /**
      * Updates data in Stripe using the corresponding action class.
-     *
-     * @param Model $model
-     * @param string $stripeActionClass
-     * @return Model|null
      */
     protected function updateToStripe(Model $model, string $stripeActionClass): ?Model
     {

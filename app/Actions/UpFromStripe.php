@@ -28,10 +28,6 @@ class UpFromStripe
 
     /**
      * Updates the model using the corresponding Stripe action.
-     *
-     * @param Model $model
-     * @param string $stripeActionClass
-     * @return Model|null
      */
     protected function updateFromStripe(Model $model, string $stripeActionClass): ?Model
     {

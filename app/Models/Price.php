@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Price extends Model
@@ -28,6 +27,7 @@ class Price extends Model
         'recurring',
         'type',
         'unit_amount',
+        'unit_label',
         'billing_scheme',
         'created',
         'currency_options',
@@ -66,5 +66,10 @@ class Price extends Model
     public function features(): HasMany
     {
         return $this->hasMany(Feature::class);
+    }
+
+    public function productt(): BelongsTo
+    {
+        return $this->belongsTo(Product::class, 'product_id');
     }
 }

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Subscription extends Model
 {
@@ -17,9 +18,8 @@ class Subscription extends Model
      */
     protected $fillable = [
         'stripe_id',
-        'billable_id',
-        'stripe_customer',
         'stripe_price',
+        'billable_id',
         'status',
         'cancel_at_period_end',
         'currency',
@@ -27,7 +27,6 @@ class Subscription extends Model
         'current_period_start',
         'default_payment_method',
         'description',
-        'items',
         'metadata',
         'pending_setup_intent',
         'pending_update',
@@ -58,6 +57,7 @@ class Subscription extends Model
         'trial_end',
         'trial_settings',
         'trial_start',
+        'quantity',
     ];
 
     /**
@@ -67,19 +67,19 @@ class Subscription extends Model
      */
     protected $casts = [
         'cancel_at_period_end' => 'boolean',
-        'current_period_end' => 'timestamp',
-        'current_period_start' => 'timestamp',
+        'current_period_end' => 'integer',
+        'current_period_start' => 'integer',
         'items' => 'array',
         'metadata' => 'array',
         'pending_update' => 'array',
         'add_invoice_items' => 'array',
         'application_fee_percent' => 'decimal',
         'automatic_tax' => 'array',
-        'backdate_start_date' => 'timestamp',
-        'billing_cycle_anchor' => 'timestamp',
+        'backdate_start_date' => 'integer',
+        'billing_cycle_anchor' => 'integer',
         'billing_cycle_anchor_config' => 'array',
         'billing_thresholds' => 'array',
-        'cancel_at' => 'timestamp',
+        'cancel_at' => 'integer',
         'default_tax_rates' => 'array',
         'discounts' => 'array',
         'invoice_settings' => 'array',
@@ -88,13 +88,19 @@ class Subscription extends Model
         'pending_invoice_item_interval' => 'array',
         'transfer_data' => 'array',
         'trial_from_plan' => 'boolean',
-        'trial_end' => 'timestamp',
+        'trial_end' => 'integer',
         'trial_settings' => 'array',
-        'trial_start' => 'timestamp',
+        'trial_start' => 'integer',
+        'quantity' => 'integer',
     ];
 
     public function billable(): BelongsTo
     {
         return $this->belongsTo(Billable::class);
+    }
+
+    public function items(): HasMany
+    {
+        return $this->hasMany(SubscriptionItem::class);
     }
 }

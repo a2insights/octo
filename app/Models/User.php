@@ -12,6 +12,7 @@ use Filament\Panel;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -40,6 +41,7 @@ class User extends Authenticatable implements BannableContract, FilamentUser, Ha
      * @var array<int, string>
      */
     protected $fillable = [
+        'billable_id',
         'name',
         'email',
         'phone',
@@ -102,5 +104,10 @@ class User extends Authenticatable implements BannableContract, FilamentUser, Ha
     public function getDefaultTenant(Panel $panel): ?Model
     {
         return $this->currentCompany;
+    }
+
+    public function billable(): BelongsTo
+    {
+        return $this->belongsTo(Billable::class);
     }
 }

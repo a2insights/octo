@@ -9,6 +9,7 @@
     "require": {
         "php": "^8.1",
         "a2insights/octo-core": "dev-main",
+        "archtechx/money": "^0.5.1",
         "barryvdh/laravel-debugbar": "^3.13",
         "laravel/framework": "^11.0",
         "laravel/sanctum": "^4.0",

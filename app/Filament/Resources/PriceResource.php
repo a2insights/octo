@@ -4,7 +4,6 @@ namespace App\Filament\Resources;
 
 use App\Actions\Stripe\GetPrices;
 use App\Filament\Resources\PriceResource\Pages;
-use App\Filament\Resources\PriceResource\RelationManagers;
 use App\Models\Price;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -12,8 +11,6 @@ use Filament\Forms\Get;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Novadaemon\FilamentPrettyJson\PrettyJson;
 
 class PriceResource extends Resource
@@ -31,8 +28,8 @@ class PriceResource extends Resource
                 ->schema([
                     Forms\Components\Select::make('stripe_id')
                         ->required()
-                        ->options(fn(Get $get): array => self::getPrices())
-                        ->disableOptionWhen(fn(string $value): bool => $prices->has($value))
+                        ->options(fn (Get $get): array => self::getPrices())
+                        ->disableOptionWhen(fn (string $value): bool => $prices->has($value))
                         ->searchable()
                         ->columnSpan(3),
                     Forms\Components\Select::make('product_id')
@@ -55,10 +52,17 @@ class PriceResource extends Resource
                     Forms\Components\TextInput::make('currency')
                         ->maxLength(255)
                         ->readonly(),
-                    PrettyJson::make('recurring')->disabled(),
-                    PrettyJson::make('metadata')->disabled(),
-                    Forms\Components\TextInput::make('type')->readonly(),
-                    Forms\Components\TextInput::make('unit_amount')->numeric()->readonly(),
+                    PrettyJson::make('recurring')
+                        ->disabled(),
+                    PrettyJson::make('metadata')
+                        ->disabled(),
+                    Forms\Components\TextInput::make('type')
+                        ->readonly(),
+                    Forms\Components\TextInput::make('unit_amount')
+                        ->numeric()
+                        ->readonly(),
+                    Forms\Components\TextInput::make('unit_label')
+                        ->readonly(),
                 ])->columns(3),
 
             Forms\Components\Section::make('Advanced Settings')
@@ -137,7 +141,7 @@ class PriceResource extends Resource
     public static function getPrices(): array
     {
         return collect(GetPrices::run(100))
-            ->map(fn($price) => [
+            ->map(fn ($price) => [
                 'id' => $price->id,
                 'text' => "{$price->nickname} - {$price->id}",
             ])

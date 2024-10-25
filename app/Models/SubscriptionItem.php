@@ -18,8 +18,6 @@ class SubscriptionItem extends Model
     protected $fillable = [
         'stripe_id',
         'subscription_id',
-        'stripe_subscription',
-        'product',
         'stripe_price',
         'quantity',
     ];
@@ -30,9 +28,6 @@ class SubscriptionItem extends Model
      * @var array<string, string>
      */
     protected $casts = [
-        'id' => 'integer',
-        'subscription_id' => 'integer',
-        'price' => 'array',
         'quantity' => 'integer',
     ];
 

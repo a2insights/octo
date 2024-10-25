@@ -98,7 +98,10 @@ class ProductResource extends Resource
                                     ->required()
                                     ->reactive()
                                     ->afterStateUpdated(function ($state, Forms\Set $set, Forms\Get $get) {
-                                        $set('unit_amount', Feature::find($state)->unit_amount ?? 0);
+                                        $feature = Feature::find($state);
+
+                                        $set('unit_amount', $feature->unit_amount ?? 0);
+                                        $set('value', $feature->value ?? 0);
                                     })
                                     ->distinct()
                                     ->disableOptionsWhenSelectedInSiblingRepeaterItems()
@@ -108,9 +111,15 @@ class ProductResource extends Resource
                                     ->label('Unit Amount')
                                     ->dehydrated()
                                     ->numeric()
-                                    ->required()
+                                    ->nullable()
                                     ->columnSpan(1),
-                            ])->columns(6)
+                                Forms\Components\TextInput::make('value')
+                                    ->label('Value')
+                                    ->dehydrated()
+                                    ->numeric()
+                                    ->nullable()
+                                    ->columnSpan(1),
+                            ])->columns(7)
                             ->extraItemActions([
                                 Action::make('openService')
                                     ->tooltip('Abrir serviço')
@@ -118,22 +127,19 @@ class ProductResource extends Resource
                                     ->url(function (array $arguments, Repeater $component): ?string {
                                         $itemData = $component->getRawItemState($arguments['item']);
 
-                                        $service = Feature::find($itemData['feature_id']);
-                                        if (! $service) {
+                                        $feature = Feature::find($itemData['feature_id']);
+                                        if (! $feature) {
                                             return null;
                                         }
 
-                                        return '';
-
-                                        //return ServiceResource::getUrl('edit', ['record' => $service]);
+                                        return FeatureResource::getUrl('edit', ['record' => $feature]);
                                     }, shouldOpenInNewTab: true)
                                     ->hidden(fn(array $arguments, Repeater $component): bool => blank($component->getRawItemState($arguments['item'])['feature_id'])),
                             ])
                             ->orderColumn('sort')
                             ->defaultItems(1)
                             ->hiddenLabel()
-                            ->columnSpanFull()
-                            ->required(),
+                            ->columnSpanFull(),
                     ])->columns(3),
 
                 Forms\Components\Section::make('Tax and URL Information')
@@ -153,7 +159,6 @@ class ProductResource extends Resource
                     ])->columns(3),
             ]);
     }
-
 
     public static function table(Table $table): Table
     {

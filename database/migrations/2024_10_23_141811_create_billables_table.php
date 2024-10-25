@@ -41,6 +41,10 @@ return new class extends Migration
             $table->string('source')->nullable();
             $table->timestamps();
         });
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreignId('billable_id')->after('id')->nullable()->constrained()->cascadeOnDelete();
+        });
     }
 
     /**
@@ -49,5 +53,10 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('customers');
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['billable_id']);
+            $table->dropColumn('billable_id');
+        });
     }
 };

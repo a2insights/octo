@@ -23,6 +23,7 @@ class FeatureProduct extends Pivot
         'product_id',
         'feature_id',
         'sort',
+        'value',
         'unit_amount',
     ];
 
@@ -33,6 +34,7 @@ class FeatureProduct extends Pivot
      */
     protected $casts = [
         'sort' => 'integer',
+        'value' => 'integer',
         'unit_amount' => 'integer',
     ];
 

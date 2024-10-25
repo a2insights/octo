@@ -24,6 +24,7 @@ return new class extends Migration
             $table->json('recurring')->nullable();
             $table->string('type')->nullable();
             $table->integer('unit_amount')->nullable();
+            $table->string('unit_label')->nullable();
             $table->string('billing_scheme')->nullable();
             $table->bigInteger('created')->nullable();
             $table->json('currency_options')->nullable();

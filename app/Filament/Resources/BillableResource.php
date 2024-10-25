@@ -30,8 +30,8 @@ class BillableResource extends Resource
                     ->schema([
                         Forms\Components\Select::make('stripe_id')
                             ->required()
-                            ->options(fn(Get $get): array => self::getBillables())
-                            ->disableOptionWhen(fn(string $value): bool => $billables->has($value))
+                            ->options(fn (Get $get): array => self::getBillables())
+                            ->disableOptionWhen(fn (string $value): bool => $billables->has($value))
                             ->searchable()
                             ->columnSpan(3),
                         Forms\Components\TextInput::make('stripe_id')
@@ -164,7 +164,7 @@ class BillableResource extends Resource
     public static function getBillables(): array
     {
         return collect(GetCustomers::run())
-            ->map(fn($customer) => [
+            ->map(fn ($customer) => [
                 'id' => $customer->id,
                 'text' => "{$customer->name} ({$customer->email}) - {$customer->id}",
             ])

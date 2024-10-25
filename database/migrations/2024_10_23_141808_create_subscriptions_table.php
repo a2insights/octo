@@ -16,9 +16,8 @@ return new class extends Migration
 
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
-            $table->string('stripe_id')->nullable();
             $table->foreignIdFor(Billable::class)->constrained()->cascadeOnDelete();
-            $table->string('stripe_customer')->nullable();
+            $table->string('stripe_id')->nullable();
             $table->string('stripe_price')->nullable();
             $table->enum('status', ['incomplete', 'incomplete_expired', 'trialing', 'active', 'past_due', 'canceled', 'unpaid', 'or paused'])->index()->nullable();
             $table->boolean('cancel_at_period_end')->nullable()->default(false);
@@ -26,8 +25,8 @@ return new class extends Migration
             $table->timestamp('current_period_end')->nullable();
             $table->timestamp('current_period_start')->nullable();
             $table->string('default_payment_method')->nullable();
+            $table->integer('quantity')->nullable();
             $table->string('description')->nullable();
-            $table->json('items')->nullable();
             $table->json('metadata')->nullable();
             $table->string('pending_setup_intent')->nullable();
             $table->json('pending_update')->nullable();

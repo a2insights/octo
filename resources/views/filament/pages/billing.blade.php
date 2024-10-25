@@ -1,3 +1,5 @@
 <x-filament-panels::page>
-    @livewire('plans-slide')
+    {{ $this->infolist }}
+
+    <x-filament-actions::modals />
 </x-filament-panels::page>

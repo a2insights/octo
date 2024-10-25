@@ -14,11 +14,9 @@ return new class extends Migration
     {
         Schema::create('subscription_items', function (Blueprint $table) {
             $table->id();
-            $table->string('stripe_id')->nullable();
             $table->foreignIdFor(Subscription::class)->constrained()->cascadeOnDelete();
-            $table->string('stripe_subscription')->nullable();
-            $table->string('product')->nullable();
-            $table->json('stripe_price')->nullable();
+            $table->string('stripe_id')->nullable();
+            $table->string('stripe_price')->nullable();
             $table->unsignedBigInteger('quantity')->nullable();
             $table->timestamps();
         });

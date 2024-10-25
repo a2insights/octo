@@ -31,6 +31,7 @@ class PriceFactory extends Factory
             'recurring' => '{}',
             'type' => $this->faker->randomElement(['one_time', 'recurring']),
             'unit_amount' => $this->faker->numberBetween(-10000, 10000),
+            'unit_label' => $this->faker->word(),
             'billing_scheme' => $this->faker->randomElement(['per_unit', 'tiered']),
             'created' => $this->faker->randomNumber(4),
             'currency_options' => '{}',

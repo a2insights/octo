@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignIdFor(Feature::class, 'feature_id')->constrained()->cascadeOnDelete();
             $table->unsignedInteger('sort')->default(0);
             $table->integer('unit_amount')->nullable();
+            $table->integer('value')->nullable();
             $table->timestamps();
             $table->unique(['product_id', 'feature_id']);
         });

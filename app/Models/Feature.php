@@ -57,7 +57,7 @@ class Feature extends Model
     {
         return $this->belongsToMany(Product::class)
             ->using(FeatureProduct::class)
-            ->withPivot('unit_amount', 'sort')
+            ->withPivot('value', 'unit_amount', 'sort')
             ->withTimestamps();
     }
 }

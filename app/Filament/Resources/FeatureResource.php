@@ -5,17 +5,13 @@ namespace App\Filament\Resources;
 use App\Actions\Stripe\GetFeatures;
 use App\Actions\Stripe\GetPrices;
 use App\Filament\Resources\FeatureResource\Pages;
-use App\Filament\Resources\FeatureResource\RelationManagers;
 use App\Models\Feature;
-use App\Models\Price;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Forms\Get;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class FeatureResource extends Resource
 {
@@ -26,7 +22,7 @@ class FeatureResource extends Resource
     public static function form(Form $form): Form
     {
         $features = Feature::pluck('name', 'stripe_id');
-        $prices = Price::pluck('nickname', 'stripe_id');
+        $prices = Feature::pluck('name', 'stripe_price');
 
         return $form
             ->schema([
@@ -34,14 +30,13 @@ class FeatureResource extends Resource
                     ->schema([
                         Forms\Components\Select::make('stripe_id')
                             ->required()
-                            ->options(fn(Get $get): array => self::getFeatures())
-                            ->disableOptionWhen(fn(string $value): bool => $features->has($value))
+                            ->options(fn (Get $get): array => self::getFeatures())
+                            ->disableOptionWhen(fn (string $value): bool => $features->has($value))
                             ->searchable()
                             ->columnSpan(2),
                         Forms\Components\Select::make('stripe_price')
-                            ->required()
-                            ->options(fn(Get $get): array => self::getPrices())
-                            ->disableOptionWhen(fn(string $value): bool => $prices->has($value))
+                            ->options(fn (Get $get): array => self::getPrices())
+                            ->disableOptionWhen(fn (string $value): bool => $prices->has($value))
                             ->searchable()
                             ->columnSpan(1),
                     ])->columns(3),
@@ -49,8 +44,8 @@ class FeatureResource extends Resource
                 Forms\Components\Section::make('Price and Product Information')
                     ->schema([
                         Forms\Components\Select::make('price_id')
-                            ->relationship('price', 'id')
-                            ->required(),
+                            ->nullable()
+                            ->relationship('price', 'id'),
                         Forms\Components\Select::make('product_id')
                             ->relationship('product', 'name')
                             ->required(),
@@ -144,7 +139,7 @@ class FeatureResource extends Resource
     public static function getFeatures(): array
     {
         return collect(GetFeatures::run(100))
-            ->map(fn($price) => [
+            ->map(fn ($price) => [
                 'id' => $price->id,
                 'text' => "{$price->name} - {$price->id}",
             ])
@@ -155,7 +150,7 @@ class FeatureResource extends Resource
     public static function getPrices(): array
     {
         return collect(GetPrices::run(100))
-            ->map(fn($price) => [
+            ->map(fn ($price) => [
                 'id' => $price->id,
                 'text' => "{$price->nickname} - {$price->id}",
             ])
