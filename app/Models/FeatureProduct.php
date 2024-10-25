@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class ProductFeature extends Pivot
+class FeatureProduct extends Pivot
 {
     /**
      * Indicates if the IDs are auto-incrementing.
@@ -20,8 +20,10 @@ class ProductFeature extends Pivot
      * @var array<int, string>
      */
     protected $fillable = [
+        'product_id',
+        'feature_id',
         'sort',
-        'value',
+        'unit_amount',
     ];
 
     /**
@@ -31,7 +33,7 @@ class ProductFeature extends Pivot
      */
     protected $casts = [
         'sort' => 'integer',
-        'value' => 'integer',
+        'unit_amount' => 'integer',
     ];
 
     public function product(): BelongsTo

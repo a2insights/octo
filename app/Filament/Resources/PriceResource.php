@@ -59,7 +59,7 @@ class PriceResource extends Resource
                     PrettyJson::make('metadata')->disabled(),
                     Forms\Components\TextInput::make('type')->readonly(),
                     Forms\Components\TextInput::make('unit_amount')->numeric()->readonly(),
-                ])->columns(3), // Definido como 3 colunas aqui
+                ])->columns(3),
 
             Forms\Components\Section::make('Advanced Settings')
                 ->schema([
@@ -73,7 +73,7 @@ class PriceResource extends Resource
                     Forms\Components\TextInput::make('tiers_mode')->maxLength(255)->readonly(),
                     PrettyJson::make('transform_quantity')->disabled(),
                     Forms\Components\TextInput::make('unit_amount_decimal')->maxLength(255)->readonly(),
-                ])->columns(3), // Aqui está definido para ter 3 colunas
+                ])->columns(3),
         ]);
     }
 
@@ -86,8 +86,6 @@ class PriceResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('stripe_id')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('product')
-                    ->searchable(),
                 Tables\Columns\IconColumn::make('active')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('currency'),
@@ -98,17 +96,6 @@ class PriceResource extends Resource
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('billing_scheme'),
-                Tables\Columns\TextColumn::make('created')
-                    ->dateTime()
-                    ->sortable(),
-                Tables\Columns\IconColumn::make('livemode')
-                    ->boolean(),
-                Tables\Columns\TextColumn::make('lookup_key')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('tax_behavior'),
-                Tables\Columns\TextColumn::make('tiers_mode'),
-                Tables\Columns\TextColumn::make('unit_amount_decimal')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

@@ -31,7 +31,7 @@ class FeatureFactory extends Factory
             'unlimited' => $this->faker->boolean(),
             'meteread' => $this->faker->boolean(),
             'unit' => $this->faker->word(),
-            'price' => $this->faker->randomFloat(0, 0, 10000),
+            'unit_amount' => $this->faker->numberBetween(1, 100000),
         ];
     }
 }

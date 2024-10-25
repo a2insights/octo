@@ -13,12 +13,12 @@ it('can create a feature', function () {
         'stripe_price' => 'price_fake_id',
         'product_id' => $product->id,
         'name' => 'Unlimited Users',
-        'value' => 100,
+        'unit_amount' => 100,
     ]);
 
     expect($feature)->toBeInstanceOf(Feature::class);
     expect($feature->name)->toBe('Unlimited Users');
-    expect($feature->value)->toBe(100);
+    expect($feature->unit_amount)->toBe(100);
 });
 
 it('can update a feature', function () {

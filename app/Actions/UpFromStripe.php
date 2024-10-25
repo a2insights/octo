@@ -3,6 +3,7 @@
 namespace App\Actions;
 
 use App\Actions\Stripe\GetCustomer;
+use App\Actions\Stripe\GetFeature;
 use App\Actions\Stripe\GetPrice;
 use App\Actions\Stripe\GetProduct;
 use Illuminate\Database\Eloquent\Model;
@@ -18,6 +19,7 @@ class UpFromStripe
             'customer' => GetCustomer::class,
             'product' => GetProduct::class,
             'price' => GetPrice::class,
+            'feature' => GetFeature::class,
             default => null,
         };
 

@@ -3,6 +3,7 @@
 namespace App\Actions;
 
 use App\Actions\Stripe\UpdateCustomer;
+use App\Actions\Stripe\UpdateFeature;
 use App\Actions\Stripe\UpdatePrice;
 use App\Actions\Stripe\UpdateProduct;
 use Illuminate\Database\Eloquent\Model;
@@ -18,6 +19,7 @@ class UpToStripe
             'customer' => UpdateCustomer::class,
             'product' => UpdateProduct::class,
             'price' => UpdatePrice::class,
+            'feature' => UpdateFeature::class,
             default => null,
         };
 

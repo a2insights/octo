@@ -2,7 +2,7 @@
 
 use App\Actions\Stripe\CreatePrice;
 
-test('can create a customer', function () {
+test('can create a price', function () {
     CreatePrice::mock()
         ->shouldReceive('handle')
         ->with('price_1MoBy5LkdIwHu7ixZhnattbh', 'usd', 1000, ['interval' => 'month'], 'per_unit')

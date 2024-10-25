@@ -5,8 +5,11 @@ namespace App\Filament\Resources;
 use App\Actions\Stripe\GetProducts;
 use App\Filament\Resources\ProductResource\Pages;
 use App\Filament\Resources\ProductResource\RelationManagers\PricesRelationManager;
+use App\Models\Feature;
 use App\Models\Product;
 use Filament\Forms;
+use Filament\Forms\Components\Actions\Action;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Form;
 use Filament\Forms\Get;
 use Filament\Resources\Resource;
@@ -81,6 +84,56 @@ class ProductResource extends Resource
                         PrettyJson::make('package_dimensions')
                             ->label('Package Dimensions')
                             ->disabled(),
+                    ])->columns(3),
+
+                Forms\Components\Section::make('Features')
+                    ->schema([
+                        Repeater::make('features')
+                            ->label('Features')
+                            ->relationship('featureProducts')
+                            ->schema([
+                                Forms\Components\Select::make('feature_id')
+                                    ->label('Feature')
+                                    ->options(Feature::query()->pluck('name', 'id'))
+                                    ->required()
+                                    ->reactive()
+                                    ->afterStateUpdated(function ($state, Forms\Set $set, Forms\Get $get) {
+                                        $set('unit_amount', Feature::find($state)->unit_amount ?? 0);
+                                    })
+                                    ->distinct()
+                                    ->disableOptionsWhenSelectedInSiblingRepeaterItems()
+                                    ->searchable()
+                                    ->columnSpan(5),
+                                Forms\Components\TextInput::make('unit_amount')
+                                    ->label('Unit Amount')
+                                    ->dehydrated()
+                                    ->numeric()
+                                    ->required()
+                                    ->columnSpan(1),
+                            ])->columns(6)
+                            ->extraItemActions([
+                                Action::make('openService')
+                                    ->tooltip('Abrir serviço')
+                                    ->icon('heroicon-m-arrow-top-right-on-square')
+                                    ->url(function (array $arguments, Repeater $component): ?string {
+                                        $itemData = $component->getRawItemState($arguments['item']);
+
+                                        $service = Feature::find($itemData['feature_id']);
+                                        if (! $service) {
+                                            return null;
+                                        }
+
+                                        return '';
+
+                                        //return ServiceResource::getUrl('edit', ['record' => $service]);
+                                    }, shouldOpenInNewTab: true)
+                                    ->hidden(fn(array $arguments, Repeater $component): bool => blank($component->getRawItemState($arguments['item'])['feature_id'])),
+                            ])
+                            ->orderColumn('sort')
+                            ->defaultItems(1)
+                            ->hiddenLabel()
+                            ->columnSpanFull()
+                            ->required(),
                     ])->columns(3),
 
                 Forms\Components\Section::make('Tax and URL Information')

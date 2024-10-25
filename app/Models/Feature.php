@@ -17,6 +17,7 @@ class Feature extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'stripe_id',
         'price_id',
         'product_id',
         'stripe_price',
@@ -26,7 +27,7 @@ class Feature extends Model
         'unlimited',
         'meteread',
         'unit',
-        'price',
+        'unit_amount',
     ];
 
     /**
@@ -39,7 +40,7 @@ class Feature extends Model
         'resetable' => 'boolean',
         'unlimited' => 'boolean',
         'meteread' => 'boolean',
-        'price' => 'decimal',
+        'unit_amount' => 'integer',
     ];
 
     public function price(): BelongsTo
@@ -47,8 +48,16 @@ class Feature extends Model
         return $this->belongsTo(Price::class);
     }
 
+    public function product(): BelongsTo
+    {
+        return $this->belongsTo(Product::class);
+    }
+
     public function products(): BelongsToMany
     {
-        return $this->belongsToMany(Feature::class, 'product_feature');
+        return $this->belongsToMany(Product::class)
+            ->using(FeatureProduct::class)
+            ->withPivot('unit_amount', 'sort')
+            ->withTimestamps();
     }
 }

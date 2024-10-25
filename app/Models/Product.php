@@ -51,16 +51,16 @@ class Product extends Model
         'livemode' => 'boolean',
     ];
 
-    public function productFeatures(): HasMany
+    public function featureProducts(): HasMany
     {
-        return $this->hasMany(ProductFeature::class);
+        return $this->hasMany(FeatureProduct::class);
     }
 
     public function features(): BelongsToMany
     {
         return $this->belongsToMany(Feature::class)
-            ->using(ProductFeature::class)
-            ->withPivot('value', 'sort')
+            ->using(FeatureProduct::class)
+            ->withPivot('unit_amount', 'sort')
             ->withTimestamps();
     }
 
