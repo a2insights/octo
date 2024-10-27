@@ -19,6 +19,8 @@ class PriceResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
 
+    protected static ?string $navigationGroup = 'Stripe';
+
     public static function form(Form $form): Form
     {
         $prices = Price::pluck('nickname', 'stripe_id');

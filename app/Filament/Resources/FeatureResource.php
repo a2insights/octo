@@ -19,6 +19,8 @@ class FeatureResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-puzzle-piece';
 
+    protected static ?string $navigationGroup = 'Stripe';
+
     public static function form(Form $form): Form
     {
         $features = Feature::pluck('name', 'stripe_id');
@@ -68,6 +70,13 @@ class FeatureResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('stripe_id')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('product.name')
+                    ->searchable(),
+                Tables\Columns\IconColumn::make('resetable'),
+                Tables\Columns\IconColumn::make('unlimited'),
+                Tables\Columns\IconColumn::make('meteread'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

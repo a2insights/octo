@@ -19,6 +19,8 @@ class BillableResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-users';
 
+    protected static ?string $navigationGroup = 'Stripe';
+
     public static function form(Form $form): Form
     {
         $billables = Billable::pluck('name', 'stripe_id');
@@ -54,7 +56,6 @@ class BillableResource extends Resource
                             ->maxLength(255),
                     ])->columns(3),
 
-                // Seção para saldo e configurações
                 Forms\Components\Section::make('Balance and Settings')
                     ->schema([
                         Forms\Components\TextInput::make('balance')
@@ -66,7 +67,6 @@ class BillableResource extends Resource
                             ->readonly(),
                     ])->columns(3),
 
-                // Seção para informações adicionais
                 Forms\Components\Section::make('Additional Information')
                     ->schema([
                         PrettyJson::make('address')->disabled(),
@@ -95,7 +95,8 @@ class BillableResource extends Resource
                         Forms\Components\TextInput::make('coupon')
                             ->readonly()
                             ->maxLength(255),
-                        Forms\Components\DateTimePicker::make('created')->readonly(),
+                        Forms\Components\DateTimePicker::make('created')
+                            ->readonly(),
                     ])->columns(3),
             ]);
     }
@@ -111,17 +112,13 @@ class BillableResource extends Resource
                 Tables\Columns\TextColumn::make('balance')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\IconColumn::make('delinquent')
-                    ->boolean(),
-                Tables\Columns\TextColumn::make('invoice_prefix')
-                    ->searchable(),
                 Tables\Columns\IconColumn::make('livemode')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('next_invoice_sequence')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created')
-                    ->numeric()
+                    ->dateTime()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

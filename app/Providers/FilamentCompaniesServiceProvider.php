@@ -174,7 +174,11 @@ class FilamentCompaniesServiceProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
                 \Cog\Laravel\Ban\Http\Middleware\ForbidBannedUser::class,
-            ])->userMenuItems([
+            ])
+            ->tenantMiddleware([
+                \Hasnayeen\Themes\Http\Middleware\SetTheme::class
+            ])
+            ->userMenuItems([
                 'plans' => MenuItem::make()
                     ->label('Plans')
                     ->url(fn () => Plans::getUrl())
