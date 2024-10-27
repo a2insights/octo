@@ -2,11 +2,13 @@
 
 namespace App\Providers;
 
+use App\Filament\Pages\Plans;
 use App\Http\Middleware\TenancyInitialize;
 use App\Models\Company;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\MenuItem;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -172,6 +174,11 @@ class FilamentCompaniesServiceProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
                 \Cog\Laravel\Ban\Http\Middleware\ForbidBannedUser::class,
+            ])->userMenuItems([
+                'plans' => MenuItem::make()
+                    ->label('Plans')
+                    ->url(fn () => Plans::getUrl())
+                    ->icon('heroicon-o-credit-card'),
             ]);
     }
 

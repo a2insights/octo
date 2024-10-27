@@ -23,14 +23,16 @@ use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Support\Str;
 use Stripe\Subscription as StripeSubscription;
 
-class Billing extends Page
+class Plans extends Page
 {
     use InteractsWithForms;
     use InteractsWithInfolists;
 
-    protected static string $view = 'filament.pages.billing';
+    protected static string $view = 'filament.pages.plans';
 
     protected static ?string $navigationIcon = 'heroicon-o-credit-card';
+
+    protected static bool $shouldRegisterNavigation = false;
 
     public function getTitle(): string|Htmlable
     {
@@ -106,7 +108,7 @@ class Billing extends Page
             ]);
     }
 
-    private static function subscribe($record, $action): void
+    private static function subscribe($record, $action)
     {
         $billable = auth()->user()->billable;
         $subscription = $billable->subscriptions()
@@ -123,10 +125,13 @@ class Billing extends Page
         } else {
             CreateSubscription::run(auth()->user(), $billable, $record);
         }
+
+        sleep(2);
+
+        return redirect(Plans::getUrl());
     }
 
-    // CancelSubscription
-    private static function cancel($record, $action): void
+    private static function cancel($record, $action)
     {
         $billable = auth()->user()->billable;
 
@@ -163,5 +168,9 @@ class Billing extends Page
 
             $action->cancel();
         }
+
+        sleep(2);
+
+        return redirect(Plans::getUrl());
     }
 }

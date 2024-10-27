@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use A21ns1g4ts\Billing\Saas;
 use App\BRL;
 use App\Models\Company;
 use App\Models\User;
@@ -46,26 +45,6 @@ class AppServiceProvider extends ServiceProvider
         Gate::policy(Schedule::class, \App\Policies\SchedulePolicy::class);
         Gate::policy(Activity::class, ActivityPolicy::class);
         Gate::policy(Exception::class, \App\Policies\ExceptionPolicy::class);
-
-        // $freeStripePlan = Saas::plan('Free Plan', 'price_1QBHY2KBVLqcMf8uAIR0OecB')
-        //     ->features([
-        //         Saas::feature('Build Minutes', 'build.minutes', 10),
-        //         Saas::feature('Seats', 'teams', 5)->notResettable(),
-        //     ]);
-        // $freeStripePlan = Saas::plan('Pro', 'price_1QBHY2KBVLqcMf8uAIR0sOecB')
-        //     ->features([
-        //         Saas::feature('Build Minutes', 'build.minutes', 10),
-        //         Saas::feature('Seats', 'teams', 5)->notResettable(),
-        //     ]);
-
-        // Saas::plan('Monthly $10', static::$billingMonthlyPlanId)
-        //     ->inheritFeaturesFromPlan($freeStripePlan, [
-        //         Saas::feature('Build Minutes', 'build.minutes', 3000),
-        //         Saas::meteredFeature('Metered Build Minutes', 'metered.build.minutes', 3000)
-        //             ->meteredPrice(static::$billingMeteredPriceId, 0.1, 'minute'),
-        //         Saas::feature('Seats', 'teams', 10)->notResettable(),
-        //         Saas::feature('Mails', 'mails', 300),
-        //     ]);
 
         Event::listen(function (Registered $event) {
             $user = $event->getUser();

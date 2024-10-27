@@ -3,7 +3,7 @@
 namespace App\Actions\Stripe;
 
 use App\Actions\GetOrCreateBillable;
-use App\Filament\Pages\Billing;
+use App\Filament\Pages\Plans;
 use App\Models\Price;
 use App\Models\User;
 use Illuminate\Support\Facades\Redirect;
@@ -17,7 +17,7 @@ class Checkout extends StripeBaseAction
     /**
      * Handle the checkout session creation.
      */
-    public function handle(User $user, Price $price, string $mode = 'subscription', array $data = []): void
+    public function handle(User $user, Price $price, string $mode = 'setup', array $data = [])
     {
         $meteredPrices = $price->productt->features()
             ->whereNotNull('stripe_price')
@@ -45,11 +45,12 @@ class Checkout extends StripeBaseAction
             'line_items' => $lineItems,
             'mode' => $mode,
             'ui_mode' => 'hosted',
-            'success_url' => Billing::getUrl(),
-            'cancel_url' => Billing::getUrl(),
+            'success_url' => Plans::getUrl(),
+            'cancel_url' => Plans::getUrl(),
         ]);
 
         $checkoutSession = $this->stripe->checkout->sessions->create($data);
-        Redirect::to($checkoutSession->url, 303);
+
+        return Redirect::to($checkoutSession->url, 303);
     }
 }
