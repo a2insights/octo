@@ -17,6 +17,7 @@ class Product extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'type',
         'stripe_id',
         'name',
         'description',
@@ -60,7 +61,7 @@ class Product extends Model
     {
         return $this->belongsToMany(Feature::class)
             ->using(FeatureProduct::class)
-            ->withPivot('value', 'unit_amount', 'sort')
+            ->withPivot('value', 'unit_amount', 'sort', 'price_id', 'product_id', 'feature_id', 'meteread', 'unlimited', 'resetable')
             ->withTimestamps();
     }
 

@@ -31,6 +31,7 @@ return new class extends Migration
             $table->json('custom_unit_amount')->nullable();
             $table->boolean('livemode')->nullable();
             $table->string('lookup_key')->nullable();
+            $table->boolean('transfer_lookup_key')->nullable();
             $table->string('tax_behavior')->nullable();
             $table->json('tiers')->nullable();
             $table->string('tiers_mode')->nullable();

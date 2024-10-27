@@ -6,6 +6,7 @@ use App\Actions\Stripe\GetProducts;
 use App\Filament\Resources\ProductResource\Pages;
 use App\Filament\Resources\ProductResource\RelationManagers\PricesRelationManager;
 use App\Models\Feature;
+use App\Models\Price;
 use App\Models\Product;
 use Filament\Forms;
 use Filament\Forms\Components\Actions\Action;
@@ -34,18 +35,21 @@ class ProductResource extends Resource
                         Forms\Components\Select::make('stripe_id')
                             ->label('Stripe Product')
                             ->required()
-                            ->options(fn(Get $get): array => self::getProducts())
-                            ->disableOptionWhen(fn(string $value): bool => $products->has($value))
+                            ->options(fn (Get $get): array => self::getProducts())
+                            ->disableOptionWhen(fn (string $value): bool => $products->has($value))
                             ->searchable()
                             ->columnSpan(3),
                         Forms\Components\TextInput::make('stripe_id')
                             ->label('Stripe ID')
                             ->maxLength(255)
                             ->readOnly(),
+                        Forms\Components\Select::make('type')
+                            ->label('Type')
+                            ->options(collect(['plan', 'feature', 'service', 'sku'])->mapWithKeys(fn ($type) => [$type => ucfirst($type)])),
                         Forms\Components\TextInput::make('name')
                             ->label('Product Name')
                             ->maxLength(255)
-                            ->required(),
+                            ->nullable(),
                     ])->columns(3),
 
                 Forms\Components\Section::make('Product Attributes')
@@ -92,34 +96,48 @@ class ProductResource extends Resource
                             ->label('Features')
                             ->relationship('featureProducts')
                             ->schema([
-                                Forms\Components\Select::make('feature_id')
-                                    ->label('Feature')
-                                    ->options(Feature::query()->pluck('name', 'id'))
-                                    ->required()
-                                    ->reactive()
-                                    ->afterStateUpdated(function ($state, Forms\Set $set, Forms\Get $get) {
-                                        $feature = Feature::find($state);
+                                Forms\Components\Group::make([
+                                    Forms\Components\Select::make('feature_id')
+                                        ->label('Feature')
+                                        ->options(Feature::query()->pluck('name', 'id'))
+                                        ->required()
+                                        ->distinct()
+                                        ->disableOptionsWhenSelectedInSiblingRepeaterItems()
+                                        ->searchable()
+                                        ->columnSpan(2),
+                                    Forms\Components\Select::make('price_id')
+                                        ->label('Price')
+                                        ->options(Price::query()->pluck('nickname', 'id'))
+                                        ->distinct()
+                                        ->disableOptionsWhenSelectedInSiblingRepeaterItems()
+                                        ->reactive()
+                                        ->afterStateUpdated(function ($state, Forms\Set $set, Forms\Get $get) {
+                                            $price = Price::find($state);
 
-                                        $set('unit_amount', $feature->unit_amount ?? 0);
-                                        $set('value', $feature->value ?? 0);
-                                    })
-                                    ->distinct()
-                                    ->disableOptionsWhenSelectedInSiblingRepeaterItems()
-                                    ->searchable()
-                                    ->columnSpan(5),
-                                Forms\Components\TextInput::make('unit_amount')
-                                    ->label('Unit Amount')
-                                    ->dehydrated()
-                                    ->numeric()
-                                    ->nullable()
-                                    ->columnSpan(1),
-                                Forms\Components\TextInput::make('value')
-                                    ->label('Value')
-                                    ->dehydrated()
-                                    ->numeric()
-                                    ->nullable()
-                                    ->columnSpan(1),
-                            ])->columns(7)
+                                            $set('unit_amount', $price?->unit_amount);
+                                        })
+                                        ->searchable()
+                                        ->columnSpan(2),
+                                    Forms\Components\TextInput::make('unit_amount')
+                                        ->label('Unit Amount')
+                                        ->numeric()
+                                        ->nullable()
+                                        ->columnSpan(1),
+                                    Forms\Components\TextInput::make('value')
+                                        ->label('Value')
+                                        ->numeric()
+                                        ->nullable()
+                                        ->columnSpan(1),
+                                ])->columns(6),
+                                Forms\Components\Group::make([
+                                    Forms\Components\Toggle::make('resetable')
+                                        ->inline(false),
+                                    Forms\Components\Toggle::make('unlimited')
+                                        ->inline(false),
+                                    Forms\Components\Toggle::make('meteread')
+                                        ->inline(false),
+                                ])->columns(10),
+                            ])
                             ->extraItemActions([
                                 Action::make('openService')
                                     ->tooltip('Abrir serviço')
@@ -134,10 +152,10 @@ class ProductResource extends Resource
 
                                         return FeatureResource::getUrl('edit', ['record' => $feature]);
                                     }, shouldOpenInNewTab: true)
-                                    ->hidden(fn(array $arguments, Repeater $component): bool => blank($component->getRawItemState($arguments['item'])['feature_id'])),
+                                    ->hidden(fn (array $arguments, Repeater $component): bool => blank($component->getRawItemState($arguments['item'])['feature_id'])),
                             ])
                             ->orderColumn('sort')
-                            ->defaultItems(1)
+                            ->defaultItems(0)
                             ->hiddenLabel()
                             ->columnSpanFull(),
                     ])->columns(3),
@@ -164,9 +182,11 @@ class ProductResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('stripe_id')
-                    ->searchable(),
+
                 Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('type'),
+                Tables\Columns\TextColumn::make('stripe_id')
                     ->searchable(),
                 Tables\Columns\IconColumn::make('active')
                     ->boolean(),
@@ -215,7 +235,7 @@ class ProductResource extends Resource
     public static function getProducts(): array
     {
         return collect(GetProducts::run(100))
-            ->map(fn($product) => [
+            ->map(fn ($product) => [
                 'id' => $product->id,
                 'text' => "{$product->name} - {$product->id}",
             ])

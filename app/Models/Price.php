@@ -34,6 +34,7 @@ class Price extends Model
         'custom_unit_amount',
         'livemode',
         'lookup_key',
+        'transfer_lookup_key',
         'tax_behavior',
         'tiers',
         'tiers_mode',

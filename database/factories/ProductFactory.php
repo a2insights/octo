@@ -20,6 +20,7 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
+            'type' => $this->faker->randomElement(['plan', 'service', 'sku', 'feature']),
             'stripe_id' => $this->faker->word(),
             'name' => $this->faker->name(),
             'active' => $this->faker->boolean(),

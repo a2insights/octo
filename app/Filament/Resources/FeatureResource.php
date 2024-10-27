@@ -34,21 +34,13 @@ class FeatureResource extends Resource
                             ->disableOptionWhen(fn (string $value): bool => $features->has($value))
                             ->searchable()
                             ->columnSpan(2),
-                        Forms\Components\Select::make('stripe_price')
-                            ->options(fn (Get $get): array => self::getPrices())
-                            ->disableOptionWhen(fn (string $value): bool => $prices->has($value))
-                            ->searchable()
-                            ->columnSpan(1),
                     ])->columns(3),
 
                 Forms\Components\Section::make('Price and Product Information')
                     ->schema([
-                        Forms\Components\Select::make('price_id')
-                            ->nullable()
-                            ->relationship('price', 'id'),
                         Forms\Components\Select::make('product_id')
                             ->relationship('product', 'name')
-                            ->required(),
+                            ->nullable(),
                         Forms\Components\TextInput::make('value')
                             ->numeric(),
                     ])->columns(3),
@@ -67,14 +59,6 @@ class FeatureResource extends Resource
                                 ->required(),
                         ]),
                     ])->columns(3),
-
-                Forms\Components\Section::make('Unit and Amount')
-                    ->schema([
-                        Forms\Components\TextInput::make('unit')
-                            ->maxLength(255),
-                        Forms\Components\TextInput::make('unit_amount')
-                            ->numeric(),
-                    ])->columns(2),
             ]);
     }
 
@@ -82,22 +66,8 @@ class FeatureResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('stripe_price')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('value')
-                    ->numeric()
-                    ->sortable(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\IconColumn::make('resetable')
-                    ->boolean(),
-                Tables\Columns\IconColumn::make('unlimited')
-                    ->boolean(),
-                Tables\Columns\IconColumn::make('meteread')
-                    ->boolean(),
-                Tables\Columns\TextColumn::make('unit_amount')
-                    ->numeric()
-                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

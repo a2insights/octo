@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use A21ns1g4ts\Billing\Saas;
+use App\BRL;
 use App\Models\Company;
 use App\Models\User;
 use App\Policies\ActivityPolicy;
@@ -94,5 +95,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Stripe::setApiKey(config('services.stripe.secret'));
+
+        currencies()->add(new BRL);
     }
 }

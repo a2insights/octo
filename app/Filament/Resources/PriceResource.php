@@ -67,16 +67,32 @@ class PriceResource extends Resource
 
             Forms\Components\Section::make('Advanced Settings')
                 ->schema([
-                    Forms\Components\TextInput::make('billing_scheme')->readonly(),
-                    Forms\Components\DateTimePicker::make('created')->readonly(),
-                    PrettyJson::make('currency_options')->disabled(),
-                    PrettyJson::make('custom_unit_amount')->disabled(),
-                    Forms\Components\Toggle::make('livemode')->disabled(),
-                    Forms\Components\TextInput::make('lookup_key')->maxLength(255)->readonly(),
-                    Forms\Components\TextInput::make('tax_behavior')->maxLength(255)->readonly(),
-                    Forms\Components\TextInput::make('tiers_mode')->maxLength(255)->readonly(),
-                    PrettyJson::make('transform_quantity')->disabled(),
-                    Forms\Components\TextInput::make('unit_amount_decimal')->maxLength(255)->readonly(),
+                    Forms\Components\TextInput::make('billing_scheme')
+                        ->readonly(),
+                    Forms\Components\DateTimePicker::make('created')
+                        ->readonly(),
+                    PrettyJson::make('currency_options')
+                        ->disabled(),
+                    PrettyJson::make('custom_unit_amount')
+                        ->disabled(),
+                    Forms\Components\Toggle::make('livemode')
+                        ->disabled(),
+                    Forms\Components\Toggle::make('transfer_lookup_key')
+                        ->disabled(),
+                    Forms\Components\TextInput::make('lookup_key')
+                        ->maxLength(255)
+                        ->readonly(),
+                    Forms\Components\TextInput::make('tax_behavior')
+                        ->maxLength(255)
+                        ->readonly(),
+                    Forms\Components\TextInput::make('tiers_mode')
+                        ->maxLength(255)
+                        ->readonly(),
+                    PrettyJson::make('transform_quantity')
+                        ->disabled(),
+                    Forms\Components\TextInput::make('unit_amount_decimal')
+                        ->maxLength(255)
+                        ->readonly(),
                 ])->columns(3),
         ]);
     }

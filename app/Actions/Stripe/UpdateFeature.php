@@ -16,11 +16,8 @@ class UpdateFeature extends StripeBaseAction
             'active' => $data['active'],
         ];
 
-        foreach ($data as $key => $value) {
-            if (is_null($value)) {
-                unset($data[$key]);
-            }
-        }
+        // Stripe api will ignore keys not in $data
+        $data = array_filter($data, fn ($value) => ! is_null($value));
 
         return $this->stripe->entitlements->features->update($stripeId, $data);
     }

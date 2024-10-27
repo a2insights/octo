@@ -69,7 +69,6 @@ class Subscription extends Model
         'cancel_at_period_end' => 'boolean',
         'current_period_end' => 'integer',
         'current_period_start' => 'integer',
-        'items' => 'array',
         'metadata' => 'array',
         'pending_update' => 'array',
         'add_invoice_items' => 'array',

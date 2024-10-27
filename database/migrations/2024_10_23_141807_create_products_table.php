@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('type')->nullable(); // plan, service, sku, feature
             $table->string('stripe_id')->nullable();
             $table->string('name')->nullable();
             $table->boolean('active')->nullable()->default(true);

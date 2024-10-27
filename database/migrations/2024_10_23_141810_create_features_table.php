@@ -16,20 +16,14 @@ return new class extends Migration
         Schema::create('features', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Price::class)->nullable()->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(Product::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Product::class)->nullable()->constrained()->cascadeOnDelete();
             $table->string('stripe_id')->nullable();
             $table->boolean('active')->default(true);
             $table->json('metadata')->nullable();
             $table->string('stripe_price')->nullable();
             $table->boolean('livemode')->default(false);
             $table->string('lookup_key')->nullable();
-            $table->bigInteger('value')->nullable();
             $table->string('name')->nullable();
-            $table->boolean('resetable')->default(false);
-            $table->boolean('unlimited')->default(false);
-            $table->boolean('meteread')->default(false);
-            $table->string('unit')->nullable();
-            $table->integer('unit_amount')->nullable();
             $table->timestamps();
         });
     }

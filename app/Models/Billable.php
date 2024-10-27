@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Stripe\Subscription as StripeSubscription;
 
 class Billable extends Model
 {
@@ -71,13 +72,20 @@ class Billable extends Model
 
     public function subscribed(string $stripePrice): bool
     {
-       $subscription = $this->subscriptions()->where('stripe_price', $stripePrice)->first();
-       if (!$subscription) {
-           $subscription = $this->subscriptions()->whereHas('items', function ($query) use ($stripePrice) {
-               $query->where('stripe_price', $stripePrice);
-           });
-       }
+        $subscription = $this->subscriptions()
+            ->whereStatus(StripeSubscription::STATUS_ACTIVE)
+            ->where('stripe_price', $stripePrice)
+            ->first();
 
-       return $subscription ? true : false;
+        if (! $subscription) {
+            $subscription = $this->subscriptions()
+                ->whereStatus(StripeSubscription::STATUS_ACTIVE)
+                ->whereHas('items', function ($query) use ($stripePrice) {
+                    $query->where('stripe_price', $stripePrice);
+                })
+                ->first();
+        }
+
+        return $subscription ? true : false;
     }
 }

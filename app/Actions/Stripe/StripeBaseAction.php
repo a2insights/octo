@@ -12,4 +12,9 @@ abstract class StripeBaseAction
     {
         $this->stripe = new StripeClient(config('services.stripe.secret'));
     }
+
+    protected function prepareData(array $data): array
+    {
+        return array_filter($data, fn ($value) => ! is_null($value));
+    }
 }

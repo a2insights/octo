@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Redirect;
 use Lorisleiva\Actions\Concerns\AsAction;
 
+// TODO: Test
 class Checkout extends StripeBaseAction
 {
     use AsAction;
@@ -20,7 +21,7 @@ class Checkout extends StripeBaseAction
     {
         $meteredPrices = $price->productt->features()
             ->whereNotNull('stripe_price')
-            ->where('meteread', true)
+            ->wherePivot('meteread', true)
             ->pluck('stripe_price')
             ->toArray();
 

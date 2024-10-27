@@ -22,7 +22,11 @@ class FeatureProduct extends Pivot
     protected $fillable = [
         'product_id',
         'feature_id',
+        'price_id',
         'sort',
+        'unlimited',
+        'meteread',
+        'resetable',
         'value',
         'unit_amount',
     ];
@@ -35,6 +39,9 @@ class FeatureProduct extends Pivot
     protected $casts = [
         'sort' => 'integer',
         'value' => 'integer',
+        'unlimited' => 'boolean',
+        'meteread' => 'boolean',
+        'resetable' => 'boolean',
         'unit_amount' => 'integer',
     ];
 
@@ -46,5 +53,10 @@ class FeatureProduct extends Pivot
     public function feature(): BelongsTo
     {
         return $this->belongsTo(Feature::class);
+    }
+
+    public function price(): BelongsTo
+    {
+        return $this->belongsTo(Price::class);
     }
 }
