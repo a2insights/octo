@@ -1,6 +1,6 @@
 <?php
 
-use App\Actions\Stripe\CreatePrice;
+use A21ns1g4ts\FilamentStripe\Actions\Stripe\CreatePrice;
 
 test('can create a price', function () {
     CreatePrice::mock()

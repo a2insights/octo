@@ -1,6 +1,6 @@
 <?php
 
-use App\Actions\Stripe\UpdateProduct;
+use A21ns1g4ts\FilamentStripe\Actions\Stripe\UpdateProduct;
 
 test('can update a product', function () {
     UpdateProduct::mock()

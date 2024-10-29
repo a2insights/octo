@@ -1,6 +1,6 @@
 <?php
 
-use App\Actions\Stripe\GetCustomers;
+use A21ns1g4ts\FilamentStripe\Actions\Stripe\GetCustomers;
 
 test('can list prices', function () {
     GetCustomers::mock()

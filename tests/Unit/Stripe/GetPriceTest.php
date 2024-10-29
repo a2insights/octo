@@ -1,6 +1,6 @@
 <?php
 
-use App\Actions\Stripe\GetPrice;
+use A21ns1g4ts\FilamentStripe\Actions\Stripe\GetPrice;
 
 test('can get a price', function () {
     GetPrice::mock()

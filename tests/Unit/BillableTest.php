@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Billable;
+use A21ns1g4ts\FilamentStripe\Models\Billable;
 
 it('can create a billable', function () {
     $billable = Billable::create([

@@ -1,6 +1,6 @@
 <?php
 
-use App\Actions\Stripe\GetCustomer;
+use A21ns1g4ts\FilamentStripe\Actions\Stripe\GetCustomer;
 
 test('can get a customer', function () {
     GetCustomer::mock()

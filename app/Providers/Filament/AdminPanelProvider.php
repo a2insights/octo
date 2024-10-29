@@ -2,7 +2,6 @@
 
 namespace App\Providers\Filament;
 
-use App\Filament\Pages\Plans;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -87,6 +86,7 @@ class AdminPanelProvider extends PanelProvider
                 \Octo\Features\FeaturesPlugin::make(),
                 \Octo\Settings\SettingsPlugin::make(),
                 \Octo\System\SystemPlugin::make(),
+                \A21ns1g4ts\FilamentStripe\FilamentStripePlugin::make(),
             ])
             ->widgets([
                 // Widgets\AccountWidget::class,
@@ -108,11 +108,6 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
                 \Cog\Laravel\Ban\Http\Middleware\ForbidBannedUser::class,
-            ])->userMenuItems([
-                'plans' => MenuItem::make()
-                    ->label('Plans')
-                    ->url(fn () => Plans::getUrl())
-                    ->icon('heroicon-o-credit-card'),
             ]);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-use App\Actions\Stripe\CreateFeature;
+use A21ns1g4ts\FilamentStripe\Actions\Stripe\CreateFeature;
 
 test('can create a feature', function () {
     CreateFeature::mock()

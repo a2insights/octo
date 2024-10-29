@@ -1,6 +1,6 @@
 <?php
 
-use App\Actions\Stripe\GetProduct;
+use A21ns1g4ts\FilamentStripe\Actions\Stripe\GetProduct;
 
 test('can get a product', function () {
     GetProduct::mock()

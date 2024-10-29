@@ -1,6 +1,6 @@
 <?php
 
-use App\Actions\Stripe\CreateProduct;
+use A21ns1g4ts\FilamentStripe\Actions\Stripe\CreateProduct;
 
 test('can create a product', function () {
     CreateProduct::mock()

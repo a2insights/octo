@@ -1,6 +1,6 @@
 <?php
 
-use App\Actions\Stripe\CreateCustomer;
+use A21ns1g4ts\FilamentStripe\Actions\Stripe\CreateCustomer;
 
 test('can create a customer', function () {
     CreateCustomer::mock()

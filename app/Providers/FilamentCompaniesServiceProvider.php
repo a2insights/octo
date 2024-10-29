@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Filament\Pages\Plans;
 use App\Http\Middleware\TenancyInitialize;
 use App\Models\Company;
 use Filament\Http\Middleware\Authenticate;
@@ -47,7 +46,6 @@ use Wallo\FilamentCompanies\FilamentCompanies;
 use Wallo\FilamentCompanies\Pages\Auth\Login;
 use Wallo\FilamentCompanies\Pages\Company\CompanySettings;
 use Wallo\FilamentCompanies\Pages\Company\CreateCompany;
-use Wallo\FilamentCompanies\Pages\User\Profile;
 
 class FilamentCompaniesServiceProvider extends PanelProvider
 {
@@ -154,6 +152,7 @@ class FilamentCompaniesServiceProvider extends PanelProvider
                 \Octo\Settings\SettingsPlugin::make(),
                 \Octo\System\SystemPlugin::make(),
                 \Octo\Tenant\TenantPlugin::make(),
+                \A21ns1g4ts\FilamentStripe\FilamentStripePlugin::make(),
             ])
             ->widgets([
                 // Widgets\AccountWidget::class,
@@ -177,12 +176,6 @@ class FilamentCompaniesServiceProvider extends PanelProvider
             ])
             ->tenantMiddleware([
                 \Hasnayeen\Themes\Http\Middleware\SetTheme::class
-            ])
-            ->userMenuItems([
-                'plans' => MenuItem::make()
-                    ->label('Plans')
-                    ->url(fn () => Plans::getUrl())
-                    ->icon('heroicon-o-credit-card'),
             ]);
     }
 

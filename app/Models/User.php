@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use A21ns1g4ts\FilamentStripe\Models\Billable;
 use Cog\Contracts\Ban\Bannable as BannableContract;
 use Cog\Laravel\Ban\Traits\Bannable;
 use Filament\Models\Contracts\FilamentUser;

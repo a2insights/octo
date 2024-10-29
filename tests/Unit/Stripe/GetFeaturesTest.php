@@ -1,6 +1,6 @@
 <?php
 
-use App\Actions\Stripe\GetFeatures;
+use A21ns1g4ts\FilamentStripe\Actions\Stripe\GetFeatures;
 
 test('can list features', function () {
     GetFeatures::mock()
