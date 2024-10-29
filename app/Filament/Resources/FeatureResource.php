@@ -12,6 +12,7 @@ use Filament\Forms\Get;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Novadaemon\FilamentPrettyJson\PrettyJson;
 
 class FeatureResource extends Resource
 {
@@ -32,8 +33,8 @@ class FeatureResource extends Resource
                     ->schema([
                         Forms\Components\Select::make('stripe_id')
                             ->required()
-                            ->options(fn (Get $get): array => self::getFeatures())
-                            ->disableOptionWhen(fn (string $value): bool => $features->has($value))
+                            ->options(fn(Get $get): array => self::getFeatures())
+                            ->disableOptionWhen(fn(string $value): bool => $features->has($value))
                             ->searchable()
                             ->columnSpan(2),
                     ])->columns(3),
@@ -43,23 +44,20 @@ class FeatureResource extends Resource
                         Forms\Components\Select::make('product_id')
                             ->relationship('product', 'name')
                             ->nullable(),
-                        Forms\Components\TextInput::make('value')
-                            ->numeric(),
                     ])->columns(3),
 
                 Forms\Components\Section::make('Product Settings')
                     ->schema([
                         Forms\Components\TextInput::make('name')
-                            ->maxLength(255)
-                            ->columnSpanFull(),
-                        Forms\Components\Group::make([
-                            Forms\Components\Toggle::make('resetable')
-                                ->required(),
-                            Forms\Components\Toggle::make('unlimited')
-                                ->required(),
-                            Forms\Components\Toggle::make('meteread')
-                                ->required(),
-                        ]),
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('lookup_key')
+                            ->maxLength(255),
+                        Forms\Components\Toggle::make('active')
+                            ->disabled(),
+                        PrettyJson::make('metadata')
+                            ->disabled(),
+                        Forms\Components\Toggle::make('livemode')
+                            ->disabled(),
                     ])->columns(3),
             ]);
     }
@@ -118,7 +116,7 @@ class FeatureResource extends Resource
     public static function getFeatures(): array
     {
         return collect(GetFeatures::run(100))
-            ->map(fn ($price) => [
+            ->map(fn($price) => [
                 'id' => $price->id,
                 'text' => "{$price->name} - {$price->id}",
             ])
@@ -129,7 +127,7 @@ class FeatureResource extends Resource
     public static function getPrices(): array
     {
         return collect(GetPrices::run(100))
-            ->map(fn ($price) => [
+            ->map(fn($price) => [
                 'id' => $price->id,
                 'text' => "{$price->nickname} - {$price->id}",
             ])

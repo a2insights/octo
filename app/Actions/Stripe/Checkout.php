@@ -19,7 +19,7 @@ class Checkout extends StripeBaseAction
      */
     public function handle(User $user, Price $price, string $mode = 'setup', array $data = [])
     {
-        $meteredPrices = $price->productt->features()
+        $meteredPrices = $price->product->features()
             ->whereNotNull('stripe_price')
             ->wherePivot('meteread', true)
             ->pluck('stripe_price')

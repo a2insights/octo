@@ -19,7 +19,7 @@ class CreateSubscription extends StripeBaseAction
             return Checkout::run($user, $price, $mode, $data);
         }
 
-        $meteredPrices = $price->productt->features()
+        $meteredPrices = $price->product->features()
             ->wherePivot('price_id', '!=', null)
             ->wherePivot('meteread', true)
             ->get()
@@ -34,11 +34,11 @@ class CreateSubscription extends StripeBaseAction
             ],
         ];
 
-        foreach ($meteredPrices as $meteredPrice) {
-            $items[] = [
-                'price' => $meteredPrice,
-            ];
-        }
+        // foreach ($meteredPrices as $meteredPrice) {
+        //     $items[] = [
+        //         'price' => $meteredPrice,
+        //     ];
+        // }
 
         $this->stripe->subscriptions->create([
             'customer' => $billable->stripe_id,

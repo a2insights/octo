@@ -39,16 +39,18 @@ class PriceResource extends Resource
                         ->required(),
                     Forms\Components\TextInput::make('nickname')
                         ->maxLength(255),
+                    Forms\Components\TextInput::make('lookup_key')
+                        ->maxLength(255),
                     Forms\Components\Toggle::make('active')
-                        ->disabled(),
-                ])->columns(2),
+                        ->disabled() ,
+                ])->columns(6),
 
             Forms\Components\Section::make('Details')
                 ->schema([
                     Forms\Components\TextInput::make('stripe_id')
                         ->maxLength(255)
                         ->readonly(),
-                    Forms\Components\TextInput::make('product')
+                    Forms\Components\TextInput::make('stripe_product')
                         ->maxLength(255)
                         ->readonly(),
                     Forms\Components\TextInput::make('currency')
@@ -81,9 +83,6 @@ class PriceResource extends Resource
                         ->disabled(),
                     Forms\Components\Toggle::make('transfer_lookup_key')
                         ->disabled(),
-                    Forms\Components\TextInput::make('lookup_key')
-                        ->maxLength(255)
-                        ->readonly(),
                     Forms\Components\TextInput::make('tax_behavior')
                         ->maxLength(255)
                         ->readonly(),

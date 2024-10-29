@@ -21,13 +21,11 @@ class Feature extends Model
         'stripe_id',
         'product_id',
         'stripe_price',
-        'value',
         'name',
-        'resetable',
-        'unlimited',
-        'meteread',
-        'unit',
-        'unit_amount',
+        'lookup_key',
+        'active',
+        'livemode',
+        'metadata',
     ];
 
     /**
@@ -37,10 +35,7 @@ class Feature extends Model
      */
     protected $casts = [
         'value' => 'integer',
-        'resetable' => 'boolean',
-        'unlimited' => 'boolean',
-        'meteread' => 'boolean',
-        'unit_amount' => 'integer',
+        'active' => 'boolean',
     ];
 
     public function product(): BelongsTo
@@ -75,7 +70,7 @@ class Feature extends Model
             return null;
         }
 
-        $pricing = money($amount, Str::upper($currency)).'/'.$billingScheme;
+        $pricing = money($amount, Str::upper($currency)) . '/' . $billingScheme;
 
         return $pricing;
     }

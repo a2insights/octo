@@ -19,7 +19,7 @@ class Price extends Model
     protected $fillable = [
         'product_id',
         'stripe_id',
-        'product',
+        'stripe_product',
         'active',
         'currency',
         'metadata',
@@ -67,10 +67,5 @@ class Price extends Model
     public function features(): HasMany
     {
         return $this->hasMany(Feature::class);
-    }
-
-    public function productt(): BelongsTo
-    {
-        return $this->belongsTo(Product::class, 'product_id');
     }
 }

@@ -38,6 +38,10 @@ class UpFromStripe
 
         // Run the action to get data from Stripe and update the model
         $data = $stripeActionClass::run($stripeId);
+
+        // In price we need transform product to stripe_product
+        $data['stripe_product'] = $data['product'] ?? null;
+
         $model->fill($data->toArray());
         $model->save();
 

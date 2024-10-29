@@ -62,7 +62,7 @@ class Plans extends Page
                 RepeatableEntry::make('plans')
                     ->label('')
                     ->schema([
-                        TextEntry::make('productt.name')
+                        TextEntry::make('product.name')
                             ->hiddenLabel()
                             ->size(TextEntry\TextEntrySize::Large)
                             ->weight(FontWeight::Bold)
@@ -72,7 +72,7 @@ class Plans extends Page
                             ->size(TextEntry\TextEntrySize::Medium)
                             ->weight(FontWeight::SemiBold)
                             ->formatStateUsing(fn ($state, $record) => Money::fromDecimal($state / 100, Str::upper($record->currency))),
-                        RepeatableEntry::make('productt.features')
+                        RepeatableEntry::make('product.features')
                             ->label('Features')
                             ->schema([
                                 TextEntry::make('name')

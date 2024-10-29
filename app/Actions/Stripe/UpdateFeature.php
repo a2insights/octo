@@ -12,8 +12,9 @@ class UpdateFeature extends StripeBaseAction
     {
         $data = [
             'name' => $data['name'],
-            'metadata' => $data['metadata'],
-            'active' => $data['active'],
+            'lookup_key' => $data['lookup_key'],
+            // 'metadata' => $data['metadata'],
+            // 'active' => $data['active'],
         ];
 
         // Stripe api will ignore keys not in $data
