@@ -2,7 +2,11 @@
 
 namespace App\Providers;
 
-use App\BRL;
+use A21ns1g4ts\FilamentStripe\Models\Billable;
+use A21ns1g4ts\FilamentStripe\Models\Feature;
+use A21ns1g4ts\FilamentStripe\Models\Price;
+use A21ns1g4ts\FilamentStripe\Models\Product;
+use A21ns1g4ts\FilamentStripe\Models\Subscription;
 use App\Models\Company;
 use App\Models\User;
 use App\Policies\ActivityPolicy;
@@ -45,6 +49,10 @@ class AppServiceProvider extends ServiceProvider
         Gate::policy(Schedule::class, \App\Policies\SchedulePolicy::class);
         Gate::policy(Activity::class, ActivityPolicy::class);
         Gate::policy(Exception::class, \App\Policies\ExceptionPolicy::class);
+        // Gate::policy(Billable::class, \A21ns1g4ts\FilamentStripe\Policies\BillablePolicy::class);
+        // Gate::policy(Product::class, \A21ns1g4ts\FilamentStripe\Policies\ProductPolicy::class);
+        // Gate::policy(Price::class, \A21ns1g4ts\FilamentStripe\Policies\PricePolicy::class);
+        // Gate::policy(Feature::class, \A21ns1g4ts\FilamentStripe\Policies\FeaturePolicy::class);
 
         Event::listen(function (Registered $event) {
             $user = $event->getUser();
@@ -72,9 +80,5 @@ class AppServiceProvider extends ServiceProvider
 
             $company->end();
         });
-
-        Stripe::setApiKey(config('services.stripe.secret'));
-
-        currencies()->add(new BRL);
     }
 }
