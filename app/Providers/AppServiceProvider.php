@@ -49,10 +49,10 @@ class AppServiceProvider extends ServiceProvider
         Gate::policy(Schedule::class, \App\Policies\SchedulePolicy::class);
         Gate::policy(Activity::class, ActivityPolicy::class);
         Gate::policy(Exception::class, \App\Policies\ExceptionPolicy::class);
-        // Gate::policy(Billable::class, \A21ns1g4ts\FilamentStripe\Policies\BillablePolicy::class);
-        // Gate::policy(Product::class, \A21ns1g4ts\FilamentStripe\Policies\ProductPolicy::class);
-        // Gate::policy(Price::class, \A21ns1g4ts\FilamentStripe\Policies\PricePolicy::class);
-        // Gate::policy(Feature::class, \A21ns1g4ts\FilamentStripe\Policies\FeaturePolicy::class);
+        Gate::policy(Billable::class, \A21ns1g4ts\FilamentStripe\Policies\BillablePolicy::class);
+        Gate::policy(Product::class, \A21ns1g4ts\FilamentStripe\Policies\ProductPolicy::class);
+        Gate::policy(Price::class, \A21ns1g4ts\FilamentStripe\Policies\PricePolicy::class);
+        Gate::policy(Feature::class, \A21ns1g4ts\FilamentStripe\Policies\FeaturePolicy::class);
 
         Event::listen(function (Registered $event) {
             $user = $event->getUser();
