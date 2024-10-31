@@ -24,3 +24,4 @@ yarn-error.log
 .blueprint
 /storage/company_*
 /filament-stripe
+/octo-core

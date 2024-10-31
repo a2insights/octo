@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use A21ns1g4ts\FilamentStripe\Models\Product;
 use App\Models\User;
+use A21ns1g4ts\FilamentStripe\Models\Product;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ProductPolicy

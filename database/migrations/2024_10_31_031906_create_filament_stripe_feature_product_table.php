@@ -26,7 +26,6 @@ return new class extends Migration
             $table->boolean('unlimited')->default(false);
             $table->boolean('meteread')->default(false);
             $table->timestamps();
-            $table->unique(['product_id', 'feature_id', 'price_id']);
         });
     }
 
