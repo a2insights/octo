@@ -6,24 +6,14 @@
         "system"
     ],
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "path",
-            "url": "./filament-stripe"
-        }
-    ],
     "require": {
         "php": "^8.1",
         "a2insights/octo-core": "dev-main",
         "a21ns1g4ts/filament-stripe": "dev-main",
-        "archtechx/money": "^0.5.1",
         "barryvdh/laravel-debugbar": "^3.13",
         "laravel/framework": "^11.0",
         "laravel/sanctum": "^4.0",
-        "laravel/tinker": "^2.9",
-        "lorisleiva/laravel-actions": "^2.8",
-        "novadaemon/filament-pretty-json": "^2.3",
-        "stripe/stripe-php": "^16.1"
+        "laravel/tinker": "^2.9"
     },
     "require-dev": {
         "doctrine/dbal": "^3.6",

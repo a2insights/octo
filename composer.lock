@@ -4,15 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e45cddaba7d2a19d060a2f11a8a7660",
+    "content-hash": "49ba957d788129f62022cffe33a9a12e",
     "packages": [
         {
             "name": "a21ns1g4ts/filament-stripe",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/a21ns1g4ts/filament-stripe.git",
+                "reference": "d3e46d701c8f8ae111e4e4b5188af0839556080a"
+            },
             "dist": {
-                "type": "path",
-                "url": "./filament-stripe",
-                "reference": "fc4e0af823d329f1940e1e6824f29c7030e4f68f"
+                "type": "zip",
+                "url": "https://api.github.com/repos/a21ns1g4ts/filament-stripe/zipball/d3e46d701c8f8ae111e4e4b5188af0839556080a",
+                "reference": "d3e46d701c8f8ae111e4e4b5188af0839556080a",
+                "shasum": ""
             },
             "require": {
                 "archtechx/money": "^0.5.1",
@@ -36,6 +42,7 @@
                 "phpstan/phpstan-deprecation-rules": "^1.1",
                 "phpstan/phpstan-phpunit": "^1.3"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -53,44 +60,7 @@
                     "A21ns1g4ts\\FilamentStripe\\Database\\Factories\\": "database/factories/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "A21ns1g4ts\\FilamentStripe\\Tests\\": "tests/",
-                    "Workbench\\App\\": "workbench/app/"
-                }
-            },
-            "scripts": {
-                "post-autoload-dump": [
-                    "@composer run prepare"
-                ],
-                "clear": [
-                    "@php vendor/bin/testbench package:purge-filament-stripe --ansi"
-                ],
-                "prepare": [
-                    "@php vendor/bin/testbench package:discover --ansi"
-                ],
-                "build": [
-                    "@composer run prepare",
-                    "@php vendor/bin/testbench workbench:build --ansi"
-                ],
-                "start": [
-                    "Composer\\Config::disableProcessTimeout",
-                    "@composer run build",
-                    "@php vendor/bin/testbench serve"
-                ],
-                "analyse": [
-                    "vendor/bin/phpstan analyse"
-                ],
-                "test": [
-                    "vendor/bin/pest"
-                ],
-                "test-coverage": [
-                    "vendor/bin/pest --coverage"
-                ],
-                "format": [
-                    "vendor/bin/pint"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -108,9 +78,17 @@
                 "filament-stripe",
                 "laravel"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/a21ns1g4ts/filament-stripe/issues",
+                "source": "https://github.com/a21ns1g4ts/filament-stripe/tree/main"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/a21ns1g4ts",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-10-31T05:50:00+00:00"
         },
         {
             "name": "a2insights/octo-core",
@@ -18196,16 +18174,16 @@
         },
         {
             "name": "sebastian/comparator",
-            "version": "6.2.0",
+            "version": "6.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "df95a6e827808debe3dbe190022dd0f643d5d909"
+                "reference": "43d129d6a0f81c78bee378b46688293eb7ea3739"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/df95a6e827808debe3dbe190022dd0f643d5d909",
-                "reference": "df95a6e827808debe3dbe190022dd0f643d5d909",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/43d129d6a0f81c78bee378b46688293eb7ea3739",
+                "reference": "43d129d6a0f81c78bee378b46688293eb7ea3739",
                 "shasum": ""
             },
             "require": {
@@ -18261,7 +18239,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/comparator/issues",
                 "security": "https://github.com/sebastianbergmann/comparator/security/policy",
-                "source": "https://github.com/sebastianbergmann/comparator/tree/6.2.0"
+                "source": "https://github.com/sebastianbergmann/comparator/tree/6.2.1"
             },
             "funding": [
                 {
@@ -18269,7 +18247,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-10-30T13:12:44+00:00"
+            "time": "2024-10-31T05:30:08+00:00"
         },
         {
             "name": "sebastian/complexity",
