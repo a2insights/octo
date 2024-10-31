@@ -1,7 +1,5 @@
 <?php
 
-use A21ns1g4ts\FilamentStripe\Models\Price;
-use A21ns1g4ts\FilamentStripe\Models\Product;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,12 +13,9 @@ return new class extends Migration
     {
         Schema::create('features', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Price::class)->nullable()->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(Product::class)->nullable()->constrained()->cascadeOnDelete();
             $table->string('stripe_id')->nullable();
             $table->boolean('active')->default(true);
             $table->json('metadata')->nullable();
-            $table->string('stripe_price')->nullable();
             $table->boolean('livemode')->default(false);
             $table->string('lookup_key')->nullable();
             $table->string('name')->nullable();

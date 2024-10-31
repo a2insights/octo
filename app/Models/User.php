@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use A21ns1g4ts\FilamentStripe\Models\Billable;
 use Cog\Contracts\Ban\Bannable as BannableContract;
 use Cog\Laravel\Ban\Traits\Bannable;
 use Filament\Models\Contracts\FilamentUser;
@@ -42,7 +41,6 @@ class User extends Authenticatable implements BannableContract, FilamentUser, Ha
      * @var array<int, string>
      */
     protected $fillable = [
-        'billable_id',
         'name',
         'email',
         'phone',
@@ -105,10 +103,5 @@ class User extends Authenticatable implements BannableContract, FilamentUser, Ha
     public function getDefaultTenant(Panel $panel): ?Model
     {
         return $this->currentCompany;
-    }
-
-    public function billable(): BelongsTo
-    {
-        return $this->belongsTo(Billable::class);
     }
 }

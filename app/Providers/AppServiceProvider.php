@@ -2,11 +2,10 @@
 
 namespace App\Providers;
 
-use A21ns1g4ts\FilamentStripe\Models\Billable;
+use A21ns1g4ts\FilamentStripe\Models\Customer;
 use A21ns1g4ts\FilamentStripe\Models\Feature;
 use A21ns1g4ts\FilamentStripe\Models\Price;
 use A21ns1g4ts\FilamentStripe\Models\Product;
-use A21ns1g4ts\FilamentStripe\Models\Subscription;
 use App\Models\Company;
 use App\Models\User;
 use App\Policies\ActivityPolicy;
@@ -23,7 +22,6 @@ use Marjose123\FilamentWebhookServer\Models\FilamentWebhookServer;
 use SolutionForest\FilamentFirewall\Models\Ip;
 use Spatie\Activitylog\Models\Activity;
 use Spatie\Permission\Models\Role;
-use Stripe\Stripe;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -33,6 +31,8 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         Relation::morphMap([
+            'user' => User::class,
+            'company' => Company::class,
         ]);
     }
 
@@ -49,10 +49,10 @@ class AppServiceProvider extends ServiceProvider
         Gate::policy(Schedule::class, \App\Policies\SchedulePolicy::class);
         Gate::policy(Activity::class, ActivityPolicy::class);
         Gate::policy(Exception::class, \App\Policies\ExceptionPolicy::class);
-        Gate::policy(Billable::class, \A21ns1g4ts\FilamentStripe\Policies\BillablePolicy::class);
-        Gate::policy(Product::class, \A21ns1g4ts\FilamentStripe\Policies\ProductPolicy::class);
-        Gate::policy(Price::class, \A21ns1g4ts\FilamentStripe\Policies\PricePolicy::class);
-        Gate::policy(Feature::class, \A21ns1g4ts\FilamentStripe\Policies\FeaturePolicy::class);
+        Gate::policy(Customer::class, \App\Policies\CustomerPolicy::class);
+        Gate::policy(Product::class, \App\Policies\ProductPolicy::class);
+        Gate::policy(Price::class, \App\Policies\PricePolicy::class);
+        Gate::policy(Feature::class, \App\Policies\FeaturePolicy::class);
 
         Event::listen(function (Registered $event) {
             $user = $event->getUser();
