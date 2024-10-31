@@ -45,7 +45,6 @@ use Wallo\FilamentCompanies\FilamentCompanies;
 use Wallo\FilamentCompanies\Pages\Auth\Login;
 use Wallo\FilamentCompanies\Pages\Company\CompanySettings;
 use Wallo\FilamentCompanies\Pages\Company\CreateCompany;
-use Wallo\FilamentCompanies\Pages\User\Profile;
 
 class FilamentCompaniesServiceProvider extends PanelProvider
 {
@@ -67,6 +66,8 @@ class FilamentCompaniesServiceProvider extends PanelProvider
             ->tenantMiddleware([
                 TenancyInitialize::class,
             ], isPersistent: true)
+            ->sidebarCollapsibleOnDesktop()
+            // ->sidebarFullyCollapsibleOnDesktop()
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
@@ -102,7 +103,7 @@ class FilamentCompaniesServiceProvider extends PanelProvider
                         ->visibility('private')
                         ->directory('avatars')
                         ->disk('avatars')),
-                \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn () => auth()->user() ? auth()->user()?->hasRole('super_admin') : false),
+                \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn () => auth()->user() ? auth()->user()->hasRole('super_admin') : false),
                 \Marjose123\FilamentWebhookServer\WebhookPlugin::make(),
                 \HusamTariq\FilamentDatabaseSchedule\FilamentDatabaseSchedulePlugin::make(),
                 \SolutionForest\FilamentFirewall\FilamentFirewallPanel::make(),
@@ -150,6 +151,7 @@ class FilamentCompaniesServiceProvider extends PanelProvider
                 \Octo\Settings\SettingsPlugin::make(),
                 \Octo\System\SystemPlugin::make(),
                 \Octo\Tenant\TenantPlugin::make(),
+                \A21ns1g4ts\FilamentStripe\FilamentStripePlugin::make(),
             ])
             ->widgets([
                 // Widgets\AccountWidget::class,
@@ -170,6 +172,10 @@ class FilamentCompaniesServiceProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
                 \Cog\Laravel\Ban\Http\Middleware\ForbidBannedUser::class,
+                \A21ns1g4ts\FilamentStripe\Http\Middleware\LoadCustomer::class,
+            ])
+            ->tenantMiddleware([
+                \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
             ]);
     }
 

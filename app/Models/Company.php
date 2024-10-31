@@ -57,6 +57,7 @@ class Company extends BaseTenant
 
     public function getFilamentAvatarUrl(): string
     {
+        /* @phpstan-ignore-next-line */
         return $this->owner->profile_photo_url;
     }
 

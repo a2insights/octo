@@ -2,10 +2,11 @@
 
 namespace App\Providers;
 
+use A21ns1g4ts\FilamentStripe\Models\Customer;
+use A21ns1g4ts\FilamentStripe\Models\Feature;
+use A21ns1g4ts\FilamentStripe\Models\Price;
+use A21ns1g4ts\FilamentStripe\Models\Product;
 use App\Models\Company;
-use App\Models\Contract;
-use App\Models\Order;
-use App\Models\Service;
 use App\Models\User;
 use App\Policies\ActivityPolicy;
 use BezhanSalleh\FilamentExceptions\Models\Exception;
@@ -18,7 +19,6 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Marjose123\FilamentWebhookServer\Models\FilamentWebhookServer;
-use SolutionForest\FilamentFieldGroup\Models\FieldGroup;
 use SolutionForest\FilamentFirewall\Models\Ip;
 use Spatie\Activitylog\Models\Activity;
 use Spatie\Permission\Models\Role;
@@ -31,9 +31,8 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         Relation::morphMap([
-            'service' => Service::class,
-            'contract' => Contract::class,
-            'order' => Order::class,
+            'user' => User::class,
+            'company' => Company::class,
         ]);
     }
 
@@ -50,6 +49,10 @@ class AppServiceProvider extends ServiceProvider
         Gate::policy(Schedule::class, \App\Policies\SchedulePolicy::class);
         Gate::policy(Activity::class, ActivityPolicy::class);
         Gate::policy(Exception::class, \App\Policies\ExceptionPolicy::class);
+        Gate::policy(Customer::class, \App\Policies\CustomerPolicy::class);
+        Gate::policy(Product::class, \App\Policies\ProductPolicy::class);
+        Gate::policy(Price::class, \App\Policies\PricePolicy::class);
+        Gate::policy(Feature::class, \App\Policies\FeaturePolicy::class);
 
         Event::listen(function (Registered $event) {
             $user = $event->getUser();
