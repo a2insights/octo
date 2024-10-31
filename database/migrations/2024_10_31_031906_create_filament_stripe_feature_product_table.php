@@ -14,7 +14,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('feature_product', function (Blueprint $table) {
+        Schema::create(config('filament-stripe.table_names.feature_product'), function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Product::class, 'product_id')->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Feature::class, 'feature_id')->constrained()->cascadeOnDelete();

@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a21ns1g4ts/filament-stripe.git",
-                "reference": "d3e46d701c8f8ae111e4e4b5188af0839556080a"
+                "reference": "a54cb228e3faa001f4448e9e22b7f9f390a5226b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a21ns1g4ts/filament-stripe/zipball/d3e46d701c8f8ae111e4e4b5188af0839556080a",
-                "reference": "d3e46d701c8f8ae111e4e4b5188af0839556080a",
+                "url": "https://api.github.com/repos/a21ns1g4ts/filament-stripe/zipball/a54cb228e3faa001f4448e9e22b7f9f390a5226b",
+                "reference": "a54cb228e3faa001f4448e9e22b7f9f390a5226b",
                 "shasum": ""
             },
             "require": {
@@ -88,7 +88,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-10-31T05:50:00+00:00"
+            "time": "2024-10-31T06:31:02+00:00"
         },
         {
             "name": "a2insights/octo-core",

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customers', function (Blueprint $table) {
+        Schema::create(config('filament-stripe.table_names.customers'), function (Blueprint $table) {
             $table->id();
             $table->morphs('billable');
             $table->string('stripe_id')->nullable();
@@ -42,10 +42,6 @@ return new class extends Migration
             $table->string('source')->nullable();
             $table->timestamps();
         });
-
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreignId('billable_id')->after('id')->nullable()->constrained()->cascadeOnDelete();
-        });
     }
 
     /**
@@ -54,10 +50,5 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('customers');
-
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign(['billable_id']);
-            $table->dropColumn('billable_id');
-        });
     }
 };

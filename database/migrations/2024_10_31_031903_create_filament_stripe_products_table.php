@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create(config('filament-stripe.table_names.products'), function (Blueprint $table) {
             $table->id();
             $table->string('type')->nullable(); // plan, service, sku, feature
             $table->string('stripe_id')->nullable();
