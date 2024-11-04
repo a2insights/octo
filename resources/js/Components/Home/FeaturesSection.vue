@@ -51,7 +51,7 @@
                         </p>
                         <ul role="list" class="mt-8 space-y-8 text-gray-600">
                             <li class="flex gap-x-3">
-                                <CloudArrowUpIcon class="flex-none w-5 h-5 mt-1 text-indigo-600" aria-hidden="true" />
+                                <CloudArrowUpIcon class="flex-none w-5 h-5 mt-1 text-yellow-600" aria-hidden="true" />
                                 <span>
                                     <strong class="font-semibold text-gray-900">Stripe Integration</strong>
                                     Easily handle subscriptions and payments with Stripe integration, enabling recurring
@@ -59,7 +59,7 @@
                                 </span>
                             </li>
                             <li class="flex gap-x-3">
-                                <LockClosedIcon class="flex-none w-5 h-5 mt-1 text-indigo-600" aria-hidden="true" />
+                                <LockClosedIcon class="flex-none w-5 h-5 mt-1 text-yellow-600" aria-hidden="true" />
                                 <span>
                                     <strong class="font-semibold text-gray-900">
                                         Flexible Pricing and Plan Management
@@ -69,7 +69,7 @@
                                 </span>
                             </li>
                             <li class="flex gap-x-3">
-                                <ServerIcon class="flex-none w-5 h-5 mt-1 text-indigo-600" aria-hidden="true" />
+                                <ServerIcon class="flex-none w-5 h-5 mt-1 text-yellow-600" aria-hidden="true" />
                                 <span>
                                     <strong class="font-semibold text-gray-900">
                                         Integrate with many filament plugins

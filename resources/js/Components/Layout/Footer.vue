@@ -74,7 +74,7 @@
                 </span>
                 <div class="flex mt-4 sm:justify-center sm:mt-0">
                     <a href="https://github.com/meicash" target="_blank"
-                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                        class="text-gray-500 hover:text-gray-900 ms-5">
                         <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 20 20">
                             <path fill-rule="evenodd"
@@ -84,7 +84,7 @@
                         <span class="sr-only">GitHub</span>
                     </a>
                     <a href="https://www.youtube.com/@FilamentSaaS" target="_blank"
-                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                        class="text-gray-500 hover:text-gray-900 ms-5">
                         <svg class="w-[24px] h-[24px] relative -top-1" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                             <path fill-rule="evenodd"

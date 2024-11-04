@@ -18,7 +18,7 @@ class SiteController extends Controller
 {
     public function index(Settings $settings)
     {
-        SEOTools::setTitle($settings->name);
+        SEOTools::setTitle($settings->name, false);
         SEOTools::setDescription($settings->description);
         JsonLd::addImage('http://localhost/storage/images/logo.svg');
         OpenGraph::setUrl(url('/'));

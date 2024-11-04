@@ -82,6 +82,7 @@ class AdminPanelProvider extends PanelProvider
                     ->navigationCountBadge(true)
                     ->enablePruning(true)
                     ->pruningRetention(7),
+                \Awcodes\FilamentQuickCreate\QuickCreatePlugin::make()->alwaysShowModal(),
                 \Octo\User\UserPlugin::make(),
                 \Octo\Features\FeaturesPlugin::make(),
                 \Octo\Settings\SettingsPlugin::make(),
