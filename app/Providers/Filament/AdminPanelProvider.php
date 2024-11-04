@@ -25,6 +25,7 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->id('admin')
+            ->homeUrl('/')
             ->path(config('octo.admin_path'))
             ->authGuard('web')
             ->login()

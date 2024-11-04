@@ -16,7 +16,6 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Octo\Tenant\Actions\FilamentCompanies\AddCompanyEmployee;
 use Octo\Tenant\Actions\FilamentCompanies\CreateConnectedAccount;
@@ -53,7 +52,7 @@ class FilamentCompaniesServiceProvider extends PanelProvider
         return $panel
             ->id('company')
             ->path(config('octo.tenant_path'))
-            ->homeUrl(static fn(): string => url(Pages\Dashboard::getUrl(panel: 'company', tenant: Auth::user()?->personalCompany())))
+            ->homeUrl('/')
             ->default()
             ->login(Login::class)
             ->registration(TenantRegister::class)
@@ -99,11 +98,11 @@ class FilamentCompaniesServiceProvider extends PanelProvider
                     // )
                     ->customMyProfilePage(TentantUserProfilePage::class)
                     ->myProfileComponents([Phone::class, Username::class])
-                    ->avatarUploadComponent(fn($fileUpload) => $fileUpload
+                    ->avatarUploadComponent(fn ($fileUpload) => $fileUpload
                         ->visibility('private')
                         ->directory('avatars')
                         ->disk('avatars')),
-                \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn() => auth()->user() ? auth()->user()->hasRole('super_admin') : false),
+                \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn () => auth()->user() ? auth()->user()->hasRole('super_admin') : false),
                 \Marjose123\FilamentWebhookServer\WebhookPlugin::make(),
                 \HusamTariq\FilamentDatabaseSchedule\FilamentDatabaseSchedulePlugin::make(),
                 \SolutionForest\FilamentFirewall\FilamentFirewallPanel::make(),
