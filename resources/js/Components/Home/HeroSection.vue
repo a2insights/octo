@@ -10,11 +10,11 @@
             <div class="mb-5 sm:mb-4 sm:flex sm:justify-center">
                 <div
                     class="relative px-3 py-1 text-gray-600 rounded-full text-sm/6 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                    📕 Learn how to config
+                    How to get started ?
                     <a href="https://www.youtube.com/@FilamentSaaS" target="_blank"
                         class="font-semibold text-[#487634]">
                         <span class="absolute inset-0" aria-hidden="true"></span>
-                        🎓 Youtube
+                        📕 Documentation
                         <span aria-hidden="true">&rarr;</span>
                     </a>
                 </div>
