@@ -20,6 +20,10 @@ defineProps({
     brevoNewsletterUrl: {
         type: [String, null],
         required: false,
+    },
+    dashboardUrl: {
+        type: [String, null],
+        required: false,
     }
 });
 
