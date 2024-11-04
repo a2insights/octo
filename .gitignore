@@ -22,6 +22,7 @@ yarn-error.log
 /.idea
 /.vscode
 .blueprint
+/bootstrap/ssr/*
 /storage/company_*
 /filament-stripe
 /octo-core

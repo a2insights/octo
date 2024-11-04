@@ -11,17 +11,7 @@
 |
 */
 
-use Filament\Pages\Dashboard;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('Home', [
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-        'brevoNewsletterUrl' => config('services.brevo.newsletter_url'),
-        'dashboardUrl' => url(Auth::user()?->personalCompany() ? Dashboard::getUrl(panel: 'company', tenant: Auth::user()?->personalCompany()) : config('octo.tenant_path')),
-    ]);
-});
+Route::get('/', [SiteController::class, 'index']);
