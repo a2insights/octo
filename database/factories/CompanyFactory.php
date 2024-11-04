@@ -26,6 +26,7 @@ class CompanyFactory extends Factory
             'name' => $this->faker->unique()->company(),
             'user_id' => User::factory(),
             'personal_company' => true,
+            'data' => ['info' => 'Some data'],
         ];
     }
 }

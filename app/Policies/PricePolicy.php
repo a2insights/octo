@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Models\User;
 use A21ns1g4ts\FilamentStripe\Models\Price;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PricePolicy

@@ -10,7 +10,6 @@ use App\Models\Company;
 use App\Models\User;
 use App\Policies\ActivityPolicy;
 use BezhanSalleh\FilamentExceptions\Models\Exception;
-use BezhanSalleh\PanelSwitch\PanelSwitch;
 use Croustibat\FilamentJobsMonitor\Models\QueueMonitor;
 use Filament\Events\Auth\Registered;
 use HusamTariq\FilamentDatabaseSchedule\Models\Schedule;

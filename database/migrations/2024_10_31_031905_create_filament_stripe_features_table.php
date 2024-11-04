@@ -1,7 +1,5 @@
 <?php
 
-use A21ns1g4ts\FilamentStripe\Models\Price;
-use A21ns1g4ts\FilamentStripe\Models\Product;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
