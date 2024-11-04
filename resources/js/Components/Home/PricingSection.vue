@@ -37,7 +37,7 @@
                 </ul>
                 <a :href="plan.href" :aria-describedby="plan.id"
                     :class="[plan.featured ? 'bg-yellow-800 text-white shadow-sm hover:bg-yellow-700 focus-visible:outline-yellow-800' : 'text-yellow-600 ring-1 ring-inset ring-yellow-400 hover:ring-yellow-600 focus-visible:outline-yellow-800', 'mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10']">
-                    Escolher plano
+                    Choose plan
                 </a>
             </div>
         </div>
