@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "138ece03f216aef0a5585a182cd60423",
+    "content-hash": "11d13b53064b0ba41777ffab7071f024",
     "packages": [
         {
             "name": "a21ns1g4ts/filament-stripe",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a21ns1g4ts/filament-stripe.git",
-                "reference": "4898bd865b96519151e5c978fce5d1c78a251cc1"
+                "reference": "2fcaeddc761cb59c7cb178ccabbab99e04de6798"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a21ns1g4ts/filament-stripe/zipball/4898bd865b96519151e5c978fce5d1c78a251cc1",
-                "reference": "4898bd865b96519151e5c978fce5d1c78a251cc1",
+                "url": "https://api.github.com/repos/a21ns1g4ts/filament-stripe/zipball/2fcaeddc761cb59c7cb178ccabbab99e04de6798",
+                "reference": "2fcaeddc761cb59c7cb178ccabbab99e04de6798",
                 "shasum": ""
             },
             "require": {
@@ -88,7 +88,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-10-31T07:48:30+00:00"
+            "time": "2024-11-05T17:32:15+00:00"
         },
         {
             "name": "a2insights/filament-saas",
@@ -96,12 +96,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a2insights/filament-saas.git",
-                "reference": "84bdc98255bb125e40907d15c1190798faa54831"
+                "reference": "bf941a395bc4169a4c7e94023d93192132de05cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a2insights/filament-saas/zipball/84bdc98255bb125e40907d15c1190798faa54831",
-                "reference": "84bdc98255bb125e40907d15c1190798faa54831",
+                "url": "https://api.github.com/repos/a2insights/filament-saas/zipball/bf941a395bc4169a4c7e94023d93192132de05cc",
+                "reference": "bf941a395bc4169a4c7e94023d93192132de05cc",
                 "shasum": ""
             },
             "require": {
@@ -126,8 +126,8 @@
                 "hasnayeen/themes": "^3.0",
                 "husam-tariq/filament-database-schedule": "^2.0",
                 "icetalker/filament-picker": "^0.1.1",
-                "illuminate/contracts": "^10.0||^11.0",
-                "illuminate/support": "^10.0|^11.0",
+                "illuminate/contracts": "^11.0",
+                "illuminate/support": "^11.0",
                 "jeffgreco13/filament-breezy": "^2.4",
                 "joaopaulolndev/filament-pdf-viewer": "^1.0",
                 "laravel/sanctum": "^4.0",
@@ -157,8 +157,8 @@
             "require-dev": {
                 "larastan/larastan": "^2.9",
                 "laravel/pint": "^1.14",
-                "nunomaduro/collision": "^8.1.1||^7.10.0",
-                "orchestra/testbench": "^9.0.0||^8.22.0",
+                "nunomaduro/collision": "^8.1.1",
+                "orchestra/testbench": "^9.0.0",
                 "pestphp/pest": "^2.34",
                 "pestphp/pest-plugin-arch": "^2.7",
                 "pestphp/pest-plugin-laravel": "^2.3",
@@ -208,7 +208,7 @@
             ],
             "support": {
                 "issues": "https://github.com/a2insights/filament-saas/issues",
-                "source": "https://github.com/a2insights/filament-saas/tree/v1.9.0-beta"
+                "source": "https://github.com/a2insights/filament-saas/tree/main"
             },
             "funding": [
                 {
@@ -216,7 +216,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-05T03:21:22+00:00"
+            "time": "2024-11-05T17:31:21+00:00"
         },
         {
             "name": "akaunting/laravel-firewall",
@@ -19423,7 +19423,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.1"
+        "php": "^8.2"
     },
     "platform-dev": [],
     "plugin-api-version": "2.6.0"
