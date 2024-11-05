@@ -6,7 +6,7 @@ return [
 
     'users' => [
         'model' => App\Models\User::class,
-        'resource' => Octo\User\Filament\UserResource::class,
+        'resource' => \A2insights\FilamentSaas\User\Filament\UserResource::class,
         'tenant_scope' => false,
     ],
 ];

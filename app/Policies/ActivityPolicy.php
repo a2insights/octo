@@ -15,7 +15,7 @@ class ActivityPolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->can('view_any_octo::system::filament::logger');
+        return $user->can('view_any_filament-saas::system::filament::logger');
     }
 
     /**
@@ -23,7 +23,7 @@ class ActivityPolicy
      */
     public function view(User $user, Activity $activity): bool
     {
-        return $user->can('view_octo::system::filament::logger');
+        return $user->can('view_filament-saas::system::filament::logger');
     }
 
     /**
@@ -31,7 +31,7 @@ class ActivityPolicy
      */
     public function create(User $user): bool
     {
-        return $user->can('create_octo::system::filament::logger');
+        return $user->can('create_filament-saas::system::filament::logger');
     }
 
     /**
@@ -39,7 +39,7 @@ class ActivityPolicy
      */
     public function update(User $user, Activity $activity): bool
     {
-        return $user->can('update_octo::system::filament::logger');
+        return $user->can('update_filament-saas::system::filament::logger');
     }
 
     /**
@@ -47,7 +47,7 @@ class ActivityPolicy
      */
     public function delete(User $user, Activity $activity): bool
     {
-        return $user->can('delete_octo::system::filament::logger');
+        return $user->can('delete_filament-saas::system::filament::logger');
     }
 
     /**
@@ -55,7 +55,7 @@ class ActivityPolicy
      */
     public function deleteAny(User $user): bool
     {
-        return $user->can('delete_any_octo::system::filament::logger');
+        return $user->can('delete_any_filament-saas::system::filament::logger');
     }
 
     /**
@@ -63,7 +63,7 @@ class ActivityPolicy
      */
     public function forceDelete(User $user, Activity $activity): bool
     {
-        return $user->can('force_delete_octo::system::filament::logger');
+        return $user->can('force_delete_filament-saas::system::filament::logger');
     }
 
     /**
@@ -71,7 +71,7 @@ class ActivityPolicy
      */
     public function forceDeleteAny(User $user): bool
     {
-        return $user->can('force_delete_any_octo::system::filament::logger');
+        return $user->can('force_delete_any_filament-saas::system::filament::logger');
     }
 
     /**
@@ -79,7 +79,7 @@ class ActivityPolicy
      */
     public function restore(User $user, Activity $activity): bool
     {
-        return $user->can('restore_octo::system::filament::logger');
+        return $user->can('restore_filament-saas::system::filament::logger');
     }
 
     /**
@@ -87,7 +87,7 @@ class ActivityPolicy
      */
     public function restoreAny(User $user): bool
     {
-        return $user->can('restore_any_octo::system::filament::logger');
+        return $user->can('restore_any_filament-saas::system::filament::logger');
     }
 
     /**
@@ -95,7 +95,7 @@ class ActivityPolicy
      */
     public function replicate(User $user, Activity $activity): bool
     {
-        return $user->can('replicate_octo::system::filament::logger');
+        return $user->can('replicate_filament-saas::system::filament::logger');
     }
 
     /**
@@ -103,6 +103,6 @@ class ActivityPolicy
      */
     public function reorder(User $user): bool
     {
-        return $user->can('reorder_octo::system::filament::logger');
+        return $user->can('reorder_filament-saas::system::filament::logger');
     }
 }

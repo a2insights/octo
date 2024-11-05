@@ -14,7 +14,7 @@ class UserPolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->can('view_any_octo::user::filament::user');
+        return $user->can('view_any_filament-saas::user::filament::user');
     }
 
     /**
@@ -22,7 +22,7 @@ class UserPolicy
      */
     public function view(User $user): bool
     {
-        return $user->can('view_octo::user::filament::user');
+        return $user->can('view_filament-saas::user::filament::user');
     }
 
     /**
@@ -30,7 +30,7 @@ class UserPolicy
      */
     public function create(User $user): bool
     {
-        return $user->can('create_octo::user::filament::user');
+        return $user->can('create_filament-saas::user::filament::user');
     }
 
     /**
@@ -38,7 +38,7 @@ class UserPolicy
      */
     public function update(User $user): bool
     {
-        return $user->can('update_octo::user::filament::user');
+        return $user->can('update_filament-saas::user::filament::user');
     }
 
     /**
@@ -46,7 +46,7 @@ class UserPolicy
      */
     public function delete(User $user): bool
     {
-        return $user->can('delete_octo::user::filament::user');
+        return $user->can('delete_filament-saas::user::filament::user');
     }
 
     /**
@@ -54,7 +54,7 @@ class UserPolicy
      */
     public function deleteAny(User $user): bool
     {
-        return $user->can('delete_any_octo::user::filament::user');
+        return $user->can('delete_any_filament-saas::user::filament::user');
     }
 
     /**
@@ -62,7 +62,7 @@ class UserPolicy
      */
     public function forceDelete(User $user): bool
     {
-        return $user->can('force_delete_octo::user::filament::user');
+        return $user->can('force_delete_filament-saas::user::filament::user');
     }
 
     /**
@@ -70,7 +70,7 @@ class UserPolicy
      */
     public function forceDeleteAny(User $user): bool
     {
-        return $user->can('force_delete_any_octo::user::filament::user');
+        return $user->can('force_delete_any_filament-saas::user::filament::user');
     }
 
     /**
@@ -78,7 +78,7 @@ class UserPolicy
      */
     public function restore(User $user): bool
     {
-        return $user->can('restore_octo::user::filament::user');
+        return $user->can('restore_filament-saas::user::filament::user');
     }
 
     /**
@@ -86,7 +86,7 @@ class UserPolicy
      */
     public function restoreAny(User $user): bool
     {
-        return $user->can('restore_any_octo::user::filament::user');
+        return $user->can('restore_any_filament-saas::user::filament::user');
     }
 
     /**
@@ -94,7 +94,7 @@ class UserPolicy
      */
     public function replicate(User $user): bool
     {
-        return $user->can('replicate_octo::user::filament::user');
+        return $user->can('replicate_filament-saas::user::filament::user');
     }
 
     /**
@@ -102,6 +102,6 @@ class UserPolicy
      */
     public function reorder(User $user): bool
     {
-        return $user->can('reorder_octo::user::filament::user');
+        return $user->can('reorder_filament-saas::user::filament::user');
     }
 }

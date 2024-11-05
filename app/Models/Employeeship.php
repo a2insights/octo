@@ -2,17 +2,6 @@
 
 namespace App\Models;
 
-use Stancl\Tenancy\Database\Concerns\BelongsToTenant;
-use Wallo\FilamentCompanies\Employeeship as FilamentCompaniesEmployeeship;
+use A2insights\FilamentSaas\Tenant\Employeeship as TenantEmployeeship;
 
-class Employeeship extends FilamentCompaniesEmployeeship
-{
-    use BelongsToTenant;
-
-    /**
-     * Indicates if the IDs are auto-incrementing.
-     *
-     * @var bool
-     */
-    public $incrementing = true;
-}
+class Employeeship extends TenantEmployeeship {}

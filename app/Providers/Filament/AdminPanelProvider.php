@@ -15,8 +15,8 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use Octo\User\Filament\Components\Phone;
-use Octo\User\Filament\Components\Username;
+use A2insights\FilamentSaas\User\Filament\Components\Phone;
+use A2insights\FilamentSaas\User\Filament\Components\Username;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -26,10 +26,10 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->homeUrl('/')
-            ->path(config('octo.admin_path'))
+            ->path(config('filament-saas.admin_path'))
             ->authGuard('web')
             ->login()
-            ->registration(\Octo\User\Filament\Pages\Register::class)
+            ->registration(\A2insights\FilamentSaas\User\Filament\Pages\Register::class)
             ->passwordReset()
             ->emailVerification()
             ->profile()
@@ -82,10 +82,10 @@ class AdminPanelProvider extends PanelProvider
                     ->navigationCountBadge(true)
                     ->enablePruning(true)
                     ->pruningRetention(7),
-                \Octo\User\UserPlugin::make(),
-                \Octo\Features\FeaturesPlugin::make(),
-                \Octo\Settings\SettingsPlugin::make(),
-                \Octo\System\SystemPlugin::make(),
+                \A2insights\FilamentSaas\User\UserPlugin::make(),
+                \A2insights\FilamentSaas\Features\FeaturesPlugin::make(),
+                \A2insights\FilamentSaas\Settings\SettingsPlugin::make(),
+                \A2insights\FilamentSaas\System\SystemPlugin::make(),
                 \A21ns1g4ts\FilamentStripe\FilamentStripePlugin::make(),
             ])
             ->widgets([
@@ -102,7 +102,7 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-                \Octo\Settings\Http\Middleware\Locale::class,
+                \A2insights\FilamentSaas\Settings\Http\Middleware\Locale::class,
                 \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
             ])
             ->authMiddleware([

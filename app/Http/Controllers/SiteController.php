@@ -2,17 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use A2insights\FilamentSaas\Settings\Settings;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOTools;
 use Artesaos\SEOTools\Facades\JsonLd;
 use Filament\Pages\Dashboard;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Auth;
-// OR with multi
-
-// OR
 use Inertia\Inertia;
-use Octo\Settings\Settings;
 
 class SiteController extends Controller
 {
@@ -32,7 +29,7 @@ class SiteController extends Controller
             'brevoNewsletterUrl' => config('services.brevo.newsletter_url'),
             'dashboardUrl' => url(Auth::user()?->personalCompany()
                 ? Dashboard::getUrl(panel: 'company', tenant: Auth::user()->personalCompany())
-                : config('octo.tenant_path')),
+                : config('filament-saas.tenant_path')),
         ]);
     }
 }
