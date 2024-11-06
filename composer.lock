@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "11d13b53064b0ba41777ffab7071f024",
+    "content-hash": "62e57804661f687c94a7934b56495da9",
     "packages": [
         {
             "name": "a21ns1g4ts/filament-stripe",
@@ -96,17 +96,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a2insights/filament-saas.git",
-                "reference": "1cd94c050b48fd9dcfc01eba4a2f9dffcea87ebd"
+                "reference": "04417230c7f0cf87ba6971914addbccf71bee840"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a2insights/filament-saas/zipball/1cd94c050b48fd9dcfc01eba4a2f9dffcea87ebd",
-                "reference": "1cd94c050b48fd9dcfc01eba4a2f9dffcea87ebd",
+                "url": "https://api.github.com/repos/a2insights/filament-saas/zipball/04417230c7f0cf87ba6971914addbccf71bee840",
+                "reference": "04417230c7f0cf87ba6971914addbccf71bee840",
                 "shasum": ""
             },
             "require": {
                 "amidesfahani/filament-tinyeditor": "^2.0",
                 "andrewdwallo/filament-companies": "^4.0",
+                "artesaos/seotools": "^1.3",
                 "bezhansalleh/filament-exceptions": "^2.1",
                 "bezhansalleh/filament-panel-switch": "^1.0",
                 "bezhansalleh/filament-shield": "^3.2",
@@ -204,12 +205,13 @@
             "homepage": "https://github.com/a2insights/filament-saas",
             "keywords": [
                 "a2insights",
+                "filament",
                 "filament-saas",
                 "laravel"
             ],
             "support": {
                 "issues": "https://github.com/a2insights/filament-saas/issues",
-                "source": "https://github.com/a2insights/filament-saas/tree/v1.9.1-beta"
+                "source": "https://github.com/a2insights/filament-saas/tree/main"
             },
             "funding": [
                 {
@@ -217,7 +219,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-06T05:41:03+00:00"
+            "time": "2024-11-06T06:05:12+00:00"
         },
         {
             "name": "akaunting/laravel-firewall",
