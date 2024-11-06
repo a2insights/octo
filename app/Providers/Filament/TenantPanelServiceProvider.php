@@ -50,7 +50,7 @@ class TenantPanelServiceProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->id('company')
+            ->id('admin')
             ->path(config('filament-saas.tenant_path'))
             ->homeUrl('/')
             ->default()

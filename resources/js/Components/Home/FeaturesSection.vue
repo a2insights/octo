@@ -39,7 +39,7 @@ const props = defineProps({
     },
     imageSrc: {
         type: String,
-        default: '/images/screenshots/app-dashboard.png',
+        default: '/images/screenshots/sysadmin-features.png',
     },
 });
 </script>

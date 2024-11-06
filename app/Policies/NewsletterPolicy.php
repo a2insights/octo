@@ -6,7 +6,7 @@ use App\Models\User;
 use Firefly\FilamentBlog\Models\NewsLetter;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class NewsLetterPolicy
+class NewsletterPolicy
 {
     use HandlesAuthorization;
 

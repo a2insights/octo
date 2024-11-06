@@ -24,7 +24,7 @@ class SysadminPanelServiceProvider extends PanelProvider
     {
         return $panel
             ->default()
-            ->id('admin')
+            ->id('sysadmin')
             ->homeUrl('/')
             ->path(config('filament-saas.sysadmin_path'))
             ->authGuard('web')
