@@ -12,7 +12,7 @@ import {
     PopoverPanel,
 } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon, DocumentMagnifyingGlassIcon } from '@heroicons/vue/20/solid'
+import { ChevronDownIcon, PhoneIcon, DocumentMagnifyingGlassIcon } from '@heroicons/vue/20/solid'
 
 const products = [
     {
@@ -107,8 +107,11 @@ const mobileMenuOpen = ref(false)
                 <a href="#features" class="font-semibold text-gray-900 text-sm/6">Features</a>
                 <a href="#pricing" class="font-semibold text-gray-900 text-sm/6">Pricing</a>
                 <a href="#" class="font-semibold text-gray-900 text-sm/6">Marketplace</a>
+                <a href="/blog" class="font-semibold text-gray-900 text-sm/6">Blog</a>
                 <a href="https://a2insights.com.br" target="_blank" rel="noopener noreferrer"
-                    class="font-semibold text-gray-900 text-sm/6">A2insights</a>
+                    class="font-semibold text-gray-900 text-sm/6">
+                    A2insights
+                </a>
             </PopoverGroup>
             <div class="hidden lg:flex lg:flex-1 lg:justify-end">
                 <a :href="$page.props.dashboardUrl" class="font-semibold text-gray-900 text-sm/6">
@@ -152,6 +155,10 @@ const mobileMenuOpen = ref(false)
                             <a href="#features" @click="mobileMenuOpen = false"
                                 class="block px-3 py-2 -mx-3 font-semibold text-gray-900 rounded-lg text-base/7 hover:bg-gray-50">
                                 Funcionalidades
+                            </a>
+                            <a href="/blog" @click="mobileMenuOpen = false"
+                                class="block px-3 py-2 -mx-3 font-semibold text-gray-900 rounded-lg text-base/7 hover:bg-gray-50">
+                                Blog
                             </a>
                             <a href="#pricing" @click="mobileMenuOpen = false"
                                 class="block px-3 py-2 -mx-3 font-semibold text-gray-900 rounded-lg text-base/7 hover:bg-gray-50">

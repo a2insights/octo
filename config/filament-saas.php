@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'admin_path' => 'admin',
-    'tenant_path' => 'company',
+    'admin_path' => 'sysadmin',
+    'tenant_path' => 'admin',
 
     'users' => [
         'model' => App\Models\User::class,
