@@ -2,9 +2,9 @@
 
 namespace App\Policies;
 
+use A2insights\FilamentSaas\Features\Features;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Octo\Features\Features;
 
 class WebhookPolicy
 {

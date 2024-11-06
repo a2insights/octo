@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\Filament;
 
 use App\Models\Company;
 use Filament\Http\Middleware\Authenticate;
@@ -17,26 +17,26 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use Octo\Tenant\Actions\FilamentCompanies\AddCompanyEmployee;
-use Octo\Tenant\Actions\FilamentCompanies\CreateConnectedAccount;
-use Octo\Tenant\Actions\FilamentCompanies\CreateNewUser;
-use Octo\Tenant\Actions\FilamentCompanies\CreateUserFromProvider;
-use Octo\Tenant\Actions\FilamentCompanies\DeleteCompany;
-use Octo\Tenant\Actions\FilamentCompanies\DeleteUser;
-use Octo\Tenant\Actions\FilamentCompanies\HandleInvalidState;
-use Octo\Tenant\Actions\FilamentCompanies\InviteCompanyEmployee;
-use Octo\Tenant\Actions\FilamentCompanies\RemoveCompanyEmployee;
-use Octo\Tenant\Actions\FilamentCompanies\ResolveSocialiteUser;
-use Octo\Tenant\Actions\FilamentCompanies\SetUserPassword;
-use Octo\Tenant\Actions\FilamentCompanies\UpdateCompanyName;
-use Octo\Tenant\Actions\FilamentCompanies\UpdateConnectedAccount;
-use Octo\Tenant\Actions\FilamentCompanies\UpdateUserPassword;
-use Octo\Tenant\Actions\FilamentCompanies\UpdateUserProfileInformation;
-use Octo\Tenant\Http\Middleware\TenancyInitialize;
-use Octo\User\Filament\Components\Phone;
-use Octo\User\Filament\Components\Username;
-use Octo\User\Filament\Pages\TenantRegister;
-use Octo\User\Filament\Pages\TentantUserProfilePage;
+use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\AddCompanyEmployee;
+use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\CreateConnectedAccount;
+use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\CreateNewUser;
+use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\CreateUserFromProvider;
+use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\DeleteCompany;
+use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\DeleteUser;
+use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\HandleInvalidState;
+use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\InviteCompanyEmployee;
+use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\RemoveCompanyEmployee;
+use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\ResolveSocialiteUser;
+use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\SetUserPassword;
+use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\UpdateCompanyName;
+use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\UpdateConnectedAccount;
+use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\UpdateUserPassword;
+use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\UpdateUserProfileInformation;
+use A2insights\FilamentSaas\Tenant\Http\Middleware\TenancyInitialize;
+use A2insights\FilamentSaas\User\Filament\Components\Phone;
+use A2insights\FilamentSaas\User\Filament\Components\Username;
+use A2insights\FilamentSaas\User\Filament\Pages\TenantRegister;
+use A2insights\FilamentSaas\User\Filament\Pages\TentantUserProfilePage;
 use Wallo\FilamentCompanies\Actions\GenerateRedirectForProvider;
 use Wallo\FilamentCompanies\Enums\Feature;
 use Wallo\FilamentCompanies\Enums\Provider;
@@ -45,13 +45,13 @@ use Wallo\FilamentCompanies\Pages\Auth\Login;
 use Wallo\FilamentCompanies\Pages\Company\CompanySettings;
 use Wallo\FilamentCompanies\Pages\Company\CreateCompany;
 
-class FilamentCompaniesServiceProvider extends PanelProvider
+class TenantPanelServiceProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->id('company')
-            ->path(config('octo.tenant_path'))
+            ->id('admin')
+            ->path(config('filament-saas.tenant_path'))
             ->homeUrl('/')
             ->default()
             ->login(Login::class)
@@ -108,6 +108,7 @@ class FilamentCompaniesServiceProvider extends PanelProvider
                 \SolutionForest\FilamentFirewall\FilamentFirewallPanel::make(),
                 \pxlrbt\FilamentEnvironmentIndicator\EnvironmentIndicatorPlugin::make(),
                 \BezhanSalleh\FilamentExceptions\FilamentExceptionsPlugin::make(),
+                \Firefly\FilamentBlog\Blog::make(),
                 \Croustibat\FilamentJobsMonitor\FilamentJobsMonitorPlugin::make()
                     ->label('Job')
                     ->pluralLabel('Jobs')
@@ -145,11 +146,11 @@ class FilamentCompaniesServiceProvider extends PanelProvider
                             Feature::CreateAccountOnFirstLogin,
                         ],
                     ),
-                \Octo\User\UserPlugin::make(),
-                \Octo\Features\FeaturesPlugin::make(),
-                \Octo\Settings\SettingsPlugin::make(),
-                \Octo\System\SystemPlugin::make(),
-                \Octo\Tenant\TenantPlugin::make(),
+                \A2insights\FilamentSaas\User\UserPlugin::make(),
+                \A2insights\FilamentSaas\Features\FeaturesPlugin::make(),
+                \A2insights\FilamentSaas\Settings\SettingsPlugin::make(),
+                \A2insights\FilamentSaas\System\SystemPlugin::make(),
+                \A2insights\FilamentSaas\Tenant\TenantPlugin::make(),
                 \A21ns1g4ts\FilamentStripe\FilamentStripePlugin::make(),
             ])
             ->widgets([
@@ -166,7 +167,7 @@ class FilamentCompaniesServiceProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-                \Octo\Settings\Http\Middleware\Locale::class,
+                \A2insights\FilamentSaas\Settings\Http\Middleware\Locale::class,
             ])
             ->authMiddleware([
                 Authenticate::class,

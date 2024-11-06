@@ -1,4 +1,4 @@
-# Octo
+# Filament SaaS
 
 [![GitHub license](https://img.shields.io/github/license/gothinkster/laravel-realworld-example-app.svg)](/LICENSE)
 
@@ -14,11 +14,11 @@ Please check the official laravel installation guide for server requirements bef
 
 Clone the repository:
 
-    git clone https://github.com/a2insights/octo.git
+    git clone https://github.com/a2insights/filament-saas.git
 
 Switch to the repo folder:
 
-    cd octo
+    cd filament-saas
 
 Install all php dependencies using composer:
 
@@ -82,18 +82,18 @@ You can now access the server at <http://localhost>
 
 To install, run the following command:
 
-    php artisan octo:install
+    php artisan filament-saas:install
 
-This command will install the octo app. You can find the implementation details of this command [here](https://github.com/a2insights/octo-core/blob/main/src/Console/OctoInstallCommand.php).
+This command will install the filament-saas app. You can find the implementation details of this command [here](https://github.com/a2insights/filament-saas-core/blob/main/src/Console/FilamentAdminInstallCommand.php).
 
-got to <http://127.0.0.1:8000/dashboard/login> and login with the following credentials:
+got to <http://127.0.0.1:8000/sysadmin/login> and login with the following credentials:
 
-email: super_admin@octo.dev
+email: super_admin@filament-saas.dev
 password: 123456
 
 or
 
-email: user@octo.dev
+email: user@filament-saas.dev
 password:123456
 
 **For more information: <https://laravel.com/docs/sail>**

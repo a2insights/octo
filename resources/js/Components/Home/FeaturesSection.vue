@@ -1,3 +1,62 @@
+<script setup>
+import {
+    CloudArrowUpIcon,
+    LockClosedIcon,
+    ServerIcon,
+} from '@heroicons/vue/20/solid';
+
+const props = defineProps({
+    heading: {
+        type: String,
+        default: 'Filament SaaS: Your Complete Platform for Building and Scaling SaaS Applications 🚀',
+    },
+    description: {
+        type: String,
+        default:
+            'Filament SaaS is the ultimate tool for developers who want to create and manage SaaS applications with ease and scalability. Our platform offers a robust and customizable infrastructure, so you can focus on building your product while we handle the complexities of SaaS operations.',
+    },
+    features: {
+        type: Array,
+        default: () => [
+            {
+                icon: CloudArrowUpIcon,
+                title: 'Stripe Integration',
+                description:
+                    'Easily handle subscriptions and payments with Stripe integration, enabling recurring billing and usage-based pricing.',
+            },
+            {
+                icon: LockClosedIcon,
+                title: 'Flexible Pricing and Plan Management',
+                description:
+                    'Design and manage multiple subscription plans to suit a range of customer needs, with flexible pricing and automatic adjustments.',
+            },
+            {
+                icon: ServerIcon,
+                title: 'Integrate with many filament plugins',
+                description: 'Seamlessly integrate with popular filament plugins, such as FilamentShield.',
+            },
+        ],
+    },
+    imageSrc: {
+        type: String,
+        default: '/images/screenshots/sysadmin-features.png',
+    },
+    featuresDescription: {
+        type: String,
+        default: `<p class="mt-8">
+                    Development Time Savings: Focus on what matters for your business while Filament SaaS takes
+                    care of the essential SaaS features.
+                </p>
+                <h2 class="mt-16 text-2xl font-bold tracking-tight text-gray-900">Advantages for
+                    <b>Developers</b> ⏱️🔧</h2>
+                <p class="mt-6">
+                    With Filament SaaS, developers have the infrastructure they need to launch and scale SaaS
+                    applications with confidence, efficiency, and control. Get started today! 🚀🌐
+                </p>`,
+    },
+});
+</script>
+
 <template>
     <div id="features"
         class="relative px-6 py-20 overflow-hidden bg-white isolate sm:py-20 lg:overflow-visible lg:px-0">
@@ -26,80 +85,36 @@
                     <div class="lg:max-w-lg">
                         <p class="font-semibold text-yellow-600 text-base/7">Features</p>
                         <h1 class="mt-2 text-4xl font-semibold tracking-tight text-gray-900 text-pretty sm:text-5xl">
-                            Filament SaaS: Your Complete Platform for Building and Scaling SaaS Applications 🚀
+                            {{ heading }}
                         </h1>
-                        <p class="mt-6 text-gray-700 text-xl/8">
-                            Filament SaaS is the ultimate tool for developers who want to create and manage SaaS
-                            applications with ease and scalability. Our platform offers a robust and customizable
-                            infrastructure, so you can focus on building your product while we handle the complexities
-                            of SaaS operations.
-                        </p>
+                        <p class="mt-6 text-gray-700 text-xl/8">{{ description }}</p>
                     </div>
                 </div>
             </div>
             <div
                 class="p-12 -mt-12 -ml-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
                 <img class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
-                    src="/images/screenshots/app-dashboard.png" alt="" />
+                    :src="imageSrc" alt="App Dashboard" />
             </div>
             <div
                 class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
                 <div class="lg:pr-4">
                     <div class="max-w-xl text-gray-700 text-base/7 lg:max-w-lg">
-                        <p>
-                            Key Features for Developers ⚙️💻
-                        </p>
+                        <p>Key Features for Developers ⚙️💻</p>
                         <ul role="list" class="mt-8 space-y-8 text-gray-600">
-                            <li class="flex gap-x-3">
-                                <CloudArrowUpIcon class="flex-none w-5 h-5 mt-1 text-yellow-600" aria-hidden="true" />
+                            <li v-for="(feature, index) in features" :key="index" class="flex gap-x-3">
+                                <component :is="feature.icon" class="flex-none w-5 h-5 mt-1 text-yellow-600"
+                                    aria-hidden="true" />
                                 <span>
-                                    <strong class="font-semibold text-gray-900">Stripe Integration</strong>
-                                    Easily handle subscriptions and payments with Stripe integration, enabling recurring
-                                    billing and usage-based pricing.
-                                </span>
-                            </li>
-                            <li class="flex gap-x-3">
-                                <LockClosedIcon class="flex-none w-5 h-5 mt-1 text-yellow-600" aria-hidden="true" />
-                                <span>
-                                    <strong class="font-semibold text-gray-900">
-                                        Flexible Pricing and Plan Management
-                                    </strong>
-                                    Design and manage multiple subscription plans to suit a range of customer needs,
-                                    with flexible pricing and automatic adjustments.
-                                </span>
-                            </li>
-                            <li class="flex gap-x-3">
-                                <ServerIcon class="flex-none w-5 h-5 mt-1 text-yellow-600" aria-hidden="true" />
-                                <span>
-                                    <strong class="font-semibold text-gray-900">
-                                        Integrate with many filament plugins
-                                    </strong>
-                                    Seamlessly integrate with popular filament plugins, such as <b>FilamentShield</b>.
+                                    <strong class="font-semibold text-gray-900">{{ feature.title }}</strong>
+                                    {{ feature.description }}
                                 </span>
                             </li>
                         </ul>
-                        <p class="mt-8">
-                            Development Time Savings: Focus on what matters for your business while Filament SaaS takes
-                            care of the essential SaaS features.
-                        </p>
-                        <h2 class="mt-16 text-2xl font-bold tracking-tight text-gray-900">
-                            Advantages for <b>Developers</b> ⏱️🔧
-                        </h2>
-                        <p class="mt-6">
-                            With Filament SaaS, developers have the infrastructure they need to launch and scale SaaS
-                            applications with confidence, efficiency, and control. Get started today! 🚀🌐
-                        </p>
+                        <p class="mt-8" v-html="featuresDescription"></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </template>
-
-<script setup>
-import {
-    CloudArrowUpIcon,
-    LockClosedIcon,
-    ServerIcon,
-} from '@heroicons/vue/20/solid';
-</script>

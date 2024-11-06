@@ -18,12 +18,6 @@ export default {
 
     theme: {
         extend: {
-            colors: {
-                danger: colors.rose,
-                primary: colors.indigo,
-                success: colors.green,
-                warning: colors.yellow,
-            },
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },

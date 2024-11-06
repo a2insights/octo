@@ -35,7 +35,7 @@ return [
     |
     */
 
-    'route_path' => '/admin/log-viewer',
+    'route_path' => '/sysadmin/log-viewer',
 
     /*
     |--------------------------------------------------------------------------
@@ -48,7 +48,7 @@ return [
     |
     */
 
-    'back_to_system_url' => '/admin',
+    'back_to_system_url' => '/sysadmin',
 
     'back_to_system_label' => null, // Displayed by default: "Back to {{ app.name }}"
 
