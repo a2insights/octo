@@ -6,6 +6,12 @@
         "system"
     ],
     "license": "MIT",
+    "reppositories": [
+        {
+            "type": "path",
+            "url": "../filament-saas"
+        }
+    ],
     "require": {
         "php": "^8.2",
         "a2insights/filament-saas": "dev-main",

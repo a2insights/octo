@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'admin_path' => 'sysadmin',
+    'sysadmin_path' => 'sysadmin',
     'tenant_path' => 'admin',
 
     'users' => [

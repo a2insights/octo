@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\Filament;
 
 use App\Models\Company;
 use Filament\Http\Middleware\Authenticate;
@@ -45,7 +45,7 @@ use Wallo\FilamentCompanies\Pages\Auth\Login;
 use Wallo\FilamentCompanies\Pages\Company\CompanySettings;
 use Wallo\FilamentCompanies\Pages\Company\CreateCompany;
 
-class FilamentCompaniesServiceProvider extends PanelProvider
+class TenantPanelServiceProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {

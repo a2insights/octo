@@ -18,7 +18,7 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 use A2insights\FilamentSaas\User\Filament\Components\Phone;
 use A2insights\FilamentSaas\User\Filament\Components\Username;
 
-class AdminPanelProvider extends PanelProvider
+class SysadminPanelServiceProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
@@ -26,7 +26,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->homeUrl('/')
-            ->path(config('filament-saas.admin_path'))
+            ->path(config('filament-saas.sysadmin_path'))
             ->authGuard('web')
             ->login()
             ->registration(\A2insights\FilamentSaas\User\Filament\Pages\Register::class)

@@ -26,6 +26,8 @@ class SiteController extends Controller
         return Inertia::render('Home', [
             'laravelVersion' => Application::VERSION,
             'phpVersion' => PHP_VERSION,
+            'tenantPath' => config('filament-saas.tenant_path'),
+            'sysadminPath' => config('filament-saas.sysadmin_path'),
             'brevoNewsletterUrl' => config('services.brevo.newsletter_url'),
             'dashboardUrl' => url(Auth::user()?->personalCompany()
                 ? Dashboard::getUrl(panel: 'company', tenant: Auth::user()->personalCompany())
