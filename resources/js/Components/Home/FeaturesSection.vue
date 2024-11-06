@@ -41,6 +41,19 @@ const props = defineProps({
         type: String,
         default: '/images/screenshots/sysadmin-features.png',
     },
+    featuresDescription: {
+        type: String,
+        default: `<p class="mt-8">
+                    Development Time Savings: Focus on what matters for your business while Filament SaaS takes
+                    care of the essential SaaS features.
+                </p>
+                <h2 class="mt-16 text-2xl font-bold tracking-tight text-gray-900">Advantages for
+                    <b>Developers</b> ⏱️🔧</h2>
+                <p class="mt-6">
+                    With Filament SaaS, developers have the infrastructure they need to launch and scale SaaS
+                    applications with confidence, efficiency, and control. Get started today! 🚀🌐
+                </p>`,
+    },
 });
 </script>
 
@@ -72,16 +85,16 @@ const props = defineProps({
                     <div class="lg:max-w-lg">
                         <p class="font-semibold text-yellow-600 text-base/7">Features</p>
                         <h1 class="mt-2 text-4xl font-semibold tracking-tight text-gray-900 text-pretty sm:text-5xl">
-                            {{ props.heading }}
+                            {{ heading }}
                         </h1>
-                        <p class="mt-6 text-gray-700 text-xl/8">{{ props.description }}</p>
+                        <p class="mt-6 text-gray-700 text-xl/8">{{ description }}</p>
                     </div>
                 </div>
             </div>
             <div
                 class="p-12 -mt-12 -ml-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
                 <img class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
-                    :src="props.imageSrc" alt="App Dashboard" />
+                    :src="imageSrc" alt="App Dashboard" />
             </div>
             <div
                 class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
@@ -89,7 +102,7 @@ const props = defineProps({
                     <div class="max-w-xl text-gray-700 text-base/7 lg:max-w-lg">
                         <p>Key Features for Developers ⚙️💻</p>
                         <ul role="list" class="mt-8 space-y-8 text-gray-600">
-                            <li v-for="(feature, index) in props.features" :key="index" class="flex gap-x-3">
+                            <li v-for="(feature, index) in features" :key="index" class="flex gap-x-3">
                                 <component :is="feature.icon" class="flex-none w-5 h-5 mt-1 text-yellow-600"
                                     aria-hidden="true" />
                                 <span>
@@ -98,16 +111,7 @@ const props = defineProps({
                                 </span>
                             </li>
                         </ul>
-                        <p class="mt-8">
-                            Development Time Savings: Focus on what matters for your business while Filament SaaS takes
-                            care of the essential SaaS features.
-                        </p>
-                        <h2 class="mt-16 text-2xl font-bold tracking-tight text-gray-900">Advantages for
-                            <b>Developers</b> ⏱️🔧</h2>
-                        <p class="mt-6">
-                            With Filament SaaS, developers have the infrastructure they need to launch and scale SaaS
-                            applications with confidence, efficiency, and control. Get started today! 🚀🌐
-                        </p>
+                        <p class="mt-8" v-html="featuresDescription"></p>
                     </div>
                 </div>
             </div>
