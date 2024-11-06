@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d2dfed70a9eae40d75e6d614f05aa261",
+    "content-hash": "11d13b53064b0ba41777ffab7071f024",
     "packages": [
         {
             "name": "a21ns1g4ts/filament-stripe",
@@ -96,12 +96,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a2insights/filament-saas.git",
-                "reference": "bf941a395bc4169a4c7e94023d93192132de05cc"
+                "reference": "1cd94c050b48fd9dcfc01eba4a2f9dffcea87ebd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a2insights/filament-saas/zipball/bf941a395bc4169a4c7e94023d93192132de05cc",
-                "reference": "bf941a395bc4169a4c7e94023d93192132de05cc",
+                "url": "https://api.github.com/repos/a2insights/filament-saas/zipball/1cd94c050b48fd9dcfc01eba4a2f9dffcea87ebd",
+                "reference": "1cd94c050b48fd9dcfc01eba4a2f9dffcea87ebd",
                 "shasum": ""
             },
             "require": {
@@ -123,6 +123,7 @@
                 "filament/spatie-laravel-media-library-plugin": "^3.2",
                 "filament/spatie-laravel-settings-plugin": "^3.2",
                 "filament/tables": "^3.2",
+                "firefly/filament-blog": "^2.0",
                 "hasnayeen/themes": "^3.0",
                 "husam-tariq/filament-database-schedule": "^2.0",
                 "icetalker/filament-picker": "^0.1.1",
@@ -208,7 +209,7 @@
             ],
             "support": {
                 "issues": "https://github.com/a2insights/filament-saas/issues",
-                "source": "https://github.com/a2insights/filament-saas/tree/main"
+                "source": "https://github.com/a2insights/filament-saas/tree/v1.9.1-beta"
             },
             "funding": [
                 {
@@ -216,7 +217,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-05T17:31:21+00:00"
+            "time": "2024-11-06T05:41:03+00:00"
         },
         {
             "name": "akaunting/laravel-firewall",
@@ -15801,16 +15802,16 @@
         },
         {
             "name": "tinymce/tinymce",
-            "version": "7.4.1",
+            "version": "7.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tinymce/tinymce-dist.git",
-                "reference": "e4d46be06c8d0d99f542e7199d1283850fb9192c"
+                "reference": "ca7a694db4fff387bb6ca9775ddd3d3b5eba3d9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tinymce/tinymce-dist/zipball/e4d46be06c8d0d99f542e7199d1283850fb9192c",
-                "reference": "e4d46be06c8d0d99f542e7199d1283850fb9192c",
+                "url": "https://api.github.com/repos/tinymce/tinymce-dist/zipball/ca7a694db4fff387bb6ca9775ddd3d3b5eba3d9c",
+                "reference": "ca7a694db4fff387bb6ca9775ddd3d3b5eba3d9c",
                 "shasum": ""
             },
             "type": "component",
@@ -15854,9 +15855,9 @@
                 "wysiwyg"
             ],
             "support": {
-                "source": "https://github.com/tinymce/tinymce-dist/tree/7.4.1"
+                "source": "https://github.com/tinymce/tinymce-dist/tree/7.5.0"
             },
-            "time": "2024-10-10T05:50:45+00:00"
+            "time": "2024-11-06T03:04:46+00:00"
         },
         {
             "name": "ueberdosis/tiptap-php",
