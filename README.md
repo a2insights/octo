@@ -14,11 +14,11 @@ Please check the official laravel installation guide for server requirements bef
 
 Clone the repository:
 
-    git clone https://github.com/a2insights/filament-saas.git
+    git clone https://github.com/a2insights/filament-saas-template.git
 
 Switch to the repo folder:
 
-    cd filament-saas
+    cd filament-saas-template
 
 Install all php dependencies using composer:
 
@@ -88,13 +88,18 @@ This command will install the filament-saas app. You can find the implementation
 
 got to <http://127.0.0.1:8000/sysadmin/login> and login with the following credentials:
 
-email: super_admin@filament-saas.dev
-password: 123456
+#### Super Admin
+- **Email:** `super_admin@filament-saas.dev`
+- **Senha:** `123456`
 
-or
+#### Admin 
+- **Email:** `admin@filament-saas.dev`
+- **Senha:** `123456`
 
-email: user@filament-saas.dev
-password:123456
+#### User 
+- **Email:** `user@filament-saas.dev`
+- **Senha:** `123456`
+
 
 **For more information: <https://laravel.com/docs/sail>**
 
