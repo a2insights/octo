@@ -84,7 +84,7 @@ To install, run the following command:
 
     php artisan filament-saas:install
 
-This command will install the filament-saas app. You can find the implementation details of this command [here](https://github.com/a2insights/filament-saas-core/blob/main/src/Console/FilamentAdminInstallCommand.php).
+This command will install the filament-saas app. You can find the implementation details of this command [here](https://github.com/a2insights/filament-saas/blob/main/src/Commands/FilamentSaasCommand.php).
 
 got to <http://127.0.0.1:8000/sysadmin/login> and login with the following credentials:
 
