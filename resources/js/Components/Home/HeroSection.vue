@@ -19,7 +19,7 @@ const props = defineProps({
     default: () => ({
       primaryLink: '/admin/register',
       primaryText: 'Get started',
-      secondaryLink: '#',
+      secondaryLink: '/about',
       secondaryText: 'More'
     })
   },
