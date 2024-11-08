@@ -29,9 +29,7 @@ class SiteController extends Controller
             'tenantPath' => config('filament-saas.tenant_path'),
             'sysadminPath' => config('filament-saas.sysadmin_path'),
             'brevoNewsletterUrl' => config('services.brevo.newsletter_url'),
-            'dashboardUrl' => url(Auth::user()?->personalCompany()
-                ? Dashboard::getUrl(panel: 'company', tenant: Auth::user()->personalCompany())
-                : config('filament-saas.tenant_path')),
+            'dashboardUrl' => url(config('filament-saas.tenant_path')),
         ]);
     }
 }
