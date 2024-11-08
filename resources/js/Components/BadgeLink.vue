@@ -45,6 +45,7 @@ const props = defineProps({
       <a
         :href="url"
         target="_blank"
+        rel="noopener noreferrer"
         :class="['font-semibold', linkColor]"
       >
         <span class="absolute inset-0" aria-hidden="true"></span>

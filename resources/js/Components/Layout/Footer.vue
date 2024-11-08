@@ -32,14 +32,14 @@
                         </h2>
                         <ul class="font-medium text-gray-500">
                             <li class="mb-4">
-                                <a href="https://www.instagram.com/a2insights" target="_blank" class="hover:underline">
+                                <a href="https://www.instagram.com/a2insights" target="_blank" rel="noopener noreferrer"  class="hover:underline">
                                     Instagram
                                 </a>
                             </li>
                         </ul>
                         <ul class="font-medium text-gray-500">
                             <li class="mb-4">
-                                <a href="https://github.com/a2insights/filament-saas" target="_blank"
+                                <a href="https://github.com/a2insights/filament-saas" target="_blank" rel="noopener noreferrer"
                                     class="hover:underline">
                                     Github
                                 </a>
@@ -50,12 +50,12 @@
                         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Legal</h2>
                         <ul class="font-medium text-gray-500">
                             <li class="mb-4">
-                                <a href="/privacy-policy" target="_blank" class="hover:underline">
+                                <a href="/privacy-policy" target="_blank" rel="noopener noreferrer"  class="hover:underline">
                                     Privacy Policy
                                 </a>
                             </li>
                             <li>
-                                <a href="/terms-of-service" target="_blank" class="hover:underline">
+                                <a href="/terms-of-service" target="_blank" rel="noopener noreferrer"  class="hover:underline">
                                     Terms of Service
                                 </a>
                             </li>
@@ -73,7 +73,7 @@
                     . All Rights Reserved.
                 </span>
                 <div class="flex mt-4 space-x-3 sm:justify-center md:mt-0 rtl:space-x-reverse">
-                    <a href="https://github.com/a2insights" target="_blank" class="text-gray-500 hover:text-gray-900">
+                    <a href="https://github.com/a2insights" target="_blank" rel="noopener noreferrer"  class="text-gray-500 hover:text-gray-900">
                         <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 20 20">
                             <path fill-rule="evenodd"
@@ -82,7 +82,7 @@
                         </svg>
                         <span class="sr-only">GitHub</span>
                     </a>
-                    <a href="https://www.instagram.com/a2insights" target="_blank"
+                    <a href="https://www.instagram.com/a2insights" target="_blank" rel="noopener noreferrer"
                         class="text-gray-500 hover:text-gray-900">
                         <svg class="w-[22px] h-[22px] relative -top-1" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
