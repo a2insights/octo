@@ -93,7 +93,7 @@ const mobileMenuOpen = ref(false)
                                 </div>
                             </div>
                             <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                                <a v-for="item in callsToAction" :key="item.name" :href="item.href" target="_blank" rel="noopener noreferrer"  rel="noopener noreferrer"
+                                <a v-for="item in callsToAction" :key="item.name" :href="item.href" target="_blank" rel="noopener noreferrer"
                                     class="flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold text-gray-900 hover:bg-gray-100">
                                     <component :is="item.icon" class="flex-none w-5 h-5 text-gray-400"
                                         aria-hidden="true" />
