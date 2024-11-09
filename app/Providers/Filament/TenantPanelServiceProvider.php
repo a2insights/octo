@@ -17,26 +17,26 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\AddCompanyEmployee;
-use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\CreateConnectedAccount;
-use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\CreateNewUser;
-use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\CreateUserFromProvider;
-use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\DeleteCompany;
-use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\DeleteUser;
-use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\HandleInvalidState;
-use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\InviteCompanyEmployee;
-use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\RemoveCompanyEmployee;
-use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\ResolveSocialiteUser;
-use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\SetUserPassword;
-use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\UpdateCompanyName;
-use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\UpdateConnectedAccount;
-use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\UpdateUserPassword;
-use A2insights\FilamentSaas\Tenant\Actions\FilamentCompanies\UpdateUserProfileInformation;
-use A2insights\FilamentSaas\Tenant\Http\Middleware\TenancyInitialize;
-use A2insights\FilamentSaas\User\Filament\Components\Phone;
-use A2insights\FilamentSaas\User\Filament\Components\Username;
-use A2insights\FilamentSaas\User\Filament\Pages\TenantRegister;
-use A2insights\FilamentSaas\User\Filament\Pages\TentantUserProfilePage;
+use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\AddCompanyEmployee;
+use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\CreateConnectedAccount;
+use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\CreateNewUser;
+use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\CreateUserFromProvider;
+use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\DeleteCompany;
+use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\DeleteUser;
+use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\HandleInvalidState;
+use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\InviteCompanyEmployee;
+use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\RemoveCompanyEmployee;
+use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\ResolveSocialiteUser;
+use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\SetUserPassword;
+use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\UpdateCompanyName;
+use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\UpdateConnectedAccount;
+use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\UpdateUserPassword;
+use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\UpdateUserProfileInformation;
+use A2Insights\FilamentSaas\Tenant\Http\Middleware\TenancyInitialize;
+use A2Insights\FilamentSaas\User\Filament\Components\Phone;
+use A2Insights\FilamentSaas\User\Filament\Components\Username;
+use A2Insights\FilamentSaas\User\Filament\Pages\TenantRegister;
+use A2Insights\FilamentSaas\User\Filament\Pages\TentantUserProfilePage;
 use Wallo\FilamentCompanies\Actions\GenerateRedirectForProvider;
 use Wallo\FilamentCompanies\Enums\Feature;
 use Wallo\FilamentCompanies\Enums\Provider;
@@ -147,11 +147,11 @@ class TenantPanelServiceProvider extends PanelProvider
                             Feature::CreateAccountOnFirstLogin,
                         ],
                     ),
-                \A2insights\FilamentSaas\User\UserPlugin::make(),
-                \A2insights\FilamentSaas\Features\FeaturesPlugin::make(),
-                \A2insights\FilamentSaas\Settings\SettingsPlugin::make(),
-                \A2insights\FilamentSaas\System\SystemPlugin::make(),
-                \A2insights\FilamentSaas\Tenant\TenantPlugin::make(),
+                \A2Insights\FilamentSaas\User\UserPlugin::make(),
+                \A2Insights\FilamentSaas\Features\FeaturesPlugin::make(),
+                \A2Insights\FilamentSaas\Settings\SettingsPlugin::make(),
+                \A2Insights\FilamentSaas\System\SystemPlugin::make(),
+                \A2Insights\FilamentSaas\Tenant\TenantPlugin::make(),
                 \A21ns1g4ts\FilamentStripe\FilamentStripePlugin::make(),
             ])
             ->widgets([
@@ -168,7 +168,7 @@ class TenantPanelServiceProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-                \A2insights\FilamentSaas\Settings\Http\Middleware\Locale::class,
+                \A2Insights\FilamentSaas\Settings\Http\Middleware\Locale::class,
             ])
             ->authMiddleware([
                 Authenticate::class,

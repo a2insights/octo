@@ -2,6 +2,6 @@
 
 namespace App\Models;
 
-use A2insights\FilamentSaas\Tenant\Employeeship as TenantEmployeeship;
+use A2Insights\FilamentSaas\Tenant\Employeeship as TenantEmployeeship;
 
 class Employeeship extends TenantEmployeeship {}

@@ -2,6 +2,6 @@
 
 namespace App\Models;
 
-use A2insights\FilamentSaas\Tenant\CompanyInvitation as TenantCompanyInvitation;
+use A2Insights\FilamentSaas\Tenant\CompanyInvitation as TenantCompanyInvitation;
 
 class CompanyInvitation extends TenantCompanyInvitation {}
