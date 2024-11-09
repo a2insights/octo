@@ -96,12 +96,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a2insights/filament-saas.git",
-                "reference": "c1601cfbcf490b0a8746106c0bfb09edc32ed8a9"
+                "reference": "0f6651d3a215a83e53ffe36862637fb7b8611f3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a2insights/filament-saas/zipball/c1601cfbcf490b0a8746106c0bfb09edc32ed8a9",
-                "reference": "c1601cfbcf490b0a8746106c0bfb09edc32ed8a9",
+                "url": "https://api.github.com/repos/a2insights/filament-saas/zipball/0f6651d3a215a83e53ffe36862637fb7b8611f3e",
+                "reference": "0f6651d3a215a83e53ffe36862637fb7b8611f3e",
                 "shasum": ""
             },
             "require": {
@@ -175,10 +175,10 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "A2insights\\FilamentSaas\\FilamentSaasServiceProvider"
+                        "A2Insights\\FilamentSaas\\FilamentSaasServiceProvider"
                     ],
                     "aliases": {
-                        "FilamentSaas": "A2insights\\FilamentSaas\\Facades\\FilamentSaas"
+                        "FilamentSaas": "A2Insights\\FilamentSaas\\Facades\\FilamentSaas"
                     }
                 }
             },
@@ -187,8 +187,8 @@
                     "src/helpers.php"
                 ],
                 "psr-4": {
-                    "A2insights\\FilamentSaas\\": "src/",
-                    "A2insights\\FilamentSaas\\Database\\Factories\\": "database/factories/"
+                    "A2Insights\\FilamentSaas\\": "src/",
+                    "A2Insights\\FilamentSaas\\Database\\Factories\\": "database/factories/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -202,7 +202,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Filament Saas for A2insights",
+            "description": "Filament Saas for A2Insights",
             "homepage": "https://github.com/a2insights/filament-saas",
             "keywords": [
                 "a2insights",
@@ -220,7 +220,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-08T05:19:56+00:00"
+            "time": "2024-11-09T23:39:09+00:00"
         },
         {
             "name": "akaunting/laravel-firewall",
