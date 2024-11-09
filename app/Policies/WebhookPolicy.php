@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use A2insights\FilamentSaas\Features\Features;
+use A2Insights\FilamentSaas\Features\Features;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 

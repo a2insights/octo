@@ -16,7 +16,7 @@ return [
         'keep_history' => true,
     ],
     'pages' => [
-        \A2insights\FilamentSaas\Webhook\Filament\Pages\Webhooks::class,
-        \A2insights\FilamentSaas\Webhook\Filament\Pages\WebhookHistory::class,
+        \A2Insights\FilamentSaas\Webhook\Filament\Pages\Webhooks::class,
+        \A2Insights\FilamentSaas\Webhook\Filament\Pages\WebhookHistory::class,
     ],
 ];

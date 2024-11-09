@@ -67,4 +67,8 @@ return [
         'secret' => env('STRIPE_SECRET'),
         'webhook_secret' => env('STRIPE_WEBHOOK_SECRET'),
     ],
+
+    'brevo' => [
+        'newsletter_url' => env('BREVO_NEWSLETTER_URL'),
+    ],
 ];

@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) A2insights
+Copyright (c) A2Insights
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

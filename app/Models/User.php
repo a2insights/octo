@@ -2,6 +2,6 @@
 
 namespace App\Models;
 
-use A2insights\FilamentSaas\User\User as UserUser;
+use A2Insights\FilamentSaas\User\User as UserUser;
 
 class User extends UserUser {}

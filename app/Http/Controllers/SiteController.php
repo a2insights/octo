@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use A2insights\FilamentSaas\Settings\Settings;
+use A2Insights\FilamentSaas\Settings\Settings;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOTools;
 use Artesaos\SEOTools\Facades\JsonLd;

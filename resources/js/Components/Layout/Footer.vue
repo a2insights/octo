@@ -6,7 +6,7 @@
         <div class="w-full max-w-screen-xl p-4 pt-20 pb-8 mx-auto lg:pt-16">
             <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">
-                    <a href="https://github.com/a2insights/filament-saas" class="flex items-center">
+                    <a href="https://github.com/A2Insights/filament-saas" class="flex items-center">
                         <img src="/img/logo.svg" class="h-8 me-3" alt="Filament SaaS Logo" />
                     </a>
                 </div>
@@ -17,12 +17,12 @@
                         </h2>
                         <ul class="font-medium text-gray-500">
                             <li class="mb-4">
-                                <a href="https://github.com/a2insights/filament-saas" class="hover:underline">
+                                <a href="https://github.com/A2Insights/filament-saas" class="hover:underline">
                                     Filament SaaS
                                 </a>
                             </li>
                             <li>
-                                <a href="https://a2insights.com.br" class="hover:underline">A2insights</a>
+                                <a href="https://A2Insights.com.br" class="hover:underline">A2Insights</a>
                             </li>
                         </ul>
                     </div>
@@ -32,14 +32,14 @@
                         </h2>
                         <ul class="font-medium text-gray-500">
                             <li class="mb-4">
-                                <a href="https://www.instagram.com/a2insights" class="hover:underline">
+                                <a href="https://www.instagram.com/A2Insights" class="hover:underline">
                                     Instagram
                                 </a>
                             </li>
                         </ul>
                         <ul class="font-medium text-gray-500">
                             <li class="mb-4">
-                                <a href="https://github.com/a2insights/filament-saas" target="_blank" rel="noopener noreferrer"
+                                <a href="https://github.com/A2Insights/filament-saas" target="_blank" rel="noopener noreferrer"
                                     class="hover:underline">
                                     Github
                                 </a>
@@ -67,13 +67,13 @@
             <div class="sm:flex sm:items-center sm:justify-between">
                 <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
                     © 2024
-                    <a href="https://github.com/a2insights/filament-saas/" class="hover:underline">
+                    <a href="https://github.com/A2Insights/filament-saas/" class="hover:underline">
                         Filament SaaS™
                     </a>
                     . All Rights Reserved.
                 </span>
                 <div class="flex mt-4 space-x-3 sm:justify-center md:mt-0 rtl:space-x-reverse">
-                    <a href="https://github.com/a2insights" class="text-gray-500 hover:text-gray-900">
+                    <a href="https://github.com/A2Insights" class="text-gray-500 hover:text-gray-900">
                         <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 20 20">
                             <path fill-rule="evenodd"
@@ -82,7 +82,7 @@
                         </svg>
                         <span class="sr-only">GitHub</span>
                     </a>
-                    <a href="https://www.instagram.com/a2insights" target="_blank" rel="noopener noreferrer"
+                    <a href="https://www.instagram.com/A2Insights" target="_blank" rel="noopener noreferrer"
                         class="text-gray-500 hover:text-gray-900">
                         <svg class="w-[22px] h-[22px] relative -top-1" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
