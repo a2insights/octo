@@ -96,12 +96,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a2insights/filament-saas.git",
-                "reference": "0f6651d3a215a83e53ffe36862637fb7b8611f3e"
+                "reference": "27f38fbf5ad9680f3b52c25f0cb0a01dfae0d63e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a2insights/filament-saas/zipball/0f6651d3a215a83e53ffe36862637fb7b8611f3e",
-                "reference": "0f6651d3a215a83e53ffe36862637fb7b8611f3e",
+                "url": "https://api.github.com/repos/a2insights/filament-saas/zipball/27f38fbf5ad9680f3b52c25f0cb0a01dfae0d63e",
+                "reference": "27f38fbf5ad9680f3b52c25f0cb0a01dfae0d63e",
                 "shasum": ""
             },
             "require": {
@@ -220,7 +220,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-09T23:39:09+00:00"
+            "time": "2024-11-10T00:48:42+00:00"
         },
         {
             "name": "akaunting/laravel-firewall",
