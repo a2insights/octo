@@ -103,8 +103,8 @@ const props = defineProps({
                                 </div>
                             </div>
                         </div>
-                        <div style="padding: 8px 0;">
-                            <div class="sib-form-block" style="text-align: left; padding: 0px;">
+                        <div style="padding: 0px">
+                            <div class="mt-5 sib-form-block" style="text-align: left; padding: 0px;">
                                 <button class="sib-form-block__button sib-form-block__button-with-loader"
                                     style="font-size:16px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#FFFFFF; background-color:#487634; border-radius:3px; border-width:0px;"
                                     form="sib-form" type="submit">
