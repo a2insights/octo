@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class () extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      *
@@ -35,25 +36,25 @@ return new class () extends Migration {
             $table->string('cover_photo_path');
             $table->string('photo_alt_text');
             $table->foreignId(config('filamentblog.user.foreign_key'))
-            ->constrained()
-            ->cascadeOnDelete();
+                ->constrained()
+                ->cascadeOnDelete();
             $table->timestamps();
         });
 
         Schema::create(config('filamentblog.tables.prefix').'category_'.config('filamentblog.tables.prefix').'post', function (Blueprint $table) {
             $table->id();
-            $table->foreignId( "post_id")
-            ->constrained(table: config('filamentblog.tables.prefix').'posts')
-            ->cascadeOnDelete();
-            $table->foreignId("category_id")
-            ->constrained(table: config('filamentblog.tables.prefix').'categories')
-            ->cascadeOnDelete();
+            $table->foreignId('post_id')
+                ->constrained(table: config('filamentblog.tables.prefix').'posts')
+                ->cascadeOnDelete();
+            $table->foreignId('category_id')
+                ->constrained(table: config('filamentblog.tables.prefix').'categories')
+                ->cascadeOnDelete();
             $table->timestamps();
         });
 
         Schema::create(config('filamentblog.tables.prefix').'seo_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("post_id")
+            $table->foreignId('post_id')
                 ->constrained(table: config('filamentblog.tables.prefix').'posts')
                 ->cascadeOnDelete();
             $table->string('title');
@@ -65,7 +66,7 @@ return new class () extends Migration {
         Schema::create(config('filamentblog.tables.prefix').'comments', function (Blueprint $table) {
             $table->id();
             $table->foreignId(config('filamentblog.user.foreign_key'));
-            $table->foreignId("post_id")
+            $table->foreignId('post_id')
                 ->constrained(table: config('filamentblog.tables.prefix').'posts')
                 ->cascadeOnDelete();
             $table->text('comment');
@@ -90,18 +91,17 @@ return new class () extends Migration {
 
         Schema::create(config('filamentblog.tables.prefix').'post_'.config('filamentblog.tables.prefix').'tag', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("post_id")
-            ->constrained(table: config('filamentblog.tables.prefix').'posts')
-            ->cascadeOnDelete();
-            $table->foreignId("tag_id")
+            $table->foreignId('post_id')
+                ->constrained(table: config('filamentblog.tables.prefix').'posts')
+                ->cascadeOnDelete();
+            $table->foreignId('tag_id')
                 ->constrained(table: config('filamentblog.tables.prefix').'tags')
                 ->cascadeOnDelete();
             $table->timestamps();
         });
 
-
-// Check if the column exists
-        if (!Schema::hasColumn($tableName, $columnName)) {
+        // Check if the column exists
+        if (! Schema::hasColumn($tableName, $columnName)) {
             // Column doesn't exist, so add it to the table
             Schema::table($tableName, function (Blueprint $table) use ($columnName) {
                 $table->string($columnName)->nullable();

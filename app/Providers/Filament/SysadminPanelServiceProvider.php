@@ -2,6 +2,8 @@
 
 namespace App\Providers\Filament;
 
+use A2Insights\FilamentSaas\User\Filament\Components\Phone;
+use A2Insights\FilamentSaas\User\Filament\Components\Username;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -15,8 +17,6 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use A2Insights\FilamentSaas\User\Filament\Components\Phone;
-use A2Insights\FilamentSaas\User\Filament\Components\Username;
 
 class SysadminPanelServiceProvider extends PanelProvider
 {

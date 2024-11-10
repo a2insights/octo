@@ -3,8 +3,8 @@
 namespace App\Policies;
 
 use App\Models\User;
-use SolutionForest\FilamentFirewall\Models\Ip;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use SolutionForest\FilamentFirewall\Models\Ip;
 
 class IpPolicy
 {

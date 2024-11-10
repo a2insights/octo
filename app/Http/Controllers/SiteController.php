@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use A2Insights\FilamentSaas\Settings\Settings;
+use Artesaos\SEOTools\Facades\JsonLd;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOTools;
-use Artesaos\SEOTools\Facades\JsonLd;
-use Filament\Pages\Dashboard;
 use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class SiteController extends Controller
