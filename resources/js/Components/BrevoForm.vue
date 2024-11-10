@@ -1,10 +1,22 @@
 <script setup>
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  const script = document.createElement('script');
+  script.src = 'https://sibforms.com/forms/end-form/build/main.js';
+  script.defer = true;
+  document.head.appendChild(script);
+
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://sibforms.com/forms/end-form/build/sib-styles.css';
+  document.head.appendChild(link);
+});
+
 window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
 window.LOCALE = 'en';
 window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
-
 window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank.";
-
 window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
 
 window.translation = {
@@ -15,30 +27,30 @@ window.translation = {
 };
 
 const props = defineProps({
-  errorMessage: {
-    type: String,
-    default: 'Your subscription could not be saved. Please try again.'
-  },
-  successMessage: {
-    type: String,
-    default: 'Your subscription was successful.'
-  },
-  emailPlaceholder: {
-    type: String,
-    default: 'Enter your email'
-  },
-  buttonText: {
-    type: String,
-    default: 'Subscribe'
-  },
-  actionUrl: {
-    type: String,
-    required: true
-  },
-  autoHide: {
-    type: Boolean,
-    default: false
-  }
+    errorMessage: {
+        type: String,
+        default: 'Your subscription could not be saved. Please try again.'
+    },
+    successMessage: {
+        type: String,
+        default: 'Your subscription was successful.'
+    },
+    emailPlaceholder: {
+        type: String,
+        default: 'Enter your email'
+    },
+    buttonText: {
+        type: String,
+        default: 'Subscribe'
+    },
+    actionUrl: {
+        type: String,
+        required: true
+    },
+    autoHide: {
+        type: Boolean,
+        default: false
+    }
 });
 </script>
 
@@ -46,7 +58,7 @@ const props = defineProps({
     <div class="sib-form" style="text-align: left; padding: 0px; margin-top: 10px;">
         <div id="sib-form-container" class="sib-form-container" style="padding: 0px;">
             <div id="error-message" class="sib-form-message-panel"
-                style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;max-width:540px;">
+                style="margin-bottom: 5px; font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;max-width:540px;">
                 <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
                     <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
                         <path
@@ -59,7 +71,7 @@ const props = defineProps({
             </div>
             <div></div>
             <div id="success-message" class="sib-form-message-panel"
-                style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66;max-width:540px;">
+                style="margin-bottom: 5px; font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66;max-width:540px;">
                 <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
                     <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
                         <path
@@ -73,47 +85,47 @@ const props = defineProps({
             <div></div>
             <div id="sib-container" class="sib-container--large sib-container--vertical"
                 style="padding:0px; text-align:left; background-color:transparent; max-width:540px; border-width:0px; border-color:#000000; border-style:solid; direction:ltr">
-                <form id="sib-form" method="POST"
-                    :action="actionUrl"
-                    data-type="subscription">
-                    <div style="padding: 0px">
-                        <div class="sib-input sib-form-block" style="padding: 0px;">
-                            <div class="form__entry entry_block">
-                                <div class="form__label-row ">
-                                    <div class="entry__field">
-                                        <input class="input " type="text" id="EMAIL" name="EMAIL" autocomplete="off"
-                                            :placeholder="emailPlaceholder" data-required="true" required />
+                <form id="sib-form" method="POST" :action="actionUrl" data-type="subscription">
+                    <slot>
+                        <div style="padding: 0px">
+                            <div class="sib-input sib-form-block" style="padding: 0px;">
+                                <div class="form__entry entry_block">
+                                    <div class="form__label-row ">
+                                        <div class="entry__field">
+                                            <input class="input " type="text" id="EMAIL" name="EMAIL" autocomplete="off"
+                                                :placeholder="emailPlaceholder" data-required="true" required />
+                                        </div>
                                     </div>
-                                </div>
 
-                                <label class="entry__error entry__error--primary"
-                                    style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
-                                </label>
+                                    <label class="entry__error entry__error--primary"
+                                        style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div style="padding: 8px 0;">
-                        <div class="sib-form-block" style="text-align: left; padding: 0px;">
-                            <button class="sib-form-block__button sib-form-block__button-with-loader"
-                                style="font-size:16px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#FFFFFF; background-color:#487634; border-radius:3px; border-width:0px;"
-                                form="sib-form" type="submit">
-                                <div class="flex">
-                                    <svg style="fill: #FFFFFF;"
-                                        class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon"
-                                        viewBox="0 0 512 512">
-                                        <path
-                                            d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
-                                    </svg>
-                                    <div>
-                                        {{ buttonText }}
+                        <div style="padding: 8px 0;">
+                            <div class="sib-form-block" style="text-align: left; padding: 0px;">
+                                <button class="sib-form-block__button sib-form-block__button-with-loader"
+                                    style="font-size:16px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#FFFFFF; background-color:#487634; border-radius:3px; border-width:0px;"
+                                    form="sib-form" type="submit">
+                                    <div class="flex">
+                                        <svg style="fill: #FFFFFF;"
+                                            class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon"
+                                            viewBox="0 0 512 512">
+                                            <path
+                                                d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+                                        </svg>
+                                        <div>
+                                            {{ buttonText }}
+                                        </div>
                                     </div>
-                                </div>
-                            </button>
+                                </button>
+                            </div>
                         </div>
-                    </div>
 
-                    <input type="text" name="email_address_check" value="" class="input--hidden">
-                    <input type="hidden" name="locale" value="en">
+                        <input type="text" name="email_address_check" value="" class="input--hidden">
+                        <input type="hidden" name="locale" value="en">
+                    </slot>
                 </form>
             </div>
         </div>
@@ -144,23 +156,19 @@ const props = defineProps({
 #sib-container input:-ms-input-placeholder {
     text-align: left;
     font-family: Helvetica, sans-serif;
-    color: #106934;
 }
 
 #sib-container input::placeholder {
     text-align: left;
     font-family: Helvetica, sans-serif;
-    color: #106934;
 }
 
 #sib-container textarea::placeholder {
     text-align: left;
     font-family: Helvetica, sans-serif;
-    color: #106934;
 }
 
 #sib-container a {
     text-decoration: underline;
-    color: #2BB2FC;
 }
 </style>

@@ -1,6 +1,6 @@
 <script setup>
 import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/vue/24/outline'
-import BrevoForm from './BrevoForm.vue';
+import BrevoForm from '../BrevoForm.vue';
 
 defineProps({
     brevoNewsletterUrl: {
@@ -35,7 +35,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="py-16 overflow-hidden bg-yellow-500 isolate sm:py-24 lg:py-32">
+     <div class="py-32 overflow-hidden bg-yellow-500 isolate">
         <div class="px-6 mx-auto max-w-7xl lg:px-8">
             <!-- Main Content Grid with Responsive Layout -->
             <div class="grid max-w-2xl grid-cols-1 mx-auto gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2" >
@@ -49,8 +49,8 @@ defineProps({
                         {{ newsletterDescription }}
                     </p>
 
-                    <!-- Newsletter iframe -->
-                    <BrevoForm :actionUrl="brevoNewsletterUrl" />
+                    <!-- Newsletter component -->
+                    <BrevoForm :actionUrl="brevoNewsletterUrl"/>
                 </div>
 
                 <!-- Right Section: Benefits of Subscribing -->

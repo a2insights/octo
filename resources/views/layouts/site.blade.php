@@ -20,6 +20,4 @@
     <body class="font-sans antialiased" style="margin: 0;">
         @inertia
     </body>
-    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
-    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 </html>
