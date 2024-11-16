@@ -69,7 +69,7 @@ class SysadminPanelServiceProvider extends PanelProvider
                     //     permissions: ['create', 'update', 'view', 'delete'] // optional, customize the permissions (default = ["create", "view", "update", "delete"])
                     // )
                     ->myProfileComponents([Phone::class, Username::class]),
-                \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn() => auth()->user() ? auth()->user()->hasRole('super_admin') : false),
+                \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn () => auth()->user() ? auth()->user()->hasRole('super_admin') : false),
                 \Marjose123\FilamentWebhookServer\WebhookPlugin::make(),
                 \HusamTariq\FilamentDatabaseSchedule\FilamentDatabaseSchedulePlugin::make(),
                 \SolutionForest\FilamentFirewall\FilamentFirewallPanel::make(),
