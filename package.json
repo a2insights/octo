@@ -27,6 +27,7 @@
         "@inertiajs/vue3": "^1.2.0",
         "@vue/server-renderer": "^3.5.12",
         "auto-typer-vue3": "^1.2.4",
-        "express": "^4.18.2"
+        "express": "^4.18.2",
+        "vue-social-chat": "^1.0.0"
     }
 }

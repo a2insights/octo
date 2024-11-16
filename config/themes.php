@@ -1,5 +1,7 @@
 <?php
 
+use Filament\Support\Colors\Color;
+
 return [
 
     /*
@@ -31,6 +33,6 @@ return [
 
     'default' => [
         'theme' => 'default',
-        'theme_color' => 'blue',
+        'theme_color' => Color::Amber,
     ],
 ];

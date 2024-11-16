@@ -15,7 +15,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { ChevronDownIcon, PhoneIcon, DocumentMagnifyingGlassIcon } from '@heroicons/vue/20/solid'
 
 const products = [
-{
+    {
         name: 'Filament Admin',
         description: 'SaaS Scalfolding for Filament',
         href: '#',
@@ -44,7 +44,7 @@ const mobileMenuOpen = ref(false)
     <header class="sticky inset-x-0 top-0 z-50 bg-white/10 backdrop-blur-lg">
         <nav class="flex items-center justify-between p-3 mx-auto max-w-7xl lg:px-8" aria-label="Global">
             <div class="flex lg:flex-1">
-                <a href="#" class="-m-1.5 p-1.5">
+                <a :href="$page.props.siteUrl" class="-m-1.5 p-1.5">
                     <span class="sr-only">Filament SaaS</span>
                     <img class="w-auto h-5" src="/img/logo.svg" alt="" />
                 </a>
@@ -105,11 +105,10 @@ const mobileMenuOpen = ref(false)
                     </transition>
                 </Popover>
 
-                <a href="#features" class="font-semibold text-gray-900 text-sm/6">Features</a>
-                <a href="#pricing" class="font-semibold text-gray-900 text-sm/6">Pricing</a>
-                <a href="#"
-                    class="text-sm font-semibold text-gray-400 cursor-default pointer-events-none">Marketplace</a>
-                <a href="/blog" class="font-semibold text-gray-900 text-sm/6">Blog</a>
+                <a href="/#features" class="font-semibold text-gray-900 text-sm/6">Features</a>
+                <a href="/#pricing" class="font-semibold text-gray-900 text-sm/6">Pricing</a>
+                <a href="#" class="font-semibold text-gray-400 cursor-default pointer-events-none text-sm/6">Marketplace</a>
+                <a :href="$page.props.blogUrl" class="font-semibold text-gray-900 text-sm/6">Blog</a>
                 <a href="https://A2Insights.com.br" target="_blank" rel="noopener noreferrer"
                     class="font-semibold text-gray-900 text-sm/6">
                     A2Insights
@@ -127,7 +126,7 @@ const mobileMenuOpen = ref(false)
             <DialogPanel
                 class="fixed inset-y-0 right-0 z-10 w-full px-6 py-6 overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                 <div class="flex items-center justify-between">
-                    <a href="#" class="-m-1.5 p-1.5">
+                    <a :href="$page.props.siteUrl" class="-m-1.5 p-1.5">
                         <span class="sr-only">Filament SaaS</span>
                         <img class="w-auto h-4" src="/img/logo.svg" alt="" />
                     </a>
@@ -154,20 +153,20 @@ const mobileMenuOpen = ref(false)
                                     </DisclosureButton>
                                 </DisclosurePanel>
                             </Disclosure>
-                            <a href="#features" @click="mobileMenuOpen = false"
+                            <a href="/#features" @click="mobileMenuOpen = false"
                                 class="block px-3 py-2 -mx-3 font-semibold text-gray-900 rounded-lg text-base/7 hover:bg-gray-50">
                                 Funcionalidades
                             </a>
-                            <a href="/blog" @click="mobileMenuOpen = false"
+                            <a :href="$page.props.blogUrl" @click="mobileMenuOpen = false"
                                 class="block px-3 py-2 -mx-3 font-semibold text-gray-900 rounded-lg text-base/7 hover:bg-gray-50">
                                 Blog
                             </a>
-                            <a href="#pricing" @click="mobileMenuOpen = false"
+                            <a href="/#pricing" @click="mobileMenuOpen = false"
                                 class="block px-3 py-2 -mx-3 font-semibold text-gray-900 rounded-lg text-base/7 hover:bg-gray-50">
                                 Preços
                             </a>
                             <a href="#"
-                                class="block px-3 py-2 -mx-3 text-base font-semibold text-gray-400 rounded-lg cursor-default pointer-events-none hover:bg-transparent">
+                                class="block px-3 py-2 -mx-3 font-semibold text-gray-400 rounded-lg cursor-default pointer-events-none text-base/7 hover:bg-transparent">
                                 Marketplace
                             </a>
                         </div>

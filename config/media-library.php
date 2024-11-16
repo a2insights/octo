@@ -1,7 +1,5 @@
 <?php
 
-use Filament\Facades\Filament;
-
 return [
 
     /*

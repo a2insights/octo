@@ -1,6 +1,6 @@
 <script setup>
 import { Head } from '@inertiajs/vue3';
-import GuestLayout from '@/Layouts/SiteLayout.vue';
+import SiteLayout from '@/Layouts/SiteLayout.vue';
 import HeroSection from '@/Components/Home/HeroSection.vue';
 import FeaturesSection from '@/Components/Home/FeaturesSection.vue';
 import PricingSection from '@/Components/Home/PricingSection.vue';
@@ -10,6 +10,10 @@ import TestimonialSection from '@/Components/Home/TestimonialSection.vue';
 import { computed } from 'vue';
 
 const props = defineProps({
+    appName: {
+        type: String,
+        required: true,
+    },
     laravelVersion: {
         type: String,
         required: true,
@@ -30,8 +34,36 @@ const props = defineProps({
         type: [String, null],
         required: false,
     },
+    blogUrl: {
+        type: [String, null],
+        required: false,
+    },
     dashboardUrl: {
         type: [String, null],
+        required: false,
+    },
+    siteUrl: {
+        type: [String, null],
+        required: false,
+    },
+    privacyPolicyUrl: {
+        type: [String, null],
+        required: false,
+    },
+    termsOfServiceUrl: {
+        type: [String, null],
+        required: false,
+    },
+    settings: {
+        type: Object,
+        required: false,
+    },
+    features: {
+        type: Object,
+        required: true,
+    },
+    whatsappChatSettings: {
+        type: Object,
         required: false,
     }
 });
@@ -71,7 +103,7 @@ const plans = computed(() => [
 </script>
 
 <template>
-    <GuestLayout>
+    <SiteLayout>
 
         <Head title="Home" />
 
@@ -92,5 +124,5 @@ const plans = computed(() => [
             image: 'https://gravatar.com/userimage/119243084/fe4cf032204c01f57b4885f1eb06ed19.jpeg?size=80'
         }" />
         <NewsletterSection v-if="brevoNewsletterUrl" :brevoNewsletterUrl="brevoNewsletterUrl" />
-    </GuestLayout>
+    </SiteLayout>
 </template>

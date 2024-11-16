@@ -17,9 +17,7 @@ class WebhookPolicy
      */
     public function viewAny(User $user, Features $feature)
     {
-        $features = app(Features::class);
-
-        return $user->hasRole('super_admin') || $features->webhook; // @phpstan-ignore-line
+        return true;
     }
 
     /**
@@ -29,9 +27,7 @@ class WebhookPolicy
      */
     public function view(User $user)
     {
-        $features = app(Features::class);
-
-        return $user->hasRole('super_admin') || $features->webhook; // @phpstan-ignore-line
+        return true;
     }
 
     /**
@@ -41,8 +37,6 @@ class WebhookPolicy
      */
     public function create(User $user)
     {
-        $features = app(Features::class);
-
-        return $user->hasRole('super_admin') || $features->webhook; // @phpstan-ignore-line
+        return true;
     }
 }

@@ -20,12 +20,12 @@ return [
     'route' => [
         'prefix' => 'blog',
         'middleware' => ['web'],
-               'home' => [
-                   'name' => 'filamentblog.home',
-                   'url' => env('APP_URL'),
-               ],
+        'home' => [
+            'name' => 'site.home',
+            'url' => env('APP_URL'),
+        ],
         'login' => [
-            'name' => 'filamentblog.post.login',
+            'name' => 'filament.admin.auth.login',
         ],
     ],
     'user' => [

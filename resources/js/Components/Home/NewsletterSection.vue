@@ -1,5 +1,6 @@
 <script setup>
 import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/vue/24/outline'
+import BrevoForm from '../BrevoForm.vue';
 
 defineProps({
     brevoNewsletterUrl: {
@@ -34,25 +35,22 @@ defineProps({
 </script>
 
 <template>
-    <div class="overflow-hidden bg-yellow-500 isolate sm:pt-16 lg:pt-16">
+     <div class="py-32 bg-yellow-500 isolate">
         <div class="px-6 mx-auto max-w-7xl lg:px-8">
             <!-- Main Content Grid with Responsive Layout -->
-            <div class="grid grid-cols-1 mx-auto gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2" style="height: 300px">
+            <div class="grid grid-cols-1 mx-auto gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
 
                 <!-- Left Section: Newsletter Subscription -->
                 <div class="max-w-xl lg:max-w-lg">
                     <h2 class="text-4xl font-semibold tracking-tight text-black">
                         {{ newsletterTitle }}
                     </h2>
-                    <p class="mt-4 text-lg text-gray-600">
+                    <p class="mt-2 text-lg text-gray-600">
                         {{ newsletterDescription }}
                     </p>
 
-                    <!-- Newsletter iframe -->
-                    <div class="flex max-w-md mt-6 gap-x-4">
-                        <iframe :src="brevoNewsletterUrl" width="100%" height="280" frameborder="0" scrolling="auto"
-                            allowfullscreen style="position:relative; left:-43px; top:-75px; max-width:100%;" />
-                    </div>
+                    <!-- Newsletter component -->
+                    <BrevoForm :actionUrl="brevoNewsletterUrl"/>
                 </div>
 
                 <!-- Right Section: Benefits of Subscribing -->

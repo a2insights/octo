@@ -10,8 +10,3 @@
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-use App\Http\Controllers\SiteController;
-use Illuminate\Support\Facades\Route;
-
-Route::get('/', [SiteController::class, 'index']);

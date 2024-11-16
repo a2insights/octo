@@ -18,7 +18,7 @@ class UserPolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->can('view_any_A2Insights::filament::saas::user::filament::user');
+        return $user->can('view_any_a2::insights::filament::saas::user::filament::user');
     }
 
     /**
@@ -29,7 +29,7 @@ class UserPolicy
      */
     public function view(User $user): bool
     {
-        return $user->can('view_A2Insights::filament::saas::user::filament::user');
+        return $user->can('view_a2::insights::filament::saas::user::filament::user');
     }
 
     /**
@@ -40,7 +40,7 @@ class UserPolicy
      */
     public function create(User $user): bool
     {
-        return $user->can('create_A2Insights::filament::saas::user::filament::user');
+        return $user->can('create_a2::insights::filament::saas::user::filament::user');
     }
 
     /**
@@ -51,7 +51,7 @@ class UserPolicy
      */
     public function update(User $user): bool
     {
-        return $user->can('update_A2Insights::filament::saas::user::filament::user');
+        return $user->can('update_a2::insights::filament::saas::user::filament::user');
     }
 
     /**
@@ -62,7 +62,7 @@ class UserPolicy
      */
     public function delete(User $user): bool
     {
-        return $user->can('delete_A2Insights::filament::saas::user::filament::user');
+        return $user->can('delete_a2::insights::filament::saas::user::filament::user');
     }
 
     /**
@@ -73,7 +73,7 @@ class UserPolicy
      */
     public function deleteAny(User $user): bool
     {
-        return $user->can('delete_any_A2Insights::filament::saas::user::filament::user');
+        return $user->can('delete_any_a2::insights::filament::saas::user::filament::user');
     }
 
     /**
@@ -84,7 +84,7 @@ class UserPolicy
      */
     public function forceDelete(User $user): bool
     {
-        return $user->can('force_delete_A2Insights::filament::saas::user::filament::user');
+        return $user->can('force_delete_a2::insights::filament::saas::user::filament::user');
     }
 
     /**
@@ -95,7 +95,7 @@ class UserPolicy
      */
     public function forceDeleteAny(User $user): bool
     {
-        return $user->can('force_delete_any_A2Insights::filament::saas::user::filament::user');
+        return $user->can('force_delete_any_a2::insights::filament::saas::user::filament::user');
     }
 
     /**
@@ -106,7 +106,7 @@ class UserPolicy
      */
     public function restore(User $user): bool
     {
-        return $user->can('restore_A2Insights::filament::saas::user::filament::user');
+        return $user->can('restore_a2::insights::filament::saas::user::filament::user');
     }
 
     /**
@@ -117,7 +117,7 @@ class UserPolicy
      */
     public function restoreAny(User $user): bool
     {
-        return $user->can('restore_any_A2Insights::filament::saas::user::filament::user');
+        return $user->can('restore_any_a2::insights::filament::saas::user::filament::user');
     }
 
     /**
@@ -128,7 +128,7 @@ class UserPolicy
      */
     public function replicate(User $user): bool
     {
-        return $user->can('replicate_A2Insights::filament::saas::user::filament::user');
+        return $user->can('replicate_a2::insights::filament::saas::user::filament::user');
     }
 
     /**
@@ -139,6 +139,6 @@ class UserPolicy
      */
     public function reorder(User $user): bool
     {
-        return $user->can('reorder_A2Insights::filament::saas::user::filament::user');
+        return $user->can('reorder_a2::insights::filament::saas::user::filament::user');
     }
 }
