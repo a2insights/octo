@@ -6,7 +6,7 @@
         <div class="w-full max-w-screen-xl p-4 pt-20 pb-8 mx-auto lg:pt-16">
             <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">
-                    <a href="https://github.com/A2Insights/filament-saas" class="flex items-center">
+                    <a :href="$page.props.siteUrl" class="flex items-center">
                         <img src="/img/logo.svg" class="h-8 me-3" alt="Filament SaaS Logo" />
                     </a>
                 </div>
@@ -50,12 +50,12 @@
                         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Legal</h2>
                         <ul class="font-medium text-gray-500">
                             <li class="mb-4">
-                                <a href="/privacy-policy" class="hover:underline">
+                                <a :href="$page.props.privacyPolicyUrl" class="hover:underline">
                                     Privacy Policy
                                 </a>
                             </li>
                             <li>
-                                <a href="/terms-of-service" class="hover:underline">
+                                <a :href="$page.props.termsOfServiceUrl" class="hover:underline">
                                     Terms of Service
                                 </a>
                             </li>
@@ -67,8 +67,8 @@
             <div class="sm:flex sm:items-center sm:justify-between">
                 <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
                     © 2024
-                    <a href="https://github.com/A2Insights/filament-saas/" class="hover:underline">
-                        Filament SaaS™
+                    <a :href="$page.props.siteUrl" class="hover:underline">
+                        {{ $page.props.appName }}™
                     </a>
                     . All Rights Reserved.
                 </span>

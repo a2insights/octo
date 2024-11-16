@@ -21,11 +21,11 @@ return [
         'prefix' => 'blog',
         'middleware' => ['web'],
         'home' => [
-            'name' => 'filamentblog.home',
+            'name' => 'site.home',
             'url' => env('APP_URL'),
         ],
         'login' => [
-            'name' => 'filamentblog.post.login',
+            'name' => 'filament.admin.auth.login',
         ],
     ],
     'user' => [

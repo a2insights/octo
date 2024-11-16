@@ -13,18 +13,21 @@ onMounted(() => {
   document.head.appendChild(link);
 });
 
-window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
-window.LOCALE = 'en';
-window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
-window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank.";
-window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+const isServer = typeof window === 'undefined'
+if (!isServer) {
+    window.REQUIRED_CODE_ERROR_MESSAGE = 'Por favor, confirme o código de verificação enviado para seu email.';
+    window.LOCALE = 'pt';
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Mensage inválido. Por favor, revise o formato do campo e tente novamente.";
+    window.REQUIRED_ERROR_MESSAGE = "O campo é obrigatório.";
+    window.GENERIC_INVALID_MESSAGE = "A informação fornecida é inválida. Por favor, revise o formato do campo e tente novamente.";
 
-window.translation = {
-    common: {
-        selectedList: '{quantity} list selected',
-        selectedLists: '{quantity} lists selected'
-    }
-};
+    window.translation = {
+        common: {
+            selectedList: '{quantity} list selected',
+            selectedLists: '{quantity} lists selected'
+        }
+    };
+}
 
 const props = defineProps({
     errorMessage: {

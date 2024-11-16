@@ -1,12 +1,16 @@
 <script setup>
 import Header from '@/Components/Layout/Header.vue';
 import Footer from '@/Components/Layout/Footer.vue';
+import WhatsappChat from '@/Components/WhatsappChat.vue';
 </script>
 
 <template>
-    <div class="bg-white">
+    <div class="flex flex-col h-screen bg-white">
         <Header />
         <slot />
         <Footer />
+
+        <WhatsappChat v-if="$page.props.features.whatsapp_chat" :settings="$page.props.whatsappChatSettings"  />
     </div>
 </template>
+

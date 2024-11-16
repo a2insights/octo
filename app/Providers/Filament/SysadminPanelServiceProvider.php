@@ -23,9 +23,8 @@ class SysadminPanelServiceProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->default()
             ->id('sysadmin')
-            ->homeUrl('/')
+            ->homeUrl(config('filament-saas.site_path'))
             ->path(config('filament-saas.sysadmin_path'))
             ->authGuard('web')
             ->login()
@@ -47,6 +46,10 @@ class SysadminPanelServiceProvider extends PanelProvider
             ->databaseNotifications()
             ->databaseNotificationsPolling('30s')
             ->plugins([
+                \Awcodes\FilamentQuickCreate\QuickCreatePlugin::make()
+                    ->includes([
+                        \A2Insights\FilamentSaas\User\Filament\UserResource::class,
+                    ]),
                 \pxlrbt\FilamentSpotlight\SpotlightPlugin::make(),
                 \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
                 \CmsMulti\FilamentClearCache\FilamentClearCachePlugin::make(),
@@ -61,19 +64,19 @@ class SysadminPanelServiceProvider extends PanelProvider
                         force: false, // force the user to enable 2FA before they can use the application (default = false)
                         // action: CustomTwoFactorPage::class // optionally, use a custom 2FA page
                     )
-                // TODO: Disable becouse we cant disable from features settings
-                // ->enableSanctumTokens(
-                //     permissions: ['create', 'update', 'view', 'delete'] // optional, customize the permissions (default = ["create", "view", "update", "delete"])
-                // )
+                    // TODO: Disable becouse we cant disable from features settings
+                    // ->enableSanctumTokens(
+                    //     permissions: ['create', 'update', 'view', 'delete'] // optional, customize the permissions (default = ["create", "view", "update", "delete"])
+                    // )
                     ->myProfileComponents([Phone::class, Username::class]),
-                \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn () => auth()->user() ? auth()->user()->hasRole('super_admin') : false),
+                \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn() => auth()->user() ? auth()->user()->hasRole('super_admin') : false),
                 \Marjose123\FilamentWebhookServer\WebhookPlugin::make(),
                 \HusamTariq\FilamentDatabaseSchedule\FilamentDatabaseSchedulePlugin::make(),
                 \SolutionForest\FilamentFirewall\FilamentFirewallPanel::make(),
                 \pxlrbt\FilamentEnvironmentIndicator\EnvironmentIndicatorPlugin::make(),
                 \BezhanSalleh\FilamentExceptions\FilamentExceptionsPlugin::make(),
                 \Firefly\FilamentBlog\Blog::make(),
-                \BezhanSalleh\FilamentGoogleAnalytics\FilamentGoogleAnalyticsPlugin::make(),
+                // \BezhanSalleh\FilamentGoogleAnalytics\FilamentGoogleAnalyticsPlugin::make(),
                 \Croustibat\FilamentJobsMonitor\FilamentJobsMonitorPlugin::make()
                     ->label('Job')
                     ->pluralLabel('Jobs')
@@ -88,6 +91,7 @@ class SysadminPanelServiceProvider extends PanelProvider
                 \A2Insights\FilamentSaas\Features\FeaturesPlugin::make(),
                 \A2Insights\FilamentSaas\Settings\SettingsPlugin::make(),
                 \A2Insights\FilamentSaas\System\SystemPlugin::make(),
+                \A2Insights\FilamentSaas\Site\SitePlugin::make(),
                 \A21ns1g4ts\FilamentStripe\FilamentStripePlugin::make(),
             ])
             ->widgets([
@@ -104,8 +108,8 @@ class SysadminPanelServiceProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-                \A2Insights\FilamentSaas\Settings\Http\Middleware\Locale::class,
                 \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
+                \A2Insights\FilamentSaas\Settings\Http\Middleware\Locale::class,
             ])
             ->authMiddleware([
                 Authenticate::class,

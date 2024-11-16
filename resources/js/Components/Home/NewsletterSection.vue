@@ -35,7 +35,7 @@ defineProps({
 </script>
 
 <template>
-     <div class="py-32 overflow-hidden bg-yellow-500 isolate">
+     <div class="py-32 bg-yellow-500 isolate">
         <div class="px-6 mx-auto max-w-7xl lg:px-8">
             <!-- Main Content Grid with Responsive Layout -->
             <div class="grid grid-cols-1 mx-auto gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">

@@ -11,8 +11,8 @@ return new class extends SettingsMigration
         $this->migrator->add('features.auth_login', true);
         $this->migrator->add('features.auth_2fa', false);
         $this->migrator->add('features.webhooks', false);
+        $this->migrator->add('features.whatsapp_chat', false);
         $this->migrator->add('features.recaptcha', false);
-        $this->migrator->add('features.terms', true);
         $this->migrator->add('features.user_phone', false);
         $this->migrator->add('features.username', false);
         $this->migrator->add('features.switch_language', true);

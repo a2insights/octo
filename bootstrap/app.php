@@ -15,9 +15,9 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [
             \App\Http\Middleware\HandleInertiaRequests::class,
             \Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets::class,
+            \A2Insights\FilamentSaas\Settings\Http\Middleware\Locale::class,
         ]);
 
-        $middleware->append(\Hasnayeen\Themes\Http\Middleware\SetTheme::class);
         // $middleware->append(\SolutionForest\FilamentFirewall\Middleware\WhitelistRangeMiddleware::class);
     })
     ->withExceptions(function (Exceptions $exceptions) {

@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use A2Insights\FilamentSaas\Features\Features;
 use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\AddCompanyEmployee;
 use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\CreateConnectedAccount;
 use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\CreateNewUser;
@@ -52,10 +53,10 @@ class TenantPanelServiceProvider extends PanelProvider
         return $panel
             ->id('admin')
             ->path(config('filament-saas.tenant_path'))
-            ->homeUrl('/')
+            ->homeUrl(config('filament-saas.site_path'))
             ->default()
             ->login(Login::class)
-            ->registration(TenantRegister::class)
+            ->registration(app(Features::class)->auth_registration ? TenantRegister::class : false)
             ->passwordReset()
             ->emailVerification()
             ->profile()
@@ -70,19 +71,18 @@ class TenantPanelServiceProvider extends PanelProvider
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
-            ->resources([
-                config('filament-logger.activity_resource'),
-            ])
             ->pages([
                 Pages\Dashboard::class,
             ])
             ->databaseNotifications()
             ->databaseNotificationsPolling('30s')
             ->plugins([
-                \pxlrbt\FilamentSpotlight\SpotlightPlugin::make(),
+                \Awcodes\FilamentQuickCreate\QuickCreatePlugin::make()
+                    ->includes([
+                        \A2Insights\FilamentSaas\User\Filament\UserResource::class,
+                    ]),
+                \MarcoGermani87\FilamentCookieConsent\FilamentCookieConsent::make(),
                 \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
-                \CmsMulti\FilamentClearCache\FilamentClearCachePlugin::make(),
-                \Brickx\MaintenanceSwitch\MaintenanceSwitchPlugin::make(),
                 \Jeffgreco13\FilamentBreezy\BreezyCore::make()->myProfile(
                     shouldRegisterUserMenu: true, // Sets the 'account' link in the panel User Menu (default = true)
                     shouldRegisterNavigation: false, // Adds a main navigation item for the My Profile page (default = false)
@@ -98,28 +98,11 @@ class TenantPanelServiceProvider extends PanelProvider
                     // )
                     ->customMyProfilePage(TentantUserProfilePage::class)
                     ->myProfileComponents([Phone::class, Username::class])
-                    ->avatarUploadComponent(fn ($fileUpload) => $fileUpload
+                    ->avatarUploadComponent(fn($fileUpload) => $fileUpload
                         ->visibility('private')
                         ->directory('avatars')
                         ->disk('avatars')),
-                \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn () => auth()->user() ? auth()->user()->hasRole('super_admin') : false),
-                \Marjose123\FilamentWebhookServer\WebhookPlugin::make(),
-                \HusamTariq\FilamentDatabaseSchedule\FilamentDatabaseSchedulePlugin::make(),
-                \SolutionForest\FilamentFirewall\FilamentFirewallPanel::make(),
-                \pxlrbt\FilamentEnvironmentIndicator\EnvironmentIndicatorPlugin::make(),
-                \BezhanSalleh\FilamentExceptions\FilamentExceptionsPlugin::make(),
-                \Firefly\FilamentBlog\Blog::make(),
-                \BezhanSalleh\FilamentGoogleAnalytics\FilamentGoogleAnalyticsPlugin::make(),
-                \Croustibat\FilamentJobsMonitor\FilamentJobsMonitorPlugin::make()
-                    ->label('Job')
-                    ->pluralLabel('Jobs')
-                    ->enableNavigation(true)
-                    ->navigationIcon('heroicon-o-cpu-chip')
-                    ->navigationGroup('System')
-                    ->navigationSort(5)
-                    ->navigationCountBadge(true)
-                    ->enablePruning(true)
-                    ->pruningRetention(7),
+                \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn() => auth()->user()->hasRole('super_admin')),
                 FilamentCompanies::make()
                     ->userPanel('company')
                     ->switchCurrentCompany()
@@ -150,7 +133,6 @@ class TenantPanelServiceProvider extends PanelProvider
                 \A2Insights\FilamentSaas\User\UserPlugin::make(),
                 \A2Insights\FilamentSaas\Features\FeaturesPlugin::make(),
                 \A2Insights\FilamentSaas\Settings\SettingsPlugin::make(),
-                \A2Insights\FilamentSaas\System\SystemPlugin::make(),
                 \A2Insights\FilamentSaas\Tenant\TenantPlugin::make(),
                 \A21ns1g4ts\FilamentStripe\FilamentStripePlugin::make(),
             ])

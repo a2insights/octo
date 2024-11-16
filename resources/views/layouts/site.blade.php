@@ -6,11 +6,15 @@
 
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
 
+        <!-- SEO tags -->
         {!! SEO::generate() !!}
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+        <!-- Head -->
+        {!! $head !!}
 
         <!-- Scripts -->
         @routes
@@ -19,5 +23,14 @@
     </head>
     <body class="font-sans antialiased" style="margin: 0;">
         @inertia
+
+        <!-- Cookie consent -->
+        @include('filament-cookie-consent::index')
     </body>
+    <style>
+        .js-cookie-consent  div {
+            align-items: center;
+            color: white;
+        }
+    </style>
 </html>
