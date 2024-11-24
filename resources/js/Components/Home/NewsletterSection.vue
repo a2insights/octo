@@ -54,7 +54,7 @@ defineProps({
                 </div>
 
                 <!-- Right Section: Benefits of Subscribing -->
-                <dl class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
+                <div class="grid max-w-2xl grid-cols-1 mx-auto gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
 
                     <!-- Weekly News -->
                     <div class="flex flex-col items-start">
@@ -73,7 +73,7 @@ defineProps({
                         <dt class="mt-4 text-base font-semibold text-black">{{ benefitTwoTitle }}</dt>
                         <dd class="mt-2 text-gray-600">{{ benefitTwoDescription }}</dd>
                     </div>
-                </dl>
+                </div>
             </div>
         </div>
     </div>

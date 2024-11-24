@@ -25,12 +25,6 @@
         @inertia
 
         <!-- Cookie consent -->
-        @include('filament-cookie-consent::index')
+        {{-- @include('filament-cookie-consent::index') --}}
     </body>
-    <style>
-        .js-cookie-consent  div {
-            align-items: center;
-            color: white;
-        }
-    </style>
 </html>

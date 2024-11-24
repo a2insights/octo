@@ -2,15 +2,15 @@
 import { onMounted } from 'vue';
 
 onMounted(() => {
-  const script = document.createElement('script');
-  script.src = 'https://sibforms.com/forms/end-form/build/main.js';
-  script.defer = true;
-  document.head.appendChild(script);
+    const script = document.createElement('script');
+    script.src = 'https://sibforms.com/forms/end-form/build/main.js';
+    script.defer = true;
+    document.head.appendChild(script);
 
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = 'https://sibforms.com/forms/end-form/build/sib-styles.css';
-  document.head.appendChild(link);
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://sibforms.com/forms/end-form/build/sib-styles.css';
+    document.head.appendChild(link);
 });
 
 const isServer = typeof window === 'undefined'
@@ -106,7 +106,7 @@ const props = defineProps({
                                 </div>
                             </div>
                         </div>
-                        <div style="padding: 0px">
+                        <div style="padding: 0px;">
                             <div class="mt-5 sib-form-block" style="text-align: left; padding: 0px;">
                                 <button class="sib-form-block__button sib-form-block__button-with-loader"
                                     style="font-size:16px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#FFFFFF; background-color:#487634; border-radius:3px; border-width:0px;"

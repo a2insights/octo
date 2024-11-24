@@ -3,7 +3,7 @@
 
 <template>
     <footer class="bg-white">
-        <div class="w-full max-w-screen-xl p-4 pt-20 pb-8 mx-auto lg:pt-16">
+        <div class="w-full max-w-screen-xl p-4 pt-8 pb-5 mx-auto sm:pt-8 lg:pt-16">
             <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">
                     <a :href="$page.props.siteUrl" class="flex items-center">
@@ -72,7 +72,7 @@
                     </a>
                     . All Rights Reserved.
                 </span>
-                <div class="flex mt-4 space-x-3 sm:justify-center md:mt-0 rtl:space-x-reverse">
+                <div class="flex mt-4 sm:mt-0">
                     <a href="https://github.com/A2Insights" class="text-gray-500 hover:text-gray-900">
                         <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 20 20">
@@ -83,7 +83,7 @@
                         <span class="sr-only">GitHub</span>
                     </a>
                     <a href="https://www.instagram.com/A2Insights" target="_blank" rel="noopener noreferrer"
-                        class="text-gray-500 hover:text-gray-900">
+                        class="text-gray-500 hover:text-gray-900 ms-5">
                         <svg class="w-[22px] h-[22px] relative -top-1" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path fill="currentColor" fill-rule="evenodd"

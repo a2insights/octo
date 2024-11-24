@@ -98,11 +98,11 @@ class TenantPanelServiceProvider extends PanelProvider
                     // )
                     ->customMyProfilePage(TentantUserProfilePage::class)
                     ->myProfileComponents([Phone::class, Username::class])
-                    ->avatarUploadComponent(fn($fileUpload) => $fileUpload
+                    ->avatarUploadComponent(fn ($fileUpload) => $fileUpload
                         ->visibility('private')
                         ->directory('avatars')
                         ->disk('avatars')),
-                \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn() => auth()->user()->hasRole('super_admin')),
+                \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn () => (bool) auth()?->user()?->hasRole('super_admin')),
                 FilamentCompanies::make()
                     ->userPanel('company')
                     ->switchCurrentCompany()

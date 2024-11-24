@@ -1,6 +1,6 @@
 <script setup>
 import { Head } from '@inertiajs/vue3';
-import GuestLayout from '@/Layouts/SiteLayout.vue';
+import SiteLayout from '@/Layouts/SiteLayout.vue';
 
 const props = defineProps({
     title: {
@@ -16,16 +16,16 @@ const props = defineProps({
 </script>
 
 <template>
-    <GuestLayout>
+    <SiteLayout>
 
         <Head :title="title" />
 
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <div v-html="terms"></div>
+        <div class="p-4 py-4 sm:px-6 lg:px-8 pb-28">
+            <div class="max-w-6xl mx-auto overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="text-gray-400">
+                    <div v-html="terms"/>
                 </div>
             </div>
         </div>
-    </GuestLayout>
+    </SiteLayout>
 </template>
