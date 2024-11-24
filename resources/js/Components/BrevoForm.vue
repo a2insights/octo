@@ -2,15 +2,15 @@
 import { onMounted } from 'vue';
 
 onMounted(() => {
-  const script = document.createElement('script');
-  script.src = 'https://sibforms.com/forms/end-form/build/main.js';
-  script.defer = true;
-  document.head.appendChild(script);
+    const script = document.createElement('script');
+    script.src = 'https://sibforms.com/forms/end-form/build/main.js';
+    script.defer = true;
+    document.head.appendChild(script);
 
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = 'https://sibforms.com/forms/end-form/build/sib-styles.css';
-  document.head.appendChild(link);
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://sibforms.com/forms/end-form/build/sib-styles.css';
+    document.head.appendChild(link);
 });
 
 const isServer = typeof window === 'undefined'

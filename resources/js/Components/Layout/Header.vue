@@ -107,7 +107,8 @@ const mobileMenuOpen = ref(false)
 
                 <a href="/#features" class="font-semibold text-gray-900 text-sm/6">Features</a>
                 <a href="/#pricing" class="font-semibold text-gray-900 text-sm/6">Pricing</a>
-                <a href="#" class="font-semibold text-gray-400 cursor-default pointer-events-none text-sm/6">Marketplace</a>
+                <a href="#"
+                    class="font-semibold text-gray-400 cursor-default pointer-events-none text-sm/6">Marketplace</a>
                 <a :href="$page.props.blogUrl" class="font-semibold text-gray-900 text-sm/6">Blog</a>
                 <a href="https://A2Insights.com.br" target="_blank" rel="noopener noreferrer"
                     class="font-semibold text-gray-900 text-sm/6">

@@ -5,7 +5,7 @@ import WhatsappChat from '@/Components/WhatsappChat.vue';
 </script>
 
 <template>
-    <div class="flex flex-col h-screen bg-white">
+    <div>
         <Header />
         <slot />
         <Footer />
