@@ -28,7 +28,7 @@ class SysadminPanelServiceProvider extends PanelProvider
             ->path(config('filament-saas.sysadmin_path'))
             ->authGuard('web')
             ->login()
-            ->registration(\A2Insights\FilamentSaas\User\Filament\Pages\Register::class)
+            // ->registration(\A2Insights\FilamentSaas\User\Filament\Pages\Register::class)
             ->passwordReset()
             ->emailVerification()
             ->profile()

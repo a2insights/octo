@@ -56,7 +56,7 @@ class TenantPanelServiceProvider extends PanelProvider
             ->homeUrl(config('filament-saas.site_path'))
             ->default()
             ->login(Login::class)
-            ->registration(app(Features::class)->auth_registration ? TenantRegister::class : false)
+            ->registration(cache('filament-saas.features')?->auth_registration ? TenantRegister::class : false)
             ->passwordReset()
             ->emailVerification()
             ->profile()
