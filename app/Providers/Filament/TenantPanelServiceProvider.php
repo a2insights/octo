@@ -37,6 +37,7 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Support\Facades\App;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Wallo\FilamentCompanies\Actions\GenerateRedirectForProvider;
 use Wallo\FilamentCompanies\Enums\Feature;
@@ -56,7 +57,7 @@ class TenantPanelServiceProvider extends PanelProvider
             ->homeUrl(config('filament-saas.site_path'))
             ->default()
             ->login(Login::class)
-            ->registration(cache('filament-saas.features')?->auth_registration ? TenantRegister::class : false)
+            ->registration(!App::runningInConsole() && cache('filament-saas.features')?->auth_registration ? TenantRegister::class : false)
             ->passwordReset()
             ->emailVerification()
             ->profile()
