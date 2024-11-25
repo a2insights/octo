@@ -2,6 +2,8 @@
 
 [![GitHub license](https://img.shields.io/github/license/gothinkster/laravel-realworld-example-app.svg)](/LICENSE)
 
+![Dasboard](./public/images/screenshots/dashboard.png)
+
 ## Introduction
 
 The purpose of this project is provide a simple way to create web aplications. We use [Laravel](https://laravel.com/) framework with [Filament Admin](https://filamentphp.com/).
