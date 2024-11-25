@@ -24,6 +24,32 @@ Install all php dependencies using composer:
 
     composer install
 
+Copy the example env file and config the database credentials.
+
+    cp .env.example .env
+
+> See all env vars available in the .env.example file.
+
+Config in the .env the database vars
+
+Generate a new application key:
+
+    php artisan key:generate
+
+Flush de application cache:
+
+    php artisan optimize
+
+Run the database migrations.
+
+    php artisan filament-saas:install
+
+PS: Make sure you set the correct database connection information before running the install command.
+
+Start the local development server:
+
+    php artisan serve
+
 Install all node dependencies using npm:
 
     npm install
@@ -32,61 +58,11 @@ Compile the css and javascript assets:
 
     npm run dev
 
-Copy the example env file and config the database credentials.
-
-    cp .env.example .env
-
-> See all env vars available in the .env.example file.
-
-Generate a new application key:
-
-    php artisan key:generate
-
-Flush de application cache:
-
-    php artisan config:clear
-    php artisan view:clear
-
-Run the database migrations.
-
-    php artisan migrate
-
-PS: Make sure you set the correct database connection information before running the migrations.
-
-Start the local development server:
-
-    php artisan serve
-
 You can now access the server at <http://127.0.0.1:8000>
 
-### Using Laravel Sail to develop
+### Finish 
 
-make .env config:
-
-    DB_CONNECTION=mysql
-    DB_HOST=sail
-    DB_PORT=3306
-    DB_DATABASE=mydb
-    DB_USERNAME=sail
-    DB_PASSWORD=password
-
-And run:
-
-    php artisan config:clear
-
-    sail up
-
-You can now access the server at <http://localhost>
-
-### Install app
-
-To install, run the following command:
-
-    php artisan filament-saas:install
-
-This command will install the filament-saas app. You can find the implementation details of this command [here](https://github.com/A2Insights/filament-saas/blob/main/src/Commands/FilamentSaasCommand.php).
-
-got to <http://127.0.0.1:8000/sysadmin/login> and login with the following credentials:
+Go to <http://localhost/sysadmin/login> and login with the following credentials:
 
 #### Super Admin
 - **Email:** `super_admin@filament-saas.dev`
@@ -99,6 +75,33 @@ got to <http://127.0.0.1:8000/sysadmin/login> and login with the following crede
 #### User 
 - **Email:** `user@filament-saas.dev`
 - **Senha:** `123456`
+
+### Using Laravel Sail to develop
+
+make .env config:
+
+    DB_CONNECTION=mysql
+    DB_HOST=mysql
+    DB_PORT=3306
+    DB_DATABASE=laravel
+    DB_USERNAME=root
+    DB_PASSWORD=
+
+And run:
+
+    vendor/bin/sail build
+
+    vendor/bin/sail up -d
+
+    sail artisan optimize
+
+    php artisan filament-saas:install
+
+    npm run install 
+
+    npm run dev
+
+You can now access the server at <http://localhost>
 
 
 **For more information: <https://laravel.com/docs/sail>**
