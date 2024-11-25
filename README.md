@@ -93,9 +93,9 @@ And run:
 
     vendor/bin/sail up -d
 
-    sail artisan optimize
+    vendor/bin/sail sail artisan optimize
 
-    php artisan filament-saas:install
+    vendor/bin/sail artisan filament-saas:install
 
     npm run install 
 
