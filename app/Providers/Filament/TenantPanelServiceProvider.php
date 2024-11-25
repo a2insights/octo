@@ -3,7 +3,6 @@
 namespace App\Providers\Filament;
 
 use A2Insights\FilamentSaas\Features\Features;
-use A2Insights\FilamentSaas\Settings\Settings;
 use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\AddCompanyEmployee;
 use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\CreateConnectedAccount;
 use A2Insights\FilamentSaas\Tenant\Actions\FilamentCompanies\CreateNewUser;
@@ -100,11 +99,11 @@ class TenantPanelServiceProvider extends PanelProvider
                     // )
                     ->customMyProfilePage(TentantUserProfilePage::class)
                     ->myProfileComponents([Phone::class, Username::class])
-                    ->avatarUploadComponent(fn($fileUpload) => $fileUpload
+                    ->avatarUploadComponent(fn ($fileUpload) => $fileUpload
                         ->visibility('private')
                         ->directory('avatars')
                         ->disk('avatars')),
-                \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn() => (bool) auth()?->user()?->hasRole('super_admin')),
+                \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn () => (bool) auth()?->user()?->hasRole('super_admin')),
                 FilamentCompanies::make()
                     ->userPanel('company')
                     ->switchCurrentCompany()
@@ -212,7 +211,6 @@ class TenantPanelServiceProvider extends PanelProvider
         //     'update',
         // ])->description('Editor users have the ability to read, create, and update.');
     }
-
 
     // TODO: Not use cached features.
     private function registrationIsEnabled()
