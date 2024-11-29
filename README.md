@@ -108,7 +108,7 @@ You can now access the server at <http://localhost>
 
 **For more information: <https://laravel.com/docs/sail>**
 
-## Screanshots
+## Screenshots
 ![Dasboard](./public/images/screenshots/1.png)
 ![Dasboard](./public/images/screenshots/2.png)
 ![Dasboard](./public/images/screenshots/3.png)
