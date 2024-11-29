@@ -115,6 +115,7 @@ You can now access the server at <http://localhost>
 ![Dasboard](./public/images/screenshots/4.png)
 ![Dasboard](./public/images/screenshots/5.png)
 ![Dasboard](./public/images/screenshots/6.png)
+![Dasboard](./public/images/screenshots/7.png)
 
 ### And much more...
 
