@@ -1,6 +1,6 @@
 # Filament SaaS
 
-## A stable versiyon is coming.
+## A stable version is coming.
 All changes in the database during the beta versions need to be updated manually. In the first stable versions, I will not introduce several breaking changes without migrations.
 
 [![GitHub license](https://img.shields.io/github/license/gothinkster/laravel-realworld-example-app.svg)](/LICENSE)

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Policies;
+namespace App\Policies\Stripe;
 
-use A21ns1g4ts\FilamentStripe\Models\Customer;
+use A21ns1g4ts\FilamentStripe\Models\Product;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class CustomerPolicy
+class ProductPolicy
 {
     use HandlesAuthorization;
 
@@ -15,15 +15,15 @@ class CustomerPolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->can('view_any_customer');
+        return $user->can('view_any_product');
     }
 
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Customer $customer): bool
+    public function view(User $user, Product $product): bool
     {
-        return $user->can('view_customer');
+        return $user->can('view_product');
     }
 
     /**
@@ -31,23 +31,23 @@ class CustomerPolicy
      */
     public function create(User $user): bool
     {
-        return $user->can('create_customer');
+        return $user->can('create_product');
     }
 
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Customer $customer): bool
+    public function update(User $user, Product $product): bool
     {
-        return $user->can('update_customer');
+        return $user->can('update_product');
     }
 
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Customer $customer): bool
+    public function delete(User $user, Product $product): bool
     {
-        return $user->can('delete_customer');
+        return $user->can('delete_product');
     }
 
     /**
@@ -55,15 +55,15 @@ class CustomerPolicy
      */
     public function deleteAny(User $user): bool
     {
-        return $user->can('delete_any_customer');
+        return $user->can('delete_any_product');
     }
 
     /**
      * Determine whether the user can permanently delete.
      */
-    public function forceDelete(User $user, Customer $customer): bool
+    public function forceDelete(User $user, Product $product): bool
     {
-        return $user->can('force_delete_customer');
+        return $user->can('force_delete_product');
     }
 
     /**
@@ -71,15 +71,15 @@ class CustomerPolicy
      */
     public function forceDeleteAny(User $user): bool
     {
-        return $user->can('force_delete_any_customer');
+        return $user->can('force_delete_any_product');
     }
 
     /**
      * Determine whether the user can restore.
      */
-    public function restore(User $user, Customer $customer): bool
+    public function restore(User $user, Product $product): bool
     {
-        return $user->can('restore_customer');
+        return $user->can('restore_product');
     }
 
     /**
@@ -87,15 +87,15 @@ class CustomerPolicy
      */
     public function restoreAny(User $user): bool
     {
-        return $user->can('restore_any_customer');
+        return $user->can('restore_any_product');
     }
 
     /**
      * Determine whether the user can replicate.
      */
-    public function replicate(User $user, Customer $customer): bool
+    public function replicate(User $user, Product $product): bool
     {
-        return $user->can('replicate_customer');
+        return $user->can('replicate_product');
     }
 
     /**
@@ -103,6 +103,6 @@ class CustomerPolicy
      */
     public function reorder(User $user): bool
     {
-        return $user->can('reorder_customer');
+        return $user->can('reorder_product');
     }
 }

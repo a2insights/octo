@@ -6,9 +6,21 @@
         "system"
     ],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../filament-shop"
+        },
+        {
+            "type": "path",
+            "url": "../filament-short-url"
+        }
+    ],
     "require": {
         "php": "^8.2",
         "a2insights/filament-saas": "dev-main",
+        "a21ns1g4ts/filament-shop": "dev-main",
+        "a21ns1g4ts/filament-short-url": "dev-main",
         "a21ns1g4ts/filament-stripe": "dev-main",
         "barryvdh/laravel-debugbar": "^3.13",
         "inertiajs/inertia-laravel": "^1.3",

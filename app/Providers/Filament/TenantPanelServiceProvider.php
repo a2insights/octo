@@ -72,6 +72,7 @@ class TenantPanelServiceProvider extends PanelProvider
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
+            ->unsavedChangesAlerts()
             ->pages([
                 Pages\Dashboard::class,
             ])
@@ -136,6 +137,8 @@ class TenantPanelServiceProvider extends PanelProvider
                 \A2Insights\FilamentSaas\Settings\SettingsPlugin::make(),
                 \A2Insights\FilamentSaas\Tenant\TenantPlugin::make(),
                 \A21ns1g4ts\FilamentStripe\FilamentStripePlugin::make(),
+                \A21ns1g4ts\FilamentShortUrl\FilamentShortUrlPlugin::make(),
+                \A21ns1g4ts\FilamentShop\FilamentShopPlugin::make(),
             ])
             ->widgets([
                 // Widgets\AccountWidget::class,

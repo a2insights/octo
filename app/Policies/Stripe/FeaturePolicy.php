@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Policies;
+namespace App\Policies\Stripe;
 
-use A21ns1g4ts\FilamentStripe\Models\Price;
 use App\Models\User;
+use A21ns1g4ts\FilamentStripe\Models\Feature;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class PricePolicy
+class FeaturePolicy
 {
     use HandlesAuthorization;
 
@@ -15,15 +15,15 @@ class PricePolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->can('view_any_price');
+        return $user->can('view_any_feature');
     }
 
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Price $price): bool
+    public function view(User $user, Feature $feature): bool
     {
-        return $user->can('view_price');
+        return $user->can('view_feature');
     }
 
     /**
@@ -31,23 +31,23 @@ class PricePolicy
      */
     public function create(User $user): bool
     {
-        return $user->can('create_price');
+        return $user->can('create_feature');
     }
 
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Price $price): bool
+    public function update(User $user, Feature $feature): bool
     {
-        return $user->can('update_price');
+        return $user->can('update_feature');
     }
 
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Price $price): bool
+    public function delete(User $user, Feature $feature): bool
     {
-        return $user->can('delete_price');
+        return $user->can('delete_feature');
     }
 
     /**
@@ -55,15 +55,15 @@ class PricePolicy
      */
     public function deleteAny(User $user): bool
     {
-        return $user->can('delete_any_price');
+        return $user->can('delete_any_feature');
     }
 
     /**
      * Determine whether the user can permanently delete.
      */
-    public function forceDelete(User $user, Price $price): bool
+    public function forceDelete(User $user, Feature $feature): bool
     {
-        return $user->can('force_delete_price');
+        return $user->can('force_delete_feature');
     }
 
     /**
@@ -71,15 +71,15 @@ class PricePolicy
      */
     public function forceDeleteAny(User $user): bool
     {
-        return $user->can('force_delete_any_price');
+        return $user->can('force_delete_any_feature');
     }
 
     /**
      * Determine whether the user can restore.
      */
-    public function restore(User $user, Price $price): bool
+    public function restore(User $user, Feature $feature): bool
     {
-        return $user->can('restore_price');
+        return $user->can('restore_feature');
     }
 
     /**
@@ -87,15 +87,15 @@ class PricePolicy
      */
     public function restoreAny(User $user): bool
     {
-        return $user->can('restore_any_price');
+        return $user->can('restore_any_feature');
     }
 
     /**
      * Determine whether the user can replicate.
      */
-    public function replicate(User $user, Price $price): bool
+    public function replicate(User $user, Feature $feature): bool
     {
-        return $user->can('replicate_price');
+        return $user->can('replicate_feature');
     }
 
     /**
@@ -103,6 +103,6 @@ class PricePolicy
      */
     public function reorder(User $user): bool
     {
-        return $user->can('reorder_price');
+        return $user->can('reorder_feature');
     }
 }

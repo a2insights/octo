@@ -37,6 +37,7 @@ class SysadminPanelServiceProvider extends PanelProvider
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
+            ->unsavedChangesAlerts()
             ->resources([
                 config('filament-logger.activity_resource'),
             ])
@@ -92,6 +93,8 @@ class SysadminPanelServiceProvider extends PanelProvider
                 \A2Insights\FilamentSaas\System\SystemPlugin::make(),
                 \A2Insights\FilamentSaas\Site\SitePlugin::make(),
                 \A21ns1g4ts\FilamentStripe\FilamentStripePlugin::make(),
+                \A21ns1g4ts\FilamentShortUrl\FilamentShortUrlPlugin::make(),
+                \A21ns1g4ts\FilamentShop\FilamentShopPlugin::make(),
             ])
             ->widgets([
                 // Widgets\AccountWidget::class,
