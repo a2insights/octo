@@ -39,8 +39,8 @@
                         </ul>
                         <ul class="font-medium text-gray-500">
                             <li class="mb-4">
-                                <a href="https://github.com/A2Insights/filament-saas" target="_blank" rel="noopener noreferrer"
-                                    class="hover:underline">
+                                <a href="https://github.com/A2Insights/filament-saas" target="_blank"
+                                    rel="noopener noreferrer" class="hover:underline">
                                     Github
                                 </a>
                             </li>
