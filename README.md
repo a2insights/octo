@@ -143,13 +143,14 @@ And run:
 
 You can now access the server at <http://localhost>
 
-## The big problem [Livewire+Filament+TenancyForLaravel]
+**For more information: <https://laravel.com/docs/sail>**
+
+## The big problem: [Livewire+Filament+TenancyForLaravel]
 
 We use Tenancy for Laravel to load the tenant context, but there is a significant issue when using the public or local filesystem driver. https://github.com/archtechx/tenancy/issues/1212. I haven't been able to resolve this and make file uploads work in tenant mode—it only works in non-tenant mode. However, if you're using the S3 driver in production, it works perfectly.
 
 I recommend using a single bucket for all tenants because I tested and verified that it works. There are many tricky issues to pinpoint. I’ve already spent several hours trying to make it work locally in tenant mode but failed. I will wait for further improvements in the package https://tenancyforlaravel.com/ or consider dropping it soon. Since this has not been a problem in production where I use AWS S3 for file storage, I don’t plan to address it for now. However, if you know how to resolve this, feel free to share a solution.
 
-**For more information: <https://laravel.com/docs/sail>**
 
 ## Screenshots
 ![Dasboard](./public/images/screenshots/1.png)
