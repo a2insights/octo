@@ -83,7 +83,6 @@ class TenantPanelServiceProvider extends PanelProvider
                     ->includes([
                         \A2Insights\FilamentSaas\User\Filament\UserResource::class,
                     ]),
-                \MarcoGermani87\FilamentCookieConsent\FilamentCookieConsent::make(),
                 \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
                 \Jeffgreco13\FilamentBreezy\BreezyCore::make()->myProfile(
                     shouldRegisterUserMenu: true, // Sets the 'account' link in the panel User Menu (default = true)
@@ -136,9 +135,6 @@ class TenantPanelServiceProvider extends PanelProvider
                 \A2Insights\FilamentSaas\Features\FeaturesPlugin::make(),
                 \A2Insights\FilamentSaas\Settings\SettingsPlugin::make(),
                 \A2Insights\FilamentSaas\Tenant\TenantPlugin::make(),
-                \A21ns1g4ts\FilamentStripe\FilamentStripePlugin::make(),
-                \A21ns1g4ts\FilamentShortUrl\FilamentShortUrlPlugin::make(),
-                \A21ns1g4ts\FilamentShop\FilamentShopPlugin::make(),
             ])
             ->widgets([
                 // Widgets\AccountWidget::class,
@@ -159,7 +155,6 @@ class TenantPanelServiceProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
                 \Cog\Laravel\Ban\Http\Middleware\ForbidBannedUser::class,
-                \A21ns1g4ts\FilamentStripe\Http\Middleware\LoadCustomer::class,
             ])
             ->tenantMiddleware([
                 \Hasnayeen\Themes\Http\Middleware\SetTheme::class,

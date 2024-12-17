@@ -1,10 +1,7 @@
-// const colors = require("tailwindcss/colors");
-// import preset from './vendor/filament/support/tailwind.config.preset';
-import defaultTheme from 'tailwindcss/defaultTheme';
+import preset from './vendor/filament/support/tailwind.config.preset';
 
-/** @type {import('tailwindcss').Config} */
 export default {
-    // presets: [preset],
+    presets: [preset],
     content: [
         "./app/Filament/**/*.php",
         "./resources/views/filament/**/*.blade.php",
@@ -14,14 +11,4 @@ export default {
         "./resources/views/**/*.blade.php",
         "./resources/js/**/*.vue",
     ],
-
-    theme: {
-        extend: {
-            fontFamily: {
-                sans: ["Figtree", ...defaultTheme.fontFamily.sans],
-            },
-        },
-    },
-
-    plugins: [require("@tailwindcss/forms")],
 };
