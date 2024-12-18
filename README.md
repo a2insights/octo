@@ -3,6 +3,23 @@
 ## A stable version is coming.
 All changes in the database during the beta versions need to be updated manually. In the first stable versions, I will not introduce several breaking changes without migrations.
 
+# Overview
+This repository provides a robust template for building scalable, multi-tenant SaaS applications. It addresses the common challenges faced in multi-tenant development, such as:
+
+Diverse models: Tailored solutions for varying application requirements.
+Database complexities: Support for multiple database models (e.g., multi-tenant per database, schema per tenant).
+Resource heterogeneity: Accommodation for diverse hardware configurations.
+By leveraging this template, you can quickly establish a solid foundation for your SaaS project. It offers a modular structure, supports various multi-tenancy models, and integrates seamlessly with popular databases.
+
+### Need help customizing the template to your specific needs? Reach out to me! I can assist you in selecting the optimal architecture and technologies for your project.
+
+## Key features:
+
+Flexibility: Adapts to different use cases and requirements.
+Scalability: Designed to handle growing user bases.
+Security: Protects user data.
+Get started today and build your multi-tenant SaaS application with confidence.
+
 [![GitHub license](https://img.shields.io/github/license/gothinkster/laravel-realworld-example-app.svg)](/LICENSE)
 
 ## Introduction
@@ -22,7 +39,6 @@ A huge thank you to the maintainers of these incredible projects!
 | andrewdwallo/filament-companies               | Company management for Filament                 | https://github.com/andrewdwallo/filament-companies |
 | awcodes/filament-quick-create                 | Quick create records in Filament                | https://github.com/awcodes/filament-quick-create   |
 | bezhansalleh/filament-exceptions              | Custom exception handling for Filament          | https://github.com/bezhansalleh/filament-exceptions|
-| bezhansalleh/filament-google-analytics        | Google Analytics integration for Filament       | https://github.com/bezhansalleh/filament-google-analytics |
 | bezhansalleh/filament-panel-switch            | Panel switch component for Filament             | [Invalid URL removed]                              |
 | bezhansalleh/filament-shield                  | Shield component for Filament                   | https://github.com/bezhansalleh/filament-shield    |
 | cms-multi/filament-clear-cache                | Clear cache button for Filament                 | https://github.com/cms-multi/filament-clear-cache  |

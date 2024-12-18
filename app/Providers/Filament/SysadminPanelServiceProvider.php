@@ -76,7 +76,6 @@ class SysadminPanelServiceProvider extends PanelProvider
                 \SolutionForest\FilamentFirewall\FilamentFirewallPanel::make(),
                 \pxlrbt\FilamentEnvironmentIndicator\EnvironmentIndicatorPlugin::make(),
                 \BezhanSalleh\FilamentExceptions\FilamentExceptionsPlugin::make(),
-                // \BezhanSalleh\FilamentGoogleAnalytics\FilamentGoogleAnalyticsPlugin::make(),
                 \Croustibat\FilamentJobsMonitor\FilamentJobsMonitorPlugin::make()
                     ->label('Job')
                     ->pluralLabel('Jobs')
@@ -91,10 +90,6 @@ class SysadminPanelServiceProvider extends PanelProvider
                 \A2Insights\FilamentSaas\Features\FeaturesPlugin::make(),
                 \A2Insights\FilamentSaas\Settings\SettingsPlugin::make(),
                 \A2Insights\FilamentSaas\System\SystemPlugin::make(),
-                \A2Insights\FilamentSaas\Site\SitePlugin::make(),
-                \A21ns1g4ts\FilamentStripe\FilamentStripePlugin::make(),
-                \A21ns1g4ts\FilamentShortUrl\FilamentShortUrlPlugin::make(),
-                \A21ns1g4ts\FilamentShop\FilamentShopPlugin::make(),
             ])
             ->widgets([
                 // Widgets\AccountWidget::class,
@@ -116,7 +111,6 @@ class SysadminPanelServiceProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
                 \Cog\Laravel\Ban\Http\Middleware\ForbidBannedUser::class,
-                \A21ns1g4ts\FilamentStripe\Http\Middleware\LoadCustomer::class,
             ]);
     }
 }
